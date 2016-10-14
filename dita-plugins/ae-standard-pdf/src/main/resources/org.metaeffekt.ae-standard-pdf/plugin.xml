@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<plugin id="org.metaeffekt.ae-standard-pdf">
+    <feature extension="package.support.name" value="Whitelabel Standard PDF DITA OT Plugin"/>
+    <feature extension="package.support.email" value="contact@metaeffekt.org"/>
+    <feature extension="package.version" value="1.0.0"/>
+    <require plugin="org.dita.pdf2" />
+    <feature extension="dita.conductor.transtype.check" value="ae-standard-pdf" />
+    <feature extension="dita.transtype.print" value="ae-standard-pdf" />
+    <feature extension="dita.conductor.target.relative" file="integrator.xml" />
+
+    <!-- libraries -->
+    <feature extension="dita.conductor.lib.import" file="lib/avalon-framework-api.jar"/>
+    <feature extension="dita.conductor.lib.import" file="lib/avalon-framework-impl.jar"/>
+    <feature extension="dita.conductor.lib.import" file="lib/batik-anim.jar"/>
+    <feature extension="dita.conductor.lib.import" file="lib/batik-awt-util.jar"/>
+    <feature extension="dita.conductor.lib.import" file="lib/batik-bridge.jar"/>
+    <feature extension="dita.conductor.lib.import" file="lib/batik-css.jar"/>
+    <feature extension="dita.conductor.lib.import" file="lib/batik-dom.jar"/>
+    <feature extension="dita.conductor.lib.import" file="lib/batik-extension.jar"/>
+    <feature extension="dita.conductor.lib.import" file="lib/batik-gvt.jar"/>
+    <feature extension="dita.conductor.lib.import" file="lib/batik-js.jar"/>
+    <feature extension="dita.conductor.lib.import" file="lib/batik-parser.jar"/>
+    <feature extension="dita.conductor.lib.import" file="lib/batik-script.jar"/>
+    <feature extension="dita.conductor.lib.import" file="lib/batik-svg-dom.jar"/>
+    <feature extension="dita.conductor.lib.import" file="lib/batik-svggen.jar"/>
+    <feature extension="dita.conductor.lib.import" file="lib/batik-transcoder.jar"/>
+    <feature extension="dita.conductor.lib.import" file="lib/batik-util.jar"/>
+    <feature extension="dita.conductor.lib.import" file="lib/batik-xml.jar"/>
+    <feature extension="dita.conductor.lib.import" file="lib/commons-io.jar"/>
+    <feature extension="dita.conductor.lib.import" file="lib/commons-logging.jar"/>
+    <feature extension="dita.conductor.lib.import" file="lib/xmlgraphics-commons.jar"/>
+</plugin>

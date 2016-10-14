@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.metaeffekt.dita</groupId>
+    <artifactId>ae-dita</artifactId>
+    <version>0.1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <parent>
+        <groupId>org.metaeffekt.core</groupId>
+        <artifactId>ae-core</artifactId>
+        <version>0.1.0-SNAPSHOT</version>
+    </parent>
+
+    <inceptionYear>2016</inceptionYear>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <artifact.inventory.version>0.1.0-SNAPSHOT</artifact.inventory.version>
+        <artifact.inventory.enabled>true</artifact.inventory.enabled>
+
+        <ae.core.version>0.1.0-SNAPSHOT</ae.core.version>
+        <ae.dita.version>0.1.0-SNAPSHOT</ae.dita.version>
+    </properties>
+
+    <modules>
+        <module>brandings</module>
+        <module>customizations</module>
+        <module>dita-plugins</module>
+        <module>maven-plugins</module>
+        <module>poms</module>
+        <module>tests</module>
+    </modules>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.metaeffekt.core</groupId>
+                    <artifactId>ae-version-maven-plugin</artifactId>
+                    <configuration>
+                        <projectVersion>${ae.dita.version}</projectVersion>
+                        <groupIdVersionMap>
+                            <org.metaeffekt.dita>${ae.core.version}</org.metaeffekt.dita>
+                        </groupIdVersionMap>
+                        <propertyVersionMap>
+                            <ae.core.version>${ae.core.version}</ae.core.version>
+                            <ae.dita.version>${ae.dita.version}</ae.dita.version>
+                        </propertyVersionMap>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+</project>

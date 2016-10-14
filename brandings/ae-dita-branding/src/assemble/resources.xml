@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<assembly>
+    <id>resources</id>
+    <formats>
+        <format>zip</format>
+    </formats>
+    <includeBaseDirectory>false</includeBaseDirectory>
+    <fileSets>
+        <fileSet>
+            <directory>${basedir}/src/main/resources</directory>
+            <lineEnding>keep</lineEnding>
+            <outputDirectory>ae-dita-branding</outputDirectory>
+        </fileSet>
+    </fileSets>
+</assembly>

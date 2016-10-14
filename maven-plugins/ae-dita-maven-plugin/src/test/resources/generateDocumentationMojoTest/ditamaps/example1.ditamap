@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE bookmap PUBLIC "-//OASIS//DTD DITA BookMap//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/bookmap.dtd">
+<bookmap id="example1">
+    <title>
+        <ph>Example 1 Documentation</ph>
+    </title>
+    <bookmeta>
+        <shortdesc></shortdesc>
+        <category>Example</category>
+        <bookrights>
+            <copyrfirst>
+                <year>2007</year>
+            </copyrfirst>
+            <copyrlast>
+                <year>2009</year>
+            </copyrlast>
+            <bookowner>
+                <organization>Example</organization>
+            </bookowner>
+        </bookrights>
+    </bookmeta>
+
+    <frontmatter>
+        <notices>
+            <topicref href="tpc_example1_notice.dita" />
+        </notices>
+        <booklists>
+            <toc />
+        </booklists>
+    </frontmatter>
+
+    <chapter href="chapters/introduction/ch_example1_chapter.dita">
+        <topicref href="chapters/introduction/ch_example1_chapter_extract.dita" />
+    </chapter>
+
+    <appendix href="chapters/appendix/ap_example1.dita">
+        <topicref href="chapters/appendix/ap_example1_text.dita">
+        </topicref>
+    </appendix>
+        
+    <backmatter>
+        <booklists>
+            <indexlist/>
+            <abbrevlist href="tpc_example1_abbreviations_list.dita"/>
+        </booklists>
+    </backmatter>
+
+</bookmap>
+        

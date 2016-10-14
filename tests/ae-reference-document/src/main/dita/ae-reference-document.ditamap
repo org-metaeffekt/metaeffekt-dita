@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE bookmap PUBLIC "-//OASIS//DTD DITA BookMap//EN" "bookmap.dtd">
+<bookmap id="bookmap_dcc-agent-administration-manual">
+    <title>
+        <ph>DITA Tool Chain</ph>
+    </title>
+    <bookmeta>
+        <shortdesc/>
+        <category>Reference Document</category>
+        <bookrights>
+            <copyrfirst>
+                <year>${document.copyright.year}</year>
+            </copyrfirst>
+            <copyrlast>
+                <year>${document.copyright.year}</year>
+            </copyrlast>
+            <bookowner>
+                <organization>${organization.name}</organization>
+            </bookowner>
+        </bookrights>
+    </bookmeta>
+    <frontmatter>
+        <notices href="ae-reference-document/imprint/en/tpc_imprint.dita"/>
+        <notices href="ae-reference-document/notice/en/tpc_notice.dita"/>
+        <booklists>
+            <toc/>
+        </booklists>
+    </frontmatter>
+    <chapter href="ae-reference-document/introduction/en/tpc_introduction.dita" keys="introduction"/>
+    <chapter href="ae-reference-document/reference/en/tpc_table.dita"/>
+    <chapter href="ae-reference-document/reference/en/tpc_notes.dita"/>
+    <chapter href="ae-reference-document/reference/en/tpc_refs.dita"/>
+    <backmatter>
+        <booklists>
+            <tablelist/>
+            <figurelist/>
+            <glossarylist>
+                <topicref format="ditamap" href="gen/glossary/en/gmap_glossary.ditamap"/>
+            </glossarylist>
+            <indexlist/>
+        </booklists>
+    </backmatter>
+</bookmap>

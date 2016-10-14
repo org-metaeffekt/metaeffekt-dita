@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project name="org.metaeffekt.ae-standard-pdf">
+
+    <target name="dita2ae-standard-pdf.init">
+        <property name="customization.dir" location="${dita.plugin.org.metaeffekt.ae-standard-pdf.dir}/cfg" />
+        <!-- no minitoc for the beginning of a chapter -->
+        <property name="args.chapter.layout" value="BASIC" />
+        <property name="args.bookmark.style" value="COLLAPSED" />
+        <!-- do not reorder the front and back matter -->
+        <property name="args.bookmap-order" value="retain" />
+        <property name="args.fo.include.rellinks" value="all" />
+    </target>
+    
+    <target name="dita2ae-standard-pdf" depends="dita2ae-standard-pdf.init, dita2pdf2"/>
+</project>

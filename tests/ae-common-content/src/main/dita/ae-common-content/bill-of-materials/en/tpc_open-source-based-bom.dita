@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd">
+<topic id="tpc_open-source-based-bom" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+    <title>${product.name} ${product.version}</title>
+    <body>
+        <p>
+            The software covered by this document is based on third-party components with individual 
+            licenses describing the terms of use and redistribution options. In order to adhere to the 
+            conditions and restrictions implied by these licenses the required license details 
+            and notices are listed.
+        </p>
+    </body>
+</topic>

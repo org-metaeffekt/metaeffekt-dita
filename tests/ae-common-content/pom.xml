@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.metaeffekt.core</groupId>
+        <artifactId>ae-core-plugin-management-pom</artifactId>
+        <version>0.1.0-SNAPSHOT</version>
+        <relativePath />
+    </parent>
+
+    <groupId>org.metaeffekt.dita</groupId>
+    <artifactId>ae-common-content</artifactId>
+    <version>0.1.0-SNAPSHOT</version>
+
+    <profiles>
+        <profile>
+            <id>package-doc-artifact</id>
+            <activation>
+                <file>
+                    <exists>src/main/dita</exists>
+                </file>
+            </activation>
+            <build>
+                <pluginManagement>
+                    <plugins>
+                        <plugin>
+                            <groupId>org.metaeffekt.core</groupId>
+                            <artifactId>ae-artifact-publish-maven-plugin</artifactId>
+                            <version>${ae.core.version}</version>
+                            <executions>
+                                <execution>
+                                    <id>package-doc</id>
+                                    <phase>package</phase>
+                                    <goals>
+                                        <goal>publish-artifact</goal>
+                                    </goals>
+                                    <configuration>
+                                        <qualifier>doc</qualifier>
+                                        <filesets>
+                                            <fileset>
+                                                <directory>src/main/dita/${project.artifactId}</directory>
+                                                <includes>
+                                                    <include>**/*</include>
+                                                </includes>
+                                                <excludes>
+                                                    <exclude>**/.svn/**/*</exclude>
+                                                    <exclude>**/.svn</exclude>
+                                                </excludes>
+                                            </fileset>
+                                        </filesets>
+                                    </configuration>
+                                </execution>
+                            </executions>
+                        </plugin>
+                    </plugins>
+                </pluginManagement>
+
+                <plugins>
+                    <plugin>
+                        <groupId>org.metaeffekt.core</groupId>
+                        <artifactId>ae-artifact-publish-maven-plugin</artifactId>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
+
+</project>

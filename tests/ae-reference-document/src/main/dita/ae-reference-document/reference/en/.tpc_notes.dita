@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.3/OS/dtd/topic.dtd">
+<topic id="tpc_tables">
+    <title>Tables</title>
+    <body>
+        <p>There are several way to create a table using dita. In general the simpletable is quite
+            easy to use:</p>
+        <p>
+            <simpletable frame="all" relcolwidth="1.0* 1.0*" id="simpletable_urb_zb1_mx">
+                <sthead>
+                    <stentry>Column 1</stentry>
+                    <stentry>Column 2</stentry>
+                </sthead>
+                <strow>
+                    <stentry>Monday</stentry>
+                    <stentry>Get up early.</stentry>
+                </strow>
+                <strow>
+                    <stentry>Tuesday</stentry>
+                    <stentry>Get up late.</stentry>
+                </strow>
+                <strow>
+                    <stentry>Wednesday</stentry>
+                    <stentry>Stay in bed.</stentry>
+                </strow>
+            </simpletable>
+        </p>
+        <p>However, the CALS Table is much more flexible and gives you more options.</p>
+        <p>
+            <table frame="all" rowsep="1" colsep="1" id="table_d5l_fc1_mx">
+                <title>CALS Table Title</title>
+                <tgroup cols="2">
+                    <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+                    <colspec colname="c2" colnum="2" colwidth="2.0*"/>
+                    <thead>
+                        <row>
+                            <entry>Column 1</entry>
+                            <entry>Column 2</entry>
+                        </row>
+                    </thead>
+                    <tbody>
+                        <row>
+                            <entry>Thursday</entry>
+                            <entry>Visit Uncle Joe</entry>
+                        </row>
+                        <row>
+                            <entry>Friday</entry>
+                            <entry>Get back on track.</entry>
+                        </row>
+                        <row>
+                            <entry>Saturday</entry>
+                            <entry>Gain faith.</entry>
+                        </row>
+                    </tbody>
+                </tgroup>
+            </table>
+        </p>
+        <p>Please note that the CALS table has a title. This title can be included in the table
+            references in the backmatter of the document. Check it out.</p>
+        <p>In case you are using an WYSIWYG editor there is no reason to not use the CALS table.</p>
+        <p>Please also mind that both tables are rendered differently. Actually the metaeffekt
+            DITA-OT customization does currently not pay particular attention to using simple
+            table.</p>
+    </body>
+</topic>

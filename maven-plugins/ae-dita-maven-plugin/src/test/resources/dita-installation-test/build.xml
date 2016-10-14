@@ -1,0 +1,10 @@
+<project name="md5">
+   <target name="build">
+   </target>
+   <checksum todir="/tmp" totalproperty="aggregated.checksum">
+      <fileset dir="dita-toolkit-dummy">
+         <include name="*/**" />
+      </fileset>
+   </checksum>
+   <echo message="Aggregated MD5: ${aggregated.checksum}." />
+</project>

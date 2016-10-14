@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<assembly>
+    <id>dita-plugin</id>
+    <formats>
+        <format>zip</format>
+    </formats>
+    <includeBaseDirectory>false</includeBaseDirectory>
+    <fileSets>
+        <fileSet>
+            <directory>${basedir}/src/main/resources/org.metaeffekt.ae-standard-pdf</directory>
+            <lineEnding>keep</lineEnding>
+            <outputDirectory>org.metaeffekt.ae-standard-pdf</outputDirectory>
+        </fileSet>
+        <fileSet>
+            <directory>${project.build.directory}/lib</directory>
+            <lineEnding>keep</lineEnding>
+            <outputDirectory>org.metaeffekt.ae-standard-pdf/lib</outputDirectory>
+        </fileSet>
+    </fileSets>
+</assembly>

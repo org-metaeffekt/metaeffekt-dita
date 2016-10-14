@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.metaeffekt.dita</groupId>
+    <artifactId>ae-dita-toolkit</artifactId>
+    <packaging>pom</packaging>
+
+    <parent>
+        <groupId>org.metaeffekt.core</groupId>
+        <artifactId>ae-core-plugin-management-pom</artifactId>
+        <version>0.1.0-SNAPSHOT</version>
+        <relativePath />
+    </parent>
+
+    <properties>
+        <dita.ot.version>2.2.4</dita.ot.version>
+        <dita.name.string>dita-ot-${dita.ot.version}</dita.name.string>
+        <dita.archive>${project.build.directory}/${dita.name.string}-bin.zip</dita.archive>
+        <dita.customized.archive>${project.build.directory}/ae-dita-toolkit-${project.version}-bin.zip</dita.customized.archive>
+        <dita.root.folder>${project.build.directory}/${dita.name.string}</dita.root.folder>
+        <ant.version>1.9.7</ant.version>
+
+        <ae.dita.version>0.1.0-SNAPSHOT</ae.dita.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.metaeffekt.dita</groupId>
+            <artifactId>ae-standard-pdf</artifactId>
+            <version>${ae.dita.version}</version>
+            <type>zip</type>
+            <classifier>dita-plugin</classifier>
+        </dependency>
+        <dependency>
+            <groupId>org.dita-ot</groupId>
+            <artifactId>dita-ot</artifactId>
+            <version>${dita.ot.version}</version>
+            <classifier>bin</classifier>
+            <type>zip</type>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!--
+                Get the binaries required for the customization.
+            -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>copy-to-target</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>copy-dependencies</goal>
+                        </goals>
+                        <configuration>
+                            <excludeTransitive>true</excludeTransitive>
+                            <outputDirectory>${project.build.directory}</outputDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- perform the actual customization -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>customization</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <target>
+                                <echo message="Unzipping the downloaded DITA OT binary." />
+                                <unzip src="${dita.archive}" dest="${project.build.directory}" />
+                                <echo message="Removing not required content." />
+                                <delete includeEmptyDirs="true">
+                                    <fileset dir="${dita.root.folder}/doc"/>
+                                    <fileset dir="${dita.root.folder}/docsrc"/>
+                                    <fileset dir="${dita.root.folder}/samples"/>
+                                </delete>
+                                <echo message="Correcting line breaks for Linux binaries." />
+                                <fixcrlf srcDir="${dita.root.folder}/bin"
+                                     eol="lf" eof="remove"
+                                     includes="ant,dita" />
+                                <echo message="Install the configured PDF DITA OT Plugin: ae-standard-pdf-${ae.dita.version}-dita-plugin.zip" />
+                                <ant dir="${dita.root.folder}"
+                                     antfile="integrator.xml"
+                                     target="install">
+                                    <property name="plugin.file" value="file:///${project.build.directory}/ae-standard-pdf-${ae.dita.version}-dita-plugin.zip" />
+                                </ant>
+                                <echo message="Creating customized archive." />
+                                <zip destfile="${dita.customized.archive}"
+                                     basedir="${project.build.directory}"
+                                     includes="${dita.name.string}/**" />
+                            </target>
+                        </configuration>
+                    </execution>
+                </executions>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.apache.ant</groupId>
+                        <artifactId>ant</artifactId>
+                        <version>${ant.version}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>build-helper-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>install-customized-artifacts</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>attach-artifact</goal>
+                        </goals>
+                        <configuration>
+                            <artifacts>
+                                <artifact>
+                                    <file>${dita.customized.archive}</file>
+                                    <type>zip</type>
+                                    <classifier>bin</classifier>
+                                </artifact>
+                            </artifacts>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+        </plugins>
+    </build>
+
+</project>

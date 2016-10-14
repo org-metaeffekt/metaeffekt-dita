@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd">
+<topic id="tpc_imprint">
+    <title>Impressum</title>
+    <body>
+        <p/>  
+        <p/>
+        <p/>  
+        <p/>  
+        <p/>
+        <p/>  
+        <section>
+            <title>${product.name}</title>
+            <p><lines>Version: ${product.version}
+Releaseversion: ${release.version}
+Releasedatum: ${release.date_de}
+                
+Dokumentensprache: de
+Dokumentenstatus: ${document.status_de}
+Sicherheitsstufe: ${document.security.level_de}
+
+Zuletzt geändert: ${document.last.change_de}
+
+
+Copyright ${document.copyright.year}, ${organization.name}</lines>
+            </p>
+        </section>
+        <p/>  
+        <p/>
+        <p/>  
+        <p/>  
+        <section>
+            <title>${organization.name}</title>
+            <p><lines>${organization.address}</lines></p>
+        </section>
+        <p/>  
+        <p/>  
+        <p/>  
+        <p/>  
+        <section>
+            <title>Hinweis</title>
+            <p>Alle Firmenlogos sind eingetragene Marken der ${organization.name}.</p>
+            <p>Alle in der Dokumentation erwähnten Produktnamen sind Marken oder eingetragene Marken
+                der entsprechenden Hersteller und werden hier ausschließlich zur Kennzeichnung verwendet.
+            </p>
+            <p>Dieses Dokument und die beschriebenen Softwarekomponenten unterliegen dem Urheberrecht
+                ${document.copyright.year}, ${organization.name}. </p>
+        </section>
+    </body>
+</topic>
