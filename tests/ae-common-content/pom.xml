@@ -40,7 +40,7 @@
                                         <qualifier>doc</qualifier>
                                         <filesets>
                                             <fileset>
-                                                <directory>src/main/dita/${project.artifactId}</directory>
+                                                <directory>${basedir}/src/main/dita/${project.artifactId}</directory>
                                                 <includes>
                                                     <include>**/*</include>
                                                 </includes>
