@@ -2,9 +2,7 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:fo="http://www.w3.org/1999/XSL/Format" version="1.0">
 
-    <!--
-        Entry point for the DITA OT Plugin, see included files for actual customizations.
-    -->
+    <!-- Entry point for the DITA OT Plugin, see included files for actual customizations. -->
 
     <xsl:include href="customizations/chapterBorders.xsl" />
     <xsl:include href="customizations/cover.xsl" />
@@ -17,5 +15,21 @@
     <xsl:include href="customizations/screen.xsl" />
     <xsl:include href="customizations/table.xsl" />
     <xsl:include href="customizations/toc.xsl" />
+
+    <!-- introduce spacing between glossary terms -->
+    <!-- FIXME: move to dedicated file; clarify responsibilities between plugin and branding  -->
+    <xsl:attribute-set name="__glossary__def">
+        <xsl:attribute name="margin-left"><xsl:value-of select="$side-col-width"/></xsl:attribute>
+        <xsl:attribute name="space-after">10pt</xsl:attribute>
+    </xsl:attribute-set>
+
+    <!-- use latin numbers for List of Tables (LOT) and List of Figures (LOF) -->
+    <xsl:attribute-set name="page-sequence.lot" use-attribute-sets="page-sequence.toc">
+        <xsl:attribute name="format">1</xsl:attribute>
+    </xsl:attribute-set>
+
+    <xsl:attribute-set name="page-sequence.lof" use-attribute-sets="page-sequence.toc">
+        <xsl:attribute name="format">1</xsl:attribute>
+    </xsl:attribute-set>
 
 </xsl:stylesheet>

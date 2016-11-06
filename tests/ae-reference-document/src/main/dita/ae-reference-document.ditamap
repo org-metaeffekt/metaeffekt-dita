@@ -20,8 +20,8 @@
         </bookrights>
     </bookmeta>
     <frontmatter>
-        <notices href="ae-reference-document/imprint/en/tpc_imprint.dita"/>
-        <notices href="ae-reference-document/notice/en/tpc_notice.dita"/>
+        <notices href="ae-reference-document/imprint/en/tpc_imprint.dita" />
+        <notices href="ae-reference-document/notice/en/tpc_notice.dita" />
         <booklists>
             <toc/>
         </booklists>
@@ -30,6 +30,8 @@
     <chapter href="ae-reference-document/reference/en/tpc_table.dita"/>
     <chapter href="ae-reference-document/reference/en/tpc_notes.dita"/>
     <chapter href="ae-reference-document/reference/en/tpc_refs.dita"/>
+    <appendix href="ae-reference-document/appendix/en/tpc_appendix.dita" />
+    
     <backmatter>
         <booklists>
             <tablelist/>
@@ -38,6 +40,8 @@
                 <topicref format="ditamap" href="gen/glossary/en/gmap_glossary.ditamap"/>
             </glossarylist>
             <indexlist/>
+            <abbrevlist/>
+            <bibliolist/>
         </booklists>
     </backmatter>
 </bookmap>

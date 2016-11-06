@@ -266,16 +266,16 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.675297"
-     inkscape:cx="93.22266"
-     inkscape:cy="518.33273"
+     inkscape:zoom="0.47750709"
+     inkscape:cx="137.77364"
+     inkscape:cy="953.06868"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="2002"
-     inkscape:window-height="1084"
-     inkscape:window-x="-8"
-     inkscape:window-y="-8"
+     inkscape:window-width="1440"
+     inkscape:window-height="806"
+     inkscape:window-x="939"
+     inkscape:window-y="1441"
      inkscape:window-maximized="1"
      units="mm"
      showguides="true"
@@ -288,7 +288,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -297,6 +297,13 @@
      inkscape:label="Ebene 1"
      inkscape:groupmode="layer"
      id="layer1">
+    <rect
+       style="fill:#cce0ec;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.11111104px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="rect4104"
+       width="556.13391"
+       height="1029.0642"
+       x="-174.99245"
+       y="-310.60965" />
     <g
        transform="matrix(1.2499995,0,0,-1.2499995,-0.4214243,1052.5947)"
        id="g2742" />
@@ -312,14 +319,64 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:44.44444275px;line-height:125%;font-family:Helvetica;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="-82.851906"
-       y="-194.35321"
+       x="-75.871208"
+       y="-126.87312"
        id="text3456"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3458"
-         x="-82.851906"
-         y="-194.35321"
-         style="-inkscape-font-specification:'Arial, Normal';font-family:Helvetica;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:44.44444444px;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%">${organization.name}</tspan></text>
+         x="-75.871208"
+         y="-126.87312"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:44.44444275px;line-height:125%;font-family:Helvetica;-inkscape-font-specification:'Arial, Normal';text-align:start;writing-mode:lr-tb;text-anchor:start">${organization.name}</tspan></text>
+    <rect
+       style="fill:none;fill-opacity:1;stroke:none;stroke-width:2.29270458;stroke-opacity:1"
+       id="rect4907"
+       width="659.32208"
+       height="933.27563"
+       x="-132.38924"
+       y="-668.42438"
+       transform="scale(1,-1)" />
+    <ellipse
+       style="fill:none;fill-opacity:1;stroke:#ffffff;stroke-width:1.48031496;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path4980"
+       cx="-318.83667"
+       cy="870.24731"
+       rx="370.2894"
+       ry="514.55725" />
+    <ellipse
+       ry="407.50012"
+       rx="472.65329"
+       cy="819.05548"
+       cx="-316.48566"
+       id="ellipse4982"
+       style="fill:none;fill-opacity:1;stroke:#ffffff;stroke-width:3.92793918;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <ellipse
+       style="fill:none;fill-opacity:1;stroke:#ffffff;stroke-width:2.81496063;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="ellipse4984"
+       cx="-154.76613"
+       cy="859.77625"
+       rx="499.61078"
+       ry="350.68924" />
+    <ellipse
+       ry="334.34933"
+       rx="541.44342"
+       cy="752.73883"
+       cx="-115.20884"
+       id="ellipse4986"
+       style="fill:none;fill-opacity:1;stroke:#ffffff;stroke-width:1.34110749;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <ellipse
+       ry="385.52972"
+       rx="496.05743"
+       cy="-173.36723"
+       cx="109.33702"
+       id="ellipse4988"
+       style="fill:none;fill-opacity:1;stroke:#cce0ec;stroke-width:4.51574803;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <ellipse
+       style="fill:none;fill-opacity:1;stroke:#cce0ec;stroke-width:2.94096684;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="ellipse4990"
+       cx="179.14401"
+       cy="-289.71222"
+       rx="496.05743"
+       ry="385.52972" />
   </g>
 </svg>

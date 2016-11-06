@@ -5,7 +5,7 @@
     <body>
         <p> Getting started with <abbreviated-form keyref="dita"/> and the <abbreviated-form
                 keyref="ditaot"/> is quite a challenge. Advantages over other documentation
-            approaches can be only achieved, once a complete infrastructure - a tool chain - is
+            approaches can be only achieved once a complete infrastructure - a tool chain - is
             defined and managed consequently. </p>
         <p>This document is part of the {metæffekt} DITA Tool Chain. It demonstrates how content can
             be organized and transformed to different outputs, such as <abbreviated-form

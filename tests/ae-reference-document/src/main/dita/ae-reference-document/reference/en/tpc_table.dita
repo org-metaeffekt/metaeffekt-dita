@@ -3,10 +3,10 @@
 <topic id="tpc_tables">
     <title>Tables</title>
     <body>
-        <p>There are several way to create a table using dita. In general the simpletable is quite
+        <p>There are several ways to create a table using <abbreviated-form keyref="ditaot"/>. In general the simpletable is quite
             easy to use:</p>
         <p>
-            <simpletable frame="all" relcolwidth="1.0* 1.0*" id="simpletable_urb_zb1_mx">
+            <simpletable frame="all" relcolwidth="1.0* 1.89*" id="simpletable_urb_zb1_mx">
                 <sthead>
                     <stentry>Column 1</stentry>
                     <stentry>Column 2</stentry>
@@ -58,7 +58,7 @@
         <p>Please note that the CALS table has a title. This title can be included in the table
             references in the backmatter of the document. Check it out.</p>
         <p>In case you are using an WYSIWYG editor there is no reason to not use the CALS table.</p>
-        <p>Please also mind that both tables are rendered differently. Actually the metaeffekt
+        <p>Please also mind that both tables are rendered differently. Actually the {metæffekt}
             DITA-OT customization does currently not pay particular attention to using simple
             table.</p>
     </body>

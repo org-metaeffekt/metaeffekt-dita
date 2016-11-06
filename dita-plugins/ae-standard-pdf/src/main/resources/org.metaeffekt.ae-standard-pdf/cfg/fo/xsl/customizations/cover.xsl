@@ -65,7 +65,7 @@
         <xsl:param name="href"/>
         <fo:block-container xsl:use-attribute-sets="__coverImage">
             <fo:block>
-                <fo:external-graphic src="url('{$href}')" />
+                <fo:external-graphic top="-20mm" src="url('{$href}')" />
             </fo:block>
         </fo:block-container>
     </xsl:template>
