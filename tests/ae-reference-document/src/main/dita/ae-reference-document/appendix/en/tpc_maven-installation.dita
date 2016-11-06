@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/task.dtd">
+<task id="tsk_maven-installation" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+    <title>Maven Installation</title>
+    <body>
+        <p>
+            Apache Maven is the supported way to use the metaeffekt DITA Toolchain. No further software prerequisites are
+            required. A customized DITA-OT Toolkit is used implicitly when using the metaeffekt DITA Plugin.
+        </p>
+
+    </body>
+</task>

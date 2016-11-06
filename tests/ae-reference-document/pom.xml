@@ -24,6 +24,13 @@
         <document.last.change>04.09.2016</document.last.change>
         <document.ditamap>ae-reference-document.ditamap</document.ditamap>
         <document.copyright.year>2016</document.copyright.year>
+
+        <release.version>0.1.0</release.version>
+        <release.date_en>15th November, 2016</release.date_en>
+        <document.status_en>preview</document.status_en>
+        <document.security.level_en>Public</document.security.level_en>
+        <document.last.change_en>November 2016</document.last.change_en>
+        <organization.address>Whiting Street 101, Sampletown</organization.address>
     </properties>
 
     <build>
@@ -156,7 +163,7 @@
                                 <documentItem>
                                     <ditaMap>${document.ditamap}</ditaMap>
                                     <ditaTranstype>AE_STANDARD_PDF</ditaTranstype>
-                                    <artifactId>${product.prefix}-${document.name}-en-${document.version}</artifactId>
+                                    <artifactId>${product.prefix}-en-${document.version}</artifactId>
                                 </documentItem>
                             </documentItems>
                             <ditaBuildDir>${project.build.directory}/dita</ditaBuildDir>

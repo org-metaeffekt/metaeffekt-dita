@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.3/OS/dtd/topic.dtd">
+<topic id="tpc_part-intro">
+    <title>Part Introduction</title>
+    <body>
+        <p>This is the introduction of the part.</p>
+    </body>
+</topic>

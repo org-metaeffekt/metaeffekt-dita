@@ -5,7 +5,7 @@
     <body>
         <p>When writing DITA content it is possible to use all kinds of references. For example it
             is possible to point to a link in the web using a href. For example <xref
-                href="metaeffekt.org" format="org" scope="external"/>. You can also point to another
+                href="http://metaeffekt.org" format="org" scope="external"/>. You can also point to another
             chapter. For example <xref
                 href="../../introduction/en/tpc_introduction.dita#tpc_introduction"/>.</p>
         <p> Really useful are key-based references (keyref). Basically you use an alias for the

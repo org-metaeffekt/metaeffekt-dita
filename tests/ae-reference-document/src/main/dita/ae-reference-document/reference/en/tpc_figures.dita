@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.3/OS/dtd/topic.dtd">
+<topic id="tpc_figures">
+    <title>Figures</title>
+    <body>
+        <p>
+            This chapter demonstrates the usage of figures.
+        </p>
+        <p>
+            <fig id="fig_dcc-shell-and-agent">
+                <title>Using an SVG as figure.</title>
+                <image href="../../resources/category-a/dcc-shell-agent-communication.svg" scale="70"/>
+            </fig>
+
+            SVGs - as these are XML files - can use placeholders as well. This way context specific replacements can
+            be performed. In addition, this approach represents an option combine a custom layout with content
+            without the need to write XSLT.
+        </p>
+        <p>SVGs can be scaled as required. Giving best results with any print output.</p>
+        <p>
+            <fig id="m4">
+                <title>Using an PNG as figure.</title>
+                <image href="../../resources/category-b/bmw-m4.png" scale="25"/>
+            </fig> Non-scalable image formats have a defined resolution. On screen the resolution
+            may still be sufficient (72dpi), but when zooming into or when printing low resolution
+            pictures show artifacts. </p>
+    </body>
+</topic>

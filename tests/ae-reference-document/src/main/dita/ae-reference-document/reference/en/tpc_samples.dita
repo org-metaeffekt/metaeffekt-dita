@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.3/OS/dtd/topic.dtd">
+<topic id="tpc_samples">
+    <title>Samples</title>
+    <body>
+        <p>
+            This chapter shows how to embed snippets and code samples.
+        </p>
+        <p>
+            <fig id="sample_dcc-shell-screen">
+                <title>Showing the output of a command line tool.</title>
+                <codeblock><![CDATA[    ____   ______ ______   _____  __           __ __
+   / __ \ / ____// ____/  / ___/ / /_   ___   / // /
+  / / / // /    / /       \__ \ / __ \ / _ \ / // /
+ / /_/ // /___ / /___    ___/ // / / //  __// // /
+/_____/ \____/ \____/   /____//_/ /_/ \___//_//_/
+
+Welcome to the DCC Shell.
+Hit TAB to see a list of options, enter [help] for help and [exit] to exit.
+dcc>]]></codeblock></fig>
+        </p>
+
+        <p>
+            <fig id="sample_xml-content">
+                <title>Showing some XML content.</title>
+                <codeblock otherprops="lang(xml)"><![CDATA[<pluginManagement>
+    <plugins>
+        <plugin>
+            <groupId>org.metaeffekt.dita</groupId>
+            <artifactId>ae-dita-maven-plugin</artifactId>
+            <version>0.1.0-SNAPSHOT</version>
+        </plugin>
+    </plugins>
+</pluginManagement>]]></codeblock></fig>
+        </p>
+        <p>
+            Unfortunately no syntax-highlighting is intergrated yet.
+        </p>
+        <p>
+            <fig id="sample_java-content">
+                <title>Showing some JAVA content.</title>
+                <codeblock otherprops="lang(xml)"><![CDATA[</**
+ * A {@link Binding} is capable of connecting two capabilities (usually a provided with a required
+ * {@link Capability}) with each other. Please note that the compatibility of the {@link Capability}
+ * (shared {@link CapabilityDefinition}) is not enforced. The implementation however expects that
+ * the attribute keys of the target are covered by the source {@link Capability}.
+ *
+ * @author Karsten Klein
+ */
+public class Binding extends AbstractElement {
+    ...
+}]]></codeblock></fig>
+        </p>
+    </body>
+</topic>

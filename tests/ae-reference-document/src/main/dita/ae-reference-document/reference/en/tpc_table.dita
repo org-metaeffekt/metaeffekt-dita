@@ -57,7 +57,8 @@
         </p>
         <p>Please note that the CALS table has a title. This title can be included in the table
             references in the backmatter of the document. Check it out.</p>
-        <p>In case you are using an WYSIWYG editor there is no reason to not use the CALS table.</p>
+        <p>In case you are using an WYSIWYG<fn>WYSIWYG: <u>W</u>hat <u>Y</u>ou <u>S</u>ee <u>I</u>s <u>W</u>hat <u>Y</u>ou <u>G</u>et.</fn> editor there is no reason to not use the CALS
+            table.</p>
         <p>Please also mind that both tables are rendered differently. Actually the {metæffekt}
             DITA-OT customization does currently not pay particular attention to using simple
             table.</p>

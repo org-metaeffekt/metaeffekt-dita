@@ -26,11 +26,38 @@
             <toc/>
         </booklists>
     </frontmatter>
-    <chapter href="ae-reference-document/introduction/en/tpc_introduction.dita" keys="introduction"/>
-    <chapter href="ae-reference-document/reference/en/tpc_table.dita"/>
-    <chapter href="ae-reference-document/reference/en/tpc_notes.dita"/>
-    <chapter href="ae-reference-document/reference/en/tpc_refs.dita"/>
-    <appendix href="ae-reference-document/appendix/en/tpc_appendix.dita" />
+
+    <chapter href="ae-reference-document/introduction/en/tpc_introduction.dita" keys="introduction">
+        <topicref href="ae-reference-document/introduction/en/tpc_context.dita" />
+        <topicref href="ae-reference-document/introduction/en/tpc_scope.dita" />
+        <topicref href="ae-reference-document/introduction/en/tpc_target-audience.dita" />
+    </chapter>
+
+    <chapter href="ae-reference-document/reference/en/tpc_reference.dita" >
+        <topicref href="ae-reference-document/reference/en/tpc_table.dita"/>
+        <topicref href="ae-reference-document/reference/en/tpc_notes.dita"/>
+        <topicref href="ae-reference-document/reference/en/tpc_refs.dita"/>
+        <topicref href="ae-reference-document/reference/en/tpc_figures.dita"/>
+        <topicref href="ae-reference-document/reference/en/tpc_samples.dita"/>
+    </chapter>
+    
+    <chapter href="ae-reference-document/reference-bom/en/tpc_reference-bom.dita" >
+        <topicref href="ae-reference-document/reference-bom/en/tpc_example-distribution-artifact-report.dita"/>
+        <topicref href="ae-reference-document/reference-bom/en/tpc_example-distribution-component-report.dita"/>
+        <topicref href="ae-reference-document/reference-bom/en/tpc_example-distribution-licenses.dita"/>
+        <topicref href="ae-reference-document/reference-bom/en/tpc_example-distribution-notices.dita"/>
+    </chapter>
+
+
+    <part href="ae-reference-document/reference/en/tpc_part-intro.dita">
+        <topicref href="ae-reference-document/reference/en/tpc_part-content.dita" />
+    </part>
+
+    <appendix href="ae-reference-document/appendix/en/tpc_appendix.dita" >
+        <topicref href="ae-reference-document/appendix/en/tpc_maven-support.dita">
+            <topicref href="ae-reference-document/appendix/en/tpc_maven-configuration.dita" />
+        </topicref>
+    </appendix>
     
     <backmatter>
         <booklists>
@@ -40,7 +67,6 @@
                 <topicref format="ditamap" href="gen/glossary/en/gmap_glossary.ditamap"/>
             </glossarylist>
             <indexlist/>
-            <abbrevlist/>
             <bibliolist/>
         </booklists>
     </backmatter>
