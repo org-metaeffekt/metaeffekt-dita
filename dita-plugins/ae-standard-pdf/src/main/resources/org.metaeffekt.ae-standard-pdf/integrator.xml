@@ -8,7 +8,7 @@
         <property name="args.bookmark.style" value="COLLAPSED" />
         <!-- do not reorder the front and back matter -->
         <property name="args.bookmap-order" value="retain" />
-        <property name="args.fo.include.rellinks" value="all" />
+        <property name="args.fo_.include.rellinks" value="all" />
     </target>
     
     <target name="dita2ae-standard-pdf" depends="dita2ae-standard-pdf.init, dita2pdf2"/>

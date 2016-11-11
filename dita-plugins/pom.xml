@@ -3,14 +3,14 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>ae-dita-plugins</artifactId>
-    <packaging>pom</packaging>
-
     <parent>
         <groupId>org.metaeffekt.dita</groupId>
         <artifactId>ae-dita</artifactId>
         <version>0.1.0-SNAPSHOT</version>
     </parent>
+
+    <artifactId>ae-dita-plugins</artifactId>
+    <packaging>pom</packaging>
 
     <modules>
         <module>ae-standard-pdf</module>

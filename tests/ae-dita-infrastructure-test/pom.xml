@@ -3,10 +3,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.metaeffekt.dita</groupId>
+    <parent>
+        <groupId>org.metaeffekt.dita</groupId>
+        <artifactId>ae-dita-tests</artifactId>
+        <version>0.1.0-SNAPSHOT</version>
+    </parent>
+
     <artifactId>ae-dita-infrastructure-test</artifactId>
-    <version>0.1.0-SNAPSHOT</version>
-    <packaging>jar</packaging>
 
     <properties>
         <ae.dita.version>${project.version}</ae.dita.version>

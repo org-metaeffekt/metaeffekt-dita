@@ -12,9 +12,9 @@
     <!-- generic -->
 
     <xsl:template name="genericCustomHeader">
-        <fo:block-container xsl:use-attribute-sets="__header__image">
+        <fo:block-container xsl:use-attribute-sets="__watermarkImageContainer">
             <fo:block>
-                <fo:external-graphic src="url(Customization/OpenTopic/common/artwork/watermark.svg)"/>
+                <fo:external-graphic xsl:use-attribute-sets="__watermarkImageGfx" src="url(Customization/OpenTopic/common/artwork/watermark.svg)"/>
             </fo:block>
         </fo:block-container>
     </xsl:template>

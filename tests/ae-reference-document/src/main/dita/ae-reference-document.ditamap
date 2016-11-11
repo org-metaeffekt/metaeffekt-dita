@@ -54,9 +54,11 @@
     </part>
 
     <appendix href="ae-reference-document/appendix/en/tpc_appendix.dita" >
-        <topicref href="ae-reference-document/appendix/en/tpc_maven-support.dita">
-            <topicref href="ae-reference-document/appendix/en/tpc_maven-configuration.dita" />
+        <topicref href="ae-reference-document/maven/en/tpc_maven-support.dita">
+            <topicref href="ae-reference-document/maven/en/tsk_maven-installation.dita" />
+            <topicref href="ae-reference-document/maven/en/tpc_maven-configuration.dita" />
         </topicref>
+        <topicref href="ae-reference-document/conventions/en/tpc_dita-conventions.dita" />
     </appendix>
     
     <backmatter>

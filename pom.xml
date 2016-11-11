@@ -12,8 +12,39 @@
     <parent>
         <groupId>org.metaeffekt.core</groupId>
         <artifactId>ae-core</artifactId>
-        <version>0.1.0-SNAPSHOT</version>
+        <version>0.1.0</version>
     </parent>
+
+    <name>metaeffekt-dita</name>
+    <description>DITA Tool Chain project with basic support for creating documents with DITA and Maven.</description>
+    <url>https://github.com/org-metaeffekt/metaeffekt-dita</url>
+
+    <organization>
+        <name>metaeffekt GmbH</name>
+        <url>http://metaeffekt.org</url>
+    </organization>
+
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <scm>
+        <connection>scm:git:git://github.com/org-metaeffekt/metaeffekt-dita.git</connection>
+        <developerConnection>scm:git:ssh://github.com:org-metaeffekt/metaeffekt-dita.git</developerConnection>
+        <url>https://github.com/org-metaeffekt/metaeffekt-dita.git</url>
+    </scm>
+
+    <developers>
+        <developer>
+            <email>contact@metaeffekt.org</email>
+            <organization>metaeffekt GmbH</organization>
+            <organizationUrl>http://metaeffekt.com</organizationUrl>
+        </developer>
+    </developers>
 
     <inceptionYear>2016</inceptionYear>
 
@@ -23,7 +54,7 @@
         <artifact.inventory.version>0.1.0-SNAPSHOT</artifact.inventory.version>
         <artifact.inventory.enabled>true</artifact.inventory.enabled>
 
-        <ae.core.version>0.1.0-SNAPSHOT</ae.core.version>
+        <ae.core.version>0.1.0</ae.core.version>
         <ae.dita.version>0.1.0-SNAPSHOT</ae.dita.version>
     </properties>
 

@@ -20,11 +20,4 @@
         <xsl:attribute name="text-align">center</xsl:attribute>
     </xsl:attribute-set>
 
-
-    <!-- FIXME: move to dedicated file -->
-    <xsl:attribute-set name="__glossary__def">
-        <xsl:attribute name="margin-left"><xsl:value-of select="$side-col-width"/></xsl:attribute>
-        <xsl:attribute name="space-after">40pt</xsl:attribute>
-    </xsl:attribute-set>
-
 </xsl:stylesheet>

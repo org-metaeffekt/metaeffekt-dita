@@ -3,9 +3,8 @@
 <topic id="tpc_maven-support" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
     <title>Maven Support</title>
     <body>
-        <p>
-            Apache Maven is the supported way to use the metaeffekt DITA Toolchain. No further software prerequisites are
-            required. A customized DITA-OT Toolkit is used implicitly when using the metaeffekt DITA Plugin.
-        </p>
+        <p> Apache Maven is the supported way to use the {metæffekt} DITA Toolchain. No further
+            software prerequisites are required. A customized DITA-OT Toolkit is used implicitly
+            when using the metaeffekt DITA Plugin. </p>
     </body>
 </topic>

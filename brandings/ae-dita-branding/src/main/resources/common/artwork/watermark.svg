@@ -7,14 +7,26 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="71.277275"
-   height="28.842098"
+   width="744.09448"
+   height="1052.3622"
    id="svg2"
    sodipodi:version="0.32"
    inkscape:version="0.91 r13725"
    sodipodi:docname="watermark.svg"
    inkscape:output_extension="org.inkscape.output.svg.inkscape"
    version="1.0">
+  <metadata
+     id="metadata3512">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
   <defs
      id="defs4">
     <clipPath
@@ -32,52 +44,86 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="18.306574"
-     inkscape:cx="21.874182"
-     inkscape:cy="14.956053"
+     inkscape:zoom="1.3995495"
+     inkscape:cx="308.77239"
+     inkscape:cy="971.98245"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="1440"
-     inkscape:window-height="727"
-     inkscape:window-x="-8"
-     inkscape:window-y="-8"
-     inkscape:window-maximized="1"
-     units="mm"
+     inkscape:window-width="2745"
+     inkscape:window-height="1168"
+     inkscape:window-x="610"
+     inkscape:window-y="30"
+     inkscape:window-maximized="0"
+     units="px"
      showguides="true"
      inkscape:guide-bbox="true"
      fit-margin-top="0.3"
-     fit-margin-left="0.3"
+     fit-margin-left="0"
      fit-margin-right="0.3"
-     fit-margin-bottom="0.3" />
-  <metadata
-     id="metadata7">
-    <rdf:RDF>
-      <cc:Work
-         rdf:about="">
-        <dc:format>image/svg+xml</dc:format>
-        <dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
-      </cc:Work>
-    </rdf:RDF>
-  </metadata>
+     fit-margin-bottom="0.3"
+     inkscape:showpageshadow="false" />
   <g
-     transform="matrix(0.9,0,0,0.9,87.578863,204.15892)"
+     transform="matrix(0.9,0,0,0.9,87.578863,1227.679)"
      inkscape:label="Ebene 1"
      inkscape:groupmode="layer"
      id="layer1">
+    <ellipse
+       ry="117.41638"
+       rx="154.1358"
+       cy="-1426.8564"
+       cx="-109.13814"
+       id="ellipse4988"
+       style="fill:none;fill-opacity:1;stroke:#cce0ec;stroke-width:1.38915586;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:44.44444275px;line-height:125%;font-family:Helvetica;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="-97.249153"
-       y="-207.60304"
-       id="text3549"
+       style="font-style:normal;font-weight:normal;font-size:44.44443893px;line-height:125%;font-family:Helvetica;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-14.884284"
+       y="-1311.9896"
+       id="text3456"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
-         id="tspan3551"
-         x="-97.249153"
-         y="-207.60304"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.55555534px;font-family:Helvetica">${organization.name}</tspan></text>
+         id="tspan3458"
+         x="-14.884284"
+         y="-1311.9896"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;line-height:125%;font-family:Helvetica;-inkscape-font-specification:'Arial, Normal';text-align:start;writing-mode:lr-tb;text-anchor:start">${organization.name}</tspan></text>
+    <rect
+       style="fill:none;fill-opacity:1;stroke:none;stroke-width:2.29270458;stroke-opacity:1"
+       id="rect4907"
+       width="659.32208"
+       height="933.27563"
+       x="-84.399345"
+       y="426.62338"
+       transform="scale(1,-1)" />
+    <ellipse
+       ry="67.355225"
+       rx="163.64822"
+       cy="-1396.4633"
+       cx="-68.930992"
+       id="ellipse4988-9"
+       style="fill:none;fill-opacity:1;stroke:#cce0ec;stroke-width:1.08411694;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <ellipse
+       ry="117.38333"
+       rx="169.19937"
+       cy="-1456.8497"
+       cx="-93.155251"
+       id="ellipse4988-4"
+       style="fill:none;fill-opacity:1;stroke:#cce0ec;stroke-width:1.45524955;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <ellipse
+       ry="67.355225"
+       rx="163.64822"
+       cy="-1476.9664"
+       cx="297.18427"
+       id="ellipse4988-9-8"
+       style="fill:none;fill-opacity:1;stroke:#cce0ec;stroke-width:1.08411694;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       transform="matrix(0.97943474,0.20176121,-0.20176121,0.97943474,0,0)" />
+    <ellipse
+       ry="67.355225"
+       rx="163.64822"
+       cy="-1495.014"
+       cx="259.78168"
+       id="ellipse4988-9-8-8"
+       style="fill:none;fill-opacity:1;stroke:#cce0ec;stroke-width:1.08411694;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       transform="matrix(0.97943474,0.20176121,-0.20176121,0.97943474,0,0)" />
   </g>
 </svg>

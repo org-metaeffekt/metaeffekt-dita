@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/task.dtd">
+<task id="tsk_maven-installation">
+    <title>Installing Apache Maven</title>
+    
+    <taskbody>
+        <context>Apache Maven is the primary prerequisite for using the {metæffekt} DITA Tool
+            Chain.</context>
+        <steps>
+            <step>
+                <cmd>Download the latest Apache Maven 3.3 release from <xref
+                        href="http://maven.apache.org/download.cgi" format="html" scope="external"
+                    />.</cmd>
+                <stepresult>
+                        <note>JAVA Required.
+                            <p>JAVA 1.7 is required to run Apache Maven 3.3. In general
+                            Oracle JAVA 1.8 is required by the {metæffekt} DITA Tool Chain.</p>
+                            <p>In case JAVA is not available, it can be downloaded from <xref
+                                href="https://java.com/en/download/" format="html" scope="external"/>.
+                            </p>
+                        </note>
+                    <!-- FIXME: After a note there should be some spacing -->
+                    <p/>
+                </stepresult>
+            </step>
+            <step>
+                <cmd>Follow the instruction provided on <xref
+                        href="http://maven.apache.org/install.html" format="html" scope="external"
+                    /></cmd>
+                <stepresult> Test the installation was successful by executing the command
+                    <codeblock>mvn -version</codeblock> on the console. When Apache Maven was
+                    successfully installed the command provides the following output: 
+                    <screen><![CDATA[Apache Maven 3.3.9 ...]]></screen>
+                </stepresult>
+            </step>
+        </steps>
+        
+       
+    </taskbody>
+</task>
