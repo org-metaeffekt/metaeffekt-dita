@@ -63,9 +63,9 @@
     -->
     <xsl:template match="*" mode="placeCoverImage">
         <xsl:param name="href"/>
-        <fo:block-container xsl:use-attribute-sets="__coverImage">
+        <fo:block-container xsl:use-attribute-sets="__coverImageContainer">
             <fo:block>
-                <fo:external-graphic top="-20mm" src="url('{$href}')" />
+                <fo:external-graphic xsl:use-attribute-sets="__coverImageGfx" src="url('{$href}')" />
             </fo:block>
         </fo:block-container>
     </xsl:template>
