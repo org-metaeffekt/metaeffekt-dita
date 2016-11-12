@@ -23,7 +23,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -293,7 +293,7 @@
      inkscape:pageshadow="2"
      inkscape:zoom="0.47750709"
      inkscape:cx="423.53019"
-     inkscape:cy="617.99512"
+     inkscape:cy="1623.2158"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -301,7 +301,7 @@
      inkscape:window-height="1050"
      inkscape:window-x="95"
      inkscape:window-y="33"
-     inkscape:window-maximized="0"
+     inkscape:window-maximized="1"
      units="mm"
      showguides="true"
      inkscape:guide-bbox="true"
@@ -333,15 +333,15 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:44.44444275px;line-height:125%;font-family:Helvetica;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="-75.871208"
+       x="-69.204544"
        y="-126.87312"
        id="text3456"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3458"
-         x="-75.871208"
+         x="-69.204544"
          y="-126.87312"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:44.44444275px;line-height:125%;font-family:Helvetica;-inkscape-font-specification:'Arial, Normal';text-align:start;writing-mode:lr-tb;text-anchor:start">${organization.name}</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.22222137px;line-height:125%;font-family:Helvetica;-inkscape-font-specification:'Arial, Normal';text-align:start;writing-mode:lr-tb;text-anchor:start">${organization.name}</tspan></text>
     <rect
        style="fill:none;fill-opacity:1;stroke:none;stroke-width:2.29270458;stroke-opacity:1"
        id="rect4907"

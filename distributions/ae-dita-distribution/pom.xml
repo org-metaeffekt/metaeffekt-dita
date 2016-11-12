@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.metaeffekt.dita</groupId>
+        <artifactId>ae-dita-distribution-pom</artifactId>
+        <version>0.1.0-SNAPSHOT</version>
+        <relativePath>../../poms/ae-dita-distribution-pom</relativePath>
+    </parent>
+
+    <artifactId>ae-dita-distribution</artifactId>
+
+    <properties>
+        <document.ditamap>bill-of-materials.ditamap</document.ditamap>
+        <document.name>Bill-of-Materials</document.name>
+        <document.version>1.0</document.version>
+        <document.status_en>Approved</document.status_en>
+
+        <product.title>DITA Tool Chain</product.title>
+        <product.name>${product.title}</product.name>
+        <product.version>0.1.0</product.version>
+        <product.prefix>ae-dita</product.prefix>
+
+        <release.version>${ae.dita.version}</release.version>
+        <release.date_en>2016-11-11</release.date_en>
+
+        <distribution.classifier>PREVIEW</distribution.classifier>
+        <distribution.name>ae-dita-${project.version}</distribution.name>
+        
+        <cryptographic.information.provider>${organization.name}</cryptographic.information.provider>
+        <cryptographic.link.verification.date>14.10.2016</cryptographic.link.verification.date>
+
+        <artifact.inventory.artifactId>ae-dita-inventory</artifact.inventory.artifactId>
+        <artifact.inventory.groupId>org.metaeffekt.dita</artifact.inventory.groupId>
+        <artifact.inventory.version>${ae.dita.version}</artifact.inventory.version>
+
+        <artifact.inventory.source.version>2016-Q1_dita</artifact.inventory.source.version>
+        <organization.address>http://www.metaeffekt.org</organization.address>
+
+        <organization.name>{met&#198;ffekt} GmbH</organization.name>
+        <organization.accronym>ae</organization.accronym>
+    </properties>
+
+    <build>
+
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.metaeffekt.core</groupId>
+                    <artifactId>ae-inventory-maven-plugin</artifactId>
+                    <executions>
+                        <execution>
+                            <id>create-scan-report</id>
+                            <goals>
+                                <goal>create-directory-report</goal>
+                            </goals>
+                            <configuration>
+                                <scanExcludes combine.children="append">
+                                    <!-- DITA-OT Components -->
+                                    <exclude>**/org.dita.*/**/*</exclude>
+                                    <exclude>**/org.oasis-open.dita*/**/*</exclude>
+
+                                    <exclude>**/ae-dita-ot-*/xsl/**/*</exclude>
+                                    <exclude>**/ae-dita-ot-*/resources/**/*</exclude>
+                                    <exclude>**/ae-dita-ot-*/bin/**/*</exclude>
+                                    <exclude>**/ae-dita-ot-*/dtd/**/*</exclude>
+
+                                    <!-- metaeffekt plugin -->
+                                    <exclude>**/org.metaeffekt.*/**/*.xsl</exclude>
+                                    <exclude>**/org.metaeffekt.*/**/*.xml</exclude>
+                                    <exclude>**/org.metaeffekt.*/**/*.svg</exclude>
+                                </scanExcludes>
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>download-binaries</id>
+                        <goals>
+                            <goal>copy</goal>
+                        </goals>
+                        <phase>generate-sources</phase>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>org.metaeffekt.dita</groupId>
+						            <artifactId>ae-dita-toolkit</artifactId>
+                                    <version>${ae.dita.version}</version>
+                                    <classifier>bin</classifier>
+                                    <type>zip</type>
+                                </artifactItem>
+                            </artifactItems>
+                            <outputDirectory>${project.build.directory}/contents/installation</outputDirectory>
+                            <overWriteReleases>false</overWriteReleases>
+                            <overWriteSnapshots>true</overWriteSnapshots>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.metaeffekt.core</groupId>
+                <artifactId>ae-inventory-maven-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <groupId>org.metaeffekt.dita</groupId>
+                <artifactId>ae-dita-maven-plugin</artifactId>
+                <configuration>
+                    <enableGrammarCache>false</enableGrammarCache>
+                </configuration>
+            </plugin>
+        </plugins>
+
+    </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.metaeffekt.dita</groupId>
+            <artifactId>ae-dita-toolkit</artifactId>
+            <version>${ae.dita.version}</version>
+            <classifier>bin</classifier>
+            <type>zip</type>
+            <scope>provided</scope>
+            <exclusions>
+                <exclusion>
+                    <artifactId>*</artifactId>
+                    <groupId>*</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+    </dependencies>
+
+</project>

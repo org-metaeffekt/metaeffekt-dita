@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd">
+<topic id="ehf-third-party-licenses-disclaimer" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+    <title>Disclaimer</title>
+    <body>
+        <p>
+            In case the software is distributed in Germany the remark below applies:
+        </p>
+        <p>
+            <i>
+                Zur lizenzvertraglichen Haftungsbeschr&#xe4;nkung im Anwendungsbereich des 
+                Rechts der Bundesrepublik Deutschland:
+            </i>
+        </p>
+        <p>
+            <i>
+                Auch f&#xfc;r die vorliegende unentgeltliche Einr&#xe4;umung von Nutzungsrechten 
+                an der verwendeten Open Source Software besteht eine Haftung, allerdings lediglich wie folgt:
+            </i>
+            <ol>
+                <li>
+                    <i>Bei Rechtsm&#xe4;ngeln nur f&#xfc;r deren arglistiges Verschweigen (&#xa7; 523 Abs. 1 BGB)</i>
+                </li>
+                <li>
+                    <i>
+                        Im &#xdc;brigen, gleich aus welchem Rechtsgrund (vorvertragliches 
+                        Vertrauensverh&#xe4;ltnis, Vertrag, Delikt),
+                    </i>
+                    <ol>
+                        <li>
+                            <i>
+                                bei &#xdc;bernahme einer Garantie bez&#xfc;glich der jeweils garantierten 
+                                Beschaffenheit und bei Vorsatz in voller H&#xf6;he sowie
+                            </i>
+                        </li>
+                        <li>
+                            <i>bei grober Fahrl&#xe4;ssigkeit</i>
+                            <ul>
+                                <li>
+                                    <i>gegen&#xfc;ber Verbrauchern in voller H&#xf6;he und</i>
+                                </li>
+                                <li>
+                                    <i>
+                                        gegen&#xfc;ber Unternehmen beschr&#xe4;nkt auf den Ersatz des 
+                                        vorhersehbaren und typischen Schadens.
+                                    </i>
+                                </li>
+                            </ul>
+                        </li>
+                    </ol>
+                </li>
+            </ol>
+        </p>
+        <p>
+            <i>
+                Verbraucher ist jede nat&#xfc;rliche Person, die ein Rechtsgesch&#xe4;ft zu einem Zweck 
+                abschlie&#xdf;t, der weder ihrer gewerblichen noch ihrer selbstst&#xe4;ndigen beruflichen 
+                T&#xe4;tigkeit zugerechnet werden kann (&#xa7;13 BGB).
+            </i>
+        </p>
+        <p>
+            <i>
+                Unternehmer ist eine nat&#xfc;rliche oder juristische Person oder eine rechtsf&#xe4;hige 
+                Personengesellschaft, die in Aus&#xfc;bung ihrer gewerblichen oder selbst&#xe4;ndigen 
+                beruflichen T&#xe4;tigkeit handelt (&#xa7;14 BGB).
+            </i>
+        </p>
+    </body>
+</topic>

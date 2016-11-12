@@ -1,0 +1,42 @@
+metaeffekt DITA Toolkit Customization Notices
+==============================================================================
+
+This artifact represents a customization of the DITA Open Toolkit
+accessible at http://www.dita-ot.org.
+
+The original DITA open Toolkit is distributed with detailed references to
+the licenses under which the toolkit itself and contained software artifacts
+are distributed.
+
+Apache license under which the DITA Open Toolkit is distributed:
+  APACHE-LICENSE-2_0.html
+
+Additional notice derived from the Project Management Committee of the DITA
+Open Toolkit:
+  license.txt
+
+DITA Open Toolkit provided details on the used licenses and license
+obligations:
+  NOTICES.txt
+
+The notices refer to the plugins provided by the original DITA Open Toolkit.
+Please consult the individual plugin folder for further license details.
+
+The metaeffekt plugin / customization adds further software components
+including:
+
+- Apache Avalon       (Apache License Version 2.0)
+- Apache Batik        (Apache License Version 2.0)
+- Apache Common IO    (Apache License Version 2.0)
+- Apache XML Graphics (Apache License Version 2.0) including Apache FOP.
+
+The following elements are not included in the DITA customization:
+
+- doc
+- docsrc
+- samples
+- plugins/com.sophos.tocjs
+- plugins/org.dita.pdf2.axf
+- plugins/org.dita.pdf2.xep
+
+

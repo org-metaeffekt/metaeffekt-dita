@@ -16,5 +16,7 @@
 
     <modules>
         <module>ae-dita-plugin-dependency-management-pom</module>
+        <module>ae-dita-distribution-pom</module>
+        <module>ae-dita-documentation-pom</module>
     </modules>
 </project>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE bookmap PUBLIC "-//OASIS//DTD DITA BookMap//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/bookmap.dtd">
+<bookmap id="dcc-bill-of-material">
+    <title>
+        <ph>${product.title} ${product.version}</ph>
+    </title>
+    <bookmeta>
+        <category>Bill of Materials</category>
+        <bookrights>
+            <copyrlast>
+                <year>2016</year>
+            </copyrlast>
+            <bookowner>
+                <organization>InterComponentWare AG</organization>
+            </bookowner>
+        </bookrights>
+    </bookmeta>
+
+    <frontmatter>
+        <notices href="ae-common-content/imprint/en/tpc_imprint.dita" />
+        <notices href="ae-common-content/notice/en/tpc_notice.dita" />
+        <booklists>
+            <toc/>
+        </booklists>
+    </frontmatter>
+
+    <chapter href="ae-common-content/bill-of-materials/en/tpc_open-source-based-bom.dita" />
+
+    <chapter href="ae-common-content/bill-of-materials/en/tpc_bill-of-materials.dita">
+        <topicref href="ae-dita-distribution/gen/ae-dita-distribution-artifact-report.dita" />
+        <topicref href="ae-dita-distribution/gen/ae-dita-distribution-component-report.dita" />
+    </chapter>
+
+    <chapter href="ae-dita-distribution/gen/ae-dita-distribution-licenses.dita" />
+	<chapter href="ae-dita-distribution/gen/ae-dita-distribution-notices.dita" />
+    
+</bookmap>

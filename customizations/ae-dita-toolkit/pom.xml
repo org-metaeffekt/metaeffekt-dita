@@ -85,7 +85,12 @@
                                     <fileset dir="${dita.root.folder}/doc"/>
                                     <fileset dir="${dita.root.folder}/docsrc"/>
                                     <fileset dir="${dita.root.folder}/samples"/>
+                                    <fileset dir="${dita.root.folder}/plugins/com.sophos.tocjs" />
+
+                                    <fileset dir="${dita.root.folder}/plugins/org.dita.pdf2.axf" />
+                                    <fileset dir="${dita.root.folder}/plugins/org.dita.pdf2.xep" />
                                 </delete>
+
                                 <echo message="Correcting line breaks for Linux binaries." />
                                 <fixcrlf srcDir="${dita.root.folder}/bin"
                                      eol="lf" eof="remove"
@@ -96,10 +101,12 @@
                                      target="install">
                                     <property name="plugin.file" value="file:///${project.build.directory}/ae-standard-pdf-${ae.dita.version}-dita-plugin.zip" />
                                 </ant>
+
                                 <echo message="Creating customized archive." />
+                                <move file="${project.build.directory}/${dita.name.string}" tofile="${project.build.directory}/ae-${dita.name.string}-${project.version}" />
                                 <zip destfile="${dita.customized.archive}"
                                      basedir="${project.build.directory}"
-                                     includes="${dita.name.string}/**" />
+                                     includes="ae-${dita.name.string}-${project.version}/**" />
                             </target>
                         </configuration>
                     </execution>

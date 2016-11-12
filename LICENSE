@@ -199,3 +199,24 @@
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
+
+
+==============================================================================
+
+METAEFFEKT DITA SUBCOMPONENTS LICENSES / NOTICES
+
+This project includes a customization of the DITA Open Toolkit which is
+distributed under the Apache 2.0 License. DITA Open Toolkit uses further
+software components with different licenses. Please refer to the NOTICES.txt
+file which is part of the original DITA Open Toolkit distribution and which
+is preserved as part of the customized toolkit supplied by this project.
+
+The DITA Open Toolkit can be downloaded from:
+  http://www.dita-ot.org
+
+Sources of the DITA Open Toolkit can be accessed through:
+  https://github.com/dita-ot/dita-ot
+
+The source code of the DITA Open Toolkit customization is part of this
+project. It is accessible at:
+  https://github.com/org-metaeffekt/metaeffekt-dita

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns="http://maven.apache.org/POM/4.0.0" 
+    xsi:schemaLocation="
+        http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.metaeffekt.dita</groupId>
+        <artifactId>ae-dita-documentation-pom</artifactId>
+        <version>0.1.0-SNAPSHOT</version>
+        <relativePath>../ae-dita-documentation-pom</relativePath>
+    </parent>
+
+    <groupId>org.metaeffekt.dita</groupId>
+    <artifactId>ae-dita-distribution-pom</artifactId>
+    <packaging>pom</packaging>
+
+    <properties>
+        <dita.enableGrammarCache>false</dita.enableGrammarCache>
+        <artifact.inventory.artifactId>ae-core-inventory</artifact.inventory.artifactId>
+        <artifact.inventory.groupId>org.metaeffekt.core</artifact.inventory.groupId>
+        <artifact.inventory.version>${ae.core.version}</artifact.inventory.version>
+    </properties>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-dependency-plugin</artifactId>
+                    <version>2.2</version>
+                    <executions>
+                        <execution>
+                            <id>unpack-licenses</id>
+                            <phase>generate-sources</phase>
+                            <goals>
+                                <goal>unpack</goal>
+                            </goals>
+                            <configuration>
+                                <artifactItems>
+                                    <artifactItem>
+                                        <groupId>${artifact.inventory.groupId}</groupId>
+                                        <artifactId>${artifact.inventory.artifactId}</artifactId>
+                                        <version>${artifact.inventory.version}</version>
+                                        <type>jar</type>
+                                        <overWrite>true</overWrite>
+                                        <outputDirectory>${project.build.directory}/tmp/artifact-inventory</outputDirectory>
+                                        <includes>**/licenses/**/*</includes>
+                                    </artifactItem>
+                                </artifactItems>
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
+
+                <!-- FIXME: move specific parts into leaf-project -->
+                <plugin>
+                    <groupId>org.metaeffekt.core</groupId>
+                    <artifactId>ae-inventory-maven-plugin</artifactId>
+                    <version>${ae.core.version}</version>
+                    <executions>
+                        <execution>
+                            <!-- disable obsolete execution -->
+                            <id>inventory-check</id>
+                            <phase>never</phase>
+                        </execution>
+                        <execution>
+                            <id>create-scan-report</id>
+                            <goals>
+                                <goal>create-directory-report</goal>
+                            </goals>
+                            <phase>process-sources</phase>
+                            <configuration>
+                                <inputDirectory>${project.build.directory}/contents</inputDirectory>
+                                <scanDirectory>${project.build.directory}/bomscan</scanDirectory>
+                                <scanIncludes>
+                                    <include>**/*</include>
+                                </scanIncludes>
+                                <scanExcludes>
+                                    <!-- data types -->
+                                    <exclude>**/*.pdf</exclude>
+                                    <exclude>**/*.xhtml</exclude>
+                                    <exclude>**/*.html</exclude>
+                                    <exclude>**/*.htm</exclude>
+                                    <exclude>**/*.sql</exclude>
+                                    <exclude>**/*.xml</exclude>
+                                    <exclude>**/*.properties</exclude>
+                                    <exclude>**/*.ldif</exclude>
+                                    <exclude>**/*.xml.vt</exclude>
+                                    <exclude>**/*.keystore</exclude>
+                                    <exclude>**/*.truststore</exclude>
+                                    <exclude>**/*.jks</exclude>
+                                    <exclude>**/*.txt</exclude>
+                                    <exclude>**/*.sql</exclude>
+                                    <exclude>**/*.xml</exclude>
+                                    <exclude>**/*.bat</exclude>
+                                    <exclude>**/*.sh</exclude>
+                                    <exclude>**/*.initd</exclude>
+                                    <exclude>**/*.conf</exclude>
+                                    <exclude>**/*.MF</exclude>
+                                    <exclude>**/*.policy</exclude>
+                                    <exclude>**/*.vt</exclude>
+                                </scanExcludes>
+                            </configuration>
+                        </execution>
+                    </executions>
+                    <configuration>
+                        <enableDita>true</enableDita>
+                        <targetDitaPath>${basedir}/src/main/dita/${project.artifactId}/gen</targetDitaPath>
+                        <!-- USE MORE STRICT CHECK FOR DISTRIBUTION -->
+                        <failOnInternal>${artifact.inventory.enabled}</failOnInternal>
+                        <failOnUnknownVersion>${artifact.inventory.enabled}</failOnUnknownVersion> 
+                        <failOnDowngrade>${artifact.inventory.enabled}</failOnDowngrade>
+                        <failOnDevelopment>${artifact.inventory.enabled}</failOnDevelopment>
+                        <failOnMissingLicenseFile>${artifact.inventory.enabled}</failOnMissingLicenseFile>
+                        <failOnMissingNotice>${artifact.inventory.enabled}</failOnMissingNotice>
+                        
+                        <relativeLicensePath>thirdparty/licenses</relativeLicensePath>
+                        <licenseSourcePath>${project.build.directory}/tmp/artifact-inventory/META-INF/licenses</licenseSourcePath>
+                        <licenseTargetPath>${project.build.directory}/contents/thirdparty/licenses</licenseTargetPath>
+                    </configuration>
+                    <dependencies>
+                        <dependency>
+                            <groupId>${artifact.inventory.groupId}</groupId>
+                            <artifactId>${artifact.inventory.artifactId}</artifactId>
+                            <version>${artifact.inventory.version}</version>
+                        </dependency>
+                    </dependencies>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-assembly-plugin</artifactId>
+                    <configuration>
+                        <descriptors>
+                            <descriptor>src/main/assemble/assembly.xml</descriptor>
+                        </descriptors>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <id>make-assembly</id>
+                            <phase>package</phase>
+                            <goals>
+                                <goal>single</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                
+            </plugins>
+        </pluginManagement>
+    </build>
+
+</project>

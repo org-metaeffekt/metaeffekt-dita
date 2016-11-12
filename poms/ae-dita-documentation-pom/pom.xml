@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.metaeffekt.core</groupId>
+        <artifactId>ae-core-plugin-management-pom</artifactId>
+        <version>0.1.0</version>
+        <relativePath />
+    </parent>
+
+    <groupId>org.metaeffekt.dita</groupId>
+    <artifactId>ae-dita-documentation-pom</artifactId>
+    <version>0.1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <properties>
+        <artifact.inventory.version>0.1.0</artifact.inventory.version>
+        <ae.dita.version>0.1.0-SNAPSHOT</ae.dita.version>
+        <ae.core.version>0.1.0</ae.core.version>
+
+        <header.copyright.year>2016</header.copyright.year>
+
+        <document.security.level_en>Sensitive</document.security.level_en>
+        <document.security.level_de>Vertraulich</document.security.level_de>
+        <document.status_en>Draft</document.status_en>
+        <document.status_de>Vorlage</document.status_de>
+        <document.last.change_en>November, 2016</document.last.change_en>
+        <document.last.change_de>November 2016</document.last.change_de>
+        <document.copyright.year>${header.copyright.year}</document.copyright.year>
+
+        <dita.source.dir>${basedir}/src/main/dita</dita.source.dir>
+        <dita.project.source.dir>${dita.source.dir}/${project.artifactId}</dita.project.source.dir>
+        <dita.generateToc>true</dita.generateToc>
+        <dita.enableGrammarCache>true</dita.enableGrammarCache>
+    </properties>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.metaeffekt.core</groupId>
+                    <artifactId>ae-artifact-publish-maven-plugin</artifactId>
+                    <version>${ae.core.version}</version>
+                    <executions>
+                        <execution>
+                            <id>package-doc</id>
+                            <phase>package</phase>
+                            <goals>
+                                <goal>publish-artifact</goal>
+                            </goals>
+                            <configuration>
+                                <qualifier>doc</qualifier>
+                                <filesets>
+                                    <fileset>
+                                        <directory>${project.build.directory}/tmp/doc-artifact</directory>
+                                        <includes>
+                                            <include>**/*</include>
+                                        </includes>
+                                        <excludes>
+                                            <exclude>**/.svn/**/*</exclude>
+                                            <exclude>**/.svn</exclude>
+                                        </excludes>
+                                        <followSymlinks>false</followSymlinks>
+                                    </fileset>
+                                </filesets>
+                            </configuration>
+                        </execution>
+                        <execution>
+                            <id>overwrite-standard-artifact</id>
+                            <phase>package</phase>
+                            <goals>
+                                <goal>publish-artifact-overwrite</goal>
+                            </goals>
+                            <configuration>
+                                <sourceQualifier>doc</sourceQualifier>
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-resources-plugin</artifactId>
+                    <version>2.6</version>
+                    <executions>
+                        <!-- Copy the complete dita.source.dir to the target folder and apply filtering  -->
+                        <execution>
+                            <id>copy-resources</id>
+                            <phase>process-resources</phase>
+                            <goals>
+                                <goal>copy-resources</goal>
+                            </goals>
+                            <configuration>
+                                <!-- Required for copying to the target dita directory. -->
+                                <outputDirectory>${project.build.directory}/dita</outputDirectory>
+                                <resources>
+                                    <resource>
+                                        <directory>${dita.source.dir}</directory>
+                                        <filtering>true</filtering>
+                                        <includes>
+                                            <include>**/*</include>
+                                        </includes>
+                                    </resource>
+                                </resources>
+                            </configuration>
+                        </execution>
+
+                        <execution>
+                            <id>copy-branding-resources</id>
+                            <phase>process-resources</phase>
+                            <goals>
+                                <goal>copy-resources</goal>
+                            </goals>
+                            <configuration>
+                                <outputDirectory>${project.build.directory}/branding</outputDirectory>
+                                <resources>
+                                    <resource>
+                                        <directory>${project.build.directory}/branding-base</directory>
+                                        <filtering>true</filtering>
+                                        <includes>
+                                            <include>**/*</include>
+                                        </includes>
+                                    </resource>
+                                </resources>
+                            </configuration>
+                        </execution>
+
+                        <execution>
+                            <id>copy-frontmatter</id>
+                            <phase>process-resources</phase>
+                            <goals>
+                                <goal>copy-resources</goal>
+                            </goals>
+                            <configuration>
+                                <!-- Required for copying to the target dita directory. -->
+                                <outputDirectory>${project.build.directory}/dita</outputDirectory>
+                                <resources>
+                                    <resource>
+                                        <directory>${project.build.directory}/tmp</directory>
+                                        <filtering>true</filtering>
+                                        <includes>
+                                            <include>**/*.dita</include>
+                                        </includes>
+                                    </resource>
+                                </resources>
+                                <overwrite>true</overwrite>
+                            </configuration>
+                        </execution>
+
+                        <execution>
+                            <!-- copy the content for doc artifact -->
+                            <id>copy-doc-resources</id>
+                            <phase>process-resources</phase>
+                            <goals>
+                                <goal>copy-resources</goal>
+                            </goals>
+                            <configuration>
+                                <outputDirectory>${project.build.directory}/tmp/doc-artifact</outputDirectory>
+                                <resources>
+                                    <resource>
+                                        <directory>${basedir}/src/main/dita/${project.artifactId}</directory>
+                                        <filtering>false</filtering>
+                                        <includes>
+                                            <include>**/*</include>
+                                        </includes>
+                                        <excludes>
+                                            <exclude>**/.svn/**/*</exclude>
+                                            <exclude>**/.svn</exclude>
+                                        </excludes>
+                                    </resource>
+                                </resources>
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-dependency-plugin</artifactId>
+                    <executions>
+                        <execution>
+                            <id>retrieve-branding</id>
+                            <goals>
+                                <goal>unpack</goal>
+                            </goals>
+                            <configuration>
+                                <outputDirectory>${project.build.directory}/branding-base</outputDirectory>
+                                <artifactItems>
+                                    <artifactItem>
+                                        <groupId>org.metaeffekt.dita</groupId>
+                                        <artifactId>ae-dita-branding</artifactId>
+                                        <type>zip</type>
+                                        <classifier>resources</classifier>
+                                        <version>${ae.dita.version}</version>
+                                    </artifactItem>
+                                </artifactItems>
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.metaeffekt.dita</groupId>
+                    <artifactId>ae-dita-maven-plugin</artifactId>
+                    <version>${ae.dita.version}</version>
+                    <executions>
+
+                        <execution>
+                            <id>clean-dita-content</id>
+                            <phase>clean</phase>
+                            <goals>
+                                <goal>clean-generated-content</goal>
+                                <goal>clean-aggregated-content</goal>
+                            </goals>
+                        </execution>
+
+                        <execution>
+                            <id>install-dita-toolkit</id>
+                            <phase>initialize</phase>
+                            <goals>
+                                <goal>ensure-dita-toolkit</goal>
+                            </goals>
+                        </execution>
+
+                        <execution>
+                            <id>aggregate-dita-content</id>
+                            <phase>initialize</phase>
+                            <goals>
+                                <goal>aggregate-content</goal>
+                            </goals>
+                        </execution>
+
+                        <execution>
+                            <id>mark-dita-content-writable</id>
+                            <phase>initialize</phase>
+                            <goals>
+                                <goal>mark-generated-content-writable</goal>
+                            </goals>
+                        </execution>
+
+                        <execution>
+                            <id>generate-dita-content</id>
+                            <phase>process-sources</phase>
+                            <goals>
+                                <goal>generate-content</goal>
+                            </goals>
+                        </execution>
+
+                        <execution>
+                            <id>mark-dita-content-read-only</id>
+                            <phase>process-resources</phase>
+                            <goals>
+                                <goal>mark-generated-content-read-only</goal>
+                            </goals>
+                        </execution>
+
+                        <execution>
+                            <id>generate-documentation</id>
+                            <phase>compile</phase>
+                            <goals>
+                                <goal>generate-documentation</goal>
+                            </goals>
+                            <configuration>
+                                <documentItems>
+                                    <documentItem>
+                                        <ditaMap>${document.ditamap}</ditaMap>
+                                        <artifactId>${product.prefix}-${product.version}-${document.name}-en-${document.version}</artifactId>
+                                    </documentItem>
+                                </documentItems>
+                                <ditaBuildDir>${project.build.directory}/dita</ditaBuildDir>
+                                <enableGrammarCache>${dita.enableGrammarCache}</enableGrammarCache>
+                                <ditaCustomizationDir>${project.build.directory}/branding/ae-dita-branding</ditaCustomizationDir>
+                            </configuration>
+                        </execution>
+                        
+                        <execution>
+                            <id>generate-glossary</id>
+                            <phase>process-sources</phase>
+                            <goals>
+                                <goal>generate-glossary</goal>
+                            </goals>
+                            <configuration>
+                                <language>en</language>
+                            </configuration>
+                        </execution>
+                    </executions>
+                    <configuration>
+                        <ditaSourceGenDir>${basedir}/src/main/dita/${project.artifactId}/gen</ditaSourceGenDir>
+                        <ditaCleanTemp>false</ditaCleanTemp>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+
+        <plugins>
+            <plugin>
+                <groupId>org.metaeffekt.core</groupId>
+                <artifactId>ae-artifact-publish-maven-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <groupId>org.metaeffekt.dita</groupId>
+                <artifactId>ae-dita-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

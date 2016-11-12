@@ -65,6 +65,8 @@
         <module>maven-plugins</module>
         <module>poms</module>
         <module>tests</module>
+        <module>distributions</module>
+        <module>inventory</module>
     </modules>
 
     <build>
