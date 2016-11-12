@@ -267,7 +267,8 @@
                                 <documentItems>
                                     <documentItem>
                                         <ditaMap>${document.ditamap}</ditaMap>
-                                        <artifactId>${product.prefix}-${product.version}-${document.name}-en-${document.version}</artifactId>
+                                        <artifactId>${project.artifactId}</artifactId>
+                                        <artifactClassifier>en</artifactClassifier>
                                     </documentItem>
                                 </documentItems>
                                 <ditaBuildDir>${project.build.directory}/dita</ditaBuildDir>
