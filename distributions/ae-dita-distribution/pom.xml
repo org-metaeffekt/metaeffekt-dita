@@ -38,7 +38,7 @@
         <artifact.inventory.source.version>2016-Q1_dita</artifact.inventory.source.version>
         <organization.address>http://www.metaeffekt.org</organization.address>
 
-        <organization.name>{met&#198;ffekt} GmbH</organization.name>
+        <organization.name>{met&#230;ffekt} GmbH</organization.name>
         <organization.accronym>ae</organization.accronym>
     </properties>
 

@@ -164,7 +164,8 @@
                                 <documentItem>
                                     <ditaMap>${document.ditamap}</ditaMap>
                                     <ditaTranstype>AE_STANDARD_PDF</ditaTranstype>
-                                    <artifactId>${product.prefix}-en-${document.version}</artifactId>
+                                    <artifactId>${project.artifactId}</artifactId>
+                                    <artifactClassifier>en</artifactClassifier>
                                 </documentItem>
                             </documentItems>
                             <ditaBuildDir>${project.build.directory}/dita</ditaBuildDir>
