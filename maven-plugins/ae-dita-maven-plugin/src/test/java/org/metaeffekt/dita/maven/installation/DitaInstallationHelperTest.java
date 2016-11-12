@@ -186,7 +186,6 @@ public class DitaInstallationHelperTest {
    
    /**
     * Test the behavior, when an empty directory is given for checksum calculation.
-    * Was also used to reproduce: EHFP-41.
     * 
     * @throws Exception
     */

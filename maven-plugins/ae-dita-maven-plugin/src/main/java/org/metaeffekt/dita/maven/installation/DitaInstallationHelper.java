@@ -37,7 +37,7 @@ import org.apache.tools.ant.types.FileSet;
  */
 public class DitaInstallationHelper {
     /**
-     * Name of the property that specifies the location of the eHF Dita Toolkit.
+     * Name of the property that specifies the location of the Dita Toolkit.
      */
     public static final String DITA_TOOLKIT_ROOT_PROPERTY = "ae.dita.toolkit.installroot";
 

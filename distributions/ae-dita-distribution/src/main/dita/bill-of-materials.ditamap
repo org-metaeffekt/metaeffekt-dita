@@ -11,7 +11,7 @@
                 <year>2016</year>
             </copyrlast>
             <bookowner>
-                <organization>InterComponentWare AG</organization>
+                <organization>${organization.name}</organization>
             </bookowner>
         </bookrights>
     </bookmeta>
