@@ -6,7 +6,7 @@
     <parent>
         <groupId>org.metaeffekt.dita</groupId>
         <artifactId>ae-dita</artifactId>
-        <version>0.1.0</version>
+        <version>0.2-SNAPSHOT</version>
     </parent>
 
     <artifactId>ae-dita-customizations</artifactId>
