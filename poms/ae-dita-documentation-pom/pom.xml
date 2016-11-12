@@ -12,13 +12,14 @@
 
     <groupId>org.metaeffekt.dita</groupId>
     <artifactId>ae-dita-documentation-pom</artifactId>
-    <version>0.1.0-SNAPSHOT</version>
+    <version>0.1.0</version>
     <packaging>pom</packaging>
 
     <properties>
-        <artifact.inventory.version>0.1.0</artifact.inventory.version>
-        <ae.dita.version>0.1.0-SNAPSHOT</ae.dita.version>
+        <ae.dita.version>0.1.0</ae.dita.version>
         <ae.core.version>0.1.0</ae.core.version>
+
+        <artifact.inventory.version>${ae.dita.version}</artifact.inventory.version>
 
         <header.copyright.year>2016</header.copyright.year>
 
