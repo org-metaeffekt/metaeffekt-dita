@@ -11,7 +11,7 @@
 
     <groupId>org.metaeffekt.dita</groupId>
     <artifactId>ae-dita-toolkit</artifactId>
-    <version>0.1.0</version>
+    <version>0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <properties>
@@ -22,7 +22,7 @@
         <dita.root.folder>${project.build.directory}/${dita.name.string}</dita.root.folder>
         <ant.version>1.9.7</ant.version>
 
-        <ae.dita.version>0.1.0</ae.dita.version>
+        <ae.dita.version>0.1-SNAPSHOT</ae.dita.version>
     </properties>
 
     <dependencies>
