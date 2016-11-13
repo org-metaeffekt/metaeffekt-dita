@@ -33,13 +33,6 @@
             <type>zip</type>
             <classifier>dita-plugin</classifier>
         </dependency>
-        <dependency>
-            <groupId>org.dita-ot</groupId>
-            <artifactId>dita-ot</artifactId>
-            <version>${dita.ot.version}</version>
-            <classifier>bin</classifier>
-            <type>zip</type>
-        </dependency>
     </dependencies>
 
     <build>
@@ -52,7 +45,7 @@
                 <artifactId>maven-dependency-plugin</artifactId>
                 <executions>
                     <execution>
-                        <id>copy-to-target</id>
+                        <id>copy-dependencies-to-target</id>
                         <phase>initialize</phase>
                         <goals>
                             <goal>copy-dependencies</goal>
@@ -60,6 +53,27 @@
                         <configuration>
                             <excludeTransitive>true</excludeTransitive>
                             <outputDirectory>${project.build.directory}</outputDirectory>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <!-- DITA-OT is explicitly not modelled as dependency. This way it does
+                             not need to be published (even not as POM only) in the public maven repository. -->
+                        <id>copy-dita-ot-to-target</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>copy</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}</outputDirectory>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>org.dita-ot</groupId>
+                                    <artifactId>dita-ot</artifactId>
+                                    <version>${dita.ot.version}</version>
+                                    <classifier>bin</classifier>
+                                    <type>zip</type>
+                                </artifactItem>
+                            </artifactItems>
                         </configuration>
                     </execution>
                 </executions>
