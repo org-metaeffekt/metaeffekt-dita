@@ -12,23 +12,23 @@
 
     <groupId>org.metaeffekt.dita</groupId>
     <artifactId>ae-dita-documentation-pom</artifactId>
-    <version>0.1-SNAPSHOT</version>
+    <version>0.2-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <properties>
-        <ae.dita.version>0.1-SNAPSHOT</ae.dita.version>
+        <ae.dita.version>0.2-SNAPSHOT</ae.dita.version>
         <ae.core.version>0.1.0</ae.core.version>
 
         <artifact.inventory.version>${ae.dita.version}</artifact.inventory.version>
 
-        <header.copyright.year>2016</header.copyright.year>
+        <header.copyright.year>2017</header.copyright.year>
 
         <document.security.level_en>Sensitive</document.security.level_en>
         <document.security.level_de>Vertraulich</document.security.level_de>
         <document.status_en>Draft</document.status_en>
         <document.status_de>Vorlage</document.status_de>
-        <document.last.change_en>November, 2016</document.last.change_en>
-        <document.last.change_de>November 2016</document.last.change_de>
+        <document.last.change_en>April, 2017</document.last.change_en>
+        <document.last.change_de>April 2017</document.last.change_de>
         <document.copyright.year>${header.copyright.year}</document.copyright.year>
 
         <dita.source.dir>${basedir}/src/main/dita</dita.source.dir>

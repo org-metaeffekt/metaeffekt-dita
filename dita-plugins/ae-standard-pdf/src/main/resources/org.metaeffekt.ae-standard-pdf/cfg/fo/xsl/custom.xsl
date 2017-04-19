@@ -16,7 +16,7 @@
     <xsl:include href="customizations/toc-and-numbering.xsl" />
 
 
-    <!-- template override to suppress Notices beind displayed on overy notice -->
+    <!-- template override to suppress Notices being displayed on every notice -->
     <xsl:template name="processTopicNotices">
         <fo:page-sequence master-reference="body-sequence" xsl:use-attribute-sets="page-sequence.notice">
             <xsl:call-template name="startPageNumbering"/>

@@ -6,7 +6,7 @@
 
     <groupId>org.metaeffekt.dita</groupId>
     <artifactId>ae-dita</artifactId>
-    <version>0.1-SNAPSHOT</version>
+    <version>0.2-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <parent>
@@ -51,7 +51,7 @@
 
     <properties>
         <ae.core.version>0.1.0</ae.core.version>
-        <ae.dita.version>0.1-SNAPSHOT</ae.dita.version>
+        <ae.dita.version>0.2-SNAPSHOT</ae.dita.version>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
