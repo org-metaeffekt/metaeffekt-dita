@@ -34,6 +34,7 @@ import org.apache.tools.ant.types.FileSet;
  * This might cause problems later on.
  * 
  * @author Siegfried E.
+ * @author Karsten Klein
  */
 public class DitaInstallationHelper {
     /**
@@ -61,6 +62,7 @@ public class DitaInstallationHelper {
      * Name of the file to store the aggregated checksum in.
      */
     public static final String AGGREGATED_CHECKSUM_FILE = "toolkit.MD5";
+    public static final String UTF_8 = "UTF-8";
 
     /**
      * The root directory where the Dita Toolkit is supposed to be installed.
@@ -123,18 +125,17 @@ public class DitaInstallationHelper {
      */
     public String getInstallationArchiveChecksum() throws IOException {
         if (installationArchive == null) {
-            throw new NullPointerException();
+            throw new NullPointerException("No installation archive!");
         }
 
         checksumTask = new Checksum();
-        checksumTask.setProject(new Project());
+        final Project project = new Project();
+        checksumTask.setProject(project);
         checksumTask.setFile(installationArchive);
-        checksumTask.setForceOverwrite(true);
-        checksumTask.setTodir(JAVA_IO_TMPDIR);
+        final String md5ChecksumProperty = "md5Checksum";
+        checksumTask.setProperty(md5ChecksumProperty);
         checksumTask.execute();
-        File checksumFile = new File(JAVA_IO_TMPDIR, installationArchive.getName() + ".MD5");
-
-        return (String) FileUtils.readLines(checksumFile).get(0);
+        return project.getProperty(md5ChecksumProperty);
     }
 
     /**
@@ -225,7 +226,7 @@ public class DitaInstallationHelper {
 
         // get the checksum of the fresh installation an remember it
         aggregatedChecksum = getAggregatedChecksum(toolkitRoot);
-        FileUtils.writeStringToFile(checksumFile, aggregatedChecksum);
+        FileUtils.writeStringToFile(checksumFile, aggregatedChecksum, UTF_8);
 
         return true;
     }

@@ -49,7 +49,8 @@
     <inceptionYear>2016</inceptionYear>
 
     <properties>
-        <ae.core.version>0.2-SNAPSHOT</ae.core.version>
+
+        <ae.core.version>0.1.0</ae.core.version>
         <ae.dita.version>0.2-SNAPSHOT</ae.dita.version>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

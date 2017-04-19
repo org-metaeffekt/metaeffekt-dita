@@ -23,7 +23,7 @@
         <product.prefix>ae-dita</product.prefix>
 
         <release.version>${ae.dita.version}</release.version>
-        <release.date_en>2016-11-11</release.date_en>
+        <release.date_en>2017-04-19</release.date_en>
 
         <distribution.classifier>PREVIEW</distribution.classifier>
         <distribution.name>ae-dita-${project.version}</distribution.name>
