@@ -12,8 +12,7 @@
     <parent>
         <groupId>org.metaeffekt.core</groupId>
         <artifactId>ae-core</artifactId>
-        <version>0.1.0</version>
-        <relativePath />
+        <version>0.2-SNAPSHOT</version>
     </parent>
 
     <name>metaeffekt-dita</name>
@@ -50,6 +49,7 @@
     <inceptionYear>2016</inceptionYear>
 
     <properties>
+
         <ae.core.version>0.1.0</ae.core.version>
         <ae.dita.version>0.2-SNAPSHOT</ae.dita.version>
 
