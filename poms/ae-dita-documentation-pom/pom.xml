@@ -6,18 +6,18 @@
     <parent>
         <groupId>org.metaeffekt.core</groupId>
         <artifactId>ae-core-plugin-management-pom</artifactId>
-        <version>0.1.0</version>
+        <version>0.2-SNAPSHOT</version>
         <relativePath />
     </parent>
 
     <groupId>org.metaeffekt.dita</groupId>
     <artifactId>ae-dita-documentation-pom</artifactId>
-    <version>0.2.0</version>
+    <version>0.3-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <properties>
-        <ae.dita.version>0.2.0</ae.dita.version>
-        <ae.core.version>0.1.0</ae.core.version>
+        <ae.dita.version>0.3-SNAPSHOT</ae.dita.version>
+        <ae.core.version>0.2-SNAPSHOT</ae.core.version>
 
         <artifact.inventory.version>${ae.dita.version}</artifact.inventory.version>
 
