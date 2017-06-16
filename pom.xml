@@ -76,6 +76,7 @@
                 <plugin>
                     <groupId>org.metaeffekt.core</groupId>
                     <artifactId>ae-version-maven-plugin</artifactId>
+                    <version>${ae.core.version}</version>
                     <configuration>
                         <projectVersion>${ae.dita.version}</projectVersion>
                         <groupIdVersionMap>
