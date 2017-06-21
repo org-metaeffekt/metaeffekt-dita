@@ -66,7 +66,9 @@
         <module>maven-plugins</module>
         <module>poms</module>
         <module>tests</module>
+        <!-- needs more work before publishing
         <module>distributions</module>
+        -->
         <module>inventory</module>
     </modules>
 

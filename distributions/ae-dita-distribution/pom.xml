@@ -20,7 +20,7 @@
 
         <product.title>DITA Tool Chain</product.title>
         <product.name>${product.title}</product.name>
-        <product.version>0.1.0</product.version>
+        <product.version>${ae.dita.version}</product.version>
         <product.prefix>ae-dita</product.prefix>
 
         <release.version>${ae.dita.version}</release.version>
