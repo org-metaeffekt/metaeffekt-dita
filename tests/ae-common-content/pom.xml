@@ -6,13 +6,13 @@
     <parent>
         <groupId>org.metaeffekt.core</groupId>
         <artifactId>ae-core-plugin-management-pom</artifactId>
-        <version>0.2-SNAPSHOT</version>
+        <version>0.2.0</version>
         <relativePath />
     </parent>
 
     <groupId>org.metaeffekt.dita</groupId>
     <artifactId>ae-common-content</artifactId>
-    <version>0.3-SNAPSHOT</version>
+    <version>0.3.0</version>
     <packaging>jar</packaging>
 
     <profiles>
@@ -38,7 +38,7 @@
                                         <goal>publish-artifact</goal>
                                     </goals>
                                     <configuration>
-                                        <qualifier>doc</qualifier>
+                                        <classifier>doc</classifier>
                                         <filesets>
                                             <fileset>
                                                 <directory>${basedir}/src/main/dita/${project.artifactId}</directory>

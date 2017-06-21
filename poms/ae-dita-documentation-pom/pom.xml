@@ -6,18 +6,18 @@
     <parent>
         <groupId>org.metaeffekt.core</groupId>
         <artifactId>ae-core-plugin-management-pom</artifactId>
-        <version>0.2-SNAPSHOT</version>
+        <version>0.2.0</version>
         <relativePath />
     </parent>
 
     <groupId>org.metaeffekt.dita</groupId>
     <artifactId>ae-dita-documentation-pom</artifactId>
-    <version>0.3-SNAPSHOT</version>
+    <version>0.3.0</version>
     <packaging>pom</packaging>
 
     <properties>
-        <ae.dita.version>0.3-SNAPSHOT</ae.dita.version>
-        <ae.core.version>0.2-SNAPSHOT</ae.core.version>
+        <ae.dita.version>0.3.0</ae.dita.version>
+        <ae.core.version>0.2.0</ae.core.version>
 
         <artifact.inventory.version>${ae.dita.version}</artifact.inventory.version>
 
@@ -52,7 +52,7 @@
                                 <goal>publish-artifact</goal>
                             </goals>
                             <configuration>
-                                <qualifier>doc</qualifier>
+                                <classifier>doc</classifier>
                                 <filesets>
                                     <fileset>
                                         <directory>${project.build.directory}/tmp/doc-artifact</directory>
