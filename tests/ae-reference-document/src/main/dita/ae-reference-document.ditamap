@@ -21,7 +21,7 @@
     </bookmeta>
     <frontmatter>
         <notices href="ae-reference-document/imprint/en/tpc_imprint.dita" />
-        <notices href="ae-reference-document/notice/en/tpc_notice.dita" />
+        <topicref href="ae-reference-document/notice/en/tpc_notice.dita" />
         <booklists>
             <toc/>
         </booklists>
@@ -38,6 +38,7 @@
         <topicref href="ae-reference-document/reference/en/tpc_notes.dita"/>
         <topicref href="ae-reference-document/reference/en/tpc_refs.dita"/>
         <topicref href="ae-reference-document/reference/en/tpc_figures.dita"/>
+        <topicref href="ae-reference-document/reference/en/tpc_lists.dita"/>
         <topicref href="ae-reference-document/reference/en/tpc_samples.dita"/>
     </chapter>
     

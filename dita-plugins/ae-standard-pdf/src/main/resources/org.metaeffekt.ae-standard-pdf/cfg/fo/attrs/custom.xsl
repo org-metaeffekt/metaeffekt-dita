@@ -4,7 +4,7 @@
 
     <!-- Entry point for the DITA OT Plugin, see included files for actual customizations. -->
 
-    <xsl:variable name="toc.toc-indent" select="'2pt'"/>
+    <xsl:variable name="toc.toc-indent" select="'12pt'"/>
 
     <xsl:include href="customizations/chapterBorders.xsl" />
     <xsl:include href="customizations/cover.xsl" />
@@ -22,7 +22,7 @@
     <!-- FIXME: move to dedicated file; clarify responsibilities between plugin and branding  -->
     <xsl:attribute-set name="__glossary__def">
         <xsl:attribute name="margin-left"><xsl:value-of select="$side-col-width"/></xsl:attribute>
-        <xsl:attribute name="space-after">5pt</xsl:attribute>
+        <xsl:attribute name="space-after">10pt</xsl:attribute>
     </xsl:attribute-set>
 
     <!-- use latin numbers for List of Tables (LOT) and List of Figures (LOF) -->
@@ -46,6 +46,14 @@
     <xsl:attribute-set name="__toc__indent__lot" use-attribute-sets="__toc__indent__booklist">
         <xsl:attribute name="font-size">12pt</xsl:attribute>
         <xsl:attribute name="padding-top">10mm</xsl:attribute>
+    </xsl:attribute-set>
+
+    <xsl:attribute-set name="lines" use-attribute-sets="base-font">
+        <xsl:attribute name="space-before">0.0em</xsl:attribute>
+        <xsl:attribute name="space-after">0.0em</xsl:attribute>
+        <xsl:attribute name="white-space-collapse">true</xsl:attribute>
+        <xsl:attribute name="linefeed-treatment">preserve</xsl:attribute>
+        <xsl:attribute name="wrap-option">wrap</xsl:attribute>
     </xsl:attribute-set>
 
 </xsl:stylesheet>

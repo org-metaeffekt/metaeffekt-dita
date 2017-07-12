@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.metaeffekt.core</groupId>
         <artifactId>ae-core-plugin-management-pom</artifactId>
-        <version>0.2.0</version>
+        <version>0.3.0</version>
         <relativePath />
     </parent>
 
@@ -15,9 +15,9 @@
     <packaging>pom</packaging>
 
     <properties>
-        <dita.ot.version>2.2.4</dita.ot.version>
+        <dita.ot.version>2.5.1</dita.ot.version>
         <dita.name.string>dita-ot-${dita.ot.version}</dita.name.string>
-        <dita.archive>${project.build.directory}/${dita.name.string}-bin.zip</dita.archive>
+        <dita.archive>${project.build.directory}/${dita.name.string}.zip</dita.archive>
         <dita.customized.archive>${project.build.directory}/ae-dita-toolkit-${project.version}-bin.zip</dita.customized.archive>
         <dita.root.folder>${project.build.directory}/${dita.name.string}</dita.root.folder>
         <ant.version>1.9.7</ant.version>
@@ -70,7 +70,6 @@
                                     <groupId>org.dita-ot</groupId>
                                     <artifactId>dita-ot</artifactId>
                                     <version>${dita.ot.version}</version>
-                                    <classifier>bin</classifier>
                                     <type>zip</type>
                                 </artifactItem>
                             </artifactItems>
@@ -98,7 +97,6 @@
                                 <delete includeEmptyDirs="true">
                                     <fileset dir="${dita.root.folder}/doc"/>
                                     <fileset dir="${dita.root.folder}/docsrc"/>
-                                    <fileset dir="${dita.root.folder}/samples"/>
                                     <fileset dir="${dita.root.folder}/plugins/com.sophos.tocjs" />
 
                                     <fileset dir="${dita.root.folder}/plugins/org.dita.pdf2.axf" />
@@ -110,6 +108,7 @@
                                      eol="lf" eof="remove"
                                      includes="ant,dita" />
                                 <echo message="Install the configured PDF DITA OT Plugin: ae-standard-pdf-${ae.dita.version}-dita-plugin.zip" />
+                                <property name="dita.dir" value="${dita.root.folder}" />
                                 <ant dir="${dita.root.folder}"
                                      antfile="integrator.xml"
                                      target="install">
@@ -130,6 +129,21 @@
                         <groupId>org.apache.ant</groupId>
                         <artifactId>ant</artifactId>
                         <version>${ant.version}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>com.google.guava</groupId>
+                        <artifactId>guava</artifactId>
+                        <version>19.0</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>net.sf.saxon</groupId>
+                        <artifactId>Saxon-HE</artifactId>
+                        <version>LATEST</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>commons-io</groupId>
+                        <artifactId>commons-io</artifactId>
+                        <version>2.5</version>
                     </dependency>
                 </dependencies>
             </plugin>

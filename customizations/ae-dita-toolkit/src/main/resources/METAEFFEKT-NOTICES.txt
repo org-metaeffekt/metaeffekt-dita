@@ -34,7 +34,6 @@ The following elements are not included in the DITA customization:
 
 - doc
 - docsrc
-- samples
 - plugins/com.sophos.tocjs
 - plugins/org.dita.pdf2.axf
 - plugins/org.dita.pdf2.xep

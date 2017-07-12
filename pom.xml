@@ -12,7 +12,7 @@
     <parent>
         <groupId>org.metaeffekt.core</groupId>
         <artifactId>ae-core</artifactId>
-        <version>0.2.0</version>
+        <version>0.3.0</version>
     </parent>
 
     <name>metaeffekt-dita</name>
@@ -50,7 +50,7 @@
 
     <properties>
 
-        <ae.core.version>0.2.0</ae.core.version>
+        <ae.core.version>0.3.0</ae.core.version>
         <ae.dita.version>0.3.0</ae.dita.version>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

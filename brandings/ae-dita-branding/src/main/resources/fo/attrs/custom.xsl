@@ -48,4 +48,12 @@
         <xsl:attribute name="padding-top">10mm</xsl:attribute>
     </xsl:attribute-set>
 
+    <xsl:attribute-set name="lines" use-attribute-sets="base-font">
+        <xsl:attribute name="space-before">0.0em</xsl:attribute>
+        <xsl:attribute name="space-after">0.0em</xsl:attribute>
+        <xsl:attribute name="white-space-collapse">true</xsl:attribute>
+        <xsl:attribute name="linefeed-treatment">preserve</xsl:attribute>
+        <xsl:attribute name="wrap-option">wrap</xsl:attribute>
+    </xsl:attribute-set>
+
 </xsl:stylesheet>

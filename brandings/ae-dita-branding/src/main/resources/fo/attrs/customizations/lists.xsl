@@ -26,6 +26,11 @@
         <xsl:attribute name="space-before"><xsl:value-of select="$metaeffekt.list.item-spacing"/></xsl:attribute>
     </xsl:attribute-set>
 
+    <xsl:attribute-set name="ol.li__label__content">
+        <xsl:attribute name="text-align">start</xsl:attribute>
+        <xsl:attribute name="font-weight">normal</xsl:attribute>
+    </xsl:attribute-set>
+
     <!-- Adapt the space between the bullet points and the actual text.  -->
 
     <xsl:attribute-set name="ul" use-attribute-sets="common.block">
