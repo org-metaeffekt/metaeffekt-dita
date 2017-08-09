@@ -73,19 +73,6 @@
             <artifactId>batik-parser</artifactId>
             <version>${batik.version}</version>
         </dependency>
-        <!--
-        <dependency>
-            <groupId>org.apache.xmlgraphics</groupId>
-            <artifactId>batik-js</artifactId>
-            <version>${batik.version}</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>xml-apis</groupId>
-                    <artifactId>xml-apis</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-        -->
         <dependency>
             <groupId>org.apache.xmlgraphics</groupId>
             <artifactId>batik-script</artifactId>
@@ -300,12 +287,6 @@
                                     <groupId>org.apache.xmlgraphics</groupId>
                                     <artifactId>batik-parser</artifactId>
                                 </artifactItem>
-                                <!--
-                                <artifactItem>
-                                    <groupId>org.apache.xmlgraphics</groupId>
-                                    <artifactId>batik-js</artifactId>
-                                </artifactItem>
-                                -->
                                 <artifactItem>
                                     <groupId>org.apache.xmlgraphics</groupId>
                                     <artifactId>batik-script</artifactId>
