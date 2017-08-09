@@ -8,7 +8,7 @@
     <parent>
         <groupId>org.metaeffekt.dita</groupId>
         <artifactId>ae-dita</artifactId>
-        <version>0.4.0</version>
+        <version>0.5-SNAPSHOT</version>
         <relativePath>../</relativePath>
     </parent>
 
@@ -59,6 +59,52 @@
 
         <plugins>
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>extract-core-inventory-licenses</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>unpack</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}/classes</outputDirectory>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>org.metaeffekt.core</groupId>
+                                    <artifactId>ae-core-inventory</artifactId>
+                                    <version>${ae.core.version}</version>
+                                    <type>jar</type>
+                                    <includes>**/*</includes>
+                                    <excludes>**/maven, **/maven/**/*, **/*.xls, **/*.MF</excludes>
+                                </artifactItem>
+                            </artifactItems>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>extract-core-inventory</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>unpack</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}/tmp</outputDirectory>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>org.metaeffekt.core</groupId>
+                                    <artifactId>ae-core-inventory</artifactId>
+                                    <version>${ae.core.version}</version>
+                                    <type>jar</type>
+                                    <includes>**/*.xls</includes>
+                                </artifactItem>
+                            </artifactItems>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
                 <groupId>org.metaeffekt.core</groupId>
                 <artifactId>ae-inventory-maven-plugin</artifactId>
                 <version>${ae.core.version}</version>
@@ -77,6 +123,12 @@
                 </executions>
                 <configuration>
                     <processors>
+                        <processor>
+                            <className>org.metaeffekt.core.inventory.processor.InheritInventoryProcessor</className>
+                            <properties>
+                                <input.inventory.path>${project.build.directory}/tmp/META-INF/ae-core-artifact-inventory.xls</input.inventory.path>
+                            </properties>
+                        </processor>
                         <processor>
                             <className>org.metaeffekt.core.inventory.processor.CleanupInventoryProcessor</className>
                             <skip>true</skip>

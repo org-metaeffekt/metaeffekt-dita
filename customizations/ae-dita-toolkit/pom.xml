@@ -5,13 +5,13 @@
     <parent>
         <groupId>org.metaeffekt.core</groupId>
         <artifactId>ae-core-plugin-management-pom</artifactId>
-        <version>0.3.0</version>
+        <version>0.4-SNAPSHOT</version>
         <relativePath />
     </parent>
 
     <groupId>org.metaeffekt.dita</groupId>
     <artifactId>ae-dita-toolkit</artifactId>
-    <version>0.4.0</version>
+    <version>0.5-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <properties>
@@ -20,9 +20,11 @@
         <dita.archive>${project.build.directory}/${dita.name.string}.zip</dita.archive>
         <dita.customized.archive>${project.build.directory}/ae-dita-toolkit-${project.version}-bin.zip</dita.customized.archive>
         <dita.root.folder>${project.build.directory}/${dita.name.string}</dita.root.folder>
-        <ant.version>1.9.7</ant.version>
 
-        <ae.dita.version>0.4.0</ae.dita.version>
+
+        <ant.version>1.10.1</ant.version>
+
+        <ae.dita.version>0.5-SNAPSHOT</ae.dita.version>
     </properties>
 
     <dependencies>

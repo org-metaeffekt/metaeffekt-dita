@@ -9,11 +9,11 @@ the licenses under which the toolkit itself and contained software artifacts
 are distributed.
 
 Apache license under which the DITA Open Toolkit is distributed:
-  APACHE-LICENSE-2_0.html
+  LICENSE
 
 Additional notice derived from the Project Management Committee of the DITA
 Open Toolkit:
-  license.txt
+  NOTICES.txt
 
 DITA Open Toolkit provided details on the used licenses and license
 obligations:
@@ -37,5 +37,3 @@ The following elements are not included in the DITA customization:
 - plugins/com.sophos.tocjs
 - plugins/org.dita.pdf2.axf
 - plugins/org.dita.pdf2.xep
-
-

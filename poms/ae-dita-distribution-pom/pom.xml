@@ -9,7 +9,7 @@
     <parent>
         <groupId>org.metaeffekt.dita</groupId>
         <artifactId>ae-dita-documentation-pom</artifactId>
-        <version>0.4.0</version>
+        <version>0.5-SNAPSHOT</version>
         <relativePath>../ae-dita-documentation-pom</relativePath>
     </parent>
 
@@ -19,9 +19,9 @@
 
     <properties>
         <dita.enableGrammarCache>false</dita.enableGrammarCache>
-        <artifact.inventory.artifactId>ae-core-inventory</artifact.inventory.artifactId>
-        <artifact.inventory.groupId>org.metaeffekt.core</artifact.inventory.groupId>
-        <artifact.inventory.version>${ae.core.version}</artifact.inventory.version>
+
+        <artifact.inventory.source>/META-INF/artifact-inventory-thirdparty-2016-Q1_dita.xls</artifact.inventory.source>
+
     </properties>
 
     <build>
@@ -41,9 +41,9 @@
                             <configuration>
                                 <artifactItems>
                                     <artifactItem>
-                                        <groupId>${artifact.inventory.groupId}</groupId>
-                                        <artifactId>${artifact.inventory.artifactId}</artifactId>
-                                        <version>${artifact.inventory.version}</version>
+                                        <groupId>org.metaeffekt.dita</groupId>
+                                        <artifactId>ae-dita-inventory</artifactId>
+                                        <version>${ae.dita.version}</version>
                                         <type>jar</type>
                                         <overWrite>true</overWrite>
                                         <outputDirectory>${project.build.directory}/tmp/artifact-inventory</outputDirectory>
@@ -102,6 +102,7 @@
                                     <exclude>**/*.MF</exclude>
                                     <exclude>**/*.policy</exclude>
                                     <exclude>**/*.vt</exclude>
+                                    <exclude>**/LICENSE</exclude>
                                 </scanExcludes>
                             </configuration>
                         </execution>
@@ -114,18 +115,23 @@
                         <failOnUnknownVersion>${artifact.inventory.enabled}</failOnUnknownVersion> 
                         <failOnDowngrade>${artifact.inventory.enabled}</failOnDowngrade>
                         <failOnDevelopment>${artifact.inventory.enabled}</failOnDevelopment>
+
                         <failOnMissingLicenseFile>${artifact.inventory.enabled}</failOnMissingLicenseFile>
                         <failOnMissingNotice>${artifact.inventory.enabled}</failOnMissingNotice>
-                        
+
+                        <!-- TEMPORARILY DISABLED -->
+                        <failOnMissingLicenseFile>false</failOnMissingLicenseFile>
+                        <failOnMissingNotice>false</failOnMissingNotice>
+
                         <relativeLicensePath>thirdparty/licenses</relativeLicensePath>
                         <licenseSourcePath>${project.build.directory}/tmp/artifact-inventory/META-INF/licenses</licenseSourcePath>
                         <licenseTargetPath>${project.build.directory}/contents/thirdparty/licenses</licenseTargetPath>
                     </configuration>
                     <dependencies>
                         <dependency>
-                            <groupId>${artifact.inventory.groupId}</groupId>
-                            <artifactId>${artifact.inventory.artifactId}</artifactId>
-                            <version>${artifact.inventory.version}</version>
+                            <groupId>org.metaeffekt.dita</groupId>
+                            <artifactId>ae-dita-inventory</artifactId>
+                            <version>${ae.dita.version}</version>
                         </dependency>
                     </dependencies>
                 </plugin>

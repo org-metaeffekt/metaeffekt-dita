@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.metaeffekt.dita</groupId>
         <artifactId>ae-dita-distribution-pom</artifactId>
-        <version>0.4.0</version>
+        <version>0.5-SNAPSHOT</version>
         <relativePath>../../poms/ae-dita-distribution-pom</relativePath>
     </parent>
 
@@ -32,11 +32,6 @@
         <cryptographic.information.provider>${organization.name}</cryptographic.information.provider>
         <cryptographic.link.verification.date>14.10.2016</cryptographic.link.verification.date>
 
-        <artifact.inventory.artifactId>ae-dita-inventory</artifact.inventory.artifactId>
-        <artifact.inventory.groupId>org.metaeffekt.dita</artifact.inventory.groupId>
-        <artifact.inventory.version>${ae.dita.version}</artifact.inventory.version>
-
-        <artifact.inventory.source.version>2016-Q1_dita</artifact.inventory.source.version>
         <organization.address>http://www.metaeffekt.org</organization.address>
 
         <organization.name>{met&#230;ffekt} GmbH</organization.name>
