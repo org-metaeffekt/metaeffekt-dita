@@ -20,7 +20,7 @@
     <properties>
         <dita.enableGrammarCache>false</dita.enableGrammarCache>
 
-        <artifact.inventory.source>/META-INF/artifact-inventory-thirdparty-2016-Q1_dita.xls</artifact.inventory.source>
+        <artifact.inventory.source>/META-INF/ae-dita-artifact-inventory.xls</artifact.inventory.source>
 
     </properties>
 

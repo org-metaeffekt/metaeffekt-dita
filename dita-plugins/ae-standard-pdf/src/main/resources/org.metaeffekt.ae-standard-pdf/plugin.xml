@@ -18,7 +18,6 @@
     <feature extension="dita.conductor.lib.import" file="lib/batik-dom.jar"/>
     <feature extension="dita.conductor.lib.import" file="lib/batik-extension.jar"/>
     <feature extension="dita.conductor.lib.import" file="lib/batik-gvt.jar"/>
-    <feature extension="dita.conductor.lib.import" file="lib/batik-js.jar"/>
     <feature extension="dita.conductor.lib.import" file="lib/batik-parser.jar"/>
     <feature extension="dita.conductor.lib.import" file="lib/batik-script.jar"/>
     <feature extension="dita.conductor.lib.import" file="lib/batik-svg-dom.jar"/>
