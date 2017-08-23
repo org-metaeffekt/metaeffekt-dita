@@ -9,7 +9,7 @@
     <parent>
         <groupId>org.metaeffekt.dita</groupId>
         <artifactId>ae-dita-documentation-pom</artifactId>
-        <version>0.5-SNAPSHOT</version>
+        <version>0.5.0</version>
         <relativePath>../ae-dita-documentation-pom</relativePath>
     </parent>
 
@@ -158,5 +158,15 @@
             </plugins>
         </pluginManagement>
     </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.metaeffekt.dita</groupId>
+            <artifactId>ae-dita-inventory</artifactId>
+            <version>${project.version}</version>
+            <scope>provided</scope>
+            <optional>true</optional>
+        </dependency>
+    </dependencies>
 
 </project>
