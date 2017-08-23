@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd">
+<topic id="tpc_ae-oss-components" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+    <title>Open Source Components</title>
+    <body>
+        <p>
+            In general, for each and every open source component the individual terms and conditions of the associated 
+            license apply. The licensee of an open source component is granted a non-exclusive right of use by the 
+            respective right holders restricted by the stipulated terms and conditions defined in the associated 
+            license. In particular, liability and warranty regulations of the individual open source license apply 
+            only in relation to the respective right holder.
+        </p>
+        <p>
+            The license files and notice files of the effective open source licenses are provided as extended scope
+            of the software delivery.
+        </p>
+        <p>
+            License obligations of the individual open source components, as far as these can be addressed in 
+            documentation, are detailed in section <xref keyref="license-notices"/>. In case a 
+            license demands the provision of source code for a component, the source is made available by adding the 
+            source artifacts to the extended scope of the software delivery or by making the source available as
+            individually outlined in <xref keyref="license-notices"/>.
+        </p>
+    </body>
+</topic>
