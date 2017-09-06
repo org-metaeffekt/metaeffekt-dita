@@ -6,7 +6,7 @@
     <parent>
         <groupId>org.metaeffekt.dita</groupId>
         <artifactId>ae-dita-tests</artifactId>
-        <version>HEAD-SNAPSHOT</version>
+        <version>0.6.0</version>
     </parent>
 
     <artifactId>ae-reference-document</artifactId>
@@ -155,6 +155,35 @@
                         </goals>
                     </execution>
                     <execution>
+                        <id>aggregate-dita-content</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>aggregate-content</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>mark-dita-content-writable</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>mark-generated-content-writable</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>generate-dita-content</id>
+                        <phase>process-sources</phase>
+                        <goals>
+                            <goal>generate-content</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>mark-dita-content-read-only</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>mark-generated-content-read-only</goal>
+                        </goals>
+                    </execution>
+
+                    <execution>
                         <id>generate-documentation</id>
                         <phase>compile</phase>
                         <goals>
@@ -190,4 +219,15 @@
             </plugin>
         </plugins>
     </build>
+
+
+    <dependencies>
+        <dependency>
+            <groupId>org.metaeffekt.dita</groupId>
+            <artifactId>ae-common-content</artifactId>
+            <type>jar</type>
+            <classifier>doc</classifier>
+            <version>${ae.dita.version}</version>
+        </dependency>
+    </dependencies>
 </project>

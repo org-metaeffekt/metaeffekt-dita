@@ -32,7 +32,7 @@
         <xsl:variable name="blacklistCount" select="count(ancestor-or-self::*[contains(@class, ' topic/section ')])" />
 
         <!-- only do numbering, if we are not in a blacklisted region (e.g. in a section) -->
-<!--        <xsl:if test="$blacklistCount = 0"> -->
+        <xsl:if test="$blacklistCount = 0">
             <fo:inline>
                 <xsl:for-each select="$mapTopics[1]">
                     <xsl:variable name="depth" select="count(ancestor-or-self::*[contains(@class, ' map/topicref')])" />
@@ -50,7 +50,7 @@
                     </xsl:choose>
                 </xsl:for-each>
             </fo:inline>
-<!--        </xsl:if> -->
+        </xsl:if>
 
         <xsl:apply-templates />
     </xsl:template>

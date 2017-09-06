@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE glossentry PUBLIC "-//OASIS//DTD DITA Glossary Entry//EN" "glossentry.dtd">
+<glossentry id="component">
+    <glossterm>Component</glossterm>
+    <glossdef>
+        A component is a group of one or more artifacts. While artifacts are physical files the component can be
+        regarded as logical aggregate. Licensing information applies on component-level.
+    </glossdef>
+    <glossBody>
+        <glossSurfaceForm>components</glossSurfaceForm>
+    </glossBody>
+</glossentry>

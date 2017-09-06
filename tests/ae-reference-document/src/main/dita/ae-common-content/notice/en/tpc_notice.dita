@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Concept//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd">
+<topic id="tpc_notice">
+    <title>Legal Notice</title>
+    <body>
+        <p>All company logos are a registered trademark of ${organization.name}.</p>
+        <p>
+            The product names mentioned in this documentation are either trademarks or
+            registered trademarks of the respective owners and are stated for identification
+            purposes only.
+        </p>
+        <p>
+            This documentation and the software components are protected by copyright 
+            ${document.copyright.year}, ${organization.name}.
+        </p>
+    </body>
+</topic>

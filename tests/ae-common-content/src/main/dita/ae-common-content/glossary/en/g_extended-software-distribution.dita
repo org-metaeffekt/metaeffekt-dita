@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE glossentry PUBLIC "-//OASIS//DTD DITA Glossary Entry//EN" "glossentry.dtd">
+<glossentry id="extended-software-distribution">
+    <glossterm>Extended Software Distribution</glossterm>
+    <glossdef>An extended software distribution contains all required licensing information and notices to fulfill the
+        obligations when distributing the associated software distribution. An extended distribution lists covered
+        third-party components and - if stipulated by the license terms and conditions - the license texts, notices and
+        source core artifacts.
+    </glossdef>
+    <glossBody>
+        <glossSurfaceForm>extended software distribution</glossSurfaceForm>
+    </glossBody>
+</glossentry>

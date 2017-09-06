@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.3/OS/dtd/topic.dtd">
+<topic id="tpc_sections">
+    <title>Sections</title>
+    <body>
+         <section>
+             <title>Title One</title>
+             <p>
+                First content.
+             </p>
+         </section>
+        <section>
+            <title>Title <codeph>Two</codeph></title>
+            <p>
+                Second content.
+            </p>
+        </section>
+    </body>
+</topic>
