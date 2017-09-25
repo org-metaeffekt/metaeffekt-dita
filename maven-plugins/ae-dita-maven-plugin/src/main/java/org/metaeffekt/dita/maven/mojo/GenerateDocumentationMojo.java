@@ -15,6 +15,7 @@
  */
 package org.metaeffekt.dita.maven.mojo;
 
+import org.apache.commons.lang.StringUtils;
 import org.metaeffekt.dita.maven.generation.*;
 import org.metaeffekt.dita.maven.installation.DitaInstallationHelper;
 import org.apache.commons.io.FileUtils;
@@ -207,7 +208,8 @@ public class GenerateDocumentationMojo extends AbstractDitaMojo {
             addDitavalFile(dita, ditaMap);
             dita.setTempDir(getTempDirectory());
 
-            ArtifactHandler handler = artifactHandlerManager.getArtifactHandler(getTransTypeFileExtension(documentItem.getDitaTranstype()));
+            ArtifactHandler handler = artifactHandlerManager.getArtifactHandler(
+                    getTransTypeFileExtension(documentItem.getDitaTranstype()));
             // the handler is not directly used, so the jar handler is also fine, if there is
             // no handler available for PDF documents
             if (handler == null) {
@@ -237,21 +239,23 @@ public class GenerateDocumentationMojo extends AbstractDitaMojo {
                 Zip zip = new Zip();
                 zip.setProject(new Project());
                 zip.setBasedir(new File(dita.getOutputDir()));
-                zip.setDestFile(new File(
-                                ditaTargetDir,
-                                documentItem.getArtifactId() + ((documentItem.getArtifactClassifier() == null || documentItem.getArtifactClassifier().equals("")) ? "" : "-" + documentItem.getArtifactClassifier()) + ".zip")
+                zip.setDestFile(new File( ditaTargetDir,
+                    documentItem.getArtifactId()
+                    + (StringUtils.isBlank(documentItem.getArtifactClassifier()) ? "" : "-" + documentItem.getArtifactClassifier())
+                    + ".zip")
                 );
                 zip.execute();
 
                 AttachedZipArtifact artifact = new AttachedZipArtifact(
-                        getCurrentProject().getArtifact(), // artifact
-                        handler, // handler
-                        new File(
-                                ditaTargetDir,
-                                documentItem.getArtifactId() + ((documentItem.getArtifactClassifier() == null || documentItem.getArtifactClassifier().equals("")) ? "" : "-" + documentItem.getArtifactClassifier()) + ".zip"), // fileToAttach
-                        documentItem.getArtifactId(), // artifactId
-                        documentItem.getArtifactClassifier(), // classifier
-                        getCurrentProject().getVersion() // version
+                    getCurrentProject().getArtifact(), // artifact
+                    handler, // handler
+                    new File(ditaTargetDir,
+                        documentItem.getArtifactId()
+                        + (StringUtils.isBlank(documentItem.getArtifactClassifier()) ? "" : "-" + documentItem.getArtifactClassifier())
+                        + ".zip"), // fileToAttach
+                    documentItem.getArtifactId(), // artifactId
+                    documentItem.getArtifactClassifier(), // classifier
+                    getCurrentProject().getVersion() // version
                 );
                 getLog().info("Attaching artifact: " + artifact.toString());
                 getCurrentProject().addAttachedArtifact(artifact);
@@ -261,24 +265,28 @@ public class GenerateDocumentationMojo extends AbstractDitaMojo {
                 // generate documentation
                 dita.execute();
 
+                // NOTE: dita produces a file named after the ditmap with the .ditamap suffix replaced by .pdf
+                //   In order to adjust it to the expected name the file is renamed / moved / copied.
                 getLog().info("Renaming generated PDF file.");
                 File fromPdf = getGeneratedPdfFile(dita, documentItem);
                 File toPdf = getMavenizedPdfFile(dita, documentItem);
                 try {
                     if (!fromPdf.getCanonicalPath().equals(toPdf.getCanonicalPath())) {
-                        FileUtils.moveFile(
-                                getGeneratedPdfFile(dita, documentItem),
-                                toPdf
-                        );
+                        // delete the file from a previous run.
+                        FileUtils.deleteQuietly(toPdf);
+
+                        // move the file
+                        FileUtils.moveFile(getGeneratedPdfFile(dita, documentItem), toPdf);
                     } else {
-                        getLog().warn("No need to rename the PDF file, since the generated PDF has already the expected name.");
+                        getLog().info("No need to rename the PDF file, since the generated PDF has the expected name.");
                     }
                 } catch (IOException e) {
                     getLog().error("From File: " + fromPdf.getAbsolutePath());
                     getLog().error("To File: " + toPdf.getAbsolutePath());
-                    throw new MojoExecutionException("Could not rename PDF file.");
+                    throw new MojoExecutionException("Could not rename PDF file.", e);
                 }
 
+                // attach the resulting PDF as artifact
                 AttachedPdfArtifact artifact = new AttachedPdfArtifact(
                         getCurrentProject().getArtifact(), // artifact
                         handler, // handler
@@ -360,7 +368,10 @@ public class GenerateDocumentationMojo extends AbstractDitaMojo {
         return new File(
                 ditaLauncher.getOutputDir() + File.separator
                 + documentItem.getArtifactId()
-                + ((documentItem.getArtifactClassifier() == null || documentItem.getArtifactClassifier().equals("")) ? "" : "-" + documentItem.getArtifactClassifier()) // append the classifier, if defined
+                + "-"
+                + getCurrentProject().getVersion()
+                // append the classifier, if defined
+                + (StringUtils.isBlank(documentItem.getArtifactClassifier()) ? "" : "-" + documentItem.getArtifactClassifier())
                 + ".pdf"
         );
     }
