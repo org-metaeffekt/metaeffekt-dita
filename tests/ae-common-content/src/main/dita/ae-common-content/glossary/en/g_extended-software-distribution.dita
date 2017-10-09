@@ -5,7 +5,7 @@
     <glossdef>An extended software distribution contains all required licensing information and notices to fulfill the
         obligations when distributing the associated software distribution. An extended distribution lists covered
         third-party components and - if stipulated by the license terms and conditions - the license texts, notices and
-        source core artifacts.
+        source code artifacts.
     </glossdef>
     <glossBody>
         <glossSurfaceForm>extended software distribution</glossSurfaceForm>

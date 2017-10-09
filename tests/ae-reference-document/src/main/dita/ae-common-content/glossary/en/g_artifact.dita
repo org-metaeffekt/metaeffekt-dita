@@ -3,7 +3,7 @@
 <glossentry id="artifact">
     <glossterm>Artifact</glossterm>
     <glossdef>In general an artifact is a physical file. An artifact can be an executable binary, an archive, a document
-        or a simple configuration files.</glossdef>
+        or a simple configuration file.</glossdef>
     <glossBody>
         <glossSurfaceForm>artifacts</glossSurfaceForm>
     </glossBody>
