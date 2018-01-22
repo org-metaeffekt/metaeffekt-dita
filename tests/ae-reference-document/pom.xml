@@ -6,7 +6,7 @@
     <parent>
         <groupId>org.metaeffekt.dita</groupId>
         <artifactId>ae-dita-tests</artifactId>
-        <version>HEAD-SNAPSHOT</version>
+        <version>0.9.0</version>
     </parent>
 
     <artifactId>ae-reference-document</artifactId>
@@ -16,7 +16,7 @@
         <product.name>Whitelabel Reference Document</product.name>
         <product.prefix>ae-reference-document</product.prefix>
         <product.version>${project.version}</product.version>
-        <organization.name>Whitelabel Group</organization.name>
+        <organization.name>{metæffekt} GmbH}</organization.name>
         <maven.ae.documentation.dita.dir>${basedir}/src/main/dita</maven.ae.documentation.dita.dir>
 
         <document.security.level>Public</document.security.level>
@@ -25,6 +25,7 @@
         <document.last.change>19.04.2017</document.last.change>
         <document.ditamap>ae-reference-document.ditamap</document.ditamap>
         <document.copyright.year>2017</document.copyright.year>
+        <document.watermark>{&aelig;}</document.watermark>
 
         <release.version>0.1.0</release.version>
         <release.date_en>19th April, 2017</release.date_en>

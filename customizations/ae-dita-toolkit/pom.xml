@@ -5,17 +5,17 @@
     <parent>
         <groupId>org.metaeffekt.core</groupId>
         <artifactId>ae-core-plugin-management-pom</artifactId>
-        <version>HEAD-SNAPSHOT</version>
+        <version>0.14.0</version>
         <relativePath />
     </parent>
 
     <groupId>org.metaeffekt.dita</groupId>
     <artifactId>ae-dita-toolkit</artifactId>
-    <version>HEAD-SNAPSHOT</version>
+    <version>0.9.0</version>
     <packaging>pom</packaging>
 
     <properties>
-        <dita.ot.version>2.5.1</dita.ot.version>
+        <dita.ot.version>2.5.4</dita.ot.version>
         <dita.name.string>dita-ot-${dita.ot.version}</dita.name.string>
         <dita.archive>${project.build.directory}/${dita.name.string}.zip</dita.archive>
         <dita.customized.archive>${project.build.directory}/ae-dita-toolkit-${project.version}-bin.zip</dita.customized.archive>
@@ -24,7 +24,7 @@
 
         <ant.version>1.10.1</ant.version>
 
-        <ae.dita.version>HEAD-SNAPSHOT</ae.dita.version>
+        <ae.dita.version>0.9.0</ae.dita.version>
     </properties>
 
     <dependencies>
@@ -104,6 +104,10 @@
                                     <fileset dir="${dita.root.folder}/plugins/org.dita.pdf2.axf" />
                                     <fileset dir="${dita.root.folder}/plugins/org.dita.pdf2.xep" />
                                 </delete>
+
+                                <copy overwrite="true" toDir="${dita.root.folder}">
+                                    <fileset dir="${project.basedir}/src/main/resources" includes="plugins/**/*" />
+                                </copy>
 
                                 <echo message="Correcting line breaks for Linux binaries." />
                                 <fixcrlf srcDir="${dita.root.folder}/bin"

@@ -3,9 +3,9 @@
 <topic id="tpc_no-import-export-information" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
     <title>Import / Export Information</title>
     <body>
-        <p id="no-distribution-with-cryptographic-components-intro">
-            This distribution does not include any components containing cryptographic software. No known
-            restrictions apply.
-        </p>
+        <p conref="tpc_import-export-information.dita#tpc_import-export-information/distribution-without-restricted-components-intro" />
+        <p conref="tpc_import-export-information.dita#tpc_import-export-information/distribution-of-restricted-components-hint" />
+        <p conref="tpc_import-export-information.dita#tpc_import-export-information/distribution-without-restricted-components-claim" />
+        <p conref="tpc_import-export-information.dita#tpc_import-export-information/distribution-of-restricted-components-disclaimer" />
     </body>
 </topic>

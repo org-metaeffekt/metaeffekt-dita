@@ -29,17 +29,17 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.3995495"
-     inkscape:cx="308.77239"
-     inkscape:cy="971.98245"
+     inkscape:zoom="0.30636335"
+     inkscape:cx="597.52502"
+     inkscape:cy="177.45631"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="2745"
-     inkscape:window-height="1168"
-     inkscape:window-x="610"
-     inkscape:window-y="30"
-     inkscape:window-maximized="0"
+     inkscape:window-width="1440"
+     inkscape:window-height="807"
+     inkscape:window-x="4442"
+     inkscape:window-y="1441"
+     inkscape:window-maximized="1"
      units="px"
      showguides="true"
      inkscape:guide-bbox="true"
@@ -53,13 +53,6 @@
      inkscape:label="Ebene 1"
      inkscape:groupmode="layer"
      id="layer1">
-    <ellipse
-       ry="117.41638"
-       rx="154.1358"
-       cy="-1426.8564"
-       cx="-109.13814"
-       id="ellipse4988"
-       style="fill:none;fill-opacity:1;stroke:#cce0ec;stroke-width:1.38915586;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:44.44443893px;line-height:125%;font-family:Helvetica;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -80,35 +73,18 @@
        x="-84.399345"
        y="426.62338"
        transform="scale(1,-1)" />
-    <ellipse
-       ry="67.355225"
-       rx="163.64822"
-       cy="-1396.4633"
-       cx="-68.930992"
-       id="ellipse4988-9"
-       style="fill:none;fill-opacity:1;stroke:#cce0ec;stroke-width:1.08411694;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
-    <ellipse
-       ry="117.38333"
-       rx="169.19937"
-       cy="-1456.8497"
-       cx="-93.155251"
-       id="ellipse4988-4"
-       style="fill:none;fill-opacity:1;stroke:#cce0ec;stroke-width:1.45524955;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
-    <ellipse
-       ry="67.355225"
-       rx="163.64822"
-       cy="-1476.9664"
-       cx="297.18427"
-       id="ellipse4988-9-8"
-       style="fill:none;fill-opacity:1;stroke:#cce0ec;stroke-width:1.08411694;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       transform="matrix(0.97943474,0.20176121,-0.20176121,0.97943474,0,0)" />
-    <ellipse
-       ry="67.355225"
-       rx="163.64822"
-       cy="-1495.014"
-       cx="259.78168"
-       id="ellipse4988-9-8-8"
-       style="fill:none;fill-opacity:1;stroke:#cce0ec;stroke-width:1.08411694;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       transform="matrix(0.97943474,0.20176121,-0.20176121,0.97943474,0,0)" />
+    <text
+       xml:space="preserve"
+	   fill="#f4f4f4"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:277.777771px;line-height:125%;font-family:Helvetica;-inkscape-font-specification:'Helvetica, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#f0f0f0;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="46.263287"
+       y="-840.77698"
+       id="text4347"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4349"
+         x="46.263287"
+         y="-840.77698"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:277.777771px;line-height:125%;font-family:Helvetica;-inkscape-font-specification:'Helvetica, Normal';text-align:start;writing-mode:lr-tb;text-anchor:start">${document.watermark}</tspan></text>
   </g>
 </svg>

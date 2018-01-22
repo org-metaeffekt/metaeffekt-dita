@@ -7,18 +7,6 @@ NOTE:
 - The variables are sorted alphabetically (at least in blocks)
 - Variables may not be used on shared level, but used on common POM level. Therefore we
   also list variables, which are locally not covered by content.
- 
-
-${cryptographic.information.provider}
-=====================================
-- Used in BOM related topics. Normally this is the organization that hands of the software to a
-  further party. When ${organization.name} is in this role the content of ${organization.name} 
-  can be used to fill this variable.
-
-${cryptographic.link.verification.date}
-=======================================
-- The import/export related links need to be reviewed on a regular basis. This date represents the
-  last date this content was checked. This is not related to any other date in the product context.
 
 ${document.security.level_de} / ${document.security.level_en}
 =============================================================

@@ -18,7 +18,7 @@ Release Date: ${release.date_en}
                 
 Document Language: en
 Document Status: ${document.status_en}
-Security Level: ${document.security.level_en}
+Document Classification: ${document.classification_en}
 
 Last Change: ${document.last.change_en}
 

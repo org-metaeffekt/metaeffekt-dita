@@ -20,8 +20,8 @@
         </bookrights>
     </bookmeta>
     <frontmatter>
-        <topicref href="ae-reference-document/imprint/en/tpc_imprint.dita" />
-        <topicref href="ae-reference-document/notice/en/tpc_notice.dita" />
+        <topicref href="ae-common-content/imprint/en/tpc_imprint.dita" />
+        <topicref href="ae-common-content/notice/en/tpc_notice.dita" />
         <booklists>
             <toc/>
         </booklists>
@@ -45,8 +45,10 @@
     
     <chapter href="ae-reference-document/reference-bom/en/tpc_reference-bom.dita" >
         <topicref href="ae-common-content/bill-of-materials/en/tpc_open-source-based-bom.dita" >
-            <topicref href="ae-common-content/components/en/tpc_commercial-components.dita" />
+            <topicref href="ae-common-content/components/en/tpc_provider-proprietary-components.dita" />
+            <topicref href="ae-common-content/components/en/tpc_proprietary-components.dita" />
             <topicref href="ae-common-content/components/en/tpc_oss-components.dita" />
+            <topicref href="ae-common-content/components/en/tpc_public-domain-components.dita" />
             <topicref href="ae-common-content/bill-of-materials/en/tpc_no-import-export-information.dita" />
             <topicref href="ae-common-content/bill-of-materials/en/tpc_import-export-information-use.dita" />
         </topicref>
@@ -55,7 +57,7 @@
             <topicref href="ae-reference-document/reference-bom/en/tpc_example-distribution-component-report.dita"/>
         </topicref>
         <topicref href="ae-reference-document/reference-bom/en/tpc_example-distribution-licenses.dita"/>
-        <topicref href="ae-reference-document/reference-bom/en/tpc_example-distribution-notices.dita"/>
+        <topicref href="ae-reference-document/reference-bom/en/tpc_example-distribution-notices.dita" keys="license-notices"/>
     </chapter>
 
 

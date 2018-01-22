@@ -37,3 +37,7 @@ The following elements are not included in the DITA customization:
 - plugins/com.sophos.tocjs
 - plugins/org.dita.pdf2.axf
 - plugins/org.dita.pdf2.xep
+
+Due to issues on Mac the font auto detection has been disabled. The modified fop.xconf file
+can be found in plugins/org.dita.pdf2.fop/cfg/fop.xconf. The modification is marked with the
+comment AE-MOD
