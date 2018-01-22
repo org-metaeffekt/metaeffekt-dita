@@ -11,7 +11,7 @@
 
     <groupId>org.metaeffekt.dita</groupId>
     <artifactId>ae-dita-toolkit</artifactId>
-    <version>0.9.0</version>
+    <version>0.10.0</version>
     <packaging>pom</packaging>
 
     <properties>
@@ -24,7 +24,7 @@
 
         <ant.version>1.10.1</ant.version>
 
-        <ae.dita.version>0.9.0</ae.dita.version>
+        <ae.dita.version>0.10.0</ae.dita.version>
     </properties>
 
     <dependencies>

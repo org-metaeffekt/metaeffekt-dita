@@ -8,7 +8,7 @@
     <parent>
         <groupId>org.metaeffekt.dita</groupId>
         <artifactId>ae-dita</artifactId>
-        <version>0.9.0</version>
+        <version>0.10.0</version>
         <relativePath>../</relativePath>
     </parent>
 
