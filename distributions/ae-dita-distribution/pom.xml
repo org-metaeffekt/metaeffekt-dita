@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.metaeffekt.dita</groupId>
         <artifactId>ae-dita-distribution-pom</artifactId>
-        <version>0.10.0</version>
+        <version>HEAD-SNAPSHOT</version>
         <relativePath>../../poms/ae-dita-distribution-pom</relativePath>
     </parent>
 
