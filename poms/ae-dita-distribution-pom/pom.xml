@@ -9,7 +9,7 @@
     <parent>
         <groupId>org.metaeffekt.dita</groupId>
         <artifactId>ae-dita-documentation-pom</artifactId>
-        <version>HEAD-SNAPSHOT</version>
+        <version>0.11.0</version>
         <relativePath>../ae-dita-documentation-pom</relativePath>
     </parent>
 

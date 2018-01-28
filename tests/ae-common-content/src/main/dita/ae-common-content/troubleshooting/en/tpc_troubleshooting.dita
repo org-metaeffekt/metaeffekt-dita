@@ -6,9 +6,9 @@
 
     <body>
         <p>This chapter provides assistance in the case of trouble installing and maintaining the
-            ${product.agent.name}. </p>
-        <p>Please also consult the list of known issues provided by the ${product.agent.name} Release Notes.</p>
-        <p>To date, no further issues are known operating the ${product.agent.name}.</p>
+            ${product.name}. </p>
+        <p>Please also consult the list of known issues provided by the ${product.name} Release Notes.</p>
+        <p>To date, no further issues are known operating the ${product.name}.</p>
     </body>
 </topic>
 

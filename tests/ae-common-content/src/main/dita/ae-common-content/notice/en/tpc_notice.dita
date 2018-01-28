@@ -9,7 +9,7 @@
             required by appropriate guidelines or license terms.
         </p>
         <p>
-            This documentation is protected by copyright ${year}, ${organization.name}.
+            This documentation is protected by copyright ${document.copyright.year}, ${organization.name}.
         </p>
     </body>
 </topic>

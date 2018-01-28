@@ -8,9 +8,9 @@ NOTE:
 - Variables may not be used on shared level, but used on common POM level. Therefore we
   also list variables, which are locally not covered by content.
 
-${document.security.level_de} / ${document.security.level_en}
+${document.classification_de} / ${document.classification_en}
 =============================================================
-- Security level of the document in the respective language.
+- Classification of the document in the respective language.
 
 ${document.status_en} / ${document.status_de}
 =============================================
@@ -55,3 +55,7 @@ ${organization.acronym}
 ${organization.name}
 ====================
 - Organization name. Example: MyCo AG
+
+${organization.license}
+=======================
+- The general license under which the organization distributes its components.

@@ -4,7 +4,7 @@
     <title>Bill of Materials</title>
     <body>
         <p>
-            Subsequently all included third-party <abbreviated-form keyref="component"/>s and individual <abbreviated-form keyref="artifact"/>
+            Subsequently all included third-party components and individual <abbreviated-form keyref="artifact"/>
             are listed with references to the licenses and/or contracts.
         </p>
     </body>
