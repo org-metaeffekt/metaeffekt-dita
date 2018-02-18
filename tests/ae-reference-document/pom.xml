@@ -6,7 +6,7 @@
     <parent>
         <groupId>org.metaeffekt.dita</groupId>
         <artifactId>ae-dita-tests</artifactId>
-        <version>0.12.0</version>
+        <version>HEAD-SNAPSHOT</version>
     </parent>
 
     <artifactId>ae-reference-document</artifactId>
