@@ -3,4 +3,7 @@
 **/target/**/*
 **/.DS_Store
 **/src/**/gen/**/*
+**/.project
+**/.classpath
+**/*.prefs
 

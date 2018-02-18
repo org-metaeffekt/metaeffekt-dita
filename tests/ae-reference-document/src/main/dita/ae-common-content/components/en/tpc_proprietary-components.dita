@@ -4,8 +4,8 @@
     <title>Third-Party Proprietary Components</title>
     <body>
         <p>
-            The covered software distribution contains proprietary third-party components. These are generally licensed
-            individually under vendor-specific license terms and specific contractual agreements with the licensee.
+            The covered software distribution contains proprietary third-party components. These are generally licensed 
+            individually under vendor-specific license terms, which further apply towards the licensee of ${product.name}.
         </p>
         <p>
             License and contract information regarding proprietary licenses are covered in section <xref keyref="license-notices"/>.

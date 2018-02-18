@@ -6,18 +6,18 @@
     <parent>
         <groupId>org.metaeffekt.core</groupId>
         <artifactId>ae-core-plugin-management-pom</artifactId>
-        <version>HEAD-SNAPSHOT</version>
+        <version>0.15.0</version>
         <relativePath />
     </parent>
 
     <groupId>org.metaeffekt.dita</groupId>
     <artifactId>ae-dita-documentation-pom</artifactId>
-    <version>HEAD-SNAPSHOT</version>
+    <version>0.12.0</version>
     <packaging>pom</packaging>
 
     <properties>
-        <ae.dita.version>HEAD-SNAPSHOT</ae.dita.version>
-        <ae.core.version>HEAD-SNAPSHOT</ae.core.version>
+        <ae.dita.version>0.12.0</ae.dita.version>
+        <ae.core.version>0.15.0</ae.core.version>
 
         <header.copyright.year>2017</header.copyright.year>
 
@@ -289,6 +289,37 @@
                     <configuration>
                         <ditaSourceGenDir>${basedir}/src/main/dita/${project.artifactId}/gen</ditaSourceGenDir>
                         <ditaCleanTemp>false</ditaCleanTemp>
+                    </configuration>
+                </plugin>
+                <!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
+                <plugin>
+                    <groupId>org.eclipse.m2e</groupId>
+                    <artifactId>lifecycle-mapping</artifactId>
+                    <version>1.0.0</version>
+                    <configuration>
+                        <lifecycleMappingMetadata>
+                            <pluginExecutions>
+                                <pluginExecution>
+                                    <pluginExecutionFilter>
+                                        <groupId>org.metaeffekt.dita</groupId>
+                                        <artifactId>ae-dita-maven-plugin</artifactId>
+                                        <versionRange>[HEAD-SNAPSHOT,)</versionRange>
+                                        <goals>
+                                            <goal>aggregate-content</goal>
+                                            <goal>ensure-dita-toolkit</goal>
+                                            <goal>generate-content</goal>
+                                            <goal>generate-documentation</goal>
+                                            <goal>generate-glossary</goal>
+                                            <goal>mark-generated-content-read-only</goal>
+                                            <goal>mark-generated-content-writable</goal>
+                                        </goals>
+                                    </pluginExecutionFilter>
+                                    <action>
+                                        <ignore></ignore>
+                                    </action>
+                                </pluginExecution>
+                            </pluginExecutions>
+                        </lifecycleMappingMetadata>
                     </configuration>
                 </plugin>
             </plugins>
