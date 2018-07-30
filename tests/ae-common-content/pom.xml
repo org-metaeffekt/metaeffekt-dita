@@ -6,13 +6,13 @@
     <parent>
         <groupId>org.metaeffekt.core</groupId>
         <artifactId>ae-core-plugin-management-pom</artifactId>
-        <version>0.16.0</version>
+        <version>HEAD-SNAPSHOT</version>
         <relativePath />
     </parent>
 
     <groupId>org.metaeffekt.dita</groupId>
     <artifactId>ae-common-content</artifactId>
-    <version>0.13.0</version>
+    <version>HEAD-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <profiles>
