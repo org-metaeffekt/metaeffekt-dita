@@ -17,7 +17,7 @@
         </p>
         <p>
             In case a license demands the provision of source code for a component, the source code is made available
-            by adding source code artifacts to the extended software distribution or by making the source code
+            by adding source code artifacts to the software distribution annex or by making the source code
             available as individually outlined in the <xref keyref="license-notices"/>.
         </p>
     </body>
