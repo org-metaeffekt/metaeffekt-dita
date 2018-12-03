@@ -4,8 +4,8 @@
     <title>${product.name} ${product.version}</title>
     <body>
         <p>
-            The <abbreviated-form keyref="software-distribution"/> covered by this document contains <abbreviated-form keyref="component"/>
-            restricted by individual license terms.
+            The <abbreviated-form keyref="software-distribution"/> covered by this document contains
+            <abbreviated-form keyref="component"/> and <abbreviated-form keyref="subcomponent"/> restricted by individual license terms.
         </p>
         <p>
             This document is part of the <abbreviated-form keyref="software-distribution-annex"/> which addresses

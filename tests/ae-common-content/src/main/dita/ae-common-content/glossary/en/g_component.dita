@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE glossentry PUBLIC "-//OASIS//DTD DITA Glossary Entry//EN" "glossentry.dtd">
-<glossentry id="component">
-    <glossterm>Component</glossterm>
+<glossentry id="subcomponent">
+    <glossterm>Subcomponent</glossterm>
     <glossdef>
-        A component is a group of one or more artifacts. While artifacts are physical files, the component can be
-        regarded as logical aggregate. Licensing information applies on component-level and is consistent within the
-        aggregated artifacts.
+        A subcomponent is a component embedded in a larger component. A subcomponent may have dedicated associated
+        licenses.
     </glossdef>
     <glossBody>
-        <glossSurfaceForm>components</glossSurfaceForm>
+        <glossSurfaceForm>subcomponents</glossSurfaceForm>
     </glossBody>
 </glossentry>
