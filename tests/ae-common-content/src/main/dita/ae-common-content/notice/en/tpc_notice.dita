@@ -4,9 +4,9 @@
     <title>Notice</title>
     <body>
         <p>
-            All company, organization, and product names mentioned in this documentation are used for identification
-            purposes only. A trademark is explicitly identified as registered or unregistered trademark only if
-            required by appropriate guidelines or license terms.
+            All company names, organization names, license names, and product names mentioned in this documentation
+            are used for identification purposes only. A trademark is explicitly identified as registered or
+            unregistered trademark only if required by appropriate guidelines or license terms.
         </p>
         <p>
             This documentation is protected by copyright ${document.copyright.year}, ${organization.name}.
