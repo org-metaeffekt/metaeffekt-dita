@@ -8,13 +8,13 @@
     <parent>
         <groupId>org.metaeffekt.core</groupId>
         <artifactId>ae-core-plugin-management-pom</artifactId>
-        <version>0.20.0</version>
+        <version>HEAD-SNAPSHOT</version>
         <relativePath />
     </parent>
 
     <groupId>org.metaeffekt.dita</groupId>
     <artifactId>ae-dita-maven-plugin</artifactId>
-    <version>0.17.0</version>
+    <version>HEAD-SNAPSHOT</version>
     <packaging>maven-plugin</packaging>
     
     <dependencyManagement>
