@@ -47,42 +47,32 @@ public class ExternalAntDitaLauncher extends AbstractDitaLauncher {
 
         String osName = System.getProperty("os.name");
         if (osName != null && osName.toLowerCase().indexOf("windows") != -1) {
-            antBin += "ant.bat";
+            antBin += "dita.bat";
         } else {
-            antBin += "ant";
+            antBin += "dita";
         }
-
-        // ToDo: (SER) Doesn't exist anymore with new toolkit
-        String antLibs = this.getDitaDir() + File.separator + "tools" + File.separator + "ant" + File.separator + "lib";
-        String ditaLibs = this.getDitaDir() + File.separator + "lib";
 
         Commandline cli = new Commandline(antBin);
-        cli.addEnvironment("ANT_OPTS","-Xmx512m");
-        cli.addEnvironment("ANT_HOME", antHome);
-        
-        cli.addArguments(new String[]{"-buildfile", this.getDitaDir() + File.separator + "build.xml"});
-        cli.addArguments(new String[] { "-Dtarget=init"});
-        cli.addArguments(new String[] { "-Dargs.input=" + this.getInputMap() });
-        cli.addArguments(new String[] { "-Doutput.dir=" + this.getOutputDir() });
-        cli.addArguments(new String[] { "-Ddita.temp.dir=" + this.getTempDir() });
-        cli.addArguments(new String[] { "-Dclean.temp=" + (this.isCleanDitaTemp() ? "yes" : "no") });
-        cli.addArguments(new String[] { "-Dtranstype=" + this.getTranstype() });
-        cli.addArguments(new String[] { "-Dnav-toc=partial" });
-        cli.addArguments(new String[] { "-Dargs.draft=" + (this.isDraft() ? "yes" : "no") });
-        cli.addArguments(new String[] { "-Dargs.grammar.cache=" + (this.isGrammarCacheEnabled() ? "yes" : "no") });
-        cli.addArguments(new String[] { "-Dargs.indexshow=yes" });
+        cli.addArguments(new String[] { "--args.input=" + this.getInputMap() });
+        cli.addArguments(new String[] { "--output.dir=" + this.getOutputDir() });
+        cli.addArguments(new String[] { "--dita.temp.dir=" + this.getTempDir() });
+        cli.addArguments(new String[] { "--clean.temp=" + (this.isCleanDitaTemp() ? "yes" : "no") });
+        cli.addArguments(new String[] { "--transtype=" + this.getTranstype() });
+        cli.addArguments(new String[] { "--nav-toc=partial" });
+        cli.addArguments(new String[] { "--args.draft=" + (this.isDraft() ? "yes" : "no") });
+        cli.addArguments(new String[] { "--args.grammar.cache=" + (this.isGrammarCacheEnabled() ? "yes" : "no") });
+        cli.addArguments(new String[] { "--args.indexshow=yes" });
         if (this.getCustomCss() != null)
-            cli.addArguments(new String[] { "-Dargs.css="+this.getCustomCss() });
-        cli.addArguments(new String[] { "-Dargs.csspath=css" });
-        cli.addArguments(new String[] { "-lib", ditaLibs });
-        cli.addArguments(new String[] { "-Ddita.dir=" + this.getDitaDir() });
+            cli.addArguments(new String[] { "--args.css="+this.getCustomCss() });
+        cli.addArguments(new String[] { "--args.csspath=css" });
+        cli.addArguments(new String[] { "--dita.dir=" + this.getDitaDir() });
         if (this.getDitavalFile() != null) {
-            cli.addArguments(new String[] { "-Ddita.input.valfile=" + this.getDitavalFile() });
+            cli.addArguments(new String[] { "--dita.input.valfile=" + this.getDitavalFile() });
         }
         if (this.getCustomizationDir() != null) {
-            cli.addArguments(new String[] { "-Dcustomization.dir=" + this.getCustomizationDir() });
+            cli.addArguments(new String[] { "--customization.dir=" + this.getCustomizationDir() });
         }
-        cli.addArguments(new String[] { "-Douter.control=quiet" });
+        cli.addArguments(new String[] { "--outer.control=quiet" });
 
         for (String param : cli.getArguments()) {
             getLog().info(param);
@@ -90,34 +80,40 @@ public class ExternalAntDitaLauncher extends AbstractDitaLauncher {
 
         cli.setWorkingDirectory(getBaseDir());
 
-        System.setProperty("ant.home", antHome);
-        System.setProperty("ant.library.dir", antLibs);
         final List<String> errorLines = new ArrayList<String>();
-
         StreamConsumer consumer = new StreamConsumer() {
             
             public void consumeLine(String line) {
                 boolean log = true;
 
-                // ToDo: (SER) This if statement seem fishy and needs review. One condition is duplicate.
+                // escalate error messages
                 if (
                     line.contains("[FATAL]") ||
                     line.contains("[ERROR]") ||
                     line.contains("[SCHWERWIEGEND]") ||
                     line.contains("[FATAL]")) {
                         errorLines.add(line);
-                    }
-                
-                    if (line.contains("BUILD SUCCESSFUL")) {
-                        // skip line
-                        log = false;
-                    }
-            
-                    if (log) {
-                        getLog().info(line);
-                    }
                 }
-            };
+
+                // filter specific messages
+                if (line.contains("BUILD SUCCESSFUL")) {
+                    log = false;
+                }
+
+                // suppress specific messages (that cannot be suppressed by logger configurations)
+                if (line.contains(" [main] DEBUG ") ||
+                    line.contains(" [main] INFO ") ||
+                    line.contains(" [main] WARN ") ||
+                    line.contains("] Loading stylesheet ") ||
+                    line.contains("] Processing ")) {
+                    log = false;
+                }
+
+                if (log) {
+                    getLog().info(line);
+                }
+            }
+        };
 
         try {
             getLog().info(" +-------------------------------------------------------+ ");

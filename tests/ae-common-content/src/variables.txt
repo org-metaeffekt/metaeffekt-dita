@@ -8,6 +8,10 @@ NOTE:
 - Variables may not be used on shared level, but used on common POM level. Therefore we
   also list variables, which are locally not covered by content.
 
+${document.name}
+=============================================
+- The name of the document.
+
 ${document.classification_de} / ${document.classification_en}
 =============================================================
 - Classification of the document in the respective language.
@@ -16,11 +20,22 @@ ${document.status_en} / ${document.status_de}
 =============================================
 - Security status of the document in the respective language.
 
+${document.version}
+=============================================
+- The version of the document.
+
+DEPRECATED
 ${document.last.change_de} / ${document.last.change_en} 
 =======================================================
 - Date, when the document content was last changed / revised. The format is language specific.
 - de: <Month_de> <Year>
 - en: <Month_en>, <Year> 
+
+${document.date_de} / ${document.date_en}
+=======================================================
+- Date, when the document content was created / built. The format is language specific.
+- de: <Day>.<Month>.<Year>
+- en: <Year>-<Month>-<Day>
 
 ${document.copyright.year}
 ==========================
@@ -36,17 +51,17 @@ ${product.name}
 
 ${product.version}
 ==================
-- Product version. MAJOR.MINOR.PATCH formatted version of the product.
+- Product version. Free-form version on product level.
 
-${release.date_de} / ${release.date_en}
+${asset.date_de} / ${asset.date_en}
 =======================================
-- The concrete day of the release. The format is again language specific
+- The concrete day of the asset creation/tag. The format is again language specific
 - de: 30.09.2015
 - en: 2015-09-30
 
-${release.version}
+${asset.version}
 ==================
-- The tag version of the release. MAJOR.MINOR.PATCH.BUILD formatted.
+- The tag version of the asset. Usually MAJOR.MINOR.PATCH.BUILD formatted.
 
 ${organization.acronym}
 =======================

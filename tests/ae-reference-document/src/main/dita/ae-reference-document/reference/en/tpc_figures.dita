@@ -23,11 +23,19 @@
                 <image href="../../resources/category-b/bmw-m4.png" scale="25"/>
             </fig> Non-scalable image formats have a defined resolution. On screen the resolution
             may still be sufficient (72dpi), but when zooming into or when printing low resolution
-            pictures show artifacts. </p>
+            pictures show artifacts.
+        </p>
         <p>
             <fig id="fig_office">
                 <title>Using an JPG as figure.</title>
                 <image href="../../resources/category-b/office.jpg" scale="25"/>
+            </fig>
+        </p>
+
+        <p>
+            <fig id="text_aligment">
+                <title>Testing text alignments.</title>
+                <image href="../../resources/svg-samples/text-alignment.svg" scale="25"/>
             </fig>
         </p>
     </body>

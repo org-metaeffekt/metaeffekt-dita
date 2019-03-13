@@ -5,13 +5,13 @@
     <parent>
         <groupId>org.metaeffekt.core</groupId>
         <artifactId>ae-core-plugin-management-pom</artifactId>
-        <version>HEAD-SNAPSHOT</version>
+        <version>0.20.0</version>
         <relativePath />
     </parent>
 
     <groupId>org.metaeffekt.dita</groupId>
     <artifactId>ae-dita-toolkit</artifactId>
-    <version>HEAD-SNAPSHOT</version>
+    <version>0.16.0</version>
     <packaging>pom</packaging>
 
     <properties>
@@ -24,7 +24,7 @@
 
         <ant.version>1.10.1</ant.version>
 
-        <ae.dita.version>HEAD-SNAPSHOT</ae.dita.version>
+        <ae.dita.version>0.16.0</ae.dita.version>
     </properties>
 
     <dependencies>
@@ -101,14 +101,15 @@
                                     <fileset dir="${dita.root.folder}/docsrc"/>
                                     <fileset dir="${dita.root.folder}/plugins/com.sophos.tocjs" />
 
+                                    <fileset dir="${dita.root.folder}/plugins/org.dita.eclipsehelp" />
+                                    <fileset dir="${dita.root.folder}/plugins/org.dita.htmlhelp" />
                                     <fileset dir="${dita.root.folder}/plugins/org.dita.pdf2.axf" />
                                     <fileset dir="${dita.root.folder}/plugins/org.dita.pdf2.xep" />
+                                    <fileset dir="${dita.root.folder}/plugins/org.dita.troff" />
                                 </delete>
-
                                 <copy overwrite="true" toDir="${dita.root.folder}">
-                                    <fileset dir="${project.basedir}/src/main/resources" includes="plugins/**/*" />
+                                    <fileset dir="${project.basedir}/src/main/resources" includes="**/*" />
                                 </copy>
-
                                 <echo message="Correcting line breaks for Linux binaries." />
                                 <fixcrlf srcDir="${dita.root.folder}/bin"
                                      eol="lf" eof="remove"
@@ -118,11 +119,23 @@
                                 <ant dir="${dita.root.folder}"
                                      antfile="integrator.xml"
                                      target="install">
+                                    <property name="dita.dir" value="${dita.root.folder}" />
                                     <property name="plugin.file" value="file:///${project.build.directory}/ae-standard-pdf-${ae.dita.version}-dita-plugin.zip" />
                                 </ant>
 
+                                <echo message="Removing not required content (after plugin installation)." />
+                                <delete includeEmptyDirs="true">
+                                    <!-- remove deprecated startcmd files -->
+                                    <fileset dir="${dita.root.folder}" includes="startcmd.*"/>
+                                </delete>
+<!--
+                                <echo message="Patching classpath to include logging configuration" />
+                                <echo message="set &quot;CLASSPATH=%CLASSPATH%;%DITA_HOME%\config&quot;" file="${dita.root.folder}/config/env.bat" append="true" />
+                                <echo message="CLASSPATH=&quot;$CLASSPATH:$DITA_HOME/config&quot;" file="${dita.root.folder}/config/env.sh" append="true" />
+-->
                                 <echo message="Creating customized archive." />
                                 <move file="${project.build.directory}/${dita.name.string}" tofile="${project.build.directory}/ae-${dita.name.string}-${project.version}" />
+
                                 <zip destfile="${dita.customized.archive}"
                                      basedir="${project.build.directory}"
                                      includes="ae-${dita.name.string}-${project.version}/**" />

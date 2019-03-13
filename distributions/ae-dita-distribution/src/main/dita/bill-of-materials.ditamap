@@ -2,13 +2,16 @@
 <!DOCTYPE bookmap PUBLIC "-//OASIS//DTD DITA BookMap//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/bookmap.dtd">
 <bookmap id="dcc-bill-of-material">
     <title>
-        <ph>${product.title} ${product.version}</ph>
+        <ph>${product.name} ${product.version}</ph>
     </title>
     <bookmeta>
         <category>Bill of Materials</category>
         <bookrights>
-            <copyrlast>
+            <copyrfirst>
                 <year>2016</year>
+            </copyrfirst>
+            <copyrlast>
+                <year>${}</year>
             </copyrlast>
             <bookowner>
                 <organization>${organization.name}</organization>
@@ -17,8 +20,8 @@
     </bookmeta>
 
     <frontmatter>
-        <notices href="ae-common-content/imprint/en/tpc_imprint.dita" />
-        <notices href="ae-common-content/notice/en/tpc_notice.dita" />
+        <topicref href="ae-common-content/imprint/en/tpc_imprint.dita" />
+        <topicref href="ae-common-content/notice/en/tpc_notice.dita" />
         <booklists>
             <toc/>
         </booklists>
@@ -33,5 +36,15 @@
 
     <chapter href="ae-dita-distribution/gen/ae-dita-distribution-licenses.dita" />
 	<chapter href="ae-dita-distribution/gen/ae-dita-distribution-notices.dita" />
+
+    <backmatter>
+        <booklists>
+            <glossarylist>
+                <topicref format="ditamap" href="ae-dita-distribution/gen/glossary/en/gmap_glossary.ditamap"/>
+            </glossarylist>
+            <figurelist/>
+            <tablelist/>
+        </booklists>
+    </backmatter>
     
 </bookmap>

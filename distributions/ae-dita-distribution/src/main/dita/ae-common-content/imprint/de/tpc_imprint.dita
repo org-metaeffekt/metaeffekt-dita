@@ -11,18 +11,56 @@
         <p/>  
         <section>
             <title>${product.name}</title>
-            <p><lines>Version: ${product.version}
-Releaseversion: ${release.version}
-Releasedatum: ${release.date_de}
-                
-Dokumentensprache: de
-Dokumentenstatus: ${document.status_de}
-Sicherheitsstufe: ${document.security.level_de}
-
-Zuletzt geändert: ${document.last.change_de}
-
-
-Copyright ${document.copyright.year}, ${organization.name}</lines>
+            <p>
+                <dl compact="yes">
+                    <dlentry>
+                        <dt>Version:</dt>
+                        <dd>${product.version}</dd>
+                    </dlentry>
+                </dl>
+            </p>
+        </section>
+        <section>
+            <title>${asset.name}</title>
+            <p>
+                <dl compact="yes">
+                    <dlentry>
+                        <dt>Version:</dt>
+                        <dd>${asset.version}</dd>
+                    </dlentry>
+                    <dlentry>
+                        <dt>Datum:</dt>
+                        <dd>${asset.date_de}</dd>
+                    </dlentry>
+                </dl>
+            </p>
+        </section>
+        <section>
+            <title>${document.name}</title>
+            <p>
+                <dl compact="yes">
+                    <dlentry>
+                        <dt>Version:</dt>
+                        <dd>${document.version}</dd>
+                    </dlentry>
+                    <dlentry>
+                        <dt>Status:</dt>
+                        <dd>${document.status_de}</dd>
+                    </dlentry>
+                    <dlentry>
+                        <dt>Klassifikation:</dt>
+                        <dd>${document.classification_de}</dd>
+                    </dlentry>
+                    <dlentry>
+                        <dt>Datum:</dt>
+                        <dd>${document.date_de}</dd>
+                    </dlentry>
+                </dl>
+            </p>
+            <p>
+            </p>
+           <p>
+                Copyright ${document.copyright.year}, ${organization.name}
             </p>
         </section>
         <p/>  
@@ -31,20 +69,9 @@ Copyright ${document.copyright.year}, ${organization.name}</lines>
         <p/>  
         <section>
             <title>${organization.name}</title>
-            <p><lines>${organization.address}</lines></p>
-        </section>
-        <p/>  
-        <p/>  
-        <p/>  
-        <p/>  
-        <section>
-            <title>Hinweis</title>
-            <p>Alle Firmenlogos sind eingetragene Marken der ${organization.name}.</p>
-            <p>Alle in der Dokumentation erwähnten Produktnamen sind Marken oder eingetragene Marken
-                der entsprechenden Hersteller und werden hier ausschließlich zur Kennzeichnung verwendet.
+            <p>
+                <lines>${organization.address}</lines>
             </p>
-            <p>Dieses Dokument und die beschriebenen Softwarekomponenten unterliegen dem Urheberrecht
-                ${document.copyright.year}, ${organization.name}. </p>
         </section>
     </body>
 </topic>

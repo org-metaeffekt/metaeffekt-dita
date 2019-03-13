@@ -6,28 +6,26 @@
     <parent>
         <groupId>org.metaeffekt.core</groupId>
         <artifactId>ae-core-plugin-management-pom</artifactId>
-        <version>HEAD-SNAPSHOT</version>
+        <version>0.20.0</version>
         <relativePath />
     </parent>
 
     <groupId>org.metaeffekt.dita</groupId>
     <artifactId>ae-dita-documentation-pom</artifactId>
-    <version>HEAD-SNAPSHOT</version>
+    <version>0.16.0</version>
     <packaging>pom</packaging>
 
     <properties>
-        <ae.dita.version>HEAD-SNAPSHOT</ae.dita.version>
-        <ae.core.version>HEAD-SNAPSHOT</ae.core.version>
+        <ae.dita.version>0.16.0</ae.dita.version>
+        <ae.core.version>0.20.0</ae.core.version>
 
         <header.copyright.year>2017</header.copyright.year>
 
-        <document.security.level_en>Sensitive</document.security.level_en>
-        <document.security.level_de>Vertraulich</document.security.level_de>
-        <document.status_en>Draft</document.status_en>
-        <document.status_de>Vorlage</document.status_de>
-        <document.last.change_en>April, 2017</document.last.change_en>
-        <document.last.change_de>April 2017</document.last.change_de>
-        <document.copyright.year>${header.copyright.year}</document.copyright.year>
+        <document.classification_en>Confidential</document.classification_en>
+        <document.classification_de>Vertraulich</document.classification_de>
+
+        <document.status_en>Initial</document.status_en>
+        <document.status_de>Inital</document.status_de>
 
         <dita.source.dir>${basedir}/src/main/dita</dita.source.dir>
         <dita.project.source.dir>${dita.source.dir}/${project.artifactId}</dita.project.source.dir>

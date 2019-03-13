@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.metaeffekt.dita</groupId>
         <artifactId>ae-dita-distribution-pom</artifactId>
-        <version>HEAD-SNAPSHOT</version>
+        <version>0.16.0</version>
         <relativePath>../../poms/ae-dita-distribution-pom</relativePath>
     </parent>
 
@@ -13,29 +13,32 @@
     <packaging>jar</packaging>
 
     <properties>
-        <document.ditamap>bill-of-materials.ditamap</document.ditamap>
-        <document.name>Bill-of-Materials</document.name>
-        <document.version>1.0</document.version>
-        <document.status_en>Approved</document.status_en>
-
-        <product.title>DITA Tool Chain</product.title>
-        <product.name>${product.title}</product.name>
+        <product.name>{met&aelig;ffekt} DITA Toolchain</product.name>
         <product.version>${ae.dita.version}</product.version>
         <product.prefix>ae-dita</product.prefix>
 
-        <release.version>${ae.dita.version}</release.version>
-        <release.date_en>2017-04-19</release.date_en>
+        <asset.name>{&aelig;} DITA Toolchain Distribution</asset.name>
+        <asset.version>${ae.dita.version}</asset.version>
+        <asset.date_en>2019-03-09</asset.date_en>
 
-        <distribution.classifier>PREVIEW</distribution.classifier>
+        <document.name>{met&aelig;ffekt} DITA Toolchain BOM</document.name>
+        <document.date_en>2019-03-09</document.date_en>
+        <document.ditamap>bill-of-materials.ditamap</document.ditamap>
+        <document.copyright.year>2019</document.copyright.year>
+        <document.watermark>{&aelig;}</document.watermark>
+        <document.status_en>Initial</document.status_en>
+        <document.version>1.0</document.version>
+        <document.status_en>Initial</document.status_en>
+        <document.classification_en>Public</document.classification_en>
+
         <distribution.name>ae-dita-${project.version}</distribution.name>
         
         <cryptographic.information.provider>${organization.name}</cryptographic.information.provider>
-        <cryptographic.link.verification.date>14.10.2016</cryptographic.link.verification.date>
-
-        <organization.address>http://www.metaeffekt.org</organization.address>
+        <cryptographic.link.verification.date>09.03.2019</cryptographic.link.verification.date>
 
         <organization.name>{met&#230;ffekt} GmbH</organization.name>
         <organization.accronym>ae</organization.accronym>
+        <organization.address>https://metaeffekt.com</organization.address>
     </properties>
 
     <build>
@@ -53,19 +56,13 @@
                             </goals>
                             <configuration>
                                 <scanExcludes combine.children="append">
-                                    <!-- DITA-OT Components -->
-                                    <exclude>**/org.dita.*/**/*</exclude>
-                                    <exclude>**/org.oasis-open.dita*/**/*</exclude>
-
-                                    <exclude>**/ae-dita-ot-*/xsl/**/*</exclude>
-                                    <exclude>**/ae-dita-ot-*/resources/**/*</exclude>
-                                    <exclude>**/ae-dita-ot-*/bin/**/*</exclude>
-                                    <exclude>**/ae-dita-ot-*/dtd/**/*</exclude>
-
                                     <!-- metaeffekt plugin -->
                                     <exclude>**/org.metaeffekt.*/**/*.xsl</exclude>
                                     <exclude>**/org.metaeffekt.*/**/*.xml</exclude>
                                     <exclude>**/org.metaeffekt.*/**/*.svg</exclude>
+
+                                    <exclude>**/NOTICES</exclude>
+
                                 </scanExcludes>
                             </configuration>
                         </execution>
@@ -129,6 +126,19 @@
                 <configuration>
                     <enableGrammarCache>false</enableGrammarCache>
                 </configuration>
+                <executions>
+                    <execution>
+                        <id>generate-glossary</id>
+                        <phase>process-sources</phase>
+                        <goals>
+                            <goal>generate-glossary</goal>
+                        </goals>
+                        <configuration>
+                            <language>en</language>
+                            <ditaMap>${document.ditamap}</ditaMap>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
 
@@ -150,6 +160,13 @@
             </exclusions>
         </dependency>
 
+        <dependency>
+            <groupId>org.metaeffekt.dita</groupId>
+            <artifactId>ae-common-content</artifactId>
+            <type>jar</type>
+            <classifier>doc</classifier>
+            <version>${ae.dita.version}</version>
+        </dependency>
     </dependencies>
 
 </project>

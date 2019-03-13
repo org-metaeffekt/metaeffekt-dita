@@ -6,33 +6,38 @@
     <parent>
         <groupId>org.metaeffekt.dita</groupId>
         <artifactId>ae-dita-tests</artifactId>
-        <version>HEAD-SNAPSHOT</version>
+        <version>0.16.0</version>
     </parent>
 
     <artifactId>ae-reference-document</artifactId>
     <packaging>jar</packaging>
 
     <properties>
-        <product.name>Whitelabel Reference Document</product.name>
-        <product.prefix>ae-reference-document</product.prefix>
-        <product.version>${project.version}</product.version>
-        <organization.name>{metæffekt} GmbH}</organization.name>
         <maven.ae.documentation.dita.dir>${basedir}/src/main/dita</maven.ae.documentation.dita.dir>
 
-        <document.security.level>Public</document.security.level>
-        <document.status>Draft</document.status>
-        <document.version>0.1</document.version>
-        <document.last.change>19.04.2017</document.last.change>
-        <document.ditamap>ae-reference-document.ditamap</document.ditamap>
-        <document.copyright.year>2017</document.copyright.year>
-        <document.watermark>{&aelig;}</document.watermark>
+        <product.name>{&aelig;} DITA Toolchain</product.name>
+        <product.prefix>ae-reference-document</product.prefix>
+        <product.version>${project.version}</product.version>
 
-        <release.version>0.1.0</release.version>
-        <release.date_en>19th April, 2017</release.date_en>
-        <document.status_en>preview</document.status_en>
-        <document.security.level_en>Public</document.security.level_en>
-        <document.last.change_en>April 2017</document.last.change_en>
-        <organization.address>Whiting Street 101, Sampletown</organization.address>
+        <organization.name>{met&#230;ffekt} GmbH</organization.name>
+        <organization.accronym>ae</organization.accronym>
+        <organization.address>https://metaeffekt.com</organization.address>
+        <organization.license>Apache License 2.0</organization.license>
+
+        <asset.name>{&aelig;} Common Content</asset.name>
+        <asset.version>0.1.0</asset.version>
+        <asset.date_en>2019-03-09</asset.date_en>
+
+        <document.name>{&aelig;} Reference Document</document.name>
+        <document.classification_en>Public</document.classification_en>
+        <document.status>Initial</document.status>
+        <document.version>1.0</document.version>
+        <document.ditamap>ae-reference-document.ditamap</document.ditamap>
+        <document.watermark>{&aelig;}</document.watermark>
+        <document.status_en>Initial</document.status_en>
+        <document.date_en>2019-03-09</document.date_en>
+        <document.copyright.year>2019</document.copyright.year>
+
     </properties>
 
     <build>

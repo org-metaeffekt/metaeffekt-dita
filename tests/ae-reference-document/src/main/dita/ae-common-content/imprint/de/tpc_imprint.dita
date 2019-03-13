@@ -12,18 +12,55 @@
         <section>
             <title>${product.name}</title>
             <p>
-                <lines>Version: ${product.version}
-Releaseversion: ${release.version}
-Releasedatum: ${release.date_de}
-                
-Dokumentensprache: de
-Dokumentenstatus: ${document.status_de}
-Dokumentenklassifikation: ${document.classification_de}
-
-Zuletzt geändert: ${document.last.change_de}
-
-
-Copyright ${document.copyright.year}, ${organization.name}</lines>
+                <dl compact="yes">
+                    <dlentry>
+                        <dt>Version:</dt>
+                        <dd>${product.version}</dd>
+                    </dlentry>
+                </dl>
+            </p>
+        </section>
+        <section>
+            <title>${asset.name}</title>
+            <p>
+                <dl compact="yes">
+                    <dlentry>
+                        <dt>Version:</dt>
+                        <dd>${asset.version}</dd>
+                    </dlentry>
+                    <dlentry>
+                        <dt>Datum:</dt>
+                        <dd>${asset.date_de}</dd>
+                    </dlentry>
+                </dl>
+            </p>
+        </section>
+        <section>
+            <title>${document.name}</title>
+            <p>
+                <dl compact="yes">
+                    <dlentry>
+                        <dt>Version:</dt>
+                        <dd>${document.version}</dd>
+                    </dlentry>
+                    <dlentry>
+                        <dt>Status:</dt>
+                        <dd>${document.status_de}</dd>
+                    </dlentry>
+                    <dlentry>
+                        <dt>Klassifikation:</dt>
+                        <dd>${document.classification_de}</dd>
+                    </dlentry>
+                    <dlentry>
+                        <dt>Datum:</dt>
+                        <dd>${document.date_de}</dd>
+                    </dlentry>
+                </dl>
+            </p>
+            <p>
+            </p>
+           <p>
+                Copyright ${document.copyright.year}, ${organization.name}
             </p>
         </section>
         <p/>  

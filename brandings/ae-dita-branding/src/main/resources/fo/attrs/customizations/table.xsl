@@ -30,6 +30,7 @@
     -->
     <xsl:attribute-set name="common.table.head.entry" use-attribute-sets="__align__center">
         <xsl:attribute name="font-weight">bold</xsl:attribute>
+        <xsl:attribute name="text-align">start</xsl:attribute>
     </xsl:attribute-set>
 
     <!--
@@ -45,6 +46,26 @@
         <!-- Explicit text align for table body entries. -->
         <xsl:attribute name="text-align">start</xsl:attribute>
         <xsl:attribute name="font-size">9pt</xsl:attribute>
+    </xsl:attribute-set>
+
+    <xsl:attribute-set name="dl">
+        <!--DL is a table-->
+        <xsl:attribute name="width">55%</xsl:attribute>
+        <xsl:attribute name="space-before">5pt</xsl:attribute>
+        <xsl:attribute name="space-after">5pt</xsl:attribute>
+    </xsl:attribute-set>
+
+    <xsl:attribute-set name="dlentry.dt__content">
+        <xsl:attribute name="space-before">0pt</xsl:attribute>
+        <xsl:attribute name="space-after">0pt</xsl:attribute>
+        <xsl:attribute name="start-indent">0pt</xsl:attribute>
+        <xsl:attribute name="end-indent">0pt</xsl:attribute>
+        <xsl:attribute name="font-size">10pt</xsl:attribute>
+        <xsl:attribute name="font-weight">normal</xsl:attribute>
+        <xsl:attribute name="text-align">start</xsl:attribute>
+    </xsl:attribute-set>
+
+    <xsl:attribute-set name="dlentry.dd__content" use-attribute-sets="dlentry.dt__content">
     </xsl:attribute-set>
 
 </xsl:stylesheet>

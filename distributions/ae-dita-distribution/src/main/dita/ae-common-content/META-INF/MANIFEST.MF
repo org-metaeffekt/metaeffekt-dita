@@ -1,3 +1,5 @@
 Manifest-Version: 1.0
-Created-By: Plexus Archiver 3.4
+Built-By: kklein
+Created-By: Apache Maven 3.3.9
+Build-Jdk: 1.8.0_161
 

@@ -3,47 +3,75 @@
 <topic id="tpc_imprint">
     <title>Imprint</title>
     <body>
-        <p/>  
         <p/>
-        <p/>  
-        <p/>  
         <p/>
-        <p/>  
+        <p/>
+        <p/>
+        <p/>
+        <p/>
         <section>
             <title>${product.name}</title>
-            <p><lines>Version: ${product.version}
-Release Version: ${release.version}
-Release Date: ${release.date_en}
-                
-Document Language: en
-Document Status: ${document.status_en}
-Security Level: ${document.security.level_en}
-
-Last Change: ${document.last.change_en}
-
-
-Copyright ${document.copyright.year}, ${organization.name}</lines>
+            <p>
+                <dl compact="yes">
+                    <dlentry>
+                        <dt>Version:</dt>
+                        <dd>${product.version}</dd>
+                    </dlentry>
+                </dl>
             </p>
         </section>
-        <p/>  
+        <section>
+            <title>${asset.name}</title>
+            <p>
+                <dl compact="yes">
+                    <dlentry>
+                        <dt>Version:</dt>
+                        <dd>${asset.version}</dd>
+                    </dlentry>
+                    <dlentry>
+                        <dt>Date:</dt>
+                        <dd>${asset.date_en}</dd>
+                    </dlentry>
+                </dl>
+            </p>
+        </section>
+        <section>
+            <title>${document.name}</title>
+            <p>
+                <dl compact="yes">
+                    <dlentry>
+                        <dt>Version:</dt>
+                        <dd>${document.version}</dd>
+                    </dlentry>
+                    <dlentry>
+                        <dt>Status:</dt>
+                        <dd>${document.status_en}</dd>
+                    </dlentry>
+                    <dlentry>
+                        <dt>Classification:</dt>
+                        <dd>${document.classification_en}</dd>
+                    </dlentry>
+                    <dlentry>
+                        <dt>Date:</dt>
+                        <dd>${document.date_en}</dd>
+                    </dlentry>
+                </dl>
+            </p>
+            <p>
+            </p>
+           <p>
+                Copyright ${document.copyright.year}, ${organization.name}
+            </p>
+        </section>
         <p/>
-        <p/>  
-        <p/>  
+        <p/>
+        <p/>
+        <p/>
         <section>
             <title>${organization.name}</title>
-            <p><lines>${organization.address}</lines></p>
-        </section>
-        <p/>  
-        <p/>  
-        <p/>  
-        <p/>  
-        <section>
-            <title>Legal Notice</title>
-            <p>All company logos are a registered trademark of ${organization.name}.</p>
-            <p>The product names mentioned in this documentation are either trademarks or registered
-                trademarks of the respective owners and are stated for identification purposes only. </p>
-            <p>This documentation and the software components are protected by copyright
-                ${document.copyright.year}, ${organization.name}. </p>
+            <p>
+                <lines>${organization.address}</lines>
+            </p>
         </section>
     </body>
 </topic>
