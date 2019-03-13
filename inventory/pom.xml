@@ -8,7 +8,7 @@
     <parent>
         <groupId>org.metaeffekt.dita</groupId>
         <artifactId>ae-dita</artifactId>
-        <version>HEAD-SNAPSHOT</version>
+        <version>0.16.0</version>
         <relativePath>../</relativePath>
     </parent>
 
