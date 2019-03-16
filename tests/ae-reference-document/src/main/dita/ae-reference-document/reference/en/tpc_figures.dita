@@ -33,8 +33,12 @@
         </p>
 
         <p>
-            <fig id="text_aligment">
-                <title>Testing text alignments.</title>
+            The features of SVG are striking in combination with the toolkit. In particular, arbitrary
+            content can be placed as SVG figure. Transparency and alignments are working out great.
+        </p>
+        <p>
+            <fig id="text_alignment">
+                <title>Testing text alignments in SVGs.</title>
                 <image href="../../resources/svg-samples/text-alignment.svg" scale="25"/>
             </fig>
         </p>

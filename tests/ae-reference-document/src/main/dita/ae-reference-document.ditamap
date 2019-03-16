@@ -63,9 +63,7 @@
 
     <part href="ae-reference-document/reference/en/tpc_part-intro.dita">
         <topicref href="ae-reference-document/reference/en/tpc_part-content.dita" />
-        <!-- Markdown is supported with DITA 3.0 onward
         <topicref href="ae-reference-document/reference/en/md_markdown.md" format="markdown"/>
-        -->
     </part>
 
     <appendix href="ae-reference-document/appendix/en/tpc_appendix.dita" >

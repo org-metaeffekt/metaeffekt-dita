@@ -217,6 +217,7 @@ See the accompanying LICENSE file for applicable license.
 
     </xsl:template>
 
+    <!-- AE-MOD: METAEFFEKT EXTENSION TO SUPPORT PAGE NUMBER RENDERING (Page n of m) -->
     <xsl:template match="fo:root/fo:page-sequence[last()]/fo:flow[last()]/fo:block[last()]">
         <xsl:copy>
             <xsl:apply-templates select="@* | node()" />

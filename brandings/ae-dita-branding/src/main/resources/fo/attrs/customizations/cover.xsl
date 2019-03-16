@@ -34,7 +34,7 @@
         <xsl:attribute name="padding">0mm</xsl:attribute>
         <xsl:attribute name="margin">0mm</xsl:attribute>
         <xsl:attribute name="top">-20mm</xsl:attribute>
-        <xsl:attribute name="left">0mm</xsl:attribute>
+        <xsl:attribute name="left">-20mm</xsl:attribute>
         <xsl:attribute name="line-height">0mm</xsl:attribute>
         <xsl:attribute name="height">297mm</xsl:attribute>
         <xsl:attribute name="width">210mm</xsl:attribute>

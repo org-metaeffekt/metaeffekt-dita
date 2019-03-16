@@ -1,0 +1,11 @@
+metaeffekt DITA Branding Customization Notices
+==============================================================================
+
+This artifacts contains customized elements of the DITA Open Toolkit. The
+toolkit is licensed under Apache License 2.0.
+
+The files use fragments of the original toolkit including modifications.
+
+The modifications are licenses under Apache License 2.0 as well.
+
+Copyright of the modification 2016-2019 metaeffekt GmbH.

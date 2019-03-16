@@ -22,22 +22,25 @@ obligations:
 The notices refer to the plugins provided by the original DITA Open Toolkit.
 Please consult the individual plugin folder for further license details.
 
-The metaeffekt plugin / customization adds further software components
-including:
+The metaeffekt plugin / customization currently adds no further software components.
 
-- Apache Avalon       (Apache License Version 2.0)
-- Apache Batik        (Apache License Version 2.0)
-- Apache Common IO    (Apache License Version 2.0)
-- Apache XML Graphics (Apache License Version 2.0) including Apache FOP.
-
-The following elements are not included in the DITA customization:
+The following elements have been removed and are not included in the DITA customization:
 
 - doc
 - docsrc
 - plugins/com.sophos.tocjs
+- plugins/org.dita.eclipsehelp
+- plugins/org.dita.htmlhelp
 - plugins/org.dita.pdf2.axf
 - plugins/org.dita.pdf2.xep
+- plugins/org.dita.troff
 
 Due to issues on Mac the font auto detection has been disabled. The modified fop.xconf file
 can be found in plugins/org.dita.pdf2.fop/cfg/fop.xconf. The modification is marked with the
-comment AE-MOD
+comment AE-MOD.
+
+In order to enable page number rendering in the form 'Page n of m'. The file
+plugins/org.dita.pdf2/xsl/fo/i18n-postprocess_template.xsl was extended. The added XLST
+template is marked with AE-MOD. The templates adds a marked block on the last page of
+the document.
+

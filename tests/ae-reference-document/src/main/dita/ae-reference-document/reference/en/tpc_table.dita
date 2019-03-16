@@ -3,7 +3,7 @@
 <topic id="tpc_tables">
     <title>Tables</title>
     <body>
-        <p>There are several ways to create a table using <abbreviated-form keyref="ditaot"/>. In general the simpletable is quite
+        <p>There are several ways to create a table using <abbreviated-form keyref="ditaot"/>. The simpletable is quite
             easy to use:</p>
         <p>
             <simpletable frame="all" relcolwidth="1.0* 1.89*" id="simpletable_urb_zb1_mx">
@@ -60,7 +60,6 @@
         <p>In case you are using an WYSIWYG<fn>WYSIWYG: <u>W</u>hat <u>Y</u>ou <u>S</u>ee <u>I</u>s <u>W</u>hat <u>Y</u>ou <u>G</u>et.</fn> editor there is no reason to not use the CALS
             table.</p>
         <p>Please also mind that both tables are rendered differently. Actually the {metæffekt}
-            DITA-OT customization does currently not pay particular attention to using simple
-            table.</p>
+            DITA-OT customization does currently not pay particular attention to using simpletable.</p>
     </body>
 </topic>

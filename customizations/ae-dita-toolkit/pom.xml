@@ -15,7 +15,7 @@
     <packaging>pom</packaging>
 
     <properties>
-        <dita.ot.version>2.5.4</dita.ot.version>
+        <dita.ot.version>3.2.1</dita.ot.version>
         <dita.name.string>dita-ot-${dita.ot.version}</dita.name.string>
         <dita.archive>${project.build.directory}/${dita.name.string}.zip</dita.archive>
         <dita.customized.archive>${project.build.directory}/ae-dita-toolkit-${project.version}-bin.zip</dita.customized.archive>
@@ -114,25 +114,27 @@
                                 <fixcrlf srcDir="${dita.root.folder}/bin"
                                      eol="lf" eof="remove"
                                      includes="ant,dita" />
+                                <chmod file="${dita.root.folder}/bin/dita" perm="+x" />
+                                <chmod file="${dita.root.folder}/bin/ant" perm="+x" />
                                 <echo message="Install the configured PDF DITA OT Plugin: ae-standard-pdf-${ae.dita.version}-dita-plugin.zip" />
                                 <property name="dita.dir" value="${dita.root.folder}" />
-                                <ant dir="${dita.root.folder}"
-                                     antfile="integrator.xml"
-                                     target="install">
-                                    <property name="dita.dir" value="${dita.root.folder}" />
-                                    <property name="plugin.file" value="file:///${project.build.directory}/ae-standard-pdf-${ae.dita.version}-dita-plugin.zip" />
-                                </ant>
+
+                                <exec executable="${dita.root.folder}/bin/dita" osfamily="unix">
+                                    <arg value="--install" />
+                                    <arg value="file:///${project.build.directory}/ae-standard-pdf-${ae.dita.version}-dita-plugin.zip" />
+                                </exec>
+                                <exec executable="cmd" osfamily="windows">
+                                    <arg value="${dita.root.folder}/bin/dita.bat" />
+                                    <arg value="--install" />
+                                    <arg value="file:///${project.build.directory}/ae-standard-pdf-${ae.dita.version}-dita-plugin.zip" />
+                                </exec>
 
                                 <echo message="Removing not required content (after plugin installation)." />
                                 <delete includeEmptyDirs="true">
                                     <!-- remove deprecated startcmd files -->
                                     <fileset dir="${dita.root.folder}" includes="startcmd.*"/>
                                 </delete>
-<!--
-                                <echo message="Patching classpath to include logging configuration" />
-                                <echo message="set &quot;CLASSPATH=%CLASSPATH%;%DITA_HOME%\config&quot;" file="${dita.root.folder}/config/env.bat" append="true" />
-                                <echo message="CLASSPATH=&quot;$CLASSPATH:$DITA_HOME/config&quot;" file="${dita.root.folder}/config/env.sh" append="true" />
--->
+
                                 <echo message="Creating customized archive." />
                                 <move file="${project.build.directory}/${dita.name.string}" tofile="${project.build.directory}/ae-${dita.name.string}-${project.version}" />
 
