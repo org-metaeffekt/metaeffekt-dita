@@ -7,14 +7,13 @@
 
     <!-- Entry point for the DITA OT Plugin, see included files for actual customizations. -->
 
-    <xsl:include href="customizations/cover.xsl" />
-    <xsl:include href="customizations/fix-for-layout-masters.xsl" />
-    <xsl:include href="customizations/footer.xsl" />
-    <xsl:include href="customizations/header.xsl" />
-    <xsl:include href="customizations/note.xsl" />
-    <xsl:include href="customizations/table.xsl" />
-    <xsl:include href="customizations/toc-and-numbering.xsl" />
-
+    <xsl:include href="customizations/cx_cover.xsl" />
+    <xsl:include href="customizations/cx_fix-for-layout-masters.xsl" />
+    <xsl:include href="customizations/cx_footer.xsl" />
+    <xsl:include href="customizations/cx_header.xsl" />
+    <xsl:include href="customizations/cx_note.xsl" />
+    <xsl:include href="customizations/cx_table.xsl" />
+    <xsl:include href="customizations/cx_toc-and-numbering.xsl" />
 
     <!-- template override to suppress Notices being displayed on every notice -->
     <xsl:template name="processTopicNotices">

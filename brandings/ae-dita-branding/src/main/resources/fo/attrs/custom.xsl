@@ -6,17 +6,17 @@
 
     <xsl:variable name="toc.toc-indent" select="'12pt'"/>
 
-    <xsl:include href="customizations/chapterBorders.xsl" />
-    <xsl:include href="customizations/cover.xsl" />
-    <xsl:include href="customizations/footer.xsl" />
-    <xsl:include href="customizations/header.xsl" />
-    <xsl:include href="customizations/lists.xsl" />
-    <xsl:include href="customizations/lot-lof.xsl" />
-    <xsl:include href="customizations/note.xsl" />
-    <xsl:include href="customizations/overall.xsl" />
-    <xsl:include href="customizations/screen.xsl" />
-    <xsl:include href="customizations/table.xsl" />
-    <xsl:include href="customizations/toc.xsl" />
+    <xsl:include href="customizations/ca_chapterBorders.xsl" />
+    <xsl:include href="customizations/ca_cover.xsl" />
+    <xsl:include href="customizations/ca_footer.xsl" />
+    <xsl:include href="customizations/ca_header.xsl" />
+    <xsl:include href="customizations/ca_lists.xsl" />
+    <xsl:include href="customizations/ca_lot-lof.xsl" />
+    <xsl:include href="customizations/ca_note.xsl" />
+    <xsl:include href="customizations/ca_overall.xsl" />
+    <xsl:include href="customizations/ca_screen.xsl" />
+    <xsl:include href="customizations/ca_table.xsl" />
+    <xsl:include href="customizations/ca_toc.xsl" />
 
     <!-- introduce spacing between glossary terms -->
     <!-- FIXME: move to dedicated file; clarify responsibilities between plugin and branding  -->
