@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="545px" preserveAspectRatio="none" style="width:597px;height:545px;" version="1.1" viewBox="0 0 597 545" width="597px" zoomAndPan="magnify"><defs/><g><line style="stroke: #0000FF; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="50" x2="50" y1="80" y2="460"/><line style="stroke: #0000FF; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="194.5" x2="194.5" y1="80" y2="460"/><line style="stroke: #0000FF; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="401.5" x2="401.5" y1="80" y2="460"/><line style="stroke: #0000FF; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="548" x2="548" y1="80" y2="460"/><rect fill="#1E90FF" height="28" rx="3" ry="3" style="stroke: #000000; stroke-width: 1.5;" width="85" x="8" y="51"/><text fill="#FFFFFF" font-family="Helvetica" font-size="14" lengthAdjust="spacingAndGlyphs"  x="15" y="68.7803">Mobile App</text><rect fill="#1E90FF" height="28" rx="3" ry="3" style="stroke: #000000; stroke-width: 1.5;" width="85" x="8" y="459"/><text fill="#FFFFFF" font-family="Helvetica" font-size="14" lengthAdjust="spacingAndGlyphs"  x="15" y="476.7803">Mobile App</text><text fill="#1E90FF" font-family="Helvetica" font-size="14" lengthAdjust="spacingAndGlyphs"  x="176.5" y="76.7803">User</text><ellipse cx="194.5" cy="13" fill="#FFFFFF" rx="8" ry="8" style="stroke: #00008B; stroke-width: 2.0;"/><path d="M194.5,21 L194.5,48 M181.5,29 L207.5,29 M194.5,48 L181.5,63 M194.5,48 L207.5,63 " fill="none" style="stroke: #00008B; stroke-width: 2.0;"/><text fill="#1E90FF" font-family="Helvetica" font-size="14" lengthAdjust="spacingAndGlyphs"  x="176.5" y="469.7803">User</text><ellipse cx="194.5" cy="483" fill="#FFFFFF" rx="8" ry="8" style="stroke: #00008B; stroke-width: 2.0;"/><path d="M194.5,491 L194.5,518 M181.5,499 L207.5,499 M194.5,518 L181.5,533 M194.5,518 L207.5,533 " fill="none" style="stroke: #00008B; stroke-width: 2.0;"/><rect fill="#1E90FF" height="28" rx="3" ry="3" style="stroke: #000000; stroke-width: 1.5;" width="84" x="359.5" y="51"/><text fill="#FFFFFF" font-family="Helvetica" font-size="14" lengthAdjust="spacingAndGlyphs"  x="366.5" y="68.7803">Reseller UI</text><rect fill="#1E90FF" height="28" rx="3" ry="3" style="stroke: #000000; stroke-width: 1.5;" width="84" x="359.5" y="459"/><text fill="#FFFFFF" font-family="Helvetica" font-size="14" lengthAdjust="spacingAndGlyphs"  x="366.5" y="476.7803">Reseller UI</text><rect fill="#1E90FF" height="28" rx="3" ry="3" style="stroke: #000000; stroke-width: 1.5;" width="75" x="511" y="51"/><text fill="#FFFFFF" font-family="Helvetica" font-size="14" lengthAdjust="spacingAndGlyphs"  x="518" y="68.7803">Database</text><rect fill="#1E90FF" height="28" rx="3" ry="3" style="stroke: #000000; stroke-width: 1.5;" width="75" x="511" y="459"/><text fill="#FFFFFF" font-family="Helvetica" font-size="14" lengthAdjust="spacingAndGlyphs"  x="518" y="476.7803">Database</text><polygon fill="#808080" points="389.5,105,399.5,109,389.5,113,393.5,109" style="stroke: #808080; stroke-width: 1.0;"/><line style="stroke: #808080; stroke-width: 1.0;" x1="194.5" x2="395.5" y1="109" y2="109"/><text fill="#000000" font-family="Helvetica" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" x="201.5" y="104.0103">1</text><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs"  x="212.5" y="104.0103">Request to login</text><polygon fill="#808080" points="205.5,145,195.5,149,205.5,153,201.5,149" style="stroke: #808080; stroke-width: 1.0;"/><line style="stroke: #808080; stroke-width: 1.0;" x1="199.5" x2="400.5" y1="149" y2="149"/><text fill="#000000" font-family="Helvetica" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs"  x="211.5" y="137.5103">2</text><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs"  x="222.5" y="131.0103">Ask for username, password</text><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs"  x="222.5" y="144.0103">and TOTP</text><polygon fill="#808080" points="61.5,185,51.5,189,61.5,193,57.5,189" style="stroke: #808080; stroke-width: 1.0;"/><line style="stroke: #808080; stroke-width: 1.0;" x1="55.5" x2="193.5" y1="189" y2="189"/><text fill="#000000" font-family="Helvetica" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs"  x="67.5" y="177.5103">3</text><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs"  x="78.5" y="171.0103">Start the app to</text><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs"  x="78.5" y="184.0103">read the TOTP</text><line style="stroke: #808080; stroke-width: 1.0;" x1="50.5" x2="92.5" y1="242" y2="242"/><line style="stroke: #808080; stroke-width: 1.0;" x1="92.5" x2="92.5" y1="242" y2="255"/><line style="stroke: #808080; stroke-width: 1.0;" x1="51.5" x2="92.5" y1="255" y2="255"/><polygon fill="#808080" points="61.5,251,51.5,255,61.5,259,57.5,255" style="stroke: #808080; stroke-width: 1.0;"/><text fill="#000000" font-family="Helvetica" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs"  x="57.5" y="224.0103">4</text><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs"  x="68.5" y="211.0103">Calculate the TOTP</text><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs"  x="68.5" y="224.0103">base on current</text><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs"  x="68.5" y="237.0103">time and secret key</text><polygon fill="#808080" points="182.5,278,192.5,282,182.5,286,186.5,282" style="stroke: #808080; stroke-width: 1.0;"/><line style="stroke: #808080; stroke-width: 1.0;" x1="50.5" x2="188.5" y1="282" y2="282"/><text fill="#000000" font-family="Helvetica" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs"  x="57.5" y="277.0103">5</text><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs"  x="68.5" y="277.0103">Display TOTP</text><polygon fill="#808080" points="389.5,318,399.5,322,389.5,326,393.5,322" style="stroke: #808080; stroke-width: 1.0;"/><line style="stroke: #808080; stroke-width: 1.0;" x1="194.5" x2="395.5" y1="322" y2="322"/><text fill="#000000" font-family="Helvetica" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs"  x="201.5" y="310.5103">6</text><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs"  x="212.5" y="304.0103">Provide username, password</text><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs"  x="212.5" y="317.0103">and TOTP</text><polygon fill="#808080" points="536.5,358,546.5,362,536.5,366,540.5,362" style="stroke: #808080; stroke-width: 1.0;"/><line style="stroke: #808080; stroke-width: 1.0;" x1="401.5" x2="542.5" y1="362" y2="362"/><text fill="#000000" font-family="Helvetica" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs"  x="408.5" y="350.5103">7</text><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs"  x="419.5" y="344.0103">Get the secret key</text><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs"  x="419.5" y="357.0103">of that user</text><line style="stroke: #808080; stroke-width: 1.0;" x1="401.5" x2="443.5" y1="402" y2="402"/><line style="stroke: #808080; stroke-width: 1.0;" x1="443.5" x2="443.5" y1="402" y2="415"/><line style="stroke: #808080; stroke-width: 1.0;" x1="402.5" x2="443.5" y1="415" y2="415"/><polygon fill="#808080" points="412.5,411,402.5,415,412.5,419,408.5,415" style="stroke: #808080; stroke-width: 1.0;"/><text fill="#000000" font-family="Helvetica" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs"  x="408.5" y="390.5103">8</text><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs"  x="419.5" y="384.0103">Validate username,</text><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs"  x="419.5" y="397.0103">password and TOTP</text><polygon fill="#808080" points="205.5,438,195.5,442,205.5,446,201.5,442" style="stroke: #808080; stroke-width: 1.0;"/><line style="stroke: #808080; stroke-width: 1.0;" x1="199.5" x2="400.5" y1="442" y2="442"/><text fill="#000000" font-family="Helvetica" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs"  x="211.5" y="437.0103">9</text><text fill="#000000" font-family="Helvetica" font-size="13" lengthAdjust="spacingAndGlyphs"  x="222.5" y="437.0103">Login success</text><!--
+@startuml
+autonumber
+
+skinparam shadowing false
+skinparam roundcorner 6
+skinparam FontName Helvetica
+
+skinparam sequence {
+	ArrowColor grey
+    ArrowFontName Helvetica
+
+	ActorBorderColor DarkBlue
+
+	LifeLineBorderColor blue
+	LifeLineBackgroundColor #A9DCDF
+    LifeLineFontName Helvetica
+
+	ParticipantBorderColor Black
+	ParticipantBackgroundColor DodgerBlue
+	ParticipantFontSize 14
+	ParticipantFontColor white
+    ParticipantFontName Helvetica
+
+	ActorBackgroundColor white
+	ActorFontColor DodgerBlue
+	ActorFontSize 14
+    ActorFontName Helvetica
+}
+
+participant "Mobile App" as token
+actor User as user
+participant "Reseller UI" as reseller_ui
+participant "Database" as db
+
+user -> reseller_ui : Request to login
+user <- reseller_ui : Ask for username, password \nand TOTP
+user -> token : Start the app to \nread the TOTP
+token -> token : Calculate the TOTP \nbase on current \ntime and secret key
+user <- token : Display TOTP
+user -> reseller_ui : Provide username, password \nand TOTP
+reseller_ui -> db : Get the secret key \nof that user
+reseller_ui -> reseller_ui : Validate username, \npassword and TOTP
+user <- reseller_ui : Login success
+
+@enduml
+
+PlantUML version 1.2018.11(Sat Sep 22 18:43:53 CEST 2018)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_161-b12
+Operating System: Mac OS X
+OS Version: 10.14.3
+Default Encoding: UTF-8
+Language: en
+Country: DE
+--></g></svg>

@@ -1,0 +1,1 @@
+Check general license terms.

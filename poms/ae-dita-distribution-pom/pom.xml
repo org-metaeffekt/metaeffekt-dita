@@ -9,7 +9,7 @@
     <parent>
         <groupId>org.metaeffekt.dita</groupId>
         <artifactId>ae-dita-documentation-pom</artifactId>
-        <version>HEAD-SNAPSHOT</version>
+        <version>0.20.0</version>
         <relativePath>../ae-dita-documentation-pom</relativePath>
     </parent>
 
@@ -32,23 +32,21 @@
                     <version>2.2</version>
                     <executions>
                         <execution>
-                            <id>unpack-licenses</id>
-                            <phase>generate-sources</phase>
+                            <id>unpack-inventory</id>
                             <goals>
                                 <goal>unpack</goal>
                             </goals>
+                            <phase>generate-sources</phase>
                             <configuration>
+                                <outputDirectory>${project.build.directory}/inventory-base</outputDirectory>
                                 <artifactItems>
                                     <artifactItem>
                                         <groupId>org.metaeffekt.dita</groupId>
                                         <artifactId>ae-dita-inventory</artifactId>
                                         <version>${ae.dita.version}</version>
-                                        <type>jar</type>
-                                        <overWrite>true</overWrite>
-                                        <outputDirectory>${project.build.directory}/tmp/artifact-inventory</outputDirectory>
-                                        <includes>**/licenses/**/*</includes>
                                     </artifactItem>
                                 </artifactItems>
+                                <overWriteSnapshots>true</overWriteSnapshots>
                             </configuration>
                         </execution>
                     </executions>
@@ -118,13 +116,15 @@
                         <failOnMissingLicenseFile>${artifact.inventory.enabled}</failOnMissingLicenseFile>
                         <failOnMissingNotice>${artifact.inventory.enabled}</failOnMissingNotice>
 
-                        <!-- TEMPORARILY DISABLED -->
-                        <failOnMissingLicenseFile>false</failOnMissingLicenseFile>
-                        <failOnMissingNotice>false</failOnMissingNotice>
+                        <relativeLicensePath>licenses</relativeLicensePath>
 
-                        <relativeLicensePath>thirdparty/licenses</relativeLicensePath>
-                        <licenseSourcePath>${project.build.directory}/tmp/artifact-inventory/META-INF/licenses</licenseSourcePath>
-                        <licenseTargetPath>${project.build.directory}/contents/thirdparty/licenses</licenseTargetPath>
+                        <sourceInventoryDir>${project.build.directory}/inventory-base/META-INF</sourceInventoryDir>
+                        <sourceInventoryIncludes>**/*inventory.xls</sourceInventoryIncludes>
+
+                        <targetLicenseDir>${project.build.directory}/contents/licenses</targetLicenseDir>
+                        <targetComponentDir>${project.build.directory}/contents/components</targetComponentDir>
+
+                        <targetDitaPath>${basedir}/src/main/dita/${project.artifactId}/gen</targetDitaPath>
                     </configuration>
                     <dependencies>
                         <dependency>

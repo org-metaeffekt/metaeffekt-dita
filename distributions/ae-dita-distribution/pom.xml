@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.metaeffekt.dita</groupId>
         <artifactId>ae-dita-distribution-pom</artifactId>
-        <version>HEAD-SNAPSHOT</version>
+        <version>0.20.0</version>
         <relativePath>../../poms/ae-dita-distribution-pom</relativePath>
     </parent>
 
@@ -39,6 +39,8 @@
         <organization.name>{met&#230;ffekt} GmbH</organization.name>
         <organization.accronym>ae</organization.accronym>
         <organization.address>https://metaeffekt.com</organization.address>
+
+        <distribution.classifier>bin</distribution.classifier>
     </properties>
 
     <build>
@@ -56,13 +58,7 @@
                             </goals>
                             <configuration>
                                 <scanExcludes combine.children="append">
-                                    <!-- metaeffekt plugin -->
-                                    <exclude>**/org.metaeffekt.*/**/*.xsl</exclude>
-                                    <exclude>**/org.metaeffekt.*/**/*.xml</exclude>
-                                    <exclude>**/org.metaeffekt.*/**/*.svg</exclude>
-
                                     <exclude>**/NOTICES</exclude>
-
                                 </scanExcludes>
                             </configuration>
                         </execution>
@@ -92,7 +88,7 @@
                                     <type>zip</type>
                                 </artifactItem>
                             </artifactItems>
-                            <outputDirectory>${project.build.directory}/contents/installation</outputDirectory>
+                            <outputDirectory>${project.build.directory}/contents/bin</outputDirectory>
                             <overWriteReleases>false</overWriteReleases>
                             <overWriteSnapshots>true</overWriteSnapshots>
                         </configuration>

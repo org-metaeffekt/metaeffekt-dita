@@ -8,7 +8,7 @@
     <parent>
         <groupId>org.metaeffekt.dita</groupId>
         <artifactId>ae-dita</artifactId>
-        <version>HEAD-SNAPSHOT</version>
+        <version>0.20.0</version>
         <relativePath>../</relativePath>
     </parent>
 
@@ -59,88 +59,37 @@
 
         <plugins>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-dependency-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>extract-core-inventory-licenses</id>
-                        <phase>process-resources</phase>
-                        <goals>
-                            <goal>unpack</goal>
-                        </goals>
-                        <configuration>
-                            <outputDirectory>${project.build.directory}/classes</outputDirectory>
-                            <artifactItems>
-                                <artifactItem>
-                                    <groupId>org.metaeffekt.core</groupId>
-                                    <artifactId>ae-core-inventory</artifactId>
-                                    <version>${ae.core.version}</version>
-                                    <type>jar</type>
-                                    <includes>**/*</includes>
-                                    <excludes>**/maven, **/maven/**/*, **/*.xls, **/*.MF</excludes>
-                                </artifactItem>
-                            </artifactItems>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>extract-core-inventory</id>
-                        <phase>process-resources</phase>
-                        <goals>
-                            <goal>unpack</goal>
-                        </goals>
-                        <configuration>
-                            <outputDirectory>${project.build.directory}/tmp</outputDirectory>
-                            <artifactItems>
-                                <artifactItem>
-                                    <groupId>org.metaeffekt.core</groupId>
-                                    <artifactId>ae-core-inventory</artifactId>
-                                    <version>${ae.core.version}</version>
-                                    <type>jar</type>
-                                    <includes>**/*.xls</includes>
-                                </artifactItem>
-                            </artifactItems>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-
-            <plugin>
                 <groupId>org.metaeffekt.core</groupId>
                 <artifactId>ae-inventory-maven-plugin</artifactId>
                 <executions>
                     <execution>
-                        <id>2016-Q1</id>
+                        <id>update-inventory</id>
                         <phase>prepare-package</phase>
                         <goals>
                             <goal>update-inventory</goal>
                         </goals>
                         <configuration>
-                            <sourceInventoryPath>${project.build.directory}/classes/META-INF/ae-dita-artifact-inventory.xls</sourceInventoryPath>
-                            <targetInventoryPath>${project.build.directory}/classes/META-INF/ae-dita-artifact-inventory.xls</targetInventoryPath>
+                            <sourceInventoryPath>${project.build.directory}/classes/META-INF/inventory/ae-dita-artifact-inventory.xls</sourceInventoryPath>
+                            <targetInventoryPath>${project.build.directory}/classes/META-INF/inventory/ae-dita-artifact-inventory.xls</targetInventoryPath>
+
+                            <processors>
+                                <processor>
+                                    <className>org.metaeffekt.core.inventory.processor.ValidateInventoryProcessor</className>
+                                    <properties>
+                                        <licenses.path>${project.build.directory}/classes/META-INF/licenses</licenses.path>
+                                        <components.path>${project.build.directory}/classes/META-INF/components</components.path>
+                                        <create.license.folders>false</create.license.folders>
+                                        <create.component.folders>false</create.component.folders>
+
+                                        <!-- FIXME: the inconsistent version message currently is interpreted as an error. -->
+                                        <failOnError>false</failOnError>
+                                    </properties>
+                                </processor>
+                            </processors>
+
                         </configuration>
                     </execution>
                 </executions>
-                <configuration>
-                    <processors>
-                        <processor>
-                            <className>org.metaeffekt.core.inventory.processor.InheritInventoryProcessor</className>
-                            <properties>
-                                <input.inventory.path>${project.build.directory}/tmp/META-INF/ae-core-artifact-inventory.xls</input.inventory.path>
-                            </properties>
-                        </processor>
-                        <processor>
-                            <className>org.metaeffekt.core.inventory.processor.CleanupInventoryProcessor</className>
-                            <skip>true</skip>
-                        </processor>
-                        <processor>
-                            <className>org.metaeffekt.core.inventory.processor.CleanupInventoryProcessor</className>
-                            <skip>true</skip>
-                        </processor>
-                        <processor>
-                            <className>org.metaeffekt.core.inventory.processor.UpdateVersionRecommendationProcessor</className>
-                        </processor>
-                    </processors>
-                </configuration>
             </plugin>
         </plugins>
     </build>

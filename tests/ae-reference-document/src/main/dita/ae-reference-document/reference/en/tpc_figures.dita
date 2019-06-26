@@ -42,5 +42,16 @@
                 <image href="../../resources/svg-samples/text-alignment.svg" scale="25"/>
             </fig>
         </p>
+
+        <p>
+            Also nice... Integrate with plantUml.
+        </p>
+        <p>
+            <fig id="PlantUML Example">
+                <title>Sequence Diagram using PlantUML embedded as SVG.</title>
+                <image href="../../resources/svg-samples/sequence.svg" scale="50"/>
+            </fig>
+        </p>
+
     </body>
 </topic>

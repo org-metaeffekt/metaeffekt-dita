@@ -33,14 +33,15 @@ Fenced block:
 ```{.scala #foreach-example}
 items.foreach(println)
 ```
+\<xxxxx>_\<xxxxx>_\<xxxxx>
 
 Tables
 ------
 
-| First Header | Second Header |         Third Header |
-| :----------- | :-----------: | -------------------: |
+| First Header | Second Header | Third Header |
+| :--- | :--- | -------------------------------: |
 | First row    |      Data     | Very long data entry |
-| Second row   |    **Cell**   |               *Cell* |
+| Second row         |    **Cell**   |    x      *Cell* |
 [simple_table]
 
 |              | Grouping                    ||

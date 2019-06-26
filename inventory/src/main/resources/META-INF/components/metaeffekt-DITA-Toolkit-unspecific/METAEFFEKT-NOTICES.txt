@@ -1,0 +1,46 @@
+metaeffekt DITA Toolkit Customization Notices
+==============================================================================
+
+This artifact represents a customization of the DITA Open Toolkit
+accessible at http://www.dita-ot.org.
+
+The original DITA open Toolkit is distributed with detailed references to
+the licenses under which the toolkit itself and contained software artifacts
+are distributed.
+
+Apache license under which the DITA Open Toolkit is distributed:
+  LICENSE
+
+Additional notice derived from the Project Management Committee of the DITA
+Open Toolkit:
+  NOTICES.txt
+
+DITA Open Toolkit provided details on the used licenses and license
+obligations:
+  NOTICES.txt
+
+The notices refer to the plugins provided by the original DITA Open Toolkit.
+Please consult the individual plugin folder for further license details.
+
+The metaeffekt plugin / customization currently adds no further software components.
+
+The following elements have been removed and are not included in the DITA customization:
+
+- doc
+- docsrc
+- plugins/com.sophos.tocjs
+- plugins/org.dita.eclipsehelp
+- plugins/org.dita.htmlhelp
+- plugins/org.dita.pdf2.axf
+- plugins/org.dita.pdf2.xep
+- plugins/org.dita.troff
+
+Due to issues on Mac the font auto detection has been disabled. The modified fop.xconf file
+can be found in plugins/org.dita.pdf2.fop/cfg/fop.xconf. The modification is marked with the
+comment AE-MOD.
+
+In order to enable page number rendering in the form 'Page n of m'. The file
+plugins/org.dita.pdf2/xsl/fo/i18n-postprocess_template.xsl was extended. The added XLST
+template is marked with AE-MOD. The templates adds a marked block on the last page of
+the document.
+
