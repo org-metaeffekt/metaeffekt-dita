@@ -8,13 +8,17 @@
 
     <xsl:attribute-set name="odd__footer" use-attribute-sets="common.border__top">
         <xsl:attribute name="border-before-color">#bbb</xsl:attribute>
-        <xsl:attribute name="text-align-last">justify</xsl:attribute>
+        <xsl:attribute name="border-before-style">none</xsl:attribute>
+
+        <xsl:attribute name="text-align">center</xsl:attribute>
+        <xsl:attribute name="text-align-last">center</xsl:attribute>
         <xsl:attribute name="font-family">Helvetica</xsl:attribute>
         <xsl:attribute name="font-size">9pt</xsl:attribute>
         <xsl:attribute name="font-weight">regular</xsl:attribute>
         <xsl:attribute name="color">black</xsl:attribute>
-        <xsl:attribute name="padding-top">3pt</xsl:attribute>
+        <xsl:attribute name="padding-top">0pt</xsl:attribute>
         <xsl:attribute name="padding-bottom">15pt</xsl:attribute>
+        <xsl:attribute name="margin-top">0pt</xsl:attribute>
         <xsl:attribute name="margin-left">
             <xsl:value-of select="$page-margins"/>
         </xsl:attribute>

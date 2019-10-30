@@ -60,7 +60,6 @@
         <topicref href="ae-reference-document/reference-bom/en/tpc_example-distribution-notices.dita" keys="license-notices"/>
     </chapter>
 
-
     <part href="ae-reference-document/reference/en/tpc_part-intro.dita">
         <topicref href="ae-reference-document/reference/en/tpc_part-content.dita" />
         <topicref href="ae-reference-document/reference/en/md_markdown.md" format="markdown"/>
@@ -80,6 +79,7 @@
             <glossarylist>
                 <topicref format="ditamap" href="gen/glossary/en/gmap_glossary.ditamap"/>
             </glossarylist>
+            <indexlist/>
         </booklists>
     </backmatter>
 </bookmap>

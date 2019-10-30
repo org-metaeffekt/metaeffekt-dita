@@ -12,7 +12,7 @@
     <!-- the actual footer content -->
 
     <xsl:template name="genericCustomFooter">
-        <!-- Product Name -->
+        <!-- Product Name 
         <xsl:choose>
             <xsl:when test="$map/*[contains(@class,' topic/title ')][1]">
                 <xsl:apply-templates select="$map/*[contains(@class,' topic/title ')][1]"/>
@@ -28,19 +28,22 @@
             </xsl:otherwise>
         </xsl:choose>
         <fo:leader leader-pattern="space"/>
-        <!-- Document Category -->
+        -->
+        <!-- Document Category 
         <xsl:choose>
             <xsl:when test="$map/bookmeta/*[contains(@class,' topic/category ')][1]">
                 <xsl:value-of select="$map/bookmeta/*[contains(@class,' topic/category ')][1]"/>
             </xsl:when>
         </xsl:choose>
         <fo:leader leader-pattern="space"/>
+        -->
+
         <!-- Page number -->
         <xsl:call-template name="getVariable">
             <xsl:with-param name="id" select="'Custom Footer Page Number'"/>
             <xsl:with-param name="params">
                 <pagenum>
-                    <fo:page-number/>
+                    Page <fo:page-number/> of <fo:page-number-citation ref-id="ae-last-page-marker" />
                 </pagenum>
             </xsl:with-param>
         </xsl:call-template>
@@ -211,5 +214,5 @@
             </fo:block>
         </fo:static-content>
     </xsl:template>
-
+    
 </xsl:stylesheet>

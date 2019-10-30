@@ -11,7 +11,7 @@
     <xsl:template name="createFrontCoverContents">
         <!-- insert image into the cover -->
         <xsl:call-template name="metaeffekt:cover-image" />
-        <!-- set the title -->
+        <!-- set the title 
         <fo:block xsl:use-attribute-sets="__frontmatter__title">
             <xsl:choose>
                 <xsl:when test="$map/*[contains(@class,' topic/title ')][1]">
@@ -28,13 +28,13 @@
                 </xsl:otherwise>
             </xsl:choose>
         </fo:block>
+        -->
         <!-- set the subtitle -->
         <!--
         <xsl:apply-templates select="$map//*[contains(@class,' bookmap/booktitlealt ')]"/>
         <fo:block xsl:use-attribute-sets="__frontmatter__owner">
             <xsl:apply-templates select="$map//*[contains(@class,' bookmap/bookmeta ')]"/>
         </fo:block>
-        -->
         <fo:block xsl:use-attribute-sets="__frontmatter__subtitle">
             <xsl:choose>
                 <xsl:when test="$map/bookmeta/*[contains(@class,' topic/category ')][1]">
@@ -42,6 +42,17 @@
                 </xsl:when>
             </xsl:choose>
         </fo:block>
+        -->
+
+		<!--        
+        <fo:block xsl:use-attribute-sets="__frontmatter__subtitle">
+            <xsl:choose>
+                <xsl:when test="$map/bookmeta/bookid/bookpartno">
+                    <xsl:value-of select="$map/bookmeta/bookid/bookpartno[1]"/>
+                </xsl:when>
+            </xsl:choose>
+        </fo:block>
+        -->
     </xsl:template>
 
     <!--

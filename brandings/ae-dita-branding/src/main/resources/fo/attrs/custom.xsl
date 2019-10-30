@@ -30,6 +30,14 @@
         <xsl:attribute name="format">1</xsl:attribute>
     </xsl:attribute-set>
 
+    <xsl:attribute-set name="page-sequence.lof" use-attribute-sets="page-sequence.toc">
+        <xsl:attribute name="format">1</xsl:attribute>
+    </xsl:attribute-set>
+
+    <xsl:attribute-set name="page-sequence.frontmatter">
+      <xsl:attribute name="format">1</xsl:attribute>
+    </xsl:attribute-set>
+
     <!-- TOC related attribute tuning -->
     <xsl:attribute-set name="__toc__header" use-attribute-sets="common.title">
         <xsl:attribute name="space-before">0pt</xsl:attribute>
@@ -37,10 +45,6 @@
         <xsl:attribute name="font-size">18pt</xsl:attribute>
         <xsl:attribute name="font-weight">bold</xsl:attribute>
         <xsl:attribute name="padding-top">16.8pt</xsl:attribute>
-    </xsl:attribute-set>
-
-    <xsl:attribute-set name="page-sequence.lof" use-attribute-sets="page-sequence.toc">
-        <xsl:attribute name="format">1</xsl:attribute>
     </xsl:attribute-set>
 
     <xsl:attribute-set name="__toc__indent__lot" use-attribute-sets="__toc__indent__booklist">
@@ -55,6 +59,18 @@
         <xsl:attribute name="linefeed-treatment">preserve</xsl:attribute>
         <xsl:attribute name="wrap-option">wrap</xsl:attribute>
         <xsl:attribute name="font-size">100%</xsl:attribute>
+    </xsl:attribute-set>
+
+    <xsl:variable name="page-margin-bottom">25mm</xsl:variable>
+
+    <xsl:attribute-set name="region-after">
+        <xsl:attribute name="extent">25mm</xsl:attribute>
+        <xsl:attribute name="display-align">after</xsl:attribute>
+        <xsl:attribute name="padding-bottom">4mm</xsl:attribute>
+
+        <!-- Uncomment to visualize footer region
+        <xsl:attribute name="background-color">#f0f0f0</xsl:attribute>
+        -->
     </xsl:attribute-set>
 
 </xsl:stylesheet>

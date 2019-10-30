@@ -2,6 +2,12 @@
 <xsl:stylesheet exclude-result-prefixes="metaeffekt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
                 xmlns:fo="http://www.w3.org/1999/XSL/Format"
+                xmlns:opentopic-i18n="http://www.idiominc.com/opentopic/i18n"
+                xmlns:opentopic-index="http://www.idiominc.com/opentopic/index"
+                xmlns:opentopic="http://www.idiominc.com/opentopic"
+                xmlns:opentopic-func="http://www.idiominc.com/opentopic/exsl/function"
+                xmlns:ot-placeholder="http://suite-sol.com/namespaces/ot-placeholder"
+                xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot"
                 xmlns:metaeffekt="org.metaeffekt"
                 version="2.0">
 
@@ -14,6 +20,7 @@
     <xsl:include href="customizations/cx_note.xsl" />
     <xsl:include href="customizations/cx_table.xsl" />
     <xsl:include href="customizations/cx_toc-and-numbering.xsl" />
+
 
     <!-- template override to suppress Notices being displayed on every notice -->
     <xsl:template name="processTopicNotices">

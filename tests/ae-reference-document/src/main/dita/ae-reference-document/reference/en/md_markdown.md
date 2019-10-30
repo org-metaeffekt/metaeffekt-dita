@@ -1,6 +1,6 @@
 # Markdown Test
 
-This test content was taken from https://github.com/jelovirt/dita-ot-markdown and
+This test content was taken and adopted from https://github.com/jelovirt/dita-ot-markdown and
 is used under Apache License 2.0.
 
 Paragraph ~~Text~~ *test* and **list**:
@@ -33,6 +33,8 @@ Fenced block:
 ```{.scala #foreach-example}
 items.foreach(println)
 ```
+
+Escaping characters:
 \<xxxxx>_\<xxxxx>_\<xxxxx>
 
 Tables
@@ -42,7 +44,7 @@ Tables
 | :--- | :--- | -------------------------------: |
 | First row    |      Data     | Very long data entry |
 | Second row         |    **Cell**   |    x      *Cell* |
-[simple_table]
+[Simple Markdown Table]
 
 |              | Grouping                    ||
 | First Header | Second Header | Third Header |
@@ -50,7 +52,7 @@ Tables
 | Content      | *Long Cell*                 ||
 | Content      | **Cell**      | Cell         |
 | New section  | More          | Data         |
-[Prototype table][reference_table]
+[Grouping Markdown Table]
 
 Links
 -----

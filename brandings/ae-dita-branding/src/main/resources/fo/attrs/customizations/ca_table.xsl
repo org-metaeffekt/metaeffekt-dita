@@ -10,6 +10,30 @@
         - Smaller font size in tables.
     -->
 
+    <xsl:attribute-set name="common.border__top">
+        <xsl:attribute name="border-before-style">solid</xsl:attribute>
+        <xsl:attribute name="border-before-width">0.5pt</xsl:attribute>
+        <xsl:attribute name="border-before-color">black</xsl:attribute>
+    </xsl:attribute-set>
+
+    <xsl:attribute-set name="common.border__bottom">
+        <xsl:attribute name="border-after-style">solid</xsl:attribute>
+        <xsl:attribute name="border-after-width">0.5pt</xsl:attribute>
+        <xsl:attribute name="border-after-color">black</xsl:attribute>
+    </xsl:attribute-set>
+
+    <xsl:attribute-set name="common.border__right">
+        <xsl:attribute name="border-end-style">solid</xsl:attribute>
+        <xsl:attribute name="border-end-width">0.5pt</xsl:attribute>
+        <xsl:attribute name="border-end-color">black</xsl:attribute>
+    </xsl:attribute-set>
+
+    <xsl:attribute-set name="common.border__left">
+        <xsl:attribute name="border-start-style">solid</xsl:attribute>
+        <xsl:attribute name="border-start-width">0.5pt</xsl:attribute>
+        <xsl:attribute name="border-start-color">black</xsl:attribute>
+    </xsl:attribute-set>
+
     <!--
         - Background color of the header row.
         - Border of the header row entries.
@@ -28,9 +52,8 @@
         - Bold font for table header entries.
         - Align all header entries in the center.
     -->
-    <xsl:attribute-set name="common.table.head.entry" use-attribute-sets="__align__center">
+    <xsl:attribute-set name="common.table.head.entry" use-attribute-sets="__align__left">
         <xsl:attribute name="font-weight">bold</xsl:attribute>
-        <xsl:attribute name="text-align">start</xsl:attribute>
     </xsl:attribute-set>
 
     <!--
@@ -47,25 +70,25 @@
         <xsl:attribute name="text-align">start</xsl:attribute>
         <xsl:attribute name="font-size">9pt</xsl:attribute>
     </xsl:attribute-set>
-
+    
     <xsl:attribute-set name="dl">
-        <!--DL is a table-->
-        <xsl:attribute name="width">55%</xsl:attribute>
-        <xsl:attribute name="space-before">5pt</xsl:attribute>
-        <xsl:attribute name="space-after">5pt</xsl:attribute>
-    </xsl:attribute-set>
+		<!--DL is a table-->
+		<xsl:attribute name="width">55%</xsl:attribute>
+		<xsl:attribute name="space-before">5pt</xsl:attribute>
+		<xsl:attribute name="space-after">5pt</xsl:attribute>
+	</xsl:attribute-set>
 
-    <xsl:attribute-set name="dlentry.dt__content">
-        <xsl:attribute name="space-before">0pt</xsl:attribute>
-        <xsl:attribute name="space-after">0pt</xsl:attribute>
-        <xsl:attribute name="start-indent">0pt</xsl:attribute>
-        <xsl:attribute name="end-indent">0pt</xsl:attribute>
-        <xsl:attribute name="font-size">10pt</xsl:attribute>
-        <xsl:attribute name="font-weight">normal</xsl:attribute>
-        <xsl:attribute name="text-align">start</xsl:attribute>
-    </xsl:attribute-set>
+	<xsl:attribute-set name="dlentry.dt__content">
+		<xsl:attribute name="space-before">0pt</xsl:attribute>
+		<xsl:attribute name="space-after">0pt</xsl:attribute>
+		<xsl:attribute name="start-indent">0pt</xsl:attribute>
+		<xsl:attribute name="end-indent">0pt</xsl:attribute>
+		<xsl:attribute name="font-size">10pt</xsl:attribute>
+		<xsl:attribute name="font-weight">normal</xsl:attribute>
+		<xsl:attribute name="text-align">start</xsl:attribute>
+	</xsl:attribute-set>
 
-    <xsl:attribute-set name="dlentry.dd__content" use-attribute-sets="dlentry.dt__content">
-    </xsl:attribute-set>
+	<xsl:attribute-set name="dlentry.dd__content" use-attribute-sets="dlentry.dt__content">
+	</xsl:attribute-set>
 
 </xsl:stylesheet>

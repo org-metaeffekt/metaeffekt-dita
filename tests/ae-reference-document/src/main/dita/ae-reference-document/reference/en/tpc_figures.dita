@@ -9,7 +9,7 @@
         <p>
             <fig id="fig_dcc-shell-and-agent">
                 <title>Using an SVG as figure.</title>
-                <image href="../../resources/category-a/dcc-shell-agent-communication.svg" scale="70"/>
+                <image href="../../resources/category-a/dcc-shell-agent-communication.svg" scale="80"/>
             </fig>
 
             SVGs - as these are XML files - can use placeholders as well. This way context specific replacements can
@@ -20,7 +20,7 @@
         <p>
             <fig id="fig_m4">
                 <title>Using an PNG as figure.</title>
-                <image href="../../resources/category-b/bmw-m4.png" scale="25"/>
+                <image href="../../resources/category-b/grade.png" scale="25"/>
             </fig> Non-scalable image formats have a defined resolution. On screen the resolution
             may still be sufficient (72dpi), but when zooming into or when printing low resolution
             pictures show artifacts.
@@ -47,9 +47,9 @@
             Also nice... Integrate with plantUml.
         </p>
         <p>
-            <fig id="PlantUML Example">
+            <fig id="PlantUML-Example">
                 <title>Sequence Diagram using PlantUML embedded as SVG.</title>
-                <image href="../../resources/svg-samples/sequence.svg" scale="50"/>
+                <image href="../../resources/svg-samples/sequence.svg" scale="80"/>
             </fig>
         </p>
 

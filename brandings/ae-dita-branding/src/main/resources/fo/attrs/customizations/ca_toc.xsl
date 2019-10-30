@@ -4,4 +4,12 @@
 
     <xsl:variable name="tocMaximumLevel">3</xsl:variable>
 
+    <xsl:attribute-set name="__toc__header" use-attribute-sets="common.title">
+        <xsl:attribute name="space-before">0pt</xsl:attribute>
+        <xsl:attribute name="space-after">16.8pt</xsl:attribute>
+        <xsl:attribute name="font-size">10pt</xsl:attribute>
+        <xsl:attribute name="font-weight">bold</xsl:attribute>
+        <xsl:attribute name="padding-top">10.0pt</xsl:attribute>
+    </xsl:attribute-set>
+
 </xsl:stylesheet>

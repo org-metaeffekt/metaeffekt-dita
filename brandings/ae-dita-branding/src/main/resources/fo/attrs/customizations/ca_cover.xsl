@@ -7,7 +7,7 @@
     -->
 
     <xsl:attribute-set name="__frontmatter">
-        <xsl:attribute name="text-align">start</xsl:attribute>
+        <xsl:attribute name="text-align">center</xsl:attribute>
     </xsl:attribute-set>
 
     <xsl:attribute-set name="__frontmatter__title" use-attribute-sets="common.title">

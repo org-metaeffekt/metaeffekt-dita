@@ -14,7 +14,7 @@
             <xsl:choose>
                 <xsl:when test="(count(preceding-sibling::*[contains(@class, ' topic/row ')]) mod 2) = 0">
                     <!-- even row, white -->
-                    <xsl:attribute name="background-color">transparent</xsl:attribute>
+                    <xsl:attribute name="background-color">white</xsl:attribute>
                 </xsl:when>
                 <xsl:otherwise>
                     <!-- odd row, gray -->
