@@ -5,13 +5,13 @@
     <parent>
         <groupId>org.metaeffekt.core</groupId>
         <artifactId>ae-core-plugin-management-pom</artifactId>
-        <version>0.23.0</version>
+        <version>HEAD-SNAPSHOT</version>
         <relativePath />
     </parent>
 
     <groupId>org.metaeffekt.dita</groupId>
     <artifactId>ae-dita-toolkit</artifactId>
-    <version>0.22.0</version>
+    <version>HEAD-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <properties>
@@ -24,7 +24,7 @@
 
         <ant.version>1.10.1</ant.version>
 
-        <ae.dita.version>0.22.0</ae.dita.version>
+        <ae.dita.version>HEAD-SNAPSHOT</ae.dita.version>
     </properties>
 
     <dependencies>
