@@ -30,12 +30,12 @@
     <chapter href="ae-common-content/bill-of-materials/en/tpc_open-source-based-bom.dita" />
 
     <chapter href="ae-common-content/bill-of-materials/en/tpc_bill-of-materials.dita">
-        <topicref href="ae-dita-distribution/gen/ae-dita-distribution-artifact-report.dita" />
-        <topicref href="ae-dita-distribution/gen/ae-dita-distribution-component-report.dita" />
+        <topicref href="ae-dita-distribution/gen/tpc_ae-dita-distribution-artifact-report.dita" />
+        <topicref href="ae-dita-distribution/gen/tpc_ae-dita-distribution-component-report.dita" />
     </chapter>
 
-    <chapter href="ae-dita-distribution/gen/ae-dita-distribution-licenses.dita" />
-	<chapter href="ae-dita-distribution/gen/ae-dita-distribution-notices.dita" />
+    <chapter href="ae-dita-distribution/gen/tpc_ae-dita-distribution-licenses.dita" />
+	<chapter href="ae-dita-distribution/gen/tpc_ae-dita-distribution-notices.dita" />
 
     <backmatter>
         <booklists>
