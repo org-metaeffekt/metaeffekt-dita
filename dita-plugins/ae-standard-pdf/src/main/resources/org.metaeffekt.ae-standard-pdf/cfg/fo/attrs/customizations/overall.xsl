@@ -44,7 +44,7 @@
         <xsl:attribute name="wrap-option">wrap</xsl:attribute>
         <xsl:attribute name="font-family">monospace</xsl:attribute>
         <xsl:attribute name="line-height">120%</xsl:attribute>
-        <xsl:attribute name="font-size">80%</xsl:attribute>
+        <xsl:attribute name="font-size">8pt</xsl:attribute>
     </xsl:attribute-set>
 
 </xsl:stylesheet>

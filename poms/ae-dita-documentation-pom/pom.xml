@@ -25,7 +25,7 @@
         <document.classification_de>Vertraulich</document.classification_de>
 
         <document.status_en>Initial</document.status_en>
-        <document.status_de>Inital</document.status_de>
+        <document.status_de>Initial</document.status_de>
 
         <dita.source.dir>${basedir}/src/main/dita</dita.source.dir>
         <dita.project.source.dir>${dita.source.dir}/${project.artifactId}</dita.project.source.dir>

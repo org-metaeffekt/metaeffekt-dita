@@ -5,7 +5,8 @@
     <body>
         <p>
             The <abbreviated-form keyref="software-distribution"/> covered by this document contains
-            <abbreviated-form keyref="component"/> and <abbreviated-form keyref="subcomponent"/> restricted by individual license terms.
+            <abbreviated-form keyref="component"/> and <abbreviated-form keyref="subcomponent"/> restricted
+            by individual license terms.
         </p>
         <p>
             This document is part of the <abbreviated-form keyref="software-distribution-annex"/> which addresses
@@ -15,7 +16,7 @@
         </p>
         <p>
             The component licenses and notice files are provided as part of the software distribution annex.
-            Licenses may be omitted in case the terms are restricting the distribution.
+            Individual license texts may be omitted in case the terms are restricting the distribution.
         </p>
         <p>
             License obligations of the individual components, as far as these can be addressed in documentation, are

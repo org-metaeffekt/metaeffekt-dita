@@ -54,7 +54,7 @@
         <xsl:attribute name="white-space-collapse">true</xsl:attribute>
         <xsl:attribute name="linefeed-treatment">preserve</xsl:attribute>
         <xsl:attribute name="wrap-option">wrap</xsl:attribute>
-        <xsl:attribute name="font-size">100%</xsl:attribute>
+        <xsl:attribute name="font-size">9pt</xsl:attribute>
     </xsl:attribute-set>
 
 </xsl:stylesheet>

@@ -82,7 +82,7 @@
                                     <exclude>**/*.html</exclude>
                                     <exclude>**/*.htm</exclude>
                                     <exclude>**/*.sql</exclude>
-                                    <exclude>**/*.xml</exclude>
+                                    <!-- <exclude>**/*.xml</exclude> -->
                                     <exclude>**/*.properties</exclude>
                                     <exclude>**/*.ldif</exclude>
                                     <exclude>**/*.xml.vt</exclude>
@@ -91,7 +91,7 @@
                                     <exclude>**/*.jks</exclude>
                                     <exclude>**/*.txt</exclude>
                                     <exclude>**/*.sql</exclude>
-                                    <exclude>**/*.xml</exclude>
+                                    <!-- <exclude>**/*.xml</exclude> -->
                                     <exclude>**/*.bat</exclude>
                                     <exclude>**/*.sh</exclude>
                                     <exclude>**/*.initd</exclude>
@@ -105,8 +105,6 @@
                         </execution>
                     </executions>
                     <configuration>
-                        <enableDita>true</enableDita>
-                        <targetDitaPath>${basedir}/src/main/dita/${project.artifactId}/gen</targetDitaPath>
                         <!-- USE MORE STRICT CHECK FOR DISTRIBUTION -->
                         <failOnInternal>${artifact.inventory.enabled}</failOnInternal>
                         <failOnUnknownVersion>${artifact.inventory.enabled}</failOnUnknownVersion> 
@@ -124,7 +122,11 @@
                         <targetLicenseDir>${project.build.directory}/contents/licenses</targetLicenseDir>
                         <targetComponentDir>${project.build.directory}/contents/components</targetComponentDir>
 
-                        <targetDitaPath>${basedir}/src/main/dita/${project.artifactId}/gen</targetDitaPath>
+                        <targetReportDir>${basedir}/src/main/dita/${project.artifactId}/gen</targetReportDir>
+
+                        <enableBomReport>true</enableBomReport>
+                        <enableVulnerabilityReport>true</enableVulnerabilityReport>
+                        <enableDiffReport>false</enableDiffReport>
                     </configuration>
                     <dependencies>
                         <dependency>
