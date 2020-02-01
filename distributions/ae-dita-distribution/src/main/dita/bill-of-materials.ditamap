@@ -27,14 +27,20 @@
         </booklists>
     </frontmatter>
 
-    <chapter href="ae-common-content/bill-of-materials/en/tpc_open-source-based-bom.dita" />
+    <chapter href="ae-common-content/bill-of-materials/en/tpc_open-source-based-bom.dita">
+        <topicref href="ae-common-content/components/en/tpc_provider-proprietary-components.dita" />
+        <topicref href="ae-common-content/components/en/tpc_proprietary-components.dita" />
+        <topicref href="ae-common-content/components/en/tpc_oss-components.dita" />
+        <topicref href="ae-common-content/components/en/tpc_public-domain-components.dita" />
+        <topicref href="ae-common-content/bill-of-materials/en/tpc_no-import-export-information.dita" />
+    </chapter>
 
     <chapter href="ae-common-content/bill-of-materials/en/tpc_bill-of-materials.dita">
         <topicref href="ae-dita-distribution/gen/tpc_inventory-artifact-report.dita" />
     </chapter>
 
     <chapter href="ae-dita-distribution/gen/tpc_inventory-licenses.dita" />
-	<chapter href="ae-dita-distribution/gen/tpc_inventory-notices.dita" />
+	<chapter href="ae-dita-distribution/gen/tpc_inventory-notices.dita" keys="license-notices" />
 
     <backmatter>
         <booklists>

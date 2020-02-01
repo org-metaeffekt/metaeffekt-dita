@@ -16,17 +16,21 @@
         <product.name>{met&aelig;ffekt} DITA Toolchain</product.name>
         <product.version>${ae.dita.version}</product.version>
         <product.prefix>ae-dita</product.prefix>
+        <product.watermark.name>${product.name}</product.watermark.name>
 
         <asset.name>{&aelig;} DITA Toolchain Distribution</asset.name>
         <asset.version>${ae.dita.version}</asset.version>
         <asset.date_en>2019-03-09</asset.date_en>
 
-        <document.name>{met&aelig;ffekt} DITA Toolchain BOM</document.name>
-        <document.date_en>2019-03-09</document.date_en>
+        <document.id>${product.prefix}.${product.version}</document.id>
+        <document.name>{met&aelig;ffekt} DITA Toolchain Annex</document.name>
+
+        <!-- FIXME: infer date -->
+        <document.date_en>2020-02-01</document.date_en>
         <document.ditamap>bill-of-materials.ditamap</document.ditamap>
-        <document.copyright.year>2019</document.copyright.year>
+        <document.copyright.year>2020</document.copyright.year>
         <document.watermark>{&aelig;}</document.watermark>
-        <document.status_en>Initial</document.status_en>
+        <document.status_en>Release</document.status_en>
         <document.version>1.0</document.version>
         <document.status_en>Initial</document.status_en>
         <document.classification_en>Public</document.classification_en>
@@ -34,11 +38,12 @@
         <distribution.name>ae-dita-${project.version}</distribution.name>
         
         <cryptographic.information.provider>${organization.name}</cryptographic.information.provider>
-        <cryptographic.link.verification.date>09.03.2019</cryptographic.link.verification.date>
+        <cryptographic.link.verification.date>02.01.2020</cryptographic.link.verification.date>
 
         <organization.name>{met&#230;ffekt} GmbH</organization.name>
         <organization.accronym>ae</organization.accronym>
         <organization.address>https://metaeffekt.com</organization.address>
+        <organization.license>Apache License 2.0</organization.license>
 
         <distribution.classifier>bin</distribution.classifier>
 
