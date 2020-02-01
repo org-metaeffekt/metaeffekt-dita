@@ -5,13 +5,13 @@
     <parent>
         <groupId>org.metaeffekt.core</groupId>
         <artifactId>ae-core-plugin-management-pom</artifactId>
-        <version>0.25.0</version>
+        <version>HEAD-SNAPSHOT</version>
         <relativePath />
     </parent>
 
     <groupId>org.metaeffekt.dita</groupId>
     <artifactId>ae-standard-pdf</artifactId>
-    <version>0.23.0</version>
+    <version>HEAD-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <properties>
