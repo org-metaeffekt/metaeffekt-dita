@@ -23,6 +23,7 @@ package org.metaeffekt.dita.maven.generation;
 public enum TransType {
     PDF ("pdf"),
     AE_STANDARD_PDF ("ae-standard-pdf"),
+    RTF ("wordrtf"),
     XHTML ("xhtml"),
     HTML5 ("html5"),
     HTMLHELP ("htmlhelp");

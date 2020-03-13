@@ -118,6 +118,16 @@
                                 <chmod file="${dita.root.folder}/bin/ant" perm="+x" />
                                 <echo message="Install the configured PDF DITA OT Plugin: ae-standard-pdf-${ae.dita.version}-dita-plugin.zip" />
                                 <property name="dita.dir" value="${dita.root.folder}" />
+                                <![CDATA[ NOTE: experimenting with RTF output
+                                <exec executable="${dita.root.folder}/bin/dita" osfamily="unix">
+                                    <arg value="--install" />
+                                    <arg value="https://github.com/dita-ot/org.dita.wordrtf/archive/2.3.zip" />
+                                </exec>
+                                <exec executable="cmd" osfamily="windows">
+                                    <arg value="${dita.root.folder}/bin/dita.bat" />
+                                    <arg value="--install" />
+                                    <arg value="https://github.com/dita-ot/org.dita.wordrtf/archive/2.3.zip" />
+                                </exec>]]-->
 
                                 <exec executable="${dita.root.folder}/bin/dita" osfamily="unix">
                                     <arg value="--install" />

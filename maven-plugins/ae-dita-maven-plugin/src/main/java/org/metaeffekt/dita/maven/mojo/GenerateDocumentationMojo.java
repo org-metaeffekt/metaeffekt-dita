@@ -147,6 +147,11 @@ public class GenerateDocumentationMojo extends AbstractDitaMojo {
     public static final List<TransType> PDF_FORMATS = Arrays.asList(TransType.PDF, TransType.AE_STANDARD_PDF);
 
     /**
+     * All TransTypes creating RTF format.
+     */
+    public static final List<TransType> RTF_FORMATS = Arrays.asList(TransType.RTF);
+
+    /**
      * All TransTypes generating more than one output files.
      */
     public static final List<TransType> MULTI_FILE_FORMATS = Arrays.asList(TransType.HTML5, TransType.HTMLHELP, TransType.XHTML);
@@ -297,6 +302,13 @@ public class GenerateDocumentationMojo extends AbstractDitaMojo {
                 );
                 getLog().info("Attaching artifact: " + artifact.toString());
                 getCurrentProject().addAttachedArtifact(artifact);
+            } else if (RTF_FORMATS.contains(documentItem.getDitaTranstype())) {
+                dita.setOutputDir(ditaTargetDir.getAbsolutePath());
+
+                // generate documentation
+                dita.execute();
+
+                // TODO: handle output file
             } else {
                 throw new MojoFailureException("The given TransType is not yet implemented.");
             }
@@ -317,6 +329,9 @@ public class GenerateDocumentationMojo extends AbstractDitaMojo {
     private String getTransTypeFileExtension(TransType transType) throws MojoExecutionException {
         if (PDF_FORMATS.contains(transType)) {
             return "pdf";
+        }
+        if (RTF_FORMATS.contains(transType)) {
+            return "rtf";
         }
         if (MULTI_FILE_FORMATS.contains(transType)) {
             return "zip";
