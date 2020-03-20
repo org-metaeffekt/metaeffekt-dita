@@ -6,13 +6,13 @@
 
     <groupId>org.metaeffekt.dita</groupId>
     <artifactId>ae-dita</artifactId>
-    <version>0.24.0</version>
+    <version>HEAD-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <parent>
         <groupId>org.metaeffekt.core</groupId>
         <artifactId>ae-core</artifactId>
-        <version>0.26.0</version>
+        <version>HEAD-SNAPSHOT</version>
     </parent>
 
     <name>metaeffekt-dita</name>
@@ -50,8 +50,8 @@
 
     <properties>
 
-        <ae.core.version>0.26.0</ae.core.version>
-        <ae.dita.version>0.24.0</ae.dita.version>
+        <ae.core.version>HEAD-SNAPSHOT</ae.core.version>
+        <ae.dita.version>HEAD-SNAPSHOT</ae.dita.version>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
