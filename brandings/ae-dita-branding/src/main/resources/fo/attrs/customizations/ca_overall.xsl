@@ -47,4 +47,9 @@
         <xsl:attribute name="font-size">8pt</xsl:attribute>
     </xsl:attribute-set>
 
+    <xsl:attribute-set name="codeph">
+        <xsl:attribute name="font-family">monospace</xsl:attribute>
+        <xsl:attribute name="font-size">8pt</xsl:attribute>
+    </xsl:attribute-set>
+
 </xsl:stylesheet>

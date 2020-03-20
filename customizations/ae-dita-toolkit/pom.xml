@@ -5,13 +5,13 @@
     <parent>
         <groupId>org.metaeffekt.core</groupId>
         <artifactId>ae-core-plugin-management-pom</artifactId>
-        <version>HEAD-SNAPSHOT</version>
+        <version>0.26.0</version>
         <relativePath />
     </parent>
 
     <groupId>org.metaeffekt.dita</groupId>
     <artifactId>ae-dita-toolkit</artifactId>
-    <version>HEAD-SNAPSHOT</version>
+    <version>0.24.0</version>
     <packaging>pom</packaging>
 
     <properties>
@@ -24,7 +24,7 @@
 
         <ant.version>1.10.1</ant.version>
 
-        <ae.dita.version>HEAD-SNAPSHOT</ae.dita.version>
+        <ae.dita.version>0.24.0</ae.dita.version>
     </properties>
 
     <dependencies>
@@ -118,7 +118,7 @@
                                 <chmod file="${dita.root.folder}/bin/ant" perm="+x" />
                                 <echo message="Install the configured PDF DITA OT Plugin: ae-standard-pdf-${ae.dita.version}-dita-plugin.zip" />
                                 <property name="dita.dir" value="${dita.root.folder}" />
-                                <![CDATA[ NOTE: experimenting with RTF output
+                                <![CDATA[NOTE: experimenting with RTF output
                                 <exec executable="${dita.root.folder}/bin/dita" osfamily="unix">
                                     <arg value="--install" />
                                     <arg value="https://github.com/dita-ot/org.dita.wordrtf/archive/2.3.zip" />
@@ -127,8 +127,7 @@
                                     <arg value="${dita.root.folder}/bin/dita.bat" />
                                     <arg value="--install" />
                                     <arg value="https://github.com/dita-ot/org.dita.wordrtf/archive/2.3.zip" />
-                                </exec>]]-->
-
+                                </exec>]]>
                                 <exec executable="${dita.root.folder}/bin/dita" osfamily="unix">
                                     <arg value="--install" />
                                     <arg value="file:///${project.build.directory}/ae-standard-pdf-${ae.dita.version}-dita-plugin.zip" />
