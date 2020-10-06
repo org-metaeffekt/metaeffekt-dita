@@ -4,12 +4,12 @@
     <title>Commercial Components</title>
     <body>
         <p>
-            The covered software distribution contains commercial third-party components. These are generally licensed 
+            The covered software contains commercial third-party components. These are generally licensed
             individually under vendor-specific license terms, which further apply towards the licensee of ${product.name}.
         </p>
         <p>
             License and contract information regarding commercial licenses are covered in section 
-			<xref keyref="license-notices"/>. Standard license texts are included in the software distribution annex
+			<xref keyref="license-notices"/>. Standard license texts are covered by the annex
             when permitted by the terms and conditions of the license and/or associated contract.
         </p>
     </body>

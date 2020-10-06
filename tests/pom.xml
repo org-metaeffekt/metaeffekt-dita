@@ -6,19 +6,17 @@
     <parent>
         <groupId>org.metaeffekt.dita</groupId>
         <artifactId>ae-dita</artifactId>
-        <version>HEAD-SNAPSHOT</version>
+        <version>0.25.0</version>
     </parent>
 
     <artifactId>ae-dita-tests</artifactId>
     <packaging>pom</packaging>
 
     <modules>
-        <module>ae-reference-document</module>
         <module>ae-dita-infrastructure-test</module>
         <module>ae-common-content</module>
-        <!--
-        <module>ae-branded-reference-document</module>
-        -->
+        <module>ae-reference-document</module>
+        <module>ae-reference-document_de</module>
     </modules>
 
 </project>

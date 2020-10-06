@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE bookmap PUBLIC "-//OASIS//DTD DITA BookMap//EN" "bookmap.dtd">
+<bookmap id="bookmap_dcc-agent-administration-manual" xml:lang="de">
+    <title>
+        <ph>DITA Tool Chain</ph>
+    </title>
+    <bookmeta>
+        <shortdesc/>
+        <category>Referenz</category>
+        <bookrights>
+            <copyrfirst>
+                <year>${document.copyright.year}</year>
+            </copyrfirst>
+            <copyrlast>
+                <year>${document.copyright.year}</year>
+            </copyrlast>
+            <bookowner>
+                <organization>${organization.name}</organization>
+            </bookowner>
+        </bookrights>
+    </bookmeta>
+
+    <frontmatter>
+        <topicref href="ae-common-content/imprint/de/tpc_imprint.dita" />
+        <topicref href="ae-common-content/notice/de/tpc_notice.dita" />
+        <booklists>
+            <toc/>
+        </booklists>
+    </frontmatter>
+
+    <chapter href="ae-common-content/bill-of-materials/de/tpc_open-source-based-bom.dita" >
+        <topicref href="ae-common-content/components/de/tpc_provider-proprietary-components.dita" />
+        <topicref href="ae-common-content/components/de/tpc_proprietary-components.dita" />
+        <topicref href="ae-common-content/components/de/tpc_oss-components.dita" />
+        <topicref href="ae-common-content/components/de/tpc_public-domain-components.dita" />
+    </chapter>
+
+    <chapter href="reference/de/tpc_quotes.dita" >
+    </chapter>
+
+    <chapter href="ae-common-content/bill-of-materials/de/tpc_bill-of-materials.dita" >
+    </chapter>
+
+    <chapter href="ae-common-content/appendix/de/tpc_appendix.dita" keys="license-notices">
+    </chapter>
+
+    <backmatter>
+        <booklists>
+            <tablelist/>
+            <glossarylist>
+                <topicref format="ditamap" href="gen/glossary/de/gmap_glossary.ditamap"/>
+            </glossarylist>
+            <indexlist/>
+        </booklists>
+    </backmatter>
+</bookmap>

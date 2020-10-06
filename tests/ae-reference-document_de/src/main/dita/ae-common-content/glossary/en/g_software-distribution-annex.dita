@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE glossentry PUBLIC "-//OASIS//DTD DITA Glossary Entry//EN" "glossentry.dtd">
+<glossentry id="software-distribution-annex">
+    <glossterm>Software Distribution Annex</glossterm>
+    <glossdef>The software distribution annex aggregates all information required to fulfill the obligations when
+        making available or transferring the software distribution. It covers the following elements:
+        <ul>
+            <li>The associated and effective license terms and notices of the individual components.</li>
+            <li>The source code of components if stipulated by the effective license.</li>
+            <li>Documentation including the bill of materials of all third-party components with appropriate
+                license and notice information.</li>
+        </ul>
+    </glossdef>
+    <glossBody>
+        <glossSurfaceForm>software distribution annex</glossSurfaceForm>
+    </glossBody>
+</glossentry>

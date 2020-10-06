@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE glossentry PUBLIC "-//OASIS//DTD DITA Glossary Entry//EN" "glossentry.dtd">
+<glossentry id="artifact">
+    <glossterm>Artifact</glossterm>
+    <glossdef>An artifact is a physical file, such as an executable binary, an archive, a document, a text or
+        configuration file.</glossdef>
+    <glossBody>
+        <glossSurfaceForm>artifacts</glossSurfaceForm>
+    </glossBody>
+</glossentry>

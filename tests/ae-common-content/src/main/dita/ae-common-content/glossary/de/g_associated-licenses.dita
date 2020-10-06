@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE glossentry PUBLIC "-//OASIS//DTD DITA Glossary Entry//EN" "glossentry.dtd">
+<glossentry id="associated-licenses">
+    <glossterm>Assoziierte Lizenzen</glossterm>
+    <glossdef>
+        Ein Artefakt kann von einem Anbieter unter verschiedenen Lizenzen lizensiert werden. Dies ermöglicht die
+        Lizensierung in Abhängigkeit vom Kontext oder den Vertriebskanälen, in denen das Artefakt verfügbar gemacht oder
+        übertragen wird, zu beeinflussen und zu steuern. Diese Lizenzen werden dem Artefakt beim Herunterladen oder
+        Empfangen des Artefakts zugeordnet und als assoziierte Lizenzen bezeichnet. Im Gegensatz zu den assoziierte
+        Lizenzen sind die effektiven Lizenzen, die Lizenzen unter denen das bezogene Artefakt weiter verteilt wird.
+        Die assoziierten und effektiven Lizenzen eines Artefakts können unterschiedlich sein, sind jedoch durch die
+        Bedingungen der assoziierten Lizenzen eingeschränkt.
+    </glossdef>
+    <glossBody>
+        <glossSurfaceForm>assoziierte Lizenzen</glossSurfaceForm>
+    </glossBody>
+</glossentry>

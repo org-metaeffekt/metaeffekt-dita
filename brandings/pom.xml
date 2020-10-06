@@ -6,7 +6,7 @@
     <parent>
         <groupId>org.metaeffekt.dita</groupId>
         <artifactId>ae-dita</artifactId>
-        <version>HEAD-SNAPSHOT</version>
+        <version>0.25.0</version>
     </parent>
 
     <artifactId>ae-dita-brandings</artifactId>
@@ -14,5 +14,6 @@
 
     <modules>
         <module>ae-dita-branding</module>
+        <module>ae-dita-branding_de</module>
     </modules>
 </project>
