@@ -6,7 +6,7 @@
     <parent>
         <groupId>org.metaeffekt.dita</groupId>
         <artifactId>ae-dita-tests</artifactId>
-        <version>HEAD-SNAPSHOT</version>
+        <version>0.26.0</version>
     </parent>
 
     <artifactId>ae-reference-document_de</artifactId>
@@ -243,6 +243,26 @@
             <type>jar</type>
             <classifier>doc</classifier>
             <version>${ae.dita.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.metaeffekt.dita</groupId>
+            <artifactId>ae-dita-maven-plugin</artifactId>
+            <type>jar</type>
+            <version>${ae.dita.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 </project>

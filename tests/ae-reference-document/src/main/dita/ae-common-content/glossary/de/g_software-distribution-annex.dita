@@ -3,16 +3,21 @@
 <glossentry id="software-distribution-annex">
     <glossterm>Software Distribution Annex</glossterm>
     <glossdef>
-        Der Annex zur Software Distribution fasst alle Informationen zusammen, die zur Erfüllung der Verpflichtungen
-        bei der Bereitstellung oder Übertragung der Softwareverteilung erforderlich sind. Es behandelt die folgenden
-        Elemente:
+        Der Annex zur Software Distribution fasst alle Informationen zusammen, die zur Darstellung der
+        Nutzungsbedingungen und zur Erfüllung der Verpflichtungen bei der Bereitstellung oder Übertragung der Software
+        Distribution erforderlich sind. Der Annex umfasst die folgenden Elemente:
         <ul>
             <li>Die assoziierten und effektiven Lizenzen und Hinweise der einzelnen enthaltenen Komponenten.</li>
-            <li>Der Quellcode der Komponenten, sofern dies für die Software Distribution entsprechend der effektiven
+            <li>Den Quellcode der Komponenten, sofern dies für die Software Distribution entsprechend der effektiven
                 Lizenz festgelegt ist.</li>
-            <li>Eine Auflistung aller Komponenten von Drittanbietern (Bill of Materials) mit ergänzenden
+            <li>Eine Auflistung aller Komponenten von Drittanbietern (<i>Bill of Materials</i>) mit ergänzenden
                 Lizenzinformationen und Hinweisen.</li>
         </ul>
+        <p>
+            Je nach Anwendungsfall und vertraglichen Rahmenbedingungen können weitere Aspekte im Software Distribution
+            Annex enthalten sein. Dazu gehören Hinweise zu Im- und Export, die Bewertung von Schwachstellen der Software
+            Komponenten oder ergänzende Patentinformationen.
+        </p>
     </glossdef>
     <glossBody>
         <glossSurfaceForm>Software Distribution Annex</glossSurfaceForm>

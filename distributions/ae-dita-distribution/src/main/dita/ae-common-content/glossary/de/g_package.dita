@@ -3,9 +3,10 @@
 <glossentry id="package">
     <glossterm>Paket</glossterm>
     <glossdef>
-        <p>
-            Ein Paket besteht aus einer Reihe von Dateien, die als Ganzes installiert werden. Ein Paket kann Teil einer
-            Komponente sein, die durch ein oder mehrere Pakete dargestellt wird.
+        Ein Paket besteht aus einer Reihe von Dateien, die als Ganzes installiert werden. Ein Paket kann Teil einer
+        Komponente sein, die durch aus einem oder mehreren Pakete zusammengesetzt ist.
+         <p>
+             Siehe auch: <abbreviated-form keyref="component"/>
          </p>
     </glossdef>
     <glossBody>

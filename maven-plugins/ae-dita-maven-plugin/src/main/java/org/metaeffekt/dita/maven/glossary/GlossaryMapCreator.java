@@ -58,7 +58,7 @@ public class GlossaryMapCreator {
      */
     private File targetGlossaryMap = new File("glossary/en/gmap_glossary.ditamap");
 
-    private File ditaMap = new File("dcc-agent-manual/administration-manual.ditamap");
+    private File ditaMap;
 
     /**
      * Include list for the files to be scanned for key references. The includes
@@ -117,23 +117,42 @@ public class GlossaryMapCreator {
 
     public void create() throws DocumentException, IOException {
         if (baseDir.exists()) {
-            final String[] files;
+
             if (ditaMap != null) {
-                Set<String> processed = new HashSet<>();
-                scan(new File(baseDir, ditaMap.getPath()), processed);
-                files = processed.toArray(new String[processed.size()]);
+                // repeat scan until no further files containing glossary keys are added
+                final Set<String> processed = new HashSet<>();
+                do {
+                    // the initial run will clear the current map
+                    updateGlossaryMap(processed.toArray(new String[processed.size()]));
+
+                    // rescan after update using separate set
+                    Set<String> processedInternal = new HashSet<>();
+                    scan(new File(baseDir, ditaMap.getPath()), processedInternal);
+
+                    // stop the loop when no more files are detected
+                    if (processedInternal.size() == processed.size()) {
+                        break;
+                    }
+
+                    // extend processed list with internal set
+                    processed.addAll(processedInternal);
+                } while (true);
             } else {
+                // use directory scan to identify files
                 DirectoryScanner scanner = new DirectoryScanner();
                 scanner.setBasedir(baseDir);
                 scanner.setIncludes(includes);
                 scanner.setExcludes(excludes);
                 scanner.scan();
-                files = scanner.getIncludedFiles();
+                updateGlossaryMap(scanner.getIncludedFiles());
             }
-            File f = makeAbsolute(targetGlossaryMap);
-            Set<GlossaryRef> glossaryRefs = extractRequiredGlossaryTerms(files, f);
-            renderGlossaryMap(f, glossaryRefs);
         }
+    }
+
+    private void updateGlossaryMap(String[] files) throws DocumentException, IOException {
+        File f = makeAbsolute(targetGlossaryMap);
+        Set<GlossaryRef> glossaryRefs = extractRequiredGlossaryTerms(files, f);
+        renderGlossaryMap(f, glossaryRefs);
     }
 
     protected File makeAbsolute(File file) {
@@ -210,6 +229,9 @@ public class GlossaryMapCreator {
                 glossaryRefs.add(ref);
             }
         }
+
+        // add support to also included further glossary hints;
+
     }
 
     protected Document readDocument(File file) {

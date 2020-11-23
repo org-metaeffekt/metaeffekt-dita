@@ -3,8 +3,11 @@
 <glossentry id="subcomponent">
     <glossterm>Unterkomponente</glossterm>
     <glossdef>
-        Eine Unterkomponente ist eine Komponente, die in eine größere Komponente eingebettet ist. Einer Unterkomponente
-        sind möglicherweise dedizierte Lizenzen zugeordnet.
+        Eine Unterkomponente ist eine Komponente, die in eine übergeordnete Komponente eingebettet ist. Einer Unterkomponente
+        sind gegebenenfalls dedizierte Lizenzen zugeordnet.
+        <p>
+            Siehe auch: <abbreviated-form keyref="component"/>
+        </p>
     </glossdef>
     <glossBody>
         <glossSurfaceForm>Unterkomponenten</glossSurfaceForm>

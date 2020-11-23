@@ -3,9 +3,11 @@
 <glossentry id="package">
     <glossterm>Webmodul</glossterm>
     <glossdef>
-        <p>
-            Ein Webmodul enthält für gewöhnlich eine Reihe von Ressourcen und Skripten mit einer bestimmten Funktion,
-            die in einer webbasierten Benutzeroberfläche verwendet wird.</p>
+        Ein Webmodul enthält für gewöhnlich eine Reihe von Ressourcen und Skripten, die eine dedizierte Funktion
+        einer webbasierten Benutzeroberflächen umsetzen.
+         <p>
+             Siehe auch: <abbreviated-form keyref="component"/>
+         </p>
     </glossdef>
     <glossBody>
         <glossSurfaceForm>Webmodule</glossSurfaceForm>

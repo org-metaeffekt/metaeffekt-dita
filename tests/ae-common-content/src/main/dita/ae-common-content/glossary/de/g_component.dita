@@ -6,6 +6,9 @@
         Eine Komponente ist eine Gruppe von einem oder mehreren Artefakten, Paketen oder Webmodulen. Eine Komponente
         kann als logisches Aggregat betrachtet werden. Lizenzinformationen werden auf Komponentenebene zugeordnet und
         sind innerhalb der aggregierten Artefakte, Pakete und Webmodule konsistent.
+        <p>
+            Siehe auch: <abbreviated-form keyref="artifact"/>, <abbreviated-form keyref="package"/>, <abbreviated-form keyref="web-module"/>, <abbreviated-form keyref="subcomponent"/>
+        </p>
     </glossdef>
     <glossBody>
         <glossSurfaceForm>Komponenten</glossSurfaceForm>

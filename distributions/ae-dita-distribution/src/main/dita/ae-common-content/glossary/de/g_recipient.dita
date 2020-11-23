@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE glossentry PUBLIC "-//OASIS//DTD DITA Glossary Entry//EN" "glossentry.dtd">
+<glossentry id="recipient">
+    <glossterm>Empfänger</glossterm>
+    <glossdef>
+        Der Empfänger einer Software steht für gewöhnlich in einem Vertragsverhältnis zum Anbieter. Dieses
+        Vertragsverhältnisses kann zudem die Software Distribution von Bestandteilen Dritter umfassen.
+        <p>
+            Je nach Vertragsverhältnis kann der Empfänger die Software weiterentwickelnder, betreiben und/oder der
+            Endanwender sein.
+        </p>
+        <p>
+            Siehe auch: <abbreviated-form keyref="provider"/>, <abbreviated-form keyref="software-distribution"/>
+        </p>
+    </glossdef>
+    <glossBody>
+        <glossSurfaceForm>Empfänger</glossSurfaceForm>
+    </glossBody>
+</glossentry>

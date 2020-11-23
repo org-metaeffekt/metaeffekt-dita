@@ -4,7 +4,7 @@
     <title>${organization.name} Proprietäre Komponenten</title>
     <body>
         <p>
-            Proprietäre Komponenten, die in der von der ${organization.name} entwickelten und gelieferten abgedeckten
+            Proprietäre Komponenten, die in der von der ${organization.name} entwickelten und gelieferten
             Software Distribution enthalten sind, werden - sofern nicht ausdrücklich anders angegeben - unter
             ${organization.license_de} zur Verfügung gestellt.
         </p>
