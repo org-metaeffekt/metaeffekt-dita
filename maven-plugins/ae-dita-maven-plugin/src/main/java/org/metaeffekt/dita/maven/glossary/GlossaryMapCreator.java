@@ -46,6 +46,9 @@ import org.xml.sax.EntityResolver;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
+/**
+ * Generates the glossary for a given ditamap of folder.
+ */
 public class GlossaryMapCreator {
 
     /**
@@ -58,11 +61,14 @@ public class GlossaryMapCreator {
      */
     private File targetGlossaryMap = new File("glossary/en/gmap_glossary.ditamap");
 
+    /**
+     * The dita map to generate the glossary for.
+     */
     private File ditaMap;
 
     /**
      * Include list for the files to be scanned for key references. The includes
-     * should include the relevant language.
+     * should cover the relevant language, only (otherwise it is currently not deterministic).
      */
     private String[] includes = new String[] { "**/*.dita" };
 
@@ -71,38 +77,18 @@ public class GlossaryMapCreator {
      */
     private String[] excludes = new String[] { "-nothing-" };;
 
+    /**
+     * The language of the glossary.
+     */
     private String language = "en";
 
     public GlossaryMapCreator() {
     }
 
-    public static void main(String[] args) throws DocumentException, IOException {
-        for (int i = 0; i < args.length; i++) {
-            GlossaryMapCreator creator = new GlossaryMapCreator();
-            creator.setBaseDir(new File(args[i]));
-            creator.create();
-        }
-    }
-
     public static class GlossaryRef {
         String path;
         String term;
-
-        public String getPath() {
-            return path;
-        }
-
-        public void setPath(String path) {
-            this.path = path;
-        }
-
-        public String getTerm() {
-            return term;
-        }
-
-        public void setTerm(String term) {
-            this.term = term;
-        }
+        String value; // the translated value; used to support lang-specific ordering
 
         @Override
         public boolean equals(Object other) {
@@ -112,6 +98,16 @@ public class GlossaryMapCreator {
         @Override
         public int hashCode() {
             return term.hashCode();
+        }
+
+        // getter required by velocity template
+        public String getPath() {
+            return path;
+        }
+
+        // getter required by velocity template
+        public String getTerm() {
+            return term;
         }
     }
 
@@ -150,11 +146,17 @@ public class GlossaryMapCreator {
     }
 
     private void updateGlossaryMap(String[] files) throws DocumentException, IOException {
-        File f = makeAbsolute(targetGlossaryMap);
-        Set<GlossaryRef> glossaryRefs = extractRequiredGlossaryTerms(files, f);
+        final File f = makeAbsolute(targetGlossaryMap);
+        final Set<GlossaryRef> glossaryRefs = extractRequiredGlossaryTerms(files, f);
         renderGlossaryMap(f, glossaryRefs);
     }
 
+    /**
+     * Combines the file - if relative - with the basedir.
+     *
+     * @param file
+     * @return
+     */
     protected File makeAbsolute(File file) {
         if (!file.isAbsolute()) {
             return new File(baseDir, file.getPath());
@@ -162,20 +164,20 @@ public class GlossaryMapCreator {
         return file;
     }
 
-    private void scan(File file, Set<String> processed) throws DocumentException, IOException {
+    private void scan(File file, Set<String> processed) throws IOException {
         if (!processed.contains(file.getCanonicalPath())) {
-            Document document = readDocument(file);
+            final Document document = readDocument(file);
             if (document != null) {
                 processed.add(file.getCanonicalPath());
                 @SuppressWarnings("unchecked")
-                List<Attribute> elements = document.selectNodes("//@href|//@conref");
+                final List<Attribute> elements = document.selectNodes("//@href|//@conref");
                 for (Attribute element : elements) {
                     String href = element.getValue();
                     final int hashIndex = href.indexOf("#");
                     if (hashIndex != -1) {
                         href = href.substring(0, hashIndex);
                     }
-                    File child = new File(file.getParent(), href);
+                    final File child = new File(file.getParent(), href);
                     if (child.exists() && !processed.contains(child.getCanonicalPath())) {
                         scan(child, processed);
                     }
@@ -185,8 +187,12 @@ public class GlossaryMapCreator {
     }
 
     protected Set<GlossaryRef> extractRequiredGlossaryTerms(final String[] files, File targetFile) throws DocumentException, IOException {
-        Set<GlossaryRef> glossaryRefs = new HashSet<>();
-        Set<String> coveredKeys = new HashSet<>();
+        final Set<GlossaryRef> glossaryRefs = new HashSet<>();
+
+        final Set<String> coveredKeys = new HashSet<>();
+        final Set<String> glossaryRefKeys = new HashSet<>();
+
+        // collect already covered key; omit the target file
         for (int i = 0; i < files.length; i++) {
             final File f = new File(files[i]);
             // do not included the target file when evaluating the covered keys
@@ -194,10 +200,18 @@ public class GlossaryMapCreator {
                 extractCoveredKeys(f, coveredKeys);
             }
         }
-        // build glossary map. do not include terms that are already covered
+
+        // collect required glossary keys
         for (int i = 0; i < files.length; i++) {
-            extractRequiredGlossaryTerms(makeAbsolute(new File(files[i])), glossaryRefs, coveredKeys);
+            extractRequiredGlossaryTerms(makeAbsolute(new File(files[i])), glossaryRefKeys);
         }
+
+        // remove already covered keys to prevent conflicts
+        glossaryRefKeys.removeAll(coveredKeys);
+
+        // generate glossary map based on the remaining glossaryRefKeys
+        createGlossaryRefsForCoveredKeys(glossaryRefs, glossaryRefKeys);
+
         return glossaryRefs;
     }
 
@@ -216,22 +230,36 @@ public class GlossaryMapCreator {
         }
     }
 
-    private void extractRequiredGlossaryTerms(File file, Collection<GlossaryRef> glossaryRefs, Set<String> coveredKeys)
-            throws DocumentException {
-        Document document = readDocument(file);
-        @SuppressWarnings("unchecked")
-        List<Element> keyRefElements = document.selectNodes("//abbreviated-form");
-        for (Element element : keyRefElements) {
-            String keyRef = element.attributeValue("keyref");
-            if (keyRef != null && !coveredKeys.contains(keyRef)) {
-                GlossaryRef ref = new GlossaryRef();
-                ref.term = keyRef;
-                glossaryRefs.add(ref);
+    private String extractTermValue(File glossaryTermFile, String defaultValue) {
+        final Document document = readDocument(glossaryTermFile);
+        if (document != null) {
+            @SuppressWarnings("unchecked")
+            final List<Element> elements = document.selectNodes("//glossterm");
+            for (Element element : elements) {
+                return element.getTextTrim();
             }
         }
+        return defaultValue;
+    }
 
-        // add support to also included further glossary hints;
+    private void extractRequiredGlossaryTerms(File file, Set<String> keyRefs) throws DocumentException {
+        final Document document = readDocument(file);
+        @SuppressWarnings("unchecked")
+        final List<Element> keyRefElements = document.selectNodes("//abbreviated-form");
+        for (Element element : keyRefElements) {
+            String keyRef = element.attributeValue("keyref");
+            if (keyRef != null && !keyRefs.contains(keyRef)) {
+                keyRefs.add(keyRef);
+            }
+        }
+    }
 
+    private void createGlossaryRefsForCoveredKeys(Collection<GlossaryRef> glossaryRefs, Set<String> keyRefs) {
+        for (String key : keyRefs) {
+            final GlossaryRef ref = new GlossaryRef();
+            ref.term = key;
+            glossaryRefs.add(ref);
+        }
     }
 
     protected Document readDocument(File file) {
@@ -280,29 +308,25 @@ public class GlossaryMapCreator {
     }
 
     private void renderGlossaryMap(File targetFolder, Set<GlossaryRef> glossaryRefs) {
-        List<GlossaryRef> orderedTerms = new ArrayList<>();
-        orderedTerms.addAll(glossaryRefs);
-        Collections.sort(orderedTerms, new Comparator<GlossaryRef>() {
-            @Override
-            public int compare(GlossaryRef arg0, GlossaryRef arg1) {
-                return arg0.term.compareTo(arg1.term);
-            }
-        });
+        // ISSUE: sorting operated on key not on (translated) value
+        // TODO: scan for files; parse tranlated title; order by title;
 
         // find and determine relative path to glossary files
         DirectoryScanner scan = new DirectoryScanner();
         scan.setBasedir(baseDir);
         String pathToBaseDir = computeRelativePath(targetFolder, baseDir);
 
-        for (GlossaryRef glossaryRef : orderedTerms) {
+        for (GlossaryRef glossaryRef : glossaryRefs) {
             scan.setIncludes(new String[] { "**/" + language + "/g_" + glossaryRef.term.toLowerCase() + ".dita" });
             scan.scan();
             if (scan.getIncludedFilesCount() == 0) {
                 throw new IllegalStateException("No glossary file found for key '" + glossaryRef.term + "'. "
                         + "At least one is required. Please make sure all glossary teams are available.");
             } else {
-                glossaryRef.path = pathToBaseDir + scan.getIncludedFiles()[0];
-                glossaryRef.path = glossaryRef.path.replace("\\", "/");
+                // in case multiple matches are found we take the first
+                final String includedFile = scan.getIncludedFiles()[0];
+                glossaryRef.path = (pathToBaseDir + includedFile).replace("\\", "/");
+                glossaryRef.value = extractTermValue(new File(baseDir, includedFile), glossaryRef.term);
             }
 
             if (!glossaryRef.term.equals(glossaryRef.term.toLowerCase())) {
@@ -310,6 +334,10 @@ public class GlossaryMapCreator {
                         + glossaryRef.term + "'. Otherwise the term may be included multiple times in the glossary.");
             }
         }
+
+        final List<GlossaryRef> orderedTerms = new ArrayList<>();
+        orderedTerms.addAll(glossaryRefs);
+        Collections.sort(orderedTerms, Comparator.comparing(arg0 -> arg0.value));
 
         VelocityContext context = new VelocityContext();
         context.put("glossaryRefs", orderedTerms);

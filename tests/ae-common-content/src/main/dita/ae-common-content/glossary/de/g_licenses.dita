@@ -27,7 +27,7 @@
                     verknüpft sind, werden mit einem Plus (+) dargestellt.
                 </li>
                 <li>
-                    <i>UND</i> hat vor <i>ODER</i> Vorrang. Eine Klammersetzung wird nur in bei zwingender
+                    <i>UND</i> hat vor <i>ODER</i> Vorrang. Eine Klammersetzung wird nur bei zwingender
                     Notwendigekeit zur korrekten Darstellung eingesetzt.
                 </li>
             </ul>
@@ -38,7 +38,7 @@
         </p>
         <p>
             Lizenzzuordnungen können mit Erweiterungen oder Ausnahmen versehen sein. Diese werden durch Zusätze an dem
-            Lizenzbezeichnern dargestellt. Etwas <i>GNU Lesser General Public License 2.1 (or any later version)</i>
+            Lizenzbezeichnern dargestellt. Etwa <i>GNU Lesser General Public License 2.1 (or any later version)</i>
             oder <i>GNU General Public License 2.0 (with classpath exception)</i>.
         </p>
         <p>Siehe auch: <abbreviated-form keyref="associated-licenses"/>, <abbreviated-form keyref="effective-licenses"/></p>

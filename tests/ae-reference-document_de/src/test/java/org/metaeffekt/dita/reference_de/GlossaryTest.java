@@ -13,16 +13,12 @@ public class GlossaryTest {
    @Ignore
    @Test
    public void testGlossary() throws IOException, DocumentException {
-
       final GlossaryMapCreator glossaryMapCreator = new GlossaryMapCreator();
-      glossaryMapCreator.setBaseDir(new File("src/main/dita"));
+      glossaryMapCreator.setBaseDir(new File("src/main/dita").getAbsoluteFile());
       glossaryMapCreator.setDitaMap(new File("ae-reference-document.ditamap"));
       glossaryMapCreator.setLanguage("de");
-      glossaryMapCreator.setTargetGlossaryMap(new File("test_glossary.map"));
-
+      glossaryMapCreator.setTargetGlossaryMap(new File("src/main/dita/gen/glossary/de/gmap_glossary.ditamap").getAbsoluteFile());
       glossaryMapCreator.create();
-
-
    }
 
 }
