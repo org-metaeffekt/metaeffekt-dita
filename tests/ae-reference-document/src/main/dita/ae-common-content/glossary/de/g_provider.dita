@@ -4,10 +4,11 @@
     <glossterm>Anbieter</glossterm>
     <glossdef>
         Anbieter einer Software können der Hersteller selbst oder ein Software Distributor sein. Meist handelt es sich
-        bei Software um Mischformen. D.h. es werden eigene und Fremdanteile kombiniert. Im Rahmen einer Lieferkette
-        für Software stellen Anbieter und Empfänger ein Glied in diese Lieferkette dar. Ein Anbieter der selbst Software
-        herstellt und damit Projekte oder Produkte umsetzt (<i>Provider</i>) ist in der Lieferkette für gewöhnlich auch
-        Empfänger und auf Zulieferungen von anderen Anbietern (<i>Supplier</i>) angewiesen.
+        bei der angebotenen Software um Mischform. D.h. es werden herstellereigene und Fremdanteile kombiniert. Im Rahmen einer
+        Lieferkette für Software stellen Anbieter und Empfänger ein Glied in dieser Kette dar.
+        Ein Anbieter der Software auf Basis von Fremdanteilen herstellt und damit Projekte oder Produkte umsetzt (<i>Provider</i>) ist in
+        der Lieferkette ebenfalls Empfänger und auf Zulieferungen von anderen Anbietern (<i>Supplier</i>)
+        angewiesen.
         <p>
             Siehe auch: <abbreviated-form keyref="recipient"/>, <abbreviated-form keyref="software-distribution"/>
         </p>
