@@ -26,39 +26,4 @@
         </fo:table-row>
     </xsl:template>
 
-    <!--
-        The following moves the title of the table under/after the table.
-
-        Overrides:
-            plugins/org.dita.pdf2/xsl/fo/tables.xsl
-    -->
-
-    <xsl:template match="*[contains(@class, ' topic/table ')]">
-        <!-- FIXME, empty value -->
-        <xsl:variable name="scale" as="xs:string?">
-            <xsl:call-template name="getTableScale"/>
-        </xsl:variable>
-
-        <fo:block xsl:use-attribute-sets="table">
-            <xsl:call-template name="commonattributes"/>
-            <xsl:if test="not(@id)">
-                <xsl:attribute name="id">
-                    <xsl:call-template name="get-id"/>
-                </xsl:attribute>
-            </xsl:if>
-            <xsl:if test="exists($scale)">
-                <xsl:attribute name="font-size" select="concat($scale, '%')"/>
-            </xsl:if>
-            <!-- BEGIN Modification -->
-            <!--
-                The following replaces the this line in the original:
-                    <xsl:apply-templates/>
-                This is required to re-order the table and the title.
-            -->
-            <xsl:apply-templates select="*[contains(@class, ' topic/tgroup ')]"/>
-            <xsl:apply-templates select="*[contains(@class, ' topic/title ') or contains(@class, ' topic/desc ')]"/>
-            <!-- END Modification -->
-        </fo:block>
-    </xsl:template>
-
 </xsl:stylesheet>

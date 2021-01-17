@@ -91,4 +91,12 @@
 	<xsl:attribute-set name="dlentry.dd__content" use-attribute-sets="dlentry.dt__content">
 	</xsl:attribute-set>
 
+    <xsl:attribute-set name="table.title" use-attribute-sets="base-font common.title">
+        <xsl:attribute name="font-weight">bold</xsl:attribute>
+        <xsl:attribute name="space-before">10pt</xsl:attribute>
+        <xsl:attribute name="space-after">10pt</xsl:attribute>
+        <xsl:attribute name="keep-with-next.within-column">auto</xsl:attribute>
+        <xsl:attribute name="keep-with-previous">always</xsl:attribute>
+    </xsl:attribute-set>
+
 </xsl:stylesheet>
