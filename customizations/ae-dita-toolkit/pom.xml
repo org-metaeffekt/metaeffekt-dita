@@ -22,7 +22,7 @@
         <dita.root.folder>${project.build.directory}/${dita.name.string}</dita.root.folder>
 
 
-        <ant.version>1.10.1</ant.version>
+        <ant.version>1.10.9</ant.version>
 
         <ae.dita.version>HEAD-SNAPSHOT</ae.dita.version>
     </properties>
