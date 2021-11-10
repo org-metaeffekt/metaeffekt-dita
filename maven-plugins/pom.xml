@@ -6,7 +6,7 @@
     <parent>
         <groupId>org.metaeffekt.dita</groupId>
         <artifactId>ae-dita</artifactId>
-        <version>0.29.0</version>
+        <version>HEAD-SNAPSHOT</version>
     </parent>
 
     <artifactId>ae-dita-maven-plugins</artifactId>
