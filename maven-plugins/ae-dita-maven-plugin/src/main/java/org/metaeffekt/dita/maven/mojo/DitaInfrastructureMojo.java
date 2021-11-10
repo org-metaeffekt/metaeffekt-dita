@@ -1,5 +1,5 @@
 /**
- * Copyright 2009-2020 the original author or authors.
+ * Copyright 2009-2021 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,10 +40,7 @@ import org.apache.maven.plugins.annotations.Parameter;
  *
  * @author Siegfried E.
  */
-@Mojo(
-        name = "ensure-dita-toolkit",
-        requiresProject = true
-)
+@Mojo(name = "ensure-dita-toolkit", requiresProject = true)
 public class DitaInfrastructureMojo extends AbstractDitaMojo {
     
     /**
@@ -153,7 +150,7 @@ public class DitaInfrastructureMojo extends AbstractDitaMojo {
      * is not found.
      * 
      * @return Pointer to the DITA Open Toolkit.
-     * @throws MojoExecutionException
+     * @throws MojoExecutionException MojoExecutionException
      */
     public Artifact getDitaToolkitDependency() throws MojoExecutionException {
         Artifact toolkitArtifact;

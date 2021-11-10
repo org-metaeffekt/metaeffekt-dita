@@ -4,6 +4,43 @@
 
     <!-- Entry point for the DITA OT Plugin, see included files for actual customizations. -->
 
+    <xsl:variable name="page-margin-inside" select="'10mm'"/>
+    <xsl:variable name="page-margin-outside" select="'10mm'"/>
+
+    <xsl:attribute-set name="__body__footnote__separator">
+        <xsl:attribute name="leader-pattern">rule</xsl:attribute>
+        <xsl:attribute name="leader-length">40%</xsl:attribute>
+        <xsl:attribute name="rule-thickness">0.5pt</xsl:attribute>
+        <xsl:attribute name="rule-style">solid</xsl:attribute>
+        <xsl:attribute name="color">rgb(235, 235, 235)</xsl:attribute>
+    </xsl:attribute-set>
+
+    <xsl:attribute-set name="fn">
+        <xsl:attribute name="font-size">6pt</xsl:attribute>
+        <xsl:attribute name="color">black</xsl:attribute>
+    </xsl:attribute-set>
+
+    <xsl:attribute-set name="fn__id">
+        <xsl:attribute name="font-style">italic</xsl:attribute>
+    </xsl:attribute-set>
+
+    <xsl:attribute-set name="fn__callout">
+        <xsl:attribute name="keep-with-previous.within-line">always</xsl:attribute>
+        <xsl:attribute name="baseline-shift">10%</xsl:attribute>
+        <xsl:attribute name="font-size">90%</xsl:attribute>
+    </xsl:attribute-set>
+
+    <xsl:attribute-set name="fn__body" use-attribute-sets="base-font">
+        <xsl:attribute name="provisional-distance-between-starts">2mm</xsl:attribute>
+        <xsl:attribute name="provisional-label-separation">2mm</xsl:attribute>
+        <xsl:attribute name="line-height">1.2</xsl:attribute>
+        <xsl:attribute name="start-indent">2mm</xsl:attribute>
+        <xsl:attribute name="font-weight">normal</xsl:attribute>
+        <xsl:attribute name="font-style">normal</xsl:attribute>
+        <xsl:attribute name="font-size">8pt</xsl:attribute>
+        <xsl:attribute name="text-decoration">no-underline no-overline</xsl:attribute>
+    </xsl:attribute-set>
+
     <xsl:variable name="toc.toc-indent" select="'12pt'"/>
 
     <xsl:include href="customizations/ca_chapterBorders.xsl" />

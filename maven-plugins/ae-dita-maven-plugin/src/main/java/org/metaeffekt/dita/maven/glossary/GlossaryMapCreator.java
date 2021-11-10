@@ -1,5 +1,5 @@
 /**
- * Copyright 2009-2020 the original author or authors.
+ * Copyright 2009-2021 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -154,8 +154,9 @@ public class GlossaryMapCreator {
     /**
      * Combines the file - if relative - with the basedir.
      *
-     * @param file
-     * @return
+     * @param file The file for which the absolute path is required.
+     *
+     * @return The absolute file.
      */
     protected File makeAbsolute(File file) {
         if (!file.isAbsolute()) {

@@ -21,4 +21,15 @@ public class GlossaryTest {
       glossaryMapCreator.create();
    }
 
+   @Ignore
+   @Test
+   public void testGlossaryExt() throws IOException, DocumentException {
+      final GlossaryMapCreator glossaryMapCreator = new GlossaryMapCreator();
+      glossaryMapCreator.setBaseDir(new File("/Volumes/USB/dita-test/dita").getAbsoluteFile());
+      glossaryMapCreator.setDitaMap(new File("bill-of-materials.ditamap"));
+      glossaryMapCreator.setLanguage("de");
+      glossaryMapCreator.setTargetGlossaryMap(new File("target/gmap_glossary.ditamap").getAbsoluteFile());
+      glossaryMapCreator.create();
+   }
+
 }

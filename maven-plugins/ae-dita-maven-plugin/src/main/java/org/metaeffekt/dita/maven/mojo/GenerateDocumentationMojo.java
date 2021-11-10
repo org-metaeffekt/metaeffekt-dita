@@ -1,5 +1,5 @@
 /**
- * Copyright 2009-2020 the original author or authors.
+ * Copyright 2009-2021 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,9 +44,7 @@ import java.util.List;
  * @author Karsten Klein
  * @author Adrian R.
  */
-@Mojo(
-        name = "generate-documentation"
-)
+@Mojo(name = "generate-documentation")
 public class GenerateDocumentationMojo extends AbstractDitaMojo {
 
     /**
@@ -167,8 +165,8 @@ public class GenerateDocumentationMojo extends AbstractDitaMojo {
      *     <li>Attach the generated artifact to the current Maven module.</li>
      * </ul>
      *
-     * @throws MojoExecutionException
-     * @throws MojoFailureException
+     * @throws MojoExecutionException MojoExecutionException
+     * @throws MojoFailureException MojoFailureException
      */
     @Override
     public void execute() throws MojoExecutionException, MojoFailureException {

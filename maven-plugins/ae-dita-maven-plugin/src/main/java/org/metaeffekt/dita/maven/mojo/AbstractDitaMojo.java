@@ -1,5 +1,5 @@
 /**
- * Copyright 2009-2020 the original author or authors.
+ * Copyright 2009-2021 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -70,7 +70,7 @@ public abstract class AbstractDitaMojo extends AbstractMojo {
     /**
      * Method was introduced to provide a way for 'injecting' a MavenProject for
      * testing purposes.
-     * <br />
+     * <br>
      * See as an example in the integration test <i>GenerateDocumentationMojoTest</i>.
      * 
      * @param project A {@link MavenProject} object.
@@ -86,7 +86,7 @@ public abstract class AbstractDitaMojo extends AbstractMojo {
     /**
      * Method was introduced to provide a way for 'injecting' a MavenSession for
      * testing purposes.
-     * <br />
+     * <br>
      * See as an example in the integration test <i>GenerateDocumentationMojoTest</i>.
      * 
      * @param session A {@link MavenSession} object.
