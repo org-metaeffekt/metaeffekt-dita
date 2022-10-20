@@ -3,8 +3,11 @@
 <glossentry id="subcomponent">
     <glossterm>Subcomponent</glossterm>
     <glossdef>
-        A subcomponent is a component embedded in a larger component. A subcomponent may have dedicated associated
-        licenses.
+        A subcomponent is a component that is embedded in a parent component. Special licenses may be assigned to a
+        subcomponent.
+        <p>
+            See also:
+        </p>
     </glossdef>
     <glossBody>
         <glossSurfaceForm>subcomponents</glossSurfaceForm>

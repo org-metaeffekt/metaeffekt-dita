@@ -4,7 +4,7 @@
     <glossterm>Unterkomponente</glossterm>
     <glossdef>
         Eine Unterkomponente ist eine Komponente, die in eine übergeordnete Komponente eingebettet ist. Einer Unterkomponente
-        sind gegebenenfalls dedizierte Lizenzen zugeordnet.
+        sind gegebenenfalls spezielle Lizenzen zugeordnet.
         <p>
             Siehe auch: <abbreviated-form keyref="component"/>
         </p>
