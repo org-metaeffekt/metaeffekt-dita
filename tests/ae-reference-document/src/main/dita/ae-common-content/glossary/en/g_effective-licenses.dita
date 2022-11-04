@@ -17,7 +17,7 @@
                 this case, the selected license is the effective license.</li>
         </ul>
         <p>
-            See also:
+            See also: <abbreviated-form keyref="associated-licenses"/>, <abbreviated-form keyref="licenses"/>
         </p>
     </glossdef>
     <glossBody>

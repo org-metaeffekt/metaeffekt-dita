@@ -7,7 +7,7 @@
         logical aggregate. License information is assigned at the component level and is consistent within
         aggregated artifacts, packages and web modules.
         <p>
-            See also:
+            See also: <abbreviated-form keyref="artifact"/>, <abbreviated-form keyref="package"/>, <abbreviated-form keyref="web-module"/>, <abbreviated-form keyref="subcomponent"/>
         </p>
     </glossdef>
     <glossBody>
