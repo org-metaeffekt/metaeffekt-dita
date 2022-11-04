@@ -3,7 +3,7 @@
 <glossentry id="g_supported">
     <glossterm>Supported</glossterm>
     <glossdef>
-        <p>Eine Konfiguration, die unterstüzt wird, kann in einer Produktionsumgebung verwendet werden.
+        <p>Eine Konfiguration, die unterstützt wird, kann in einer Produktionsumgebung verwendet werden.
          ${organization.name} versichert, dass die Software mit dieser Systemkonfiguration funktioniert, ohne die
          Funktionen der Software zu beeinträchtigen. ${organization.name} bestätigt das durch die Verwendung der Konfiguration
          während der Qualitätskontrolle und Regressionstests der Software.
