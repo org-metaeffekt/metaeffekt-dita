@@ -3,18 +3,22 @@
 <glossentry id="effective-licenses">
     <glossterm>Effective Licenses</glossterm>
     <glossdef>
-        There are various cases where a component is made available by a provider under multiple associated licenses.
+        There are several cases where a component is made available by a provider under multiple associated licenses.
         The effective licenses are the selected licenses relevant for the software distribution:
         <ul>
-            <li>A component is provided with a dual or multiple licensing option where either one or the other
-                license can be used for distribution. In this case a single effective license needs to be determined.</li>
-            <li>A component is provided with a license in a specific or later version. In this case a version of the
-                license has to be selected as effective license.</li>
-            <li>For a component, which contains subcomponents the license of the component and the individual licenses
-                of the subcomponents are effective.</li>
-            <li>The associated license of a component allows to sublicense the component under a different license. In
-                this case the chosen license is the effective license.</li>
+            <li>A component is provided with a licensing option (dual or multiple licensing), where either one or
+                the other license can be used for software distribution. In this case, a single effective license
+                must be specified.</li>
+            <li>A component is licensed in a specific or higher version of the license. In this case, one version of the
+                license must be designated as the effective license.</li>
+            <li>For a component containing subcomponents, the respective licenses of the subcomponents shall be
+                considered bound in addition to the license of the component.</li>
+            <li>An associated license of a component allows to sublicensing under another license. In
+                this case, the selected license is the effective license.</li>
         </ul>
+        <p>
+            See also:
+        </p>
     </glossdef>
     <glossBody>
         <glossSurfaceForm>effective licenses</glossSurfaceForm>

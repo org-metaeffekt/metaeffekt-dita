@@ -4,8 +4,11 @@
     <glossterm>Component</glossterm>
     <glossdef>
         A component is a group of one or more artifacts, packages or web modules. A component can be regarded as
-        logical aggregate. Licensing information applies on component-level and is consistent within the
+        logical aggregate. License information is assigned at the component level and is consistent within
         aggregated artifacts, packages and web modules.
+        <p>
+            See also:
+        </p>
     </glossdef>
     <glossBody>
         <glossSurfaceForm>components</glossSurfaceForm>

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE glossentry PUBLIC "-//OASIS//DTD DITA Glossary Entry//EN" "glossentry.dtd">
-<glossentry id="associated-licenses">
+<glossentry id="licenses">
     <glossterm>Lizenzbezeichner und -ausdrücke</glossterm>
     <glossdef>
         Die verwendeten Lizenzbezeichner wurden - soweit möglich und sinnvoll - nach vereinheitlichten Regeln aus den
         Lizenzen (Titel, Version und Inhalt) abgeleitet. Dabei wurde die Zielsetzung der Vereinheitlichung verfolgt und
         weitgehend auf Abkürzungen verzichtet.
         <p>
-            Eine Besonderheit bilden hierbei Lizenzen oder Nutzungsbedingungen die keinerlei Titel oder Namen
+            Eine Besonderheit bilden hierbei Lizenzen oder Nutzungsbedingungen, die keinerlei Titel oder Namen
             tragen. Für diese Nutzungsbedingungen wurde der Bezeichner aus Inhalt und Kontext abgeleitet. Insbesondere
-            einfach Erlaubnisse (<i>Permissions</i>), die in vielzähligen Variationen gängig sind, werden hier als
+            einfache Erlaubnisse (<i>Permissions</i>), die in vielzähligen Variationen gängig sind, werden hier als
             <q>Permission Terms</q> bezeichnet. Um diese schneller einordnen bzw. sinnvoll unterscheiden zu können,
             wurden ausgewählte Eigenschaften in den Lizenzbezeichner aufgenommen (z.B. <q>Permission Terms (no warranty;
             no advertisment)</q>).
@@ -19,7 +19,7 @@
             mit einer Ausnahme versehen sind, werden in Form eines Ausdrucks dargestellt:
             <ul>
                 <li>
-                    Lizenzbezeichner oder wiederum Lizenzausdrücke, die durch ein Komma (,) getrennt werden entsprechen
+                    Lizenzbezeichner oder wiederum Lizenzausdrücke, die durch ein Komma (,) getrennt werden, entsprechen
                     der Verknüpfung mit einem <i>UND</i>.
                 </li>
                 <li>
@@ -28,7 +28,7 @@
                 </li>
                 <li>
                     <i>UND</i> hat vor <i>ODER</i> Vorrang. Eine Klammersetzung wird nur bei zwingender
-                    Notwendigekeit zur korrekten Darstellung eingesetzt.
+                    Notwendigkeit zur korrekten Darstellung eingesetzt.
                 </li>
             </ul>
             Ordnet man so einer Komponente etwa den Lizenzausdruck <i>Apache License 2.0, GNU General Public License 2.0 +
@@ -37,7 +37,7 @@
             zu prüfen.
         </p>
         <p>
-            Lizenzzuordnungen können mit Erweiterungen oder Ausnahmen versehen sein. Diese werden durch Zusätze an dem
+            Lizenzzuordnungen können mit Erweiterungen oder Ausnahmen versehen sein. Diese werden durch Zusätze an den
             Lizenzbezeichnern dargestellt. Etwa <i>GNU Lesser General Public License 2.1 (or any later version)</i>
             oder <i>GNU General Public License 2.0 (with classpath exception)</i>.
         </p>

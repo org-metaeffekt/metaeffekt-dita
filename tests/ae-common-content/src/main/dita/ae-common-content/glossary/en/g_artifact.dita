@@ -2,8 +2,13 @@
 <!DOCTYPE glossentry PUBLIC "-//OASIS//DTD DITA Glossary Entry//EN" "glossentry.dtd">
 <glossentry id="artifact">
     <glossterm>Artifact</glossterm>
-    <glossdef>An artifact is a physical file, such as an executable binary, an archive, a document, a text or
-        configuration file.</glossdef>
+    <glossdef>
+        An artifact is a physical file, such as an executable binary, archive, document, text or
+        configuration file. An artifact is associated with a component.
+        <p>
+            See also: <abbreviated-form keyref="component"/>
+        </p>
+    </glossdef>
     <glossBody>
         <glossSurfaceForm>artifacts</glossSurfaceForm>
     </glossBody>
