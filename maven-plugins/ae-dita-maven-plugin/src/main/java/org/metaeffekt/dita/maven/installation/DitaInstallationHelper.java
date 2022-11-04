@@ -81,7 +81,7 @@ public class DitaInstallationHelper {
     private Checksum checksumTask;
 
     /**
-     * Ant codeextraction for unzipping used to install the Dita Toolkit.
+     * Ant Expand task for unzipping used to install the Dita Toolkit.
      */
     private Expand unzipTask;
 
