@@ -3,7 +3,7 @@
 <glossentry id="ditaot">
     <glossterm>DITA Open Toolkit</glossterm>
     <glossdef>Das DITA-OT unterstützt die Übertratung von DITA-basierten Inhalten in verschiedene Ausgabeformate. Das
-              DITA-OT ist eine Open Source-Projekt, das alle verfügbaren Versionen der DITA-Spezifikation unterstützt.
+              DITA-OT ist ein Open Source-Projekt, das alle verfügbaren Versionen der DITA-Spezifikation unterstützt.
     </glossdef>
     <glossBody>
         <glossSurfaceForm>DITA Open Toolkit (DITA-OT)</glossSurfaceForm>
