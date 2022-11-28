@@ -23,6 +23,7 @@
     <frontmatter>
         <topicref href="ae-common-content/imprint/de/tpc_imprint.dita" />
         <topicref href="ae-common-content/notice/de/tpc_notice.dita" />
+        <topicref href="ae-common-content/notice/de/tpc_vulnerability-report-notice.dita" />
         <booklists>
             <toc/>
         </booklists>
