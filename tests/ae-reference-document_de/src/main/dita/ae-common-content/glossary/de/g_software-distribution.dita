@@ -7,10 +7,10 @@
         Eine Software Distribution wird von einem Anbieter zusammengestellt, um die Software einem oder mehreren
         Empfängern zur Verfügung zu stellen. Je nach Kontext und Beziehung zwischen Anbieter und
         Empfänger einer Software Distribution müssen die Lizenzbedingungen der enthaltenen Komponenten berücksichtigt werden.
-        Eine Software Distribution kann verschiedene Ausprägungen annehmen. Sie kann etwa durch
-        eine ausführbare Datei, ein Archiv oder ein Dateisystem-Image umgesetzt sein.
+        Eine Software Distribution kann in verschiedenen Ausprägungen erscheinen. Sie kann etwa durch
+        eine ausführbare Datei, ein Archiv oder ein Dateisystem-Image umgesetzt werden.
         <p>
-            Siehe auch: <abbreviated-form keyref="provider"/>, <abbreviated-form keyref="recipient"/>, <abbreviated-form keyref="software-distribution"/>
+            Siehe auch: <abbreviated-form keyref="provider"/>, <abbreviated-form keyref="recipient"/>
         </p>
     </glossdef>
     <glossBody>

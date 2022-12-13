@@ -2,11 +2,11 @@
 <!DOCTYPE glossentry PUBLIC "-//OASIS//DTD DITA Glossary Entry//EN" "glossentry.dtd">
 <glossentry id="software-annex">
     <glossterm>Software Annex</glossterm>
-    <glossdef>The software annex aggregates all information about the used software:
+    <glossdef>The Software Annex aggregates all information about the used software:
         <ul>
             <li>The associated and effective license terms and notices of the individual components.</li>
             <li>The source code of components if stipulated by the effective license.</li>
-            <li>Documentation including the bill of materials of all third-party components with appropriate
+            <li>Documentation including the Bill of Materials of all third-party components with appropriate
                 license and notice information.</li>
         </ul>
     </glossdef>

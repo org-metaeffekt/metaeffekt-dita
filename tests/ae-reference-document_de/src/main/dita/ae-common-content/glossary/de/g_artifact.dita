@@ -3,7 +3,7 @@
 <glossentry id="artifact">
     <glossterm>Artefakt</glossterm>
     <glossdef>
-        Ein Artefakt ist eine physische Datei, z. B. eine ausführbare Binärdatei, ein Archiv, ein Dokument, ein Text
+        Ein Artefakt ist eine physische Datei wie bspw. eine ausführbare Binärdatei, ein Archiv, ein Dokument, ein Text
         oder eine Konfigurationsdatei. Ein Artefakt wird einer Komponente zugeordnet.
         <p>
             Siehe auch: <abbreviated-form keyref="component"/>

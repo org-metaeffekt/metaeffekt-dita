@@ -5,14 +5,14 @@
     <glossdef>
         Common Product Enumeration (CPE) ist ein von der <abbreviated-form keyref="nvd"/> verwendetes Schema zur
         Identifizierung anfälliger Produkte (Software und Hardware). Eine CPE hat eine definierte Struktur, die aus
-        mehreren Teilen besteht:
+        mehreren Bestandteilen besteht:
         <p>
             <codeblock>cpe:&lt;cpe_version&gt;:&lt;part&gt;:&lt;vendor&gt;:&lt;product&gt;:&lt;version&gt;:&lt;update&gt;:&lt;edition&gt;:
     &lt;language&gt;:&lt;sw_edition&gt;:&lt;target_sw&gt;:
         &lt;target_hw&gt;:&lt;other&gt;</codeblock>
         </p>
         <p>
-            Mit einem CPE können mehrere Schwachstellen (<abbreviated-form keyref="cve"/>) verbunden sein.
+            Mit einem CPE können mehrere Schwachstellen (<abbreviated-form keyref="cve"/>) verknüpft sein.
         </p>
     </glossdef>
     <glossBody>

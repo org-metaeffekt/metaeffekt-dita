@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd">
+<topic id="tpc_dita-glossary" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+    <title>DITA Glossar Begriffe</title>
+    <body>
+        <p>
+            <abbreviated-form keyref="appliance"/>
+        </p>
+        <p>
+            <abbreviated-form keyref="artifact"/>
+        </p>
+        <p>
+            <abbreviated-form keyref="asset"/>
+        </p>
+        <p>
+            <abbreviated-form keyref="cpe"/>
+        </p>
+        <p>
+            <abbreviated-form keyref="cve"/>
+        </p>
+        <p>
+            <abbreviated-form keyref="cvss"/>
+        </p>
+        <p>
+            <abbreviated-form keyref="effective-licenses"/>
+        </p>
+        <p>
+            <abbreviated-form keyref="nist"/>
+        </p>
+        <p>
+            <abbreviated-form keyref="nvd"/>
+        </p>
+        <p>
+            <abbreviated-form keyref="package"/>
+        </p>
+        <p>
+            <abbreviated-form keyref="subcomponent"/>
+        </p>
+        <p>
+            <abbreviated-form keyref="web-module"/>
+        </p>
+    </body>
+</topic>

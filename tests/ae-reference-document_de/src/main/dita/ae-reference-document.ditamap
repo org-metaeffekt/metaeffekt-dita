@@ -23,6 +23,7 @@
     <frontmatter>
         <topicref href="ae-common-content/imprint/de/tpc_imprint.dita" />
         <topicref href="ae-common-content/notice/de/tpc_notice.dita" />
+        <topicref href="ae-common-content/notice/de/tpc_vulnerability-report-notice.dita" />
         <booklists>
             <toc/>
         </booklists>
@@ -34,6 +35,9 @@
         <topicref href="ae-common-content/components/de/tpc_oss-components.dita" />
         <topicref href="ae-common-content/components/de/tpc_public-domain-components.dita" />
     </chapter>
+
+    <chapter href="reference/de/tpc_quotes.dita"></chapter>
+    <chapter href="reference/de/tpc_dita-used-glossary-terms.dita"></chapter>
 
     <chapter href="ae-common-content/bill-of-materials/de/tpc_bill-of-materials.dita" >
     </chapter>

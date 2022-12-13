@@ -3,7 +3,7 @@
 <glossentry id="component">
     <glossterm>Komponente</glossterm>
     <glossdef>
-        Eine Komponente ist eine Gruppe von einem oder mehreren Artefakten, Paketen oder Webmodulen. Eine Komponente
+        Eine Komponente ist eine Gruppe bestehend aus einem oder mehreren Artefakten, Paketen oder Webmodulen. Eine Komponente
         kann als logisches Aggregat betrachtet werden. Lizenzinformationen werden auf Komponentenebene zugeordnet und
         sind innerhalb der aggregierten Artefakte, Pakete und Webmodule konsistent.
         <p>

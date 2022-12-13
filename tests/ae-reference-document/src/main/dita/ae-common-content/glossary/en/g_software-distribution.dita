@@ -3,13 +3,13 @@
 <glossentry id="software-distribution">
     <glossterm>Software Distribution</glossterm>
     <glossdef>A software distribution is composed of components and complementary data and configurations.
-        A software distribution is put together by a provider in order to make the software available to one or more
-        recipients. Depending upon context and relationship between provider and recipient of a software distribution
-        the license conditions of the contained components must be considered. A software distribution can take
+        A Software Distribution is put together by a provider in order to make the software available to one or more
+        recipients. Depending upon context and relationship between provider and recipient of a software distribution,
+        the license conditions of the contained components must be considered. A Software Distribution can take
         different characteristics. A software distribution can be converted for instance by an executable file, an
         archive or a file system image.
         <p>
-            See also:
+            See also: <abbreviated-form keyref="provider"/>, <abbreviated-form keyref="recipient"/>
         </p>
     </glossdef>
     <glossBody>
