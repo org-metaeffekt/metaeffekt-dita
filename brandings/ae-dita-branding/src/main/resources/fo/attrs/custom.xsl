@@ -119,4 +119,12 @@
         <xsl:attribute name="padding-bottom">2mm</xsl:attribute>
    </xsl:attribute-set>
 
+    <xsl:attribute-set name="topic.topic.topic.topic.title" use-attribute-sets="base-font common.title">
+        <xsl:attribute name="space-before">10pt</xsl:attribute>
+        <xsl:attribute name="font-size">11pt</xsl:attribute>
+        <xsl:attribute name="start-indent"><xsl:value-of select="$side-col-width"/></xsl:attribute>
+        <xsl:attribute name="font-weight">bold</xsl:attribute>
+        <xsl:attribute name="keep-with-next.within-column">always</xsl:attribute>
+    </xsl:attribute-set>
+
 </xsl:stylesheet>

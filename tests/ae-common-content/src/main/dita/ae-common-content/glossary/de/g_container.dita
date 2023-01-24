@@ -11,10 +11,10 @@
             Ein Container erfordert eine Container-Laufzeitumgebung, damit er instanziiert werden kann. Container sind
             kompakter als virtuelle Appliances. Sie können mühelos in Clusterumgebungen bedient werden und werden
             häufig zur dynamischen Umsetzung von Scaling Services verwendet. Eine typische Container-Laufzeitumgebung
-            ist Kubernetes, die auch bei Dataport in den IONOS-Rechenzentren eingesetzt wird.
+            ist Kubernetes.
         </p>
     </glossdef>
     <glossBody>
-        <glossSurfaceForm>container</glossSurfaceForm>
+        <glossSurfaceForm>Container</glossSurfaceForm>
     </glossBody>
 </glossentry>
