@@ -5,7 +5,7 @@
     <glossdef>
     <p>
     JMX-Client, der zusammen mit JDK-Distributionen ausgeliefert wird.
-    Per JMX (MBeans) kann eine Zielanwendung während der Laufzeit überwacht und adminstriert werden.
+    Per JMX (MBeans) kann eine Zielanwendung während der Laufzeit überwacht und administriert werden.
     </p>
     </glossdef>
 </glossentry>

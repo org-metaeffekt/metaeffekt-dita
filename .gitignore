@@ -7,3 +7,4 @@
 **/.classpath
 **/*.prefs
 
+/tests/ae-reference-document/src/main/dita/ae-common-content/

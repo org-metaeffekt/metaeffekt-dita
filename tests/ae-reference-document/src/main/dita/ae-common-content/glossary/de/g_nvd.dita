@@ -6,7 +6,7 @@
         Die National Vulnerability Database (NVD) ist ein Repository für Daten bezüglich Sicherheitsrisiken.
         Die NVD enthält <abbreviated-form keyref="cpe"/>- und <abbreviated-form keyref="cve"/>-Angaben zum Abrufen und
         Abgleichen von Schwachstelleninformationen.
-        <p>Die NVD wird vom <abbreviated-form keyref="nist"/>.</p> verwaltet.
+        <p>Die NVD wird vom <abbreviated-form keyref="nist"/> verwaltet.</p>
     </glossdef>
     <glossBody>
         <glossSurfaceForm>National Vulnerability Database (NVD)</glossSurfaceForm>
