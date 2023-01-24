@@ -12,7 +12,11 @@
         Hosts und werden auf gemeinsam genutzten Hardware-Ressourcen einer Virtualisierungsumgebung ausgeführt.
         Häufig werden virtuelle Appliances als virtuelle Maschinen bezeichnet. Eine virtuelle Maschine kann aus einer
         Virtualisierungsumgebung exportiert und übertragen werden. Sie ist an keine Hardware angeschlossen.
-    </p></glossdef>
+    </p>
+    <p>
+        Siehe auch: <abbreviated-form keyref="asset"/>
+    </p>
+    </glossdef>
     <glossBody>
         <glossSurfaceForm>Appliance</glossSurfaceForm>
     </glossBody>
