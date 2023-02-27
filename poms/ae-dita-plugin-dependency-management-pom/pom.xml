@@ -16,8 +16,20 @@
     <version>HEAD-SNAPSHOT</version>
     <packaging>pom</packaging>
 
+    <properties>
+        <xbean.reflect.version>4.5</xbean.reflect.version>
+    </properties>
+
     <dependencyManagement>
         <dependencies>
+
+            <dependency>
+                <!-- manage transitive version -->
+                <groupId>org.apache.xbean</groupId>
+                <artifactId>xbean-reflect</artifactId>
+                <version>${xbean.reflect.version}</version>
+                <scope>compile</scope>
+            </dependency>
 
         </dependencies>
     </dependencyManagement>
