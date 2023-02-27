@@ -21,7 +21,7 @@
         <dita.customized.archive>${project.build.directory}/ae-dita-toolkit-${project.version}-bin.zip</dita.customized.archive>
         <dita.root.folder>${project.build.directory}/${dita.name.string}</dita.root.folder>
 
-        <ant.version>1.10.1</ant.version>
+        <ant.version>1.10.11</ant.version>
 
         <ae.dita.version>HEAD-SNAPSHOT</ae.dita.version>
     </properties>
