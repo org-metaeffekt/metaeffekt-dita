@@ -21,7 +21,6 @@
         <dita.customized.archive>${project.build.directory}/ae-dita-toolkit-${project.version}-bin.zip</dita.customized.archive>
         <dita.root.folder>${project.build.directory}/${dita.name.string}</dita.root.folder>
 
-
         <ant.version>1.10.1</ant.version>
 
         <ae.dita.version>HEAD-SNAPSHOT</ae.dita.version>
@@ -168,7 +167,7 @@
                     <dependency>
                         <groupId>net.sf.saxon</groupId>
                         <artifactId>Saxon-HE</artifactId>
-                        <version>LATEST</version>
+                        <version>9.8.0-12</version>
                     </dependency>
                     <dependency>
                         <groupId>commons-io</groupId>

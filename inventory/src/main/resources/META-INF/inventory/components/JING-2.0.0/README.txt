@@ -1,1 +1,0 @@
-Neither a copy of the BSD 3-Clause License nor a NOTICE text file was provided with the component. Please refer to the general license text.
