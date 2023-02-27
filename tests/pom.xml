@@ -15,7 +15,7 @@
     <modules>
         <module>ae-dita-infrastructure-test</module>
         <module>ae-common-content</module>
-        <module>ae-reference-document</module>
+        <module>ae-reference-document_en</module>
         <module>ae-reference-document_de</module>
     </modules>
 

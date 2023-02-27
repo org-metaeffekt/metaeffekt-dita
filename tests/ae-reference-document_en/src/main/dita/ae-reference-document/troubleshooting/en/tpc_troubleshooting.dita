@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd">
+
+<topic id="tpc_troubleshooting">
+    <title>Troubleshooting</title>
+
+    <body>
+        <p>This chapter provides assistance in the case of trouble installing and maintaining the
+            ${product.name}. </p>
+        <p>Please also consult the list of known issues provided by the ${product.name} Release Notes.</p>
+        <p>To date, no further issues are known operating the ${product.name}.</p>
+    </body>
+</topic>
+

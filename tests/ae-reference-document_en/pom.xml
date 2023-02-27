@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+    <modelVersion>4.0.0</modelVersion>
+    
+    <parent>
+        <groupId>org.metaeffekt.dita</groupId>
+        <artifactId>ae-dita-tests</artifactId>
+        <version>HEAD-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>ae-reference-document_en</artifactId>
+    <packaging>jar</packaging>
+
+    <properties>
+        <maven.ae.documentation.dita.dir>${basedir}/src/main/dita</maven.ae.documentation.dita.dir>
+
+        <product.name>DITA Toolchain</product.name>
+        <product.prefix>ae-reference-document</product.prefix>
+        <product.version>${project.version}</product.version>
+        <product.watermark.name>Reference Documentation</product.watermark.name>
+
+        <organization.name>{met&#230;ffekt} GmbH</organization.name>
+        <organization.accronym>ae</organization.accronym>
+        <organization.address>https://metaeffekt.com</organization.address>
+        <organization.license>Apache License 2.0</organization.license>
+
+        <asset.name>Common Content</asset.name>
+        <asset.version>0.1.0</asset.version>
+        <asset.date_en>2019-03-09</asset.date_en>
+
+        <document.id>XXX-YYY-ZZZZZ</document.id>
+        <document.name>Reference Document</document.name>
+        <document.classification_en>Public</document.classification_en>
+        <document.status>Initial</document.status>
+        <document.version>1.0</document.version>
+        <document.ditamap>ae-reference-document.ditamap</document.ditamap>
+        <document.status_en>Initial</document.status_en>
+        <document.date_en>2019-03-09</document.date_en>
+        <document.copyright.year>2019</document.copyright.year>
+
+    </properties>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.metaeffekt.dita</groupId>
+                    <artifactId>ae-dita-maven-plugin</artifactId>
+                    <version>${ae.dita.version}</version>
+                    <configuration>
+                        <ditaCleanTemp>false</ditaCleanTemp>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>retrieve-branding</id>
+                        <goals>
+                            <goal>unpack</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}/branding-base</outputDirectory>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>org.metaeffekt.dita</groupId>
+                                    <artifactId>ae-dita-branding</artifactId>
+                                    <type>zip</type>
+                                    <classifier>resources</classifier>
+                                    <version>${ae.dita.version}</version>
+                                </artifactItem>
+                            </artifactItems>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>2.6</version>
+                <executions>
+                    <!-- Copy the complete dita.source.dir to the target folder and apply filtering  -->
+                    <execution>
+                        <id>copy-resources</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <!-- Required for copying to the target dita directory. -->
+                            <outputDirectory>${project.build.directory}/dita</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>${maven.ae.documentation.dita.dir}</directory>
+                                    <filtering>true</filtering>
+                                    <includes>
+                                        <include>**/*</include>
+                                    </includes>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>copy-branding-resources</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}/branding</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>${project.build.directory}/branding-base</directory>
+                                    <filtering>true</filtering>
+                                    <includes>
+                                        <include>**/*</include>
+                                    </includes>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>copy-frontmatter</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <!-- Required for copying to the target dita directory. -->
+                            <outputDirectory>${project.build.directory}/dita</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>${project.build.directory}/tmp</directory>
+                                    <filtering>true</filtering>
+                                    <includes>
+                                        <include>**/*.dita</include>
+                                    </includes>
+                                </resource>
+                            </resources>
+                            <overwrite>true</overwrite>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.metaeffekt.dita</groupId>
+                <artifactId>ae-dita-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>ensure-dita-toolkit</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>ensure-dita-toolkit</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>aggregate-dita-content</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>aggregate-content</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>mark-dita-content-writable</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>mark-generated-content-writable</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>generate-dita-content</id>
+                        <phase>process-sources</phase>
+                        <goals>
+                            <goal>generate-content</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>mark-dita-content-read-only</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>mark-generated-content-read-only</goal>
+                        </goals>
+                    </execution>
+
+                    <execution>
+                        <id>generate-documentation</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>generate-documentation</goal>
+                        </goals>
+                        <configuration>
+                            <documentItems>
+                                <documentItem>
+                                    <ditaMap>${document.ditamap}</ditaMap>
+                                    <ditaTranstype>AE_STANDARD_PDF</ditaTranstype>
+                                    <artifactId>${project.artifactId}</artifactId>
+                                    <artifactClassifier>en</artifactClassifier>
+                                </documentItem>
+                            </documentItems>
+                            <ditaBuildDir>${project.build.directory}/dita</ditaBuildDir>
+                            <ditaCustomizationDir>${project.build.directory}/branding/ae-dita-branding</ditaCustomizationDir>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>generate-glossary</id>
+                        <phase>process-sources</phase>
+                        <goals>
+                            <goal>generate-glossary</goal>
+                        </goals>
+                        <configuration>
+                            <language>en</language>
+
+                            <!-- FIXME-KKL: mojo should fail, when ditamap was not found -->
+                            <ditaMap>${document.ditamap}</ditaMap>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.metaeffekt.dita</groupId>
+            <artifactId>ae-common-content</artifactId>
+            <type>jar</type>
+            <classifier>doc</classifier>
+            <version>${ae.dita.version}</version>
+        </dependency>
+    </dependencies>
+</project>

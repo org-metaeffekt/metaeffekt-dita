@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd">
+<topic id="tpc_third-party-jars" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+    <title>Third-Party Artifacts</title>
+    <body>
+        <table otherprops="wide" id="table_third-party-jars">
+            <tgroup cols="4">
+                <colspec colname="COLSPEC0" colnum="1" colwidth="30*" />
+                <colspec colname="COLSPEC1" colnum="2" colwidth="30*" />
+                <colspec colname="COLSPEC2" colnum="3" colwidth="15*" />
+                <colspec colname="COLSPEC3" colnum="4" colwidth="25*" />
+
+                <thead>
+                    <row>
+                        <entry colname="COLSPEC0" valign="top">Group Id</entry>
+                        <entry colname="COLSPEC1" valign="top">Artifact Id</entry>
+                        <entry colname="COLSPEC2" valign="top">Version</entry>
+                        <entry colname="COLSPEC3" valign="top">License</entry>
+                    </row>
+                </thead>
+                
+                <tbody>
+                    <row>
+                        <entry>&nbsp;</entry>
+                        <entry>bootstrap-theme (css)</entry>
+                        <entry><codeph>3.&#8203;3.&#8203;2</codeph></entry>
+                        
+                                                                                                            <entry><xref href="thirdparty/licenses/MIT-License/" type="html" scope="external">MIT License</xref></entry>
+                                                                        </row>
+                    <row>
+                        <entry>&nbsp;</entry>
+                        <entry>bootstrap (css)</entry>
+                        <entry><codeph>3.&#8203;3.&#8203;2</codeph></entry>
+                        
+                                                                                                            <entry><xref href="thirdparty/licenses/MIT-License/" type="html" scope="external">MIT License</xref></entry>
+                                                                        </row>
+                    <row>
+                        <entry>&nbsp;</entry>
+                        <entry>bootstrap (js)</entry>
+                        <entry><codeph>3.&#8203;3.&#8203;2</codeph></entry>
+                        
+                                                                                                            <entry><xref href="thirdparty/licenses/MIT-License/" type="html" scope="external">MIT License</xref></entry>
+                                                                        </row>
+                    <row>
+                        <entry>&nbsp;</entry>
+                        <entry>glyphicons-halflings (eot)</entry>
+                        <entry><codeph>3.&#8203;3.&#8203;2</codeph></entry>
+                        
+                                                                                                            <entry><xref href="thirdparty/licenses/MIT-License/" type="html" scope="external">MIT License</xref></entry>
+                                                                        </row>
+                    <row>
+                        <entry>&nbsp;</entry>
+                        <entry>glyphicons-halflings (svg)</entry>
+                        <entry><codeph>3.&#8203;3.&#8203;2</codeph></entry>
+                        
+                                                                                                            <entry><xref href="thirdparty/licenses/MIT-License/" type="html" scope="external">MIT License</xref></entry>
+                                                                        </row>
+                    <row>
+                        <entry>&nbsp;</entry>
+                        <entry>glyphicons-halflings (ttf)</entry>
+                        <entry><codeph>3.&#8203;3.&#8203;2</codeph></entry>
+                        
+                                                                                                            <entry><xref href="thirdparty/licenses/MIT-License/" type="html" scope="external">MIT License</xref></entry>
+                                                                        </row>
+                    <row>
+                        <entry>&nbsp;</entry>
+                        <entry>glyphicons-halflings (woff)</entry>
+                        <entry><codeph>3.&#8203;3.&#8203;2</codeph></entry>
+                        
+                                                                                                            <entry><xref href="thirdparty/licenses/MIT-License/" type="html" scope="external">MIT License</xref></entry>
+                                                                        </row>
+                    <row>
+                        <entry>&nbsp;</entry>
+                        <entry>glyphicons-halflings (woff2)</entry>
+                        <entry><codeph>3.&#8203;3.&#8203;2</codeph></entry>
+                        
+                                                                                                            <entry><xref href="thirdparty/licenses/MIT-License/" type="html" scope="external">MIT License</xref></entry>
+                                                                        </row>
+                    <row>
+                        <entry>&nbsp;</entry>
+                        <entry>jquery (js)</entry>
+                        <entry><codeph>1.&#8203;11.&#8203;1</codeph></entry>
+                        
+                                                                                                            <entry><xref href="thirdparty/licenses/MIT-License/" type="html" scope="external">MIT License</xref></entry>
+                                                                        </row>
+                    <row>
+                        <entry>ant-contrib</entry>
+                        <entry>ant-contrib</entry>
+                        <entry><codeph>1.&#8203;0b3</codeph></entry>
+                        
+                                                                                                            <entry><xref href="thirdparty/licenses/Apache-License-Version-1.1/" type="html" scope="external">Apache License Version 1.1</xref></entry>
+                                                                        </row>
+                    <row>
+                        <entry>cglib</entry>
+                        <entry>cglib</entry>
+                        <entry><codeph>3.&#8203;2.&#8203;4</codeph></entry>
+                        
+                                                                                                            <entry><xref href="thirdparty/licenses/Apache-License-Version-2.0/" type="html" scope="external">Apache License Version 2.0</xref></entry>
+                                                                        </row>
+                    <row>
+                        <entry>com.&#8203;google.&#8203;guava</entry>
+                        <entry>guava</entry>
+                        <entry><codeph>19.&#8203;0</codeph></entry>
+                        
+                                                                                                            <entry><xref href="thirdparty/licenses/Apache-License-Version-2.0/" type="html" scope="external">Apache License Version 2.0</xref></entry>
+                                                                        </row>
+                    <row>
+                        <entry>commons-codec</entry>
+                        <entry>commons-codec</entry>
+                        <entry><codeph>1.&#8203;10</codeph></entry>
+                        
+                                                                                                            <entry><xref href="thirdparty/licenses/Apache-License-Version-2.0/" type="html" scope="external">Apache License Version 2.0</xref></entry>
+                                                                        </row>
+                    <row>
+                        <entry>commons-collections</entry>
+                        <entry>commons-collections</entry>
+                        <entry><codeph>3.&#8203;2.&#8203;2</codeph></entry>
+                        
+                                                                                                            <entry><xref href="thirdparty/licenses/Apache-License-Version-2.0/" type="html" scope="external">Apache License Version 2.0</xref></entry>
+                                                                        </row>
+                    <row>
+                        <entry>commons-fileupload</entry>
+                        <entry>commons-fileupload</entry>
+                        <entry><codeph>1.&#8203;3.&#8203;2</codeph></entry>
+                        
+                                                                                                            <entry><xref href="thirdparty/licenses/Apache-License-Version-2.0/" type="html" scope="external">Apache License Version 2.0</xref></entry>
+                                                                        </row>
+                    <row>
+                        <entry>commons-io</entry>
+                        <entry>commons-io</entry>
+                        <entry><codeph>2.&#8203;5</codeph></entry>
+                        
+                                                                                                            <entry><xref href="thirdparty/licenses/Apache-License-Version-2.0/" type="html" scope="external">Apache License Version 2.0</xref></entry>
+                                                                        </row>
+                    <row>
+                        <entry>commons-lang</entry>
+                        <entry>commons-lang</entry>
+                        <entry><codeph>2.&#8203;6</codeph></entry>
+                        
+                                                                                                            <entry><xref href="thirdparty/licenses/Apache-License-Version-2.0/" type="html" scope="external">Apache License Version 2.0</xref></entry>
+                                                                        </row>
+                    <row>
+                        <entry>jline</entry>
+                        <entry>jline</entry>
+                        <entry><codeph>2.&#8203;12.&#8203;1</codeph></entry>
+                        
+                                                                                                            <entry><xref href="thirdparty/licenses/BSD-3-Clause-License/" type="html" scope="external">BSD 3-Clause License</xref></entry>
+                                                                        </row>
+                    <row>
+                        <entry>net.&#8203;jcip</entry>
+                        <entry>jcip-annotations</entry>
+                        <entry><codeph>1.&#8203;0</codeph></entry>
+                        
+                                                                                                            <entry><xref href="thirdparty/licenses/Creative-Commons-Public-Domain/" type="html" scope="external">Creative Commons Public Domain</xref></entry>
+                                                                        </row>
+                    <row>
+                        <entry>org.&#8203;apache.&#8203;ant</entry>
+                        <entry>ant-commons-logging</entry>
+                        <entry><codeph>1.&#8203;9.&#8203;7</codeph></entry>
+                        
+                                                                                                            <entry><xref href="thirdparty/licenses/Apache-License-Version-2.0-(with-subcomponents)/" type="html" scope="external">Apache License Version 2.0 (with-subcomponents)</xref></entry>
+                                                                        </row>
+                    <row>
+                        <entry>org.&#8203;apache.&#8203;ant</entry>
+                        <entry>ant-launcher</entry>
+                        <entry><codeph>1.&#8203;9.&#8203;7</codeph></entry>
+                        
+                                                                                                            <entry><xref href="thirdparty/licenses/Apache-License-Version-2.0-(with-subcomponents)/" type="html" scope="external">Apache License Version 2.0 (with-subcomponents)</xref></entry>
+                                                                        </row>
+                    <row>
+                        <entry>org.&#8203;apache.&#8203;ant</entry>
+                        <entry>ant</entry>
+                        <entry><codeph>1.&#8203;9.&#8203;7</codeph></entry>
+                        
+                                                                                                            <entry><xref href="thirdparty/licenses/Apache-License-Version-2.0-(with-subcomponents)/" type="html" scope="external">Apache License Version 2.0 (with-subcomponents)</xref></entry>
+                                                                        </row>
+                    <row>
+                        <entry>org.&#8203;apache.&#8203;camel</entry>
+                        <entry>camel-core</entry>
+                        <entry><codeph>2.&#8203;16.&#8203;2</codeph></entry>
+                        
+                                                                                                            <entry><xref href="thirdparty/licenses/Apache-License-Version-2.0/" type="html" scope="external">Apache License Version 2.0</xref></entry>
+                                                                        </row>
+                    <row>
+                        <entry>org.&#8203;apache.&#8203;camel</entry>
+                        <entry>camel-restlet</entry>
+                        <entry><codeph>2.&#8203;16.&#8203;2</codeph></entry>
+                        
+                                                                                                            <entry><xref href="thirdparty/licenses/Apache-License-Version-2.0/" type="html" scope="external">Apache License Version 2.0</xref></entry>
+                                                                        </row>
+                    <row>
+                        <entry>org.&#8203;apache.&#8203;camel</entry>
+                        <entry>camel-spring</entry>
+                        <entry><codeph>2.&#8203;16.&#8203;2</codeph></entry>
+                        
+                                                                                                            <entry><xref href="thirdparty/licenses/Apache-License-Version-2.0/" type="html" scope="external">Apache License Version 2.0</xref></entry>
+                                                                        </row>
+                    <row>
+                        <entry>org.&#8203;apache.&#8203;commons</entry>
+                        <entry>commons-exec</entry>
+                        <entry><codeph>1.&#8203;3</codeph></entry>
+                        
+                                                                                                            <entry><xref href="thirdparty/licenses/Apache-License-Version-2.0/" type="html" scope="external">Apache License Version 2.0</xref></entry>
+                                                                        </row>
+                    <row>
+                        <entry>org.&#8203;apache.&#8203;commons</entry>
+                        <entry>commons-lang3</entry>
+                        <entry><codeph>3.&#8203;4</codeph></entry>
+                        
+                                                                                                            <entry><xref href="thirdparty/licenses/Apache-License-Version-2.0/" type="html" scope="external">Apache License Version 2.0</xref></entry>
+                                                                        </row>
+                    <row>
+                        <entry>org.&#8203;apache.&#8203;httpcomponents</entry>
+                        <entry>httpclient</entry>
+                        <entry><codeph>4.&#8203;5.&#8203;2</codeph></entry>
+                        
+                                                                                                            <entry><xref href="thirdparty/licenses/Apache-License-Version-2.0/" type="html" scope="external">Apache License Version 2.0</xref></entry>
+                                                                        </row>
+                    <row>
+                        <entry>org.&#8203;apache.&#8203;httpcomponents</entry>
+                        <entry>httpmime</entry>
+                        <entry><codeph>4.&#8203;5.&#8203;2</codeph></entry>
+                        
+                                                                                                            <entry><xref href="thirdparty/licenses/Apache-License-Version-2.0/" type="html" scope="external">Apache License Version 2.0</xref></entry>
+                                                                        </row>
+                    <row>
+                        <entry>org.&#8203;apache.&#8203;httpcomponents</entry>
+                        <entry>httpcore</entry>
+                        <entry><codeph>4.&#8203;4.&#8203;5</codeph></entry>
+                        
+                                                                                                            <entry><xref href="thirdparty/licenses/Apache-License-Version-2.0/" type="html" scope="external">Apache License Version 2.0</xref></entry>
+                                                                        </row>
+                    <row>
+                        <entry>org.&#8203;apache.&#8203;james</entry>
+                        <entry>apache-mime4j-core</entry>
+                        <entry><codeph>0.&#8203;7.&#8203;2</codeph></entry>
+                        
+                                                                                                            <entry><xref href="thirdparty/licenses/Apache-License-Version-2.0/" type="html" scope="external">Apache License Version 2.0</xref></entry>
+                                                                        </row>
+                    <row>
+                        <entry>org.&#8203;apache.&#8203;logging.&#8203;log4j</entry>
+                        <entry>log4j-api</entry>
+                        <entry><codeph>2.&#8203;7</codeph></entry>
+                        
+                                                                                                            <entry><xref href="thirdparty/licenses/Apache-License-Version-2.0/" type="html" scope="external">Apache License Version 2.0</xref></entry>
+                                                                        </row>
+                    <row>
+                        <entry>org.&#8203;apache.&#8203;logging.&#8203;log4j</entry>
+                        <entry>log4j-core</entry>
+                        <entry><codeph>2.&#8203;7</codeph></entry>
+                        
+                                                                                                            <entry><xref href="thirdparty/licenses/Apache-License-Version-2.0/" type="html" scope="external">Apache License Version 2.0</xref></entry>
+                                                                        </row>
+                    <row>
+                        <entry>org.&#8203;apache.&#8203;logging.&#8203;log4j</entry>
+                        <entry>log4j-slf4j-impl</entry>
+                        <entry><codeph>2.&#8203;7</codeph></entry>
+                        
+                                                                                                            <entry><xref href="thirdparty/licenses/Apache-License-Version-2.0/" type="html" scope="external">Apache License Version 2.0</xref></entry>
+                                                                        </row>
+                    <row>
+                        <entry>org.&#8203;apache.&#8203;velocity</entry>
+                        <entry>velocity</entry>
+                        <entry><codeph>1.&#8203;7</codeph></entry>
+                        
+                                                                                                            <entry><xref href="thirdparty/licenses/Apache-License-Version-2.0/" type="html" scope="external">Apache License Version 2.0</xref></entry>
+                                                                        </row>
+                    <row>
+                        <entry>org.&#8203;bouncycastle</entry>
+                        <entry>bcpkix-jdk15on</entry>
+                        <entry><codeph>1.&#8203;55</codeph></entry>
+                        
+                                                                                                            <entry><xref href="thirdparty/licenses/Bouncy-Castle-License/" type="html" scope="external">Bouncy Castle License</xref></entry>
+                                                                        </row>
+                    <row>
+                        <entry>org.&#8203;bouncycastle</entry>
+                        <entry>bcprov-jdk15on</entry>
+                        <entry><codeph>1.&#8203;55</codeph></entry>
+                        
+                                                                                                            <entry><xref href="thirdparty/licenses/Bouncy-Castle-License/" type="html" scope="external">Bouncy Castle License</xref></entry>
+                                                                        </row>
+                    <row>
+                        <entry>org.&#8203;ow2.&#8203;asm</entry>
+                        <entry>asm</entry>
+                        <entry><codeph>5.&#8203;0.&#8203;4</codeph></entry>
+                        
+                                                                                                            <entry><xref href="thirdparty/licenses/BSD-3-Clause-License/" type="html" scope="external">BSD 3-Clause License</xref></entry>
+                                                                        </row>
+                    <row>
+                        <entry>org.&#8203;restlet.&#8203;jee</entry>
+                        <entry>org.&#8203;restlet.&#8203;ext.&#8203;fileupload</entry>
+                        <entry><codeph>2.&#8203;3.&#8203;1</codeph></entry>
+                        
+                                                                                                            <entry><xref href="thirdparty/licenses/Apache-License-Version-2.0/" type="html" scope="external">Apache License Version 2.0</xref></entry>
+                                                                        </row>
+                    <row>
+                        <entry>org.&#8203;restlet.&#8203;jee</entry>
+                        <entry>org.&#8203;restlet.&#8203;ext.&#8203;httpclient</entry>
+                        <entry><codeph>2.&#8203;3.&#8203;1</codeph></entry>
+                        
+                                                                                                            <entry><xref href="thirdparty/licenses/Apache-License-Version-2.0/" type="html" scope="external">Apache License Version 2.0</xref></entry>
+                                                                        </row>
+                    <row>
+                        <entry>org.&#8203;restlet.&#8203;jee</entry>
+                        <entry>org.&#8203;restlet.&#8203;ext.&#8203;servlet</entry>
+                        <entry><codeph>2.&#8203;3.&#8203;1</codeph></entry>
+                        
+                                                                                                            <entry><xref href="thirdparty/licenses/Apache-License-Version-2.0/" type="html" scope="external">Apache License Version 2.0</xref></entry>
+                                                                        </row>
+                    <row>
+                        <entry>org.&#8203;restlet.&#8203;jee</entry>
+                        <entry>org.&#8203;restlet</entry>
+                        <entry><codeph>2.&#8203;3.&#8203;1</codeph></entry>
+                        
+                                                                                                            <entry><xref href="thirdparty/licenses/Apache-License-Version-2.0/" type="html" scope="external">Apache License Version 2.0</xref></entry>
+                                                                        </row>
+                    <row>
+                        <entry>org.&#8203;slf4j</entry>
+                        <entry>jcl-over-slf4j</entry>
+                        <entry><codeph>1.&#8203;7.&#8203;21</codeph></entry>
+                        
+                                                                                                            <entry><xref href="thirdparty/licenses/MIT-License/" type="html" scope="external">MIT License</xref></entry>
+                                                                        </row>
+                    <row>
+                        <entry>org.&#8203;slf4j</entry>
+                        <entry>jul-to-slf4j</entry>
+                        <entry><codeph>1.&#8203;7.&#8203;21</codeph></entry>
+                        
+                                                                                                            <entry><xref href="thirdparty/licenses/MIT-License/" type="html" scope="external">MIT License</xref></entry>
+                                                                        </row>
+                    <row>
+                        <entry>org.&#8203;slf4j</entry>
+                        <entry>slf4j-api</entry>
+                        <entry><codeph>1.&#8203;7.&#8203;21</codeph></entry>
+                        
+                                                                                                            <entry><xref href="thirdparty/licenses/MIT-License/" type="html" scope="external">MIT License</xref></entry>
+                                                                        </row>
+                    <row>
+                        <entry>org.&#8203;springframework.&#8203;shell</entry>
+                        <entry>spring-shell</entry>
+                        <entry><codeph>1.&#8203;1.&#8203;0.&#8203;RELEASE</codeph></entry>
+                        
+                                                                                                            <entry><xref href="thirdparty/licenses/Apache-License-Version-2.0/" type="html" scope="external">Apache License Version 2.0</xref></entry>
+                                                                        </row>
+                    <row>
+                        <entry>org.&#8203;springframework</entry>
+                        <entry>spring-aop</entry>
+                        <entry><codeph>4.&#8203;3.&#8203;2.&#8203;RELEASE</codeph></entry>
+                        
+                                                                                                            <entry><xref href="thirdparty/licenses/Apache-License-Version-2.0-(with-subcomponents)/" type="html" scope="external">Apache License Version 2.0 (with-subcomponents)</xref></entry>
+                                                                        </row>
+                    <row>
+                        <entry>org.&#8203;springframework</entry>
+                        <entry>spring-beans</entry>
+                        <entry><codeph>4.&#8203;3.&#8203;2.&#8203;RELEASE</codeph></entry>
+                        
+                                                                                                            <entry><xref href="thirdparty/licenses/Apache-License-Version-2.0-(with-subcomponents)/" type="html" scope="external">Apache License Version 2.0 (with-subcomponents)</xref></entry>
+                                                                        </row>
+                    <row>
+                        <entry>org.&#8203;springframework</entry>
+                        <entry>spring-context-support</entry>
+                        <entry><codeph>4.&#8203;3.&#8203;2.&#8203;RELEASE</codeph></entry>
+                        
+                                                                                                            <entry><xref href="thirdparty/licenses/Apache-License-Version-2.0-(with-subcomponents)/" type="html" scope="external">Apache License Version 2.0 (with-subcomponents)</xref></entry>
+                                                                        </row>
+                    <row>
+                        <entry>org.&#8203;springframework</entry>
+                        <entry>spring-context</entry>
+                        <entry><codeph>4.&#8203;3.&#8203;2.&#8203;RELEASE</codeph></entry>
+                        
+                                                                                                            <entry><xref href="thirdparty/licenses/Apache-License-Version-2.0-(with-subcomponents)/" type="html" scope="external">Apache License Version 2.0 (with-subcomponents)</xref></entry>
+                                                                        </row>
+                    <row>
+                        <entry>org.&#8203;springframework</entry>
+                        <entry>spring-core</entry>
+                        <entry><codeph>4.&#8203;3.&#8203;2.&#8203;RELEASE</codeph></entry>
+                        
+                                                                                                            <entry><xref href="thirdparty/licenses/Apache-License-Version-2.0-(with-subcomponents)/" type="html" scope="external">Apache License Version 2.0 (with-subcomponents)</xref></entry>
+                                                                        </row>
+                    <row>
+                        <entry>org.&#8203;springframework</entry>
+                        <entry>spring-expression</entry>
+                        <entry><codeph>4.&#8203;3.&#8203;2.&#8203;RELEASE</codeph></entry>
+                        
+                                                                                                            <entry><xref href="thirdparty/licenses/Apache-License-Version-2.0-(with-subcomponents)/" type="html" scope="external">Apache License Version 2.0 (with-subcomponents)</xref></entry>
+                                                                        </row>
+                    <row>
+                        <entry>org.&#8203;springframework</entry>
+                        <entry>spring-tx</entry>
+                        <entry><codeph>4.&#8203;3.&#8203;2.&#8203;RELEASE</codeph></entry>
+                        
+                                                                                                            <entry><xref href="thirdparty/licenses/Apache-License-Version-2.0-(with-subcomponents)/" type="html" scope="external">Apache License Version 2.0 (with-subcomponents)</xref></entry>
+                                                                        </row>
+                </tbody>
+            </tgroup>
+        </table>
+    </body>
+</topic>

@@ -16,14 +16,6 @@
         <ae.dita.version>${project.version}</ae.dita.version>
     </properties>
 
-    <dependencies>
-        <dependency>
-            <groupId>commons-io</groupId>
-            <artifactId>commons-io</artifactId>
-            <version>2.5</version>
-        </dependency>
-    </dependencies>
-
     <build>
         <plugins>
             <plugin>

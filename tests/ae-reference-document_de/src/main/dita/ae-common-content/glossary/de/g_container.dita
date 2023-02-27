@@ -13,6 +13,9 @@
             häufig zur dynamischen Umsetzung von Scaling Services verwendet. Eine typische Container-Laufzeitumgebung
             ist Kubernetes.
         </p>
+        <p>
+            Siehe auch: <abbreviated-form keyref="asset"/>
+        </p>
     </glossdef>
     <glossBody>
         <glossSurfaceForm>Container</glossSurfaceForm>
