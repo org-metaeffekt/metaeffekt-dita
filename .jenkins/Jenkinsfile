@@ -16,9 +16,15 @@ pipeline {
             }
         }
 
-        stage('Move repository to Maven repository folder') {
+        stage('Prepare Maven repository folder') {
             steps {
                 sh 'mkdir -p $MAVEN_REPO/org'
+                sh 'rm -rf $MAVEN_REPO/org/dita-ot/*'
+            }
+        }
+
+        stage('Move repository to Maven repository folder') {
+            steps {
                 sh 'mv dita-ot $MAVEN_REPO/org/dita-ot'
             }
         }
