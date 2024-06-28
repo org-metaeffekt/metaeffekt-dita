@@ -1,7 +1,7 @@
 pipeline {
     agent any
     tools {
-        maven 'maven-3.9.6'
+        maven 'maven-3.6.3'
         jdk 'ZULU8'
     }
 
@@ -31,7 +31,7 @@ pipeline {
 
         stage('Build') {
             steps {
-                withMaven(maven: 'maven-3.9.6') {
+                withMaven(maven: 'maven-3.6.3') {
                     sh 'mvn -B clean install'
                 }
             }
