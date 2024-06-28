@@ -12,7 +12,7 @@ pipeline {
     stages {
         stage('Pull repository from server') {
             steps {
-                sh 'scp -r ae-scanner:80/repository/org/dita-ot .'
+                sh 'wget -r -np -nH --cut-dirs=3 -R "index.html*" http://ae-scanner/repository/org/dita-ot/'
             }
         }
 
