@@ -127,15 +127,17 @@
                                     <arg value="--install" />
                                     <arg value="https://github.com/dita-ot/org.dita.wordrtf/archive/2.3.zip" />
                                 </exec>]]>
-                                <exec executable="${dita.root.folder}/bin/dita" osfamily="unix">
+                                <exec executable="${dita.root.folder}/bin/dita">
                                     <arg value="--install" />
                                     <arg value="file:///${project.build.directory}/ae-standard-pdf-${ae.dita.version}-dita-plugin.zip" />
                                 </exec>
+                                <!--
                                 <exec executable="cmd" osfamily="windows">
                                     <arg value="${dita.root.folder}/bin/dita.bat" />
                                     <arg value="--install" />
                                     <arg value="file:///${project.build.directory}/ae-standard-pdf-${ae.dita.version}-dita-plugin.zip" />
                                 </exec>
+                                -->
 
                                 <echo message="Removing not required content (after plugin installation)." />
                                 <delete includeEmptyDirs="true">
