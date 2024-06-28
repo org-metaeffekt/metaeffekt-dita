@@ -212,7 +212,7 @@
                                     <ditaMap>${document.ditamap}</ditaMap>
                                     <ditaTranstype>AE_STANDARD_PDF</ditaTranstype>
                                     <artifactId>${project.artifactId}</artifactId>
-                                    <artifactClassifier>bom</artifactClassifier>
+                                    <artifactClassifier>de</artifactClassifier>
                                 </documentItem>
                             </documentItems>
                             <ditaBuildDir>${project.build.directory}/dita</ditaBuildDir>
@@ -250,6 +250,7 @@
             <artifactId>ae-dita-maven-plugin</artifactId>
             <type>jar</type>
             <version>${ae.dita.version}</version>
+            <scope>test</scope>
         </dependency>
 
         <dependency>
