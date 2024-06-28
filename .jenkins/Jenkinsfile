@@ -12,7 +12,7 @@ pipeline {
     stages {
         stage('Pull repository from server') {
             steps {
-                sh 'curl -O http://ae-scanner/repository/org/dita-ot'
+                sh 'wget --no-parent -r http://ae-scanner/repository/org/dita-ot'
             }
         }
 
