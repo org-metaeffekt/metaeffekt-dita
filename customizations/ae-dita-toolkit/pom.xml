@@ -131,13 +131,13 @@
                                     <arg value="--install" />
                                     <arg value="file:///${project.build.directory}/ae-standard-pdf-${ae.dita.version}-dita-plugin.zip" />
                                 </exec>
-                                <!--
+                                <![CDATA[NOTE: experimenting with RTF output
                                 <exec executable="cmd" osfamily="windows">
                                     <arg value="${dita.root.folder}/bin/dita.bat" />
                                     <arg value="--install" />
                                     <arg value="file:///${project.build.directory}/ae-standard-pdf-${ae.dita.version}-dita-plugin.zip" />
                                 </exec>
-                                -->
+                                ]]>
 
                                 <echo message="Removing not required content (after plugin installation)." />
                                 <delete includeEmptyDirs="true">
