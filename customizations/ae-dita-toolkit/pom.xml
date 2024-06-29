@@ -130,10 +130,13 @@
                                     <arg value="https://github.com/dita-ot/org.dita.wordrtf/archive/2.3.zip" />
                                 </exec>]]>
                                 <echo message="Installing plugin: ${project.build.directory}/ae-standard-pdf-${ae.dita.version}-dita-plugin.zip" />
-                                <exec executable="${dita.root.folder}/bin/dita" osfamily="unix">
+                                <exec executable="${dita.root.folder}/bin/dita" osfamily="unix" failonerror="true">
                                     <arg value="--install" />
                                     <arg value="file:///${project.build.directory}/ae-standard-pdf-${ae.dita.version}-dita-plugin.zip" />
                                     <arg value="--debug" />
+                                    <arg value="--temp" />
+                                    <arg value="${project.build.directory}/dita-tmp" />
+
                                 </exec>
                                 <exec executable="cmd" osfamily="windows">
                                     <arg value="${dita.root.folder}/bin/dita.bat" />
