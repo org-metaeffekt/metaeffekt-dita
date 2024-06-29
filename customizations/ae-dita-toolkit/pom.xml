@@ -106,6 +106,7 @@
                                     <fileset dir="${dita.root.folder}/plugins/org.dita.pdf2.xep" />
                                     <fileset dir="${dita.root.folder}/plugins/org.dita.troff" />
                                 </delete>
+                                <echo message="Inplace customization of plugins." />
                                 <copy overwrite="true" toDir="${dita.root.folder}">
                                     <fileset dir="${project.basedir}/src/main/resources" includes="**/*" />
                                 </copy>
@@ -129,10 +130,11 @@
                                     <arg value="--install" />
                                     <arg value="https://github.com/dita-ot/org.dita.wordrtf/archive/2.3.zip" />
                                 </exec>]]>
+
                                 <echo message="Installing plugin: ${project.build.directory}/ae-standard-pdf-${ae.dita.version}-dita-plugin.zip" />
                                 <exec executable="${dita.root.folder}/bin/dita" osfamily="unix" failonerror="true">
                                     <arg value="--install" />
-                                    <arg value="file://${project.build.directory}/ae-standard-pdf-${ae.dita.version}-dita-plugin.zip" />
+                                    <arg value="${project.build.directory}/ae-standard-pdf-${ae.dita.version}-dita-plugin.zip" />
                                     <arg value="--debug" />
                                     <arg value="--temp" />
                                     <arg value="${project.build.directory}/dita-tmp" />
