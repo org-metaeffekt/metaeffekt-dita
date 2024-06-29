@@ -132,7 +132,7 @@
                                 <echo message="Installing plugin: ${project.build.directory}/ae-standard-pdf-${ae.dita.version}-dita-plugin.zip" />
                                 <exec executable="${dita.root.folder}/bin/dita" osfamily="unix" failonerror="true">
                                     <arg value="--install" />
-                                    <arg value="file:///${project.build.directory}/ae-standard-pdf-${ae.dita.version}-dita-plugin.zip" />
+                                    <arg value="file://${project.build.directory}/ae-standard-pdf-${ae.dita.version}-dita-plugin.zip" />
                                     <arg value="--debug" />
                                     <arg value="--temp" />
                                     <arg value="${project.build.directory}/dita-tmp" />
