@@ -34,7 +34,7 @@ pipeline {
                 sh 'rm -rf /tmp/dita'
 
                 withMaven(maven: 'maven-3.6.3') {
-                    sh 'mvn -B clean install -X
+                    sh 'mvn -B clean install -X'
                 }
             }
         }
