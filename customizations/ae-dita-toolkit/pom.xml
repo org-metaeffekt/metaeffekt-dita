@@ -136,6 +136,7 @@
                                     <arg value="--install" />
                                     <arg value="${project.build.directory}/ae-standard-pdf-${ae.dita.version}-dita-plugin.zip" />
                                     <arg value="--debug" />
+                                    <arg value="--verbose" />
                                     <arg value="--temp" />
                                     <arg value="${project.build.directory}/dita-tmp" />
 
