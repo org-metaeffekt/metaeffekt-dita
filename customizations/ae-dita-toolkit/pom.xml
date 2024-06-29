@@ -92,6 +92,8 @@
                         </goals>
                         <configuration>
                             <target>
+                                <property name="args.debug" value="yes"/>
+
                                 <echo message="Unzipping the downloaded DITA OT binary." />
                                 <unzip src="${dita.archive}" dest="${project.build.directory}" />
                                 <echo message="Removing not required content." />
