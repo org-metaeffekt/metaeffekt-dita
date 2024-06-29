@@ -8,8 +8,6 @@ See the accompanying LICENSE file for applicable license.
 -->
 <project name="dita.integrator" default="integrate">
 
-  <property name="args.debug" value="yes"/>
-
   <dirname property="ant.file.dita.integrator.dir" file="${ant.file.dita.integrator}"/>
   
   <!-- First try to initialize ${dita.dir} using the special 
@@ -74,6 +72,7 @@ See the accompanying LICENSE file for applicable license.
   </target>
 
   <target name="install" description="Install plug-in" >
+    <property name="args.debug" value="yes"/>
     <property name="force" value="false"/>
     <install pluginFile="${plugin.file}" force="${force}"/>
     <antcall target="configuration-jar"/>
