@@ -111,9 +111,11 @@
                                     <fileset dir="${project.basedir}/src/main/resources" includes="**/*" />
                                 </copy>
                                 <echo message="Correcting line breaks for Linux binaries." />
+                                <!--
                                 <fixcrlf srcDir="${dita.root.folder}/bin"
                                      eol="lf" eof="remove"
                                      includes="ant,dita" />
+                                     -->
                                 <chmod file="${dita.root.folder}/bin/dita" perm="+x" />
                                 <chmod file="${dita.root.folder}/bin/ant" perm="+x" />
 
