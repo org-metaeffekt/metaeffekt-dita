@@ -32,9 +32,9 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'rm -rf /tmp/dita'
-
                 withMaven(maven: 'maven-3.6.3') {
-                    sh 'mvn -B clean install -X'
+                    sh 'mv . /tmp/'
+                    sh 'cd /tmp/metaeffekt-dita && mvn -B clean install -X'
                 }
             }
         }
