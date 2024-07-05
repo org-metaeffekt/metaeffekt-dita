@@ -41,9 +41,11 @@
         <topicref href="ae-reference-document/vulnerabilitites/tpc_inventory-vulnerability-labels.dita" />
     -->
         <topicref href="ae-reference-document/assets/tpc_asset-report.dita" />
-
     </chapter>
-<!--
+
+   <chapter href="gen/report/tpc_asset-assessment-overview-unmodified.dita" />
+   <chapter href="gen/report/tpc_asset-assessment-overview-modified.dita" />
+
     <chapter href="ae-reference-document/reference/en/tpc_reference.dita" >
         <topicref href="ae-reference-document/reference/en/tpc_table.dita"/>
         <topicref href="ae-reference-document/reference/en/tpc_notes.dita"/>
@@ -78,7 +80,6 @@
 
         <topicref href="ae-reference-document/glossary/en/tpc_dita-used-glossary-terms.dita"/>
     </part>
--->
     <appendix href="ae-reference-document/appendix/en/tpc_appendix.dita" >
         <topicref href="ae-reference-document/maven/en/tpc_maven-support.dita">
             <topicref href="ae-reference-document/maven/en/tsk_maven-installation.dita" />
@@ -86,7 +87,7 @@
         </topicref>
         <topicref href="ae-reference-document/conventions/en/tpc_dita-conventions.dita" />
     </appendix>
-    
+
     <backmatter>
         <booklists>
             <tablelist/>
@@ -96,4 +97,5 @@
             <indexlist/>
         </booklists>
     </backmatter>
+
 </bookmap>

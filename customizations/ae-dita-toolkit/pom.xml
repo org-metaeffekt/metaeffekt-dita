@@ -19,7 +19,10 @@
         <dita.name.string>dita-ot-${dita.ot.version}</dita.name.string>
         <dita.archive>${project.build.directory}/${dita.name.string}.zip</dita.archive>
         <dita.customized.archive>${project.build.directory}/ae-dita-toolkit-${project.version}-bin.zip</dita.customized.archive>
-        <dita.root.folder>${project.build.directory}/${dita.name.string}</dita.root.folder>
+
+        <!-- we need flexibility to move the dir where the customization happens; i.e. due to execution issue on jenkins -->
+        <dita.customization.basedir>${project.build.directory}</dita.customization.basedir>
+        <dita.root.folder>${dita.customization.basedir}/${dita.name.string}</dita.root.folder>
 
         <ant.version>1.10.1</ant.version>
 
@@ -95,7 +98,7 @@
                                 <property name="args.debug" value="yes"/>
 
                                 <echo message="Unzipping the downloaded DITA OT binary." />
-                                <unzip src="${dita.archive}" dest="${project.build.directory}" />
+                                <unzip src="${dita.archive}" dest="${dita.customization.basedir}" />
                                 <echo message="Removing not required content." />
                                 <delete includeEmptyDirs="true">
                                     <fileset dir="${dita.root.folder}/doc"/>
@@ -157,10 +160,10 @@
                                 </delete>
 
                                 <echo message="Creating customized archive." />
-                                <move file="${project.build.directory}/${dita.name.string}" tofile="${project.build.directory}/ae-${dita.name.string}-${project.version}" />
+                                <move file="${dita.customization.basedir}/${dita.name.string}" tofile="${dita.customization.basedir}/ae-${dita.name.string}-${project.version}" />
 
                                 <zip destfile="${dita.customized.archive}"
-                                     basedir="${project.build.directory}"
+                                     basedir="${dita.customization.basedir}"
                                      includes="ae-${dita.name.string}-${project.version}/**" />
                             </target>
                         </configuration>

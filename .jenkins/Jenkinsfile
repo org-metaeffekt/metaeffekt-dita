@@ -32,9 +32,11 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'rm -rf /tmp/dita'
+                sh 'rm -rf /tmp/dita-customization'
+                sh 'mkdir -p /tmp/dita-customization'
 
                 withMaven(maven: 'maven-3.6.3') {
-                    sh 'mvn -B clean install -X'
+                    sh 'mvn -B clean install -Ddita.customization.basedir=/tmp/dita-customization'
                 }
             }
         }
