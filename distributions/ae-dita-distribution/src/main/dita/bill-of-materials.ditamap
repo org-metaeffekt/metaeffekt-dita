@@ -36,10 +36,11 @@
     </chapter>
 
     <chapter href="ae-common-content/bill-of-materials/en/tpc_bill-of-materials.dita">
-        <topicref href="ae-dita-distribution/gen/tpc_inventory-artifact-report.dita" />
+        <topicref href="ae-dita-distribution/gen/tpc_inventory-artifact-report-effective.dita" />
     </chapter>
 
-    <chapter href="ae-dita-distribution/gen/tpc_inventory-licenses.dita" />
+    <chapter href="ae-dita-distribution/gen/tpc_inventory-licenses-effective.dita" />
+    <chapter href="ae-dita-distribution/gen/tpc_inventory-license-usage.dita" />
 	<chapter href="ae-dita-distribution/gen/tpc_inventory-notices.dita" keys="license-notices" />
 
     <backmatter>
