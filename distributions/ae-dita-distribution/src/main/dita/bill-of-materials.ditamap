@@ -11,7 +11,7 @@
                 <year>2016</year>
             </copyrfirst>
             <copyrlast>
-                <year>${}</year>
+                <year>2024</year>
             </copyrlast>
             <bookowner>
                 <organization>${organization.name}</organization>
@@ -41,7 +41,7 @@
 
     <chapter href="ae-dita-distribution/gen/tpc_inventory-licenses-effective.dita" />
     <chapter href="ae-dita-distribution/gen/tpc_inventory-license-usage.dita" />
-	<chapter href="ae-dita-distribution/gen/tpc_inventory-notices.dita" keys="license-notices" />
+	<chapter href="ae-dita-distribution/gen/tpc_inventory-component-license-details.dita" keys="license-notices" />
 
     <backmatter>
         <booklists>
