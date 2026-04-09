@@ -48,6 +48,7 @@
         <distribution.classifier>bin</distribution.classifier>
 
         <PROJECTVERSION>${project.version}</PROJECTVERSION>
+        <ae.artifact.analysis.version>HEAD-SNAPSHOT</ae.artifact.analysis.version>
     </properties>
 
     <build>
@@ -73,6 +74,13 @@
                             </configuration>
                         </execution>
                     </executions>
+                    <dependencies>
+                        <dependency>
+                            <groupId>com.metaeffekt.artifact.analysis</groupId>
+                            <artifactId>ae-artifact-analysis</artifactId>
+                            <version>${ae.artifact.analysis.version}</version>
+                        </dependency>
+                    </dependencies>
                 </plugin>
             </plugins>
         </pluginManagement>
