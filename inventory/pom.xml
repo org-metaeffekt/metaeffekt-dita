@@ -9,7 +9,6 @@
         <groupId>org.metaeffekt.dita</groupId>
         <artifactId>ae-dita</artifactId>
         <version>HEAD-SNAPSHOT</version>
-        <relativePath>../</relativePath>
     </parent>
 
     <artifactId>ae-dita-inventory</artifactId>
