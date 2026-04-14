@@ -4,6 +4,7 @@ import org.dom4j.DocumentException;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.metaeffekt.dita.maven.glossary.GlossaryMapCreator;
+import org.metaeffekt.dita.maven.mojo.GenerateGlossaryMapMojo;
 
 import java.io.File;
 import java.io.IOException;
@@ -31,5 +32,4 @@ public class GlossaryTest {
       glossaryMapCreator.setTargetGlossaryMap(new File("target/gmap_glossary.ditamap").getAbsoluteFile());
       glossaryMapCreator.create();
    }
-
 }
