@@ -125,8 +125,6 @@
                         <targetReportDir>${basedir}/src/main/dita/${project.artifactId}/gen</targetReportDir>
 
                         <enableBomReport>true</enableBomReport>
-                        <enableVulnerabilityReport>true</enableVulnerabilityReport>
-                        <enableDiffReport>false</enableDiffReport>
                     </configuration>
                     <dependencies>
                         <dependency>
