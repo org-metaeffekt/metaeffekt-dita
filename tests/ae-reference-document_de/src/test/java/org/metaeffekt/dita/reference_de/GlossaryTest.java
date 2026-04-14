@@ -1,8 +1,8 @@
 package org.metaeffekt.dita.reference_de;
 
 import org.dom4j.DocumentException;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 import org.metaeffekt.dita.maven.glossary.GlossaryMapCreator;
 
 import java.io.File;
@@ -10,7 +10,7 @@ import java.io.IOException;
 
 public class GlossaryTest {
 
-   @Ignore
+   @Disabled
    @Test
    public void testGlossary() throws IOException, DocumentException {
       final GlossaryMapCreator glossaryMapCreator = new GlossaryMapCreator();
@@ -21,7 +21,7 @@ public class GlossaryTest {
       glossaryMapCreator.create();
    }
 
-   @Ignore
+   @Disabled
    @Test
    public void testGlossaryExt() throws IOException, DocumentException {
       final GlossaryMapCreator glossaryMapCreator = new GlossaryMapCreator();

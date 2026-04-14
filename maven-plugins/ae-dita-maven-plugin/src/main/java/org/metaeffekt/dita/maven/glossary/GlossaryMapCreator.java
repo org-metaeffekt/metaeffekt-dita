@@ -352,13 +352,10 @@ public class GlossaryMapCreator {
     public VelocityEngine initializeVelocityEngine() {
         final String ENCODING_UTF_8 = "UTF-8";
         Properties velocityProperties = new Properties();
-        velocityProperties.put(Velocity.RESOURCE_LOADER, "class, file");
-        velocityProperties.put("class.resource.loader.class", ClasspathResourceLoader.class.getName());
+        velocityProperties.put(Velocity.RESOURCE_LOADERS, "class, file");
+        velocityProperties.put(Velocity.RESOURCE_LOADER + ".class.class", ClasspathResourceLoader.class.getName());
         velocityProperties.put(Velocity.FILE_RESOURCE_LOADER_CACHE, Boolean.FALSE);
         velocityProperties.put(Velocity.INPUT_ENCODING, ENCODING_UTF_8);
-        velocityProperties.put(Velocity.OUTPUT_ENCODING, ENCODING_UTF_8);
-        velocityProperties.setProperty(Velocity.RUNTIME_LOG_LOGSYSTEM_CLASS,
-                "org.apache.velocity.runtime.log.NullLogChute");
         VelocityEngine velocityEngine = new VelocityEngine(velocityProperties);
         return velocityEngine;
     }

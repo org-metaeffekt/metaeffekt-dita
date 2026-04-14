@@ -15,7 +15,7 @@
  */
 package org.metaeffekt.dita.maven.mojo;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.metaeffekt.dita.maven.generation.*;
 import org.metaeffekt.dita.maven.installation.DitaInstallationHelper;
 import org.apache.commons.io.FileUtils;
