@@ -9,7 +9,7 @@ pipeline {
     }
 
     environment {
-        MAVEN_REPO = "${env.HOME}/.m2/repository"
+        MAVEN_REPO = "/var/root/.m2/repository"
     }
 
     stages {
