@@ -77,7 +77,7 @@ public class GenerateGlossaryMapMojo extends AbstractDitaContentMojo {
     private void validateDitaWellFormed() throws MojoExecutionException {
         getLog().info("Validating DITA content in " + getDitaSourceGenDir());
 
-        if (!getDitaSourceDir().exists()) return;
+        if (!getDitaSourceGenDir().exists()) return;
 
         SAXParserFactory factory = SAXParserFactory.newInstance();
         factory.setValidating(false);
