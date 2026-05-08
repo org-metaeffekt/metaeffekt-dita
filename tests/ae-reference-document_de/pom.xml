@@ -154,7 +154,7 @@
                                     </includes>
                                 </resource>
                             </resources>
-                            <overwrite>true</overwrite>
+                            <changeDetection>always</changeDetection>
                         </configuration>
                     </execution>
                 </executions>
