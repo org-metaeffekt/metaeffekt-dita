@@ -37,10 +37,7 @@ import org.apache.velocity.VelocityContext;
 import org.apache.velocity.app.Velocity;
 import org.apache.velocity.app.VelocityEngine;
 import org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader;
-import org.dom4j.Attribute;
-import org.dom4j.Document;
-import org.dom4j.DocumentException;
-import org.dom4j.Element;
+import org.dom4j.*;
 import org.dom4j.io.SAXReader;
 import org.xml.sax.EntityResolver;
 import org.xml.sax.InputSource;
@@ -170,10 +167,11 @@ public class GlossaryMapCreator {
             final Document document = readDocument(file);
             if (document != null) {
                 processed.add(file.getCanonicalPath());
-                @SuppressWarnings("unchecked")
-                final List<Attribute> elements = document.selectNodes("//@href|//@conref");
-                for (Attribute element : elements) {
-                    String href = element.getValue();
+                final List<Node> elements = document.selectNodes("//@href|//@conref");
+                for (Node element : elements) {
+                    // From getText() documentation of version 1.6.1
+                    // This method returns the same value as the Node.getText()method.
+                    String href = element.getText();
                     final int hashIndex = href.indexOf("#");
                     if (hashIndex != -1) {
                         href = href.substring(0, hashIndex);
@@ -219,10 +217,11 @@ public class GlossaryMapCreator {
     private void extractCoveredKeys(File file, Set<String> coveredKeys) {
         Document document = readDocument(file);
         if (document != null) {
-            @SuppressWarnings("unchecked")
-            List<Attribute> elements = document.selectNodes("//@keys");
-            for (Attribute element : elements) {
-                String keys = element.getValue();
+            List<Node> selectedNodes = document.selectNodes("//@keys");
+            for (Node node : selectedNodes) {
+                // From getText() documentation of version 1.6.1
+                // This method returns the same value as the Node.getText()method.
+                String keys = node.getText();
                 String[] keyArray = keys.split(" ");
                 for (String key : keyArray) {
                     coveredKeys.add(key);
@@ -234,10 +233,10 @@ public class GlossaryMapCreator {
     private String extractTermValue(File glossaryTermFile, String defaultValue) {
         final Document document = readDocument(glossaryTermFile);
         if (document != null) {
-            @SuppressWarnings("unchecked")
-            final List<Element> elements = document.selectNodes("//glossterm");
-            for (Element element : elements) {
-                return element.getTextTrim();
+            final List<Node> selectedNodes = document.selectNodes("//glossterm");
+            for (Node node : selectedNodes) {
+                if(node.getNodeType() == Node.ELEMENT_NODE)
+                    return ((Element) node).getTextTrim();
             }
         }
         return defaultValue;
@@ -245,12 +244,13 @@ public class GlossaryMapCreator {
 
     private void extractRequiredGlossaryTerms(File file, Set<String> keyRefs) throws DocumentException {
         final Document document = readDocument(file);
-        @SuppressWarnings("unchecked")
-        final List<Element> keyRefElements = document.selectNodes("//abbreviated-form");
-        for (Element element : keyRefElements) {
-            String keyRef = element.attributeValue("keyref");
-            if (keyRef != null && !keyRefs.contains(keyRef)) {
-                keyRefs.add(keyRef);
+        final List<Node> selectedNodes = document.selectNodes("//abbreviated-form");
+        for (Node node : selectedNodes) {
+            if(node.getNodeType() == Node.ELEMENT_NODE) {
+                String keyRef = ((Element) node).attributeValue("keyref");
+                if (keyRef != null && !keyRefs.contains(keyRef)) {
+                    keyRefs.add(keyRef);
+                }
             }
         }
     }
