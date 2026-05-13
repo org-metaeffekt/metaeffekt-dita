@@ -94,7 +94,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>
-                <version>2.6</version>
+                <version>${maven.resources.plugin.version}</version>
                 <executions>
                     <!-- Copy the complete dita.source.dir to the target folder and apply filtering  -->
                     <execution>
@@ -154,7 +154,7 @@
                                     </includes>
                                 </resource>
                             </resources>
-                            <overwrite>true</overwrite>
+                            <changeDetection>always</changeDetection>
                         </configuration>
                     </execution>
                 </executions>
