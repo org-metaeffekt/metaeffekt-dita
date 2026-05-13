@@ -55,7 +55,7 @@ public class GenerateGlossaryMapMojo extends AbstractDitaContentMojo {
     @Override
     public void execute() throws MojoExecutionException, MojoFailureException {
         // only run if we can do something
-        if(isPomPackagingProject()){
+        if (isPomPackagingProject()){
             return;
         }
 

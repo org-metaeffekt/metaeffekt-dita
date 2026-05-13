@@ -235,7 +235,7 @@ public class GlossaryMapCreator {
         if (document != null) {
             final List<Node> selectedNodes = document.selectNodes("//glossterm");
             for (Node node : selectedNodes) {
-                if(node.getNodeType() == Node.ELEMENT_NODE)
+                if (node.getNodeType() == Node.ELEMENT_NODE)
                     return ((Element) node).getTextTrim();
             }
         }
@@ -246,7 +246,7 @@ public class GlossaryMapCreator {
         final Document document = readDocument(file);
         final List<Node> selectedNodes = document.selectNodes("//abbreviated-form");
         for (Node node : selectedNodes) {
-            if(node.getNodeType() == Node.ELEMENT_NODE) {
+            if (node.getNodeType() == Node.ELEMENT_NODE) {
                 String keyRef = ((Element) node).attributeValue("keyref");
                 if (keyRef != null && !keyRefs.contains(keyRef)) {
                     keyRefs.add(keyRef);

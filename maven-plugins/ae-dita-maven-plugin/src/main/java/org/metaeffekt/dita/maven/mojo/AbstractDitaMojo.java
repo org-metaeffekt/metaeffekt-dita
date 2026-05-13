@@ -122,7 +122,7 @@ public abstract class AbstractDitaMojo extends AbstractMojo {
     @Override
     public void execute() throws MojoExecutionException, MojoFailureException {
         // only run if we can do something
-        if(isPomPackagingProject()){
+        if (isPomPackagingProject()){
             return;
         }
     }
