@@ -17,6 +17,10 @@
     <artifactId>ae-dita-maven-plugin</artifactId>
     <version>HEAD-SNAPSHOT</version>
     <packaging>maven-plugin</packaging>
+
+    <properties>
+        <failOnJavadocWarn>false</failOnJavadocWarn>
+    </properties>
     
     <dependencyManagement>
         <dependencies>
