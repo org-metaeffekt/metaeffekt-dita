@@ -9,7 +9,7 @@ pipeline {
     }
 
     environment {
-        MAVEN_REPO = "/var/root/.m2/repository"
+        MAVEN_REPO = "$WORKSPACE/.m2/repository"
     }
 
     stages {
@@ -32,13 +32,36 @@ pipeline {
             }
         }
 
+        stage('Checkout metaeffekt-core') {
+            steps {
+                script {
+                    sh 'mkdir -p .metaeffekt-core'
+                    dir ('.metaeffekt-core') {
+                        withCredentials([usernamePassword(credentialsId: 'JenkinsGithubAccess', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+                            git url: 'https://github.com/org-metaeffekt/metaeffekt-core.git', branch: 'master', credentialsId: 'JenkinsGithubAccess'
+                        }
+                    }
+                }
+            }
+        }
+
+        stage('Build metaeffekt-core (skipping tests and javadoc)') {
+            steps {
+                dir ('.metaeffekt-core') {
+                    withMaven(maven: 'MAVEN3912', mavenLocalRepo: '$MAVEN_REPO') {
+                        sh 'mvn -B clean install -DskipTests -Dmaven.javadoc.skip=true'
+                    }
+                }
+            }
+        }
+
         stage('Build') {
             steps {
                 sh 'rm -rf /tmp/dita'
                 sh 'rm -rf /tmp/dita-customization'
                 sh 'mkdir -p /tmp/dita-customization'
 
-                withMaven(maven: 'MAVEN3912') {
+                withMaven(maven: 'MAVEN3912', mavenLocalRepo: '$MAVEN_REPO') {
                     sh 'mvn -B clean install -Ddita.customization.basedir=/tmp/dita-customization'
                 }
             }
