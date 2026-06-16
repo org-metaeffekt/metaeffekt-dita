@@ -16,12 +16,17 @@
 package org.metaeffekt.dita.maven.installation;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.maven.plugin.MojoExecutionException;
+import org.apache.maven.plugin.MojoFailureException;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.metaeffekt.dita.maven.mojo.DitaInfrastructureMojo;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.attribute.PosixFilePermissions;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -36,7 +41,7 @@ public class DitaInstallationHelperTest {
     /**
      * The MD5 checksum of Dita Toolkit Archive mock.
      */
-    public static final String DITA_ARCHIVE_CHECKSUM = "28da645fd00eb362f797c3d0cccea096";
+    public static final String DITA_ARCHIVE_CHECKSUM = "b4ea57804bf44a2dff708a1449cfdc12";
 
     /**
      * The aggregated MD5 checksum of the expanded Dita Toolkit archive.
@@ -208,5 +213,21 @@ public class DitaInstallationHelperTest {
         assertThrows(IOException.class, () ->
                 helper.getDitaToolkitRoot(),
             "IOException should have been thrown.");
+    }
+
+    @Test
+    public void alreadyInstalled_accessRightsChanged_shouldNotFailIfConsistent() throws IOException, MojoExecutionException, MojoFailureException {
+        helper.install();
+
+        final File ditaToolkitRoot = helper.getDitaToolkitRoot();
+        Files.setPosixFilePermissions(ditaToolkitRoot.toPath(), PosixFilePermissions.fromString("r-xrwxrwx"));
+
+        final DitaInfrastructureMojo mojo = new DitaInfrastructureMojo() {
+            @Override
+            public void execute() throws MojoExecutionException, MojoFailureException {
+                executeInstallation(helper);
+            }
+        };
+        mojo.execute();
     }
 }

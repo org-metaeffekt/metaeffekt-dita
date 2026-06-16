@@ -107,26 +107,32 @@ public class DitaInfrastructureMojo extends AbstractDitaMojo {
 
         File installArchive = getDitaToolkitDependency().getFile();
         getLog().info("DITA Open Toolkit install archive: " + installArchive.getAbsolutePath());
-        String toolkitPath = "";
 
         // create new installation with the according parameters
         DitaInstallationHelper installHelper =
                 new DitaInstallationHelper(ditaToolkitCacheDir, installArchive);
 
+        String toolkitPath = executeInstallation(installHelper);
+
+        getMavenSession().getUserProperties().setProperty(
+                DitaInstallationHelper.DITA_TOOLKIT_ROOT_PROPERTY, toolkitPath);
+    }
+
+    protected String executeInstallation(DitaInstallationHelper installHelper) throws MojoExecutionException {
         try {
             if (!installHelper.isInstalled() || !installHelper.isConsistent()) {
                 getLog().info("No consistent DITA Open Toolkit installation found. Installing ...");
                 installHelper.install();
             }
-            toolkitPath = installHelper.getDitaToolkitRoot().getAbsolutePath();
+            String toolkitPath = installHelper.getDitaToolkitRoot().getAbsolutePath();
 
             getLog().info("Using DITA Open Toolkit at: " + toolkitPath);
 
             // ensure that the binaries of the dita toolkit are executable
             makeDitaExecutable(installHelper.getDitaToolkitRoot());
 
-            getMavenSession().getUserProperties().setProperty(
-                    DitaInstallationHelper.DITA_TOOLKIT_ROOT_PROPERTY, toolkitPath);
+            return toolkitPath;
+
         } catch (IOException e) {
             throw new MojoExecutionException("Error while checking or installing the DITA Open Toolkit.", e);
         }
