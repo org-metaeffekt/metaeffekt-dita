@@ -20,6 +20,7 @@ import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugin.MojoFailureException;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.metaeffekt.dita.maven.mojo.DitaInfrastructureMojo;
 
@@ -212,43 +213,50 @@ public class DitaInstallationHelperTest {
 
         // now check if the correct exception is thrown
         assertThrows(IOException.class, () ->
-                helper.getDitaToolkitRoot(),
-            "IOException should have been thrown.");
+                        helper.getDitaToolkitRoot(),
+                "IOException should have been thrown.");
     }
 
-    @Test
-    public void alreadyInstalled_accessRightsChanged_shouldNotFailIfConsistent() throws IOException, MojoExecutionException, MojoFailureException {
-        helper.install();
 
-        final File ditaToolkitRoot = helper.getDitaToolkitRoot();
-        setPermissions(ditaToolkitRoot, "r-xr-xr-x");
+    /**
+     * Test in the context of mojo.
+     */
+    @Nested
+    class MojoContext {
 
+        @Test
+        public void alreadyInstalled_accessRightsChanged_shouldNotFailIfConsistent() throws IOException, MojoExecutionException, MojoFailureException {
+            helper.install();
+
+            final File ditaToolkitRoot = helper.getDitaToolkitRoot();
+            setPermissions(ditaToolkitRoot, "r-xr-xr-x");
+
+            mojo.execute();
+        }
+
+        @Test
+        public void alreadyInstalled_minimalPermissions_shouldNotFailIfConsistent() throws IOException, MojoExecutionException, MojoFailureException {
+            helper.install();
+
+            final File ditaToolkitRoot = helper.getDitaToolkitRoot();
+            setPermissions(ditaToolkitRoot, "r-x------");
+
+
+            mojo.execute();
+        }
+
+        /**
+         * Bypass maven infrastructure by overriding {@link DitaInfrastructureMojo#execute()}.
+         */
         final DitaInfrastructureMojo mojo = new DitaInfrastructureMojo() {
             @Override
             public void execute() throws MojoExecutionException, MojoFailureException {
                 executeInstallation(helper);
             }
         };
-        mojo.execute();
-    }
 
-    @Test
-    public void alreadyInstalled_minimalPermissions_shouldNotFailIfConsistent() throws IOException, MojoExecutionException, MojoFailureException {
-        helper.install();
-
-        final File ditaToolkitRoot = helper.getDitaToolkitRoot();
-        setPermissions(ditaToolkitRoot, "r-x------");
-
-        final DitaInfrastructureMojo mojo = new DitaInfrastructureMojo() {
-            @Override
-            public void execute() throws MojoExecutionException, MojoFailureException {
-                executeInstallation(helper);
-            }
-        };
-        mojo.execute();
-    }
-
-    protected Path setPermissions(File onPath, String withPermissions) throws IOException {
-        return Files.setPosixFilePermissions(onPath.toPath(), PosixFilePermissions.fromString(withPermissions));
+        protected Path setPermissions(File onPath, String withPermissions) throws IOException {
+            return Files.setPosixFilePermissions(onPath.toPath(), PosixFilePermissions.fromString(withPermissions));
+        }
     }
 }
