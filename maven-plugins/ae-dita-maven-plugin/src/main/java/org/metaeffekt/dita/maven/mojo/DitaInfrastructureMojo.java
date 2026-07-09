@@ -99,6 +99,7 @@ public class DitaInfrastructureMojo extends AbstractDitaMojo {
     )
     private String ditaToolkitClassifier;
 
+    @Override
     public void execute() throws MojoExecutionException, MojoFailureException {
         super.execute();
         if (skipProject()) {
@@ -118,6 +119,16 @@ public class DitaInfrastructureMojo extends AbstractDitaMojo {
                 DitaInstallationHelper.DITA_TOOLKIT_ROOT_PROPERTY, toolkitPath);
     }
 
+    /**
+     * Perform the installation of dita toolkit.
+     * <br>
+     * For testing purposes override {@link DitaInfrastructureMojo#execute()} and call this method with an initialized
+     * {@link DitaInstallationHelper}.
+     *
+     * @param installHelper
+     * @return
+     * @throws MojoExecutionException
+     */
     protected String executeInstallation(DitaInstallationHelper installHelper) throws MojoExecutionException {
         try {
             if (!installHelper.isInstalled() || !installHelper.isConsistent()) {
