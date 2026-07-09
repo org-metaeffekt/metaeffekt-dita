@@ -26,6 +26,7 @@ import org.metaeffekt.dita.maven.mojo.DitaInfrastructureMojo;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.attribute.PosixFilePermissions;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -220,7 +221,7 @@ public class DitaInstallationHelperTest {
         helper.install();
 
         final File ditaToolkitRoot = helper.getDitaToolkitRoot();
-        Files.setPosixFilePermissions(ditaToolkitRoot.toPath(), PosixFilePermissions.fromString("r-xrwxrwx"));
+        setPermissions(ditaToolkitRoot, "r-xr-xr-x");
 
         final DitaInfrastructureMojo mojo = new DitaInfrastructureMojo() {
             @Override
@@ -229,5 +230,25 @@ public class DitaInstallationHelperTest {
             }
         };
         mojo.execute();
+    }
+
+    @Test
+    public void alreadyInstalled_minimalPermissions_shouldNotFailIfConsistent() throws IOException, MojoExecutionException, MojoFailureException {
+        helper.install();
+
+        final File ditaToolkitRoot = helper.getDitaToolkitRoot();
+        setPermissions(ditaToolkitRoot, "r-x------");
+
+        final DitaInfrastructureMojo mojo = new DitaInfrastructureMojo() {
+            @Override
+            public void execute() throws MojoExecutionException, MojoFailureException {
+                executeInstallation(helper);
+            }
+        };
+        mojo.execute();
+    }
+
+    protected Path setPermissions(File onPath, String withPermissions) throws IOException {
+        return Files.setPosixFilePermissions(onPath.toPath(), PosixFilePermissions.fromString(withPermissions));
     }
 }
