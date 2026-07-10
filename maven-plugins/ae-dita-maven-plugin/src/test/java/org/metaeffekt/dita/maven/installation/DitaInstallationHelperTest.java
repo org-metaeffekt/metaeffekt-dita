@@ -118,13 +118,13 @@ public class DitaInstallationHelperTest {
      */
     @Test
     public void test_isInstalled_and_install() throws Exception {
-        assertFalse(helper.isInstalled(), "Result should have been false.");
+        assertFalse(helper.isInstalled(), "Dita should not be installed before test.");
 
         // install the Dita Toolkit
         assertTrue(helper.install(), "Result should have been true, Dita installation may have failed.");
 
         // check if installation was successful
-        assertTrue(helper.isInstalled(), "Result should have been true.");
+        assertTrue(helper.isInstalled(), "Check that installation was successful has been failed.");
 
         // this assertion is very instable. Needs in-depth analysis
 
