@@ -18,6 +18,7 @@ package org.metaeffekt.dita.maven.installation;
 import org.apache.commons.io.FileUtils;
 import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugin.MojoFailureException;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Nested;
@@ -58,30 +59,30 @@ public class DitaInstallationHelperTest {
     /**
      * This folder is root to all Dita Toolkit installations.
      */
-    File testDitaInstallationCache;
+    File ditaInstallationCache;
 
     /**
      * Archive containing some content that imitates a real life Dita Toolkit.
      */
-    File installationArchiveMock;
+    File installationDummyArchive;
 
     @BeforeEach
     public void setUp() throws Exception {
         // create a temporary directory for test installations
-        testDitaInstallationCache = new File("target" + File.separator + "test-data" + File.separator
+        ditaInstallationCache = new File("target" + File.separator + "test-data" + File.separator
                 + File.createTempFile("dita-", "-install-test").getName());
-        testDitaInstallationCache.mkdirs();
+        ditaInstallationCache.mkdirs();
 
         // get the test installation archive
-        installationArchiveMock = new File(this.getClass().getClassLoader().getResource(
+        installationDummyArchive = new File(this.getClass().getClassLoader().getResource(
                 "dita-installation-test/dita-toolkit-dummy.zip").toURI());
 
-        helper = new DitaInstallationHelper(testDitaInstallationCache, installationArchiveMock);
+        helper = new DitaInstallationHelper(ditaInstallationCache, installationDummyArchive);
     }
 
     @AfterEach
     public void tearDown() throws Exception {
-        FileUtils.forceDelete(testDitaInstallationCache);
+        FileUtils.forceDelete(ditaInstallationCache);
     }
 
     /**
@@ -109,6 +110,31 @@ public class DitaInstallationHelperTest {
         assertThrows(NullPointerException.class, () ->
                         helper.getInstallationArchiveChecksum(),
                 "NPE should have been thrown.");
+    }
+
+    @Test
+    public void installDitaWithoutUsername_useChecksumBasedDir() throws IOException {
+        DitaInstallationHelper helper = new DitaInstallationHelper(ditaInstallationCache, installationDummyArchive);
+
+        helper.install();
+
+        final File installRoot = helper.getDitaToolkitRoot();
+
+        Assertions.assertThat(installRoot).isNotEmptyDirectory();
+        Assertions.assertThat(installRoot.getParent()).endsWith(DITA_ARCHIVE_CHECKSUM).doesNotContain("_");
+    }
+
+    @Test
+    public void installWithUsername_hasInstallationDirContainingUsername() throws IOException {
+        String username = "ANY_USER";
+        DitaInstallationHelper helper = new DitaInstallationHelper(ditaInstallationCache, installationDummyArchive, username);
+
+        helper.install();
+
+        final File installRoot = helper.getDitaToolkitRoot();
+
+        Assertions.assertThat(installRoot).isNotEmptyDirectory();
+        Assertions.assertThat(installRoot.getParent()).endsWith(username + "_" + DITA_ARCHIVE_CHECKSUM);
     }
 
     /**
