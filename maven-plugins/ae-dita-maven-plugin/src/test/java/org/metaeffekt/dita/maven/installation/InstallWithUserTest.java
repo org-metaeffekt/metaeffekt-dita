@@ -152,51 +152,6 @@ public class InstallWithUserTest {
     }
 
     /**
-     * Test if {@link DitaInstallationHelper#isConsistent()} does work as
-     * expected.
-     *
-     * @throws Exception
-     */
-    @Test
-    public void test_isConsistent_and_install() throws Exception {
-        // install the Dita Toolkit
-        helper.install();
-
-        // check if the built-in consistency check does work
-        assertTrue(helper.isConsistent(), "Consistency check failed, but shouldn't have.");
-
-        // now changing the content of the installed dita and see if the
-        // consistency check picks it up
-        File toolkitRoot = helper.getDitaToolkitRoot();
-        FileUtils.forceDelete(new File(toolkitRoot, "build.xml"));
-
-        // now check again for consistency
-        assertFalse(helper.isConsistent(), "Consistency check succeded, but shouldn't have.");
-
-        // now do a reinstall since the installation is corrupt
-        assertTrue(helper.install(), "Subsequent installation should have succeeded but didn't.");
-    }
-
-    /**
-     * Test the boundaries of {@link DitaInstallationHelper#isConsistent()}.
-     *
-     * @throws Exception
-     */
-    @Test
-    public void testBoundaries_isConsistent() throws Exception {
-        // install the Dita Toolkit
-        helper.install();
-
-        // delete the checksum file to provoke internal exception
-        File checksumFile = new File(helper.getDitaToolkitRoot().getParentFile(),
-                DitaInstallationHelper.AGGREGATED_CHECKSUM_FILE);
-        FileUtils.forceDelete(checksumFile);
-
-        // check that the change is correctly picked up
-        assertFalse(helper.isConsistent(), "Consistency check succeded, but shouldn't have.");
-    }
-
-    /**
      * Test the behavior, when an empty directory is given for checksum calculation.
      *
      */

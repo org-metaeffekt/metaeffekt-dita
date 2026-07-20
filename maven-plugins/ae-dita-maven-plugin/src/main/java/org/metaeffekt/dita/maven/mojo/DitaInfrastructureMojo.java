@@ -131,7 +131,7 @@ public class DitaInfrastructureMojo extends AbstractDitaMojo {
      */
     protected String executeInstallation(DitaInstallationHelper installHelper) throws MojoExecutionException {
         try {
-            if (!installHelper.isInstalled() || !installHelper.isConsistent()) {
+            if (!installHelper.isInstalled()) {
                 getLog().info("No consistent DITA Open Toolkit installation found. Installing ...");
                 installHelper.install();
             }

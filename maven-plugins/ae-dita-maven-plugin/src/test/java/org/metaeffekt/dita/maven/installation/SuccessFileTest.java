@@ -16,14 +16,13 @@
 
 package org.metaeffekt.dita.maven.installation;
 
-import com.google.common.io.Files;
-import org.apache.commons.io.FileUtils;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URISyntaxException;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.fail;
@@ -34,45 +33,52 @@ public class SuccessFileTest {
     private static File mockArchive;
 
     @BeforeAll
-    public static void setUp(@TempDir File archivePath) throws IOException {
-        mockArchive = new File(archivePath," mock_archive.zip");
-        Files.touch(mockArchive);
+    public static void setUp(@TempDir File archivePath) throws IOException, URISyntaxException {
+        mockArchive = new File(SuccessFileTest.class.getClassLoader().getResource(
+                "dita-installation-test/dita-toolkit-dummy.zip").toURI());
+
     }
 
     @Test
-    public void noSuccessFile_notSuccessful(@TempDir File installationFolder) throws Exception {
+    public void unsuccessfulInstallation_notSuccessful(@TempDir File installationFolder) throws Exception {
 
         final DitaInstallationHelper helper = new DitaInstallationHelper(installationFolder, mockArchive, "ANY_USER");
 
-        assertThat(helper.wasSuccessful()).isFalse();
+        installUnsuccessfully(helper);
+
+        assertThat(helper.isInstalled()).isFalse();
     }
 
     @Test
-    public void createSuccesFile_successful(@TempDir File installationFolder) throws Exception {
+    public void installWithSuccess_successful(@TempDir File installationFolder) throws Exception {
 
         final DitaInstallationHelper helper = new DitaInstallationHelper(installationFolder, mockArchive, "ANY_USER");
 
-        createSuccessFile(helper, "installation.success");
+        installSuccessfully(helper);
 
-        assertThat(helper.wasSuccessful()).isTrue();
+        assertThat(helper.isInstalled()).isTrue();
     }
 
     @Test
-    public void user1WithSuccessFile_user2Without_noInterference(@TempDir File installationFolder) throws IOException {
+    public void installForUser1WithSuccess_user2Without_noInterference(@TempDir File installationFolder) throws IOException {
 
         final DitaInstallationHelper helperUser1 = new DitaInstallationHelper(installationFolder, mockArchive, "USER_1");
         final DitaInstallationHelper helperUser2 = new DitaInstallationHelper(installationFolder, mockArchive, "USER_2");
 
-        createSuccessFile(helperUser1, "installation.success");
+        installSuccessfully(helperUser1);
+        installUnsuccessfully(helperUser2);
 
-        assertThat(helperUser1.wasSuccessful()).isTrue();
-        assertThat(helperUser2.wasSuccessful()).isFalse();
+        assertThat(helperUser1.isInstalled()).isTrue();
+        assertThat(helperUser2.isInstalled()).isFalse();
     }
 
-    protected void createSuccessFile(DitaInstallationHelper helperUser1, String successFileName) throws IOException {
-        final File successFileUser1 = new File(helperUser1.getInstallationRoot(), successFileName);
-        FileUtils.createParentDirectories(successFileUser1);
-        successFileUser1.createNewFile();
+    protected void installSuccessfully(DitaInstallationHelper helper) throws IOException {
+        final boolean success = helper.install();
+
+        if (!success) { throw new RuntimeException("Failed to install"); }
     }
 
+    private void installUnsuccessfully(DitaInstallationHelper helper) {
+        // do nothing
+    }
 }
