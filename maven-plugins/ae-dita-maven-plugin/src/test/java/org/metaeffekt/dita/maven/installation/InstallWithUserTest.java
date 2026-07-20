@@ -39,7 +39,7 @@ import static org.junit.jupiter.api.Assertions.*;
  * @author Siegfried E.
  *
  */
-public class DitaInstallationHelperTest {
+public class InstallWithUserTest {
 
     /**
      * The MD5 checksum of Dita Toolkit Archive mock.
@@ -65,6 +65,7 @@ public class DitaInstallationHelperTest {
      * Archive containing some content that imitates a real life Dita Toolkit.
      */
     File installationDummyArchive;
+    private String username = "ANY_USER";
 
     @BeforeEach
     public void setUp() throws Exception {
@@ -77,7 +78,7 @@ public class DitaInstallationHelperTest {
         installationDummyArchive = new File(this.getClass().getClassLoader().getResource(
                 "dita-installation-test/dita-toolkit-dummy.zip").toURI());
 
-        helper = new DitaInstallationHelper(ditaInstallationCache, installationDummyArchive);
+        helper = new DitaInstallationHelper(ditaInstallationCache, installationDummyArchive, username);
     }
 
     @AfterEach
@@ -113,13 +114,13 @@ public class DitaInstallationHelperTest {
     }
 
     @Test
-    public void installDitaWithoutUsername_useChecksumBasedDir() throws IOException {
+    public void installationDirContainingUsername() throws IOException {
         helper.install();
 
         final File installRoot = helper.getDitaToolkitRoot();
 
         Assertions.assertThat(installRoot).isNotEmptyDirectory();
-        Assertions.assertThat(installRoot.getParent()).endsWith(DITA_ARCHIVE_CHECKSUM).doesNotContain("_");
+        Assertions.assertThat(installRoot.getParent()).endsWith(username + "_" + DITA_ARCHIVE_CHECKSUM);
     }
 
     /**
