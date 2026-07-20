@@ -34,6 +34,19 @@ import java.io.IOException;
  * <b>Warning:</b> The calculation of the checksum differs between Ant versions.
  * This might cause problems later on.
  *
+ * The file structure used looks as follows:
+ * <pre>
+ *     ${installationFolder}
+ *                  |- ${USER_1}_${ARCHIVE_CHECKSUM}
+ *                  |       |- dita-toolkit-installation
+ *                  |       |           |- ...
+ *                  |       |- installation.success
+ *                  |- ${USER_2}_${ARCHIVE_CHECKSUM}
+ *                          |- dita-toolkit-installation
+ *                          |           |- ...
+ *                          |- installation.success
+ * </pre>
+ *
  * @author Siegfried E.
  * @author Karsten Klein
  */
@@ -64,6 +77,7 @@ public class DitaInstallationHelper {
      */
     public static final String AGGREGATED_CHECKSUM_FILE = "toolkit.MD5";
     public static final String UTF_8 = "UTF-8";
+    private static final String SUCCESS_FILE = "installation.success";
 
     /**
      * Username to generate installation root with. Helps to distinguish installations
@@ -296,5 +310,13 @@ public class DitaInstallationHelper {
      */
     public void setInstallationArchive(File installationArchive) {
         this.installationArchive = installationArchive;
+    }
+
+    public boolean wasSuccessful() {
+        try {
+            return new File(getInstallationRoot(), SUCCESS_FILE).exists();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
