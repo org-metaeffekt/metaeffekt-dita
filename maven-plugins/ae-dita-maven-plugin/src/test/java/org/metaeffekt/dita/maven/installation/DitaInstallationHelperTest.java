@@ -250,21 +250,32 @@ public class DitaInstallationHelperTest {
     @Nested
     class MojoContext {
 
-        @Test
-        public void alreadyInstalled_accessRightsChanged_shouldNotFailIfConsistent() throws IOException, MojoExecutionException, MojoFailureException {
+        File ditaToolkitRoot;
+
+        @BeforeEach
+        public void setUp() throws Exception {
             helper.install();
 
-            final File ditaToolkitRoot = helper.getDitaToolkitRoot();
-            setPermissions(ditaToolkitRoot, "r-xr-xr-x");
+            this.ditaToolkitRoot = helper.getDitaToolkitRoot();
+        }
+
+        @AfterEach
+        public void tearDown() throws Exception {
+            // ensure mvn clean works correctly
+            setPermissions(this.ditaToolkitRoot, "rwxrwxrwx");
+        }
+
+        @Test
+        public void alreadyInstalled_accessRightsChanged_shouldNotFailIfConsistent() throws IOException, MojoExecutionException, MojoFailureException {
+
+            setPermissions(this.ditaToolkitRoot, "r-xr-xr-x");
 
             mojo.execute();
         }
 
         @Test
         public void alreadyInstalled_minimalPermissions_shouldNotFailIfConsistent() throws IOException, MojoExecutionException, MojoFailureException {
-            helper.install();
 
-            final File ditaToolkitRoot = helper.getDitaToolkitRoot();
             setPermissions(ditaToolkitRoot, "r-x------");
 
 
