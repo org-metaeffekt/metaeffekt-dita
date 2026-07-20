@@ -111,7 +111,7 @@ public class DitaInfrastructureMojo extends AbstractDitaMojo {
 
         // create new installation with the according parameters
         DitaInstallationHelper installHelper =
-                new DitaInstallationHelper(ditaToolkitCacheDir, installArchive);
+                new DitaInstallationHelper(ditaToolkitCacheDir, installArchive, System.getProperty("user.name"));
 
         String toolkitPath = executeInstallation(installHelper);
 

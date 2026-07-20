@@ -15,10 +15,6 @@
  */
 package org.metaeffekt.dita.maven.installation;
 
-import java.io.File;
-import java.io.FileFilter;
-import java.io.IOException;
-
 import com.google.common.base.Strings;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.filefilter.DirectoryFileFilter;
@@ -27,6 +23,10 @@ import org.apache.tools.ant.Project;
 import org.apache.tools.ant.taskdefs.Checksum;
 import org.apache.tools.ant.taskdefs.Expand;
 import org.apache.tools.ant.types.FileSet;
+
+import java.io.File;
+import java.io.FileFilter;
+import java.io.IOException;
 
 /**
  * This class takes care of all tasks necessary to provide a consistent Dita
@@ -93,18 +93,6 @@ public class DitaInstallationHelper {
      * Ant Expand task for unzipping used to install the Dita Toolkit.
      */
     private Expand unzipTask;
-
-    /**
-     * Constructor.
-     *
-     * @param installationFolder  The installation folder.
-     * @param installationArchive The installation archive.
-     */
-    public DitaInstallationHelper(File installationFolder, File installationArchive) {
-        this.installationFolder = installationFolder;
-        this.installationArchive = installationArchive;
-        username = null;
-    }
 
     /**
      * Constructor.
