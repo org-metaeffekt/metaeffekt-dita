@@ -15,14 +15,13 @@
  */
 package org.metaeffekt.dita.maven.installation;
 
+import com.google.common.base.Preconditions;
 import com.google.common.base.Strings;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.filefilter.DirectoryFileFilter;
-import org.apache.tools.ant.BuildException;
 import org.apache.tools.ant.Project;
 import org.apache.tools.ant.taskdefs.Checksum;
 import org.apache.tools.ant.taskdefs.Expand;
-import org.apache.tools.ant.types.FileSet;
 
 import java.io.File;
 import java.io.FileFilter;
@@ -33,7 +32,7 @@ import java.io.IOException;
  * Toolkit installation for the usage within a Maven build. <br>
  * <b>Warning:</b> The calculation of the checksum differs between Ant versions.
  * This might cause problems later on.
- *
+ * <p>
  * The file structure used looks as follows:
  * <pre>
  *     ${installationFolder}
@@ -113,9 +112,12 @@ public class DitaInstallationHelper {
      *
      * @param installationFolder  The installation folder.
      * @param installationArchive The installation archive.
-     * @param username username to distinguish user installations.
+     * @param username            username to distinguish user installations.
      */
     public DitaInstallationHelper(File installationFolder, File installationArchive, String username) {
+        Preconditions.checkArgument(installationArchive.isFile(), "Installation archive must point to an existing file.");
+        Preconditions.checkArgument(!Strings.isNullOrEmpty(username), "Username must not be null or empty.");
+
         this.installationFolder = installationFolder;
         this.installationArchive = installationArchive;
         this.username = username;
@@ -142,13 +144,8 @@ public class DitaInstallationHelper {
      * Create a checksum for the installation archive and return it as String.
      *
      * @return String containing the MD5 sum of the installation archive.
-     * @throws IOException IOException
      */
-    public String getInstallationArchiveChecksum() throws IOException {
-        if (installationArchive == null) {
-            throw new NullPointerException("No installation archive!");
-        }
-
+    public String getInstallationArchiveChecksum() {
         checksumTask = new Checksum();
         final Project project = new Project();
         checksumTask.setProject(project);
@@ -196,69 +193,15 @@ public class DitaInstallationHelper {
         return true;
     }
 
-    File getInstallationRoot() throws IOException {
-        String checksum = this.getInstallationArchiveChecksum();
-        if (!Strings.isNullOrEmpty(username)) {
-            return new File(installationFolder, "%s_%s".formatted(username, checksum));
-        } else {
-            return new File(installationFolder, checksum);
-        }
-    }
-
     /**
-     * This method creates an aggregated checksum for a given directory. <br>
-     * The checksum is calculated using the Ant codeextraction <i>Checksum</i> with the
-     * according file inclusions.
+     * Calculates the root directory where the toolkit is unzipped into. The directory path
+     * is based onto the checksum of the zip file and the username passed at instantiation.
      *
-     * @param target Directory to calculate the checksum for.
-     * @return The aggregated checksum
+     * @return directory path based on checksum and username
      */
-    public String getAggregatedChecksum(File target) {
-        Project checksumProject = new Project();
-        FileSet fileSet = new FileSet();
-        String checksum;
-
-        // define FileSet to include all files recursively
-        fileSet.setProject(checksumProject);
-        fileSet.setIncludes("*/**");
-        fileSet.setDir(target);
-
-        // calculate the actual checksum
-        checksumTask = new Checksum();
-        checksumTask.setProject(checksumProject);
-        checksumTask.setTodir(new File(JAVA_IO_TMPDIR, "dita-checksums"));
-        checksumTask.setTotalproperty(ANT_AGGREGATED_CHECKSUM_PROPERTY);
-        checksumTask.addFileset(fileSet);
-
-        try {
-            checksumTask.execute();
-            checksum = checksumTask.getProject().getProperty(ANT_AGGREGATED_CHECKSUM_PROPERTY);
-        } catch (BuildException e) {
-            checksum = "";
-        }
-
-        return checksum;
-    }
-
-    /**
-     * @param installationFolder the installationFolder to set
-     */
-    public void setInstallationFolder(File installationFolder) {
-        this.installationFolder = installationFolder;
-    }
-
-    /**
-     * @return the installationArchive
-     */
-    public File getInstallationArchive() {
-        return installationArchive;
-    }
-
-    /**
-     * @param installationArchive the installationArchive to set
-     */
-    public void setInstallationArchive(File installationArchive) {
-        this.installationArchive = installationArchive;
+    private File getInstallationRoot() {
+        String checksum = this.getInstallationArchiveChecksum();
+        return new File(installationFolder, "%s_%s".formatted(username, checksum));
     }
 
     /**
@@ -269,10 +212,7 @@ public class DitaInstallationHelper {
      * otherwise.
      */
     public boolean isInstalled() {
-        try {
-            return new File(getInstallationRoot(), SUCCESS_FILE).exists();
-        } catch (IOException e) {
-            throw new RuntimeException("Exception while checking installation status.", e);
-        }
+        final File installationRoot = getInstallationRoot();
+        return new File(installationRoot, SUCCESS_FILE).exists();
     }
 }

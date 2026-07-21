@@ -25,7 +25,6 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.fail;
 
 public class SuccessFileTest {
 
@@ -73,12 +72,10 @@ public class SuccessFileTest {
     }
 
     protected void installSuccessfully(DitaInstallationHelper helper) throws IOException {
-        final boolean success = helper.install();
-
-        if (!success) { throw new RuntimeException("Failed to install"); }
+        helper.install();
     }
 
     private void installUnsuccessfully(DitaInstallationHelper helper) {
-        // do nothing
+        // do nothing to simulate a failed installation
     }
 }

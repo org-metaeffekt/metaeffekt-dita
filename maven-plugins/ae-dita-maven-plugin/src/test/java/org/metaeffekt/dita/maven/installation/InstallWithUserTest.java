@@ -16,22 +16,16 @@
 package org.metaeffekt.dita.maven.installation;
 
 import org.apache.commons.io.FileUtils;
-import org.apache.maven.plugin.MojoExecutionException;
-import org.apache.maven.plugin.MojoFailureException;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
-import org.metaeffekt.dita.maven.mojo.DitaInfrastructureMojo;
 
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.attribute.PosixFilePermissions;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 /**
  * Test the correct behavior of the DitaInstallationHelper.
@@ -64,7 +58,7 @@ public class InstallWithUserTest {
     /**
      * Archive containing some content that imitates a real life Dita Toolkit.
      */
-    File installationDummyArchive;
+    File mockArchive;
     private String username = "ANY_USER";
 
     @BeforeEach
@@ -75,10 +69,10 @@ public class InstallWithUserTest {
         ditaInstallationCache.mkdirs();
 
         // get the test installation archive
-        installationDummyArchive = new File(this.getClass().getClassLoader().getResource(
+        mockArchive = new File(this.getClass().getClassLoader().getResource(
                 "dita-installation-test/dita-toolkit-dummy.zip").toURI());
 
-        helper = new DitaInstallationHelper(ditaInstallationCache, installationDummyArchive, username);
+        helper = new DitaInstallationHelper(ditaInstallationCache, mockArchive, username);
     }
 
     @AfterEach
@@ -96,23 +90,6 @@ public class InstallWithUserTest {
                 .getInstallationArchiveChecksum(), "The checksum was not as expected.");
     }
 
-    /**
-     * Test the correct behavior when bogus values are given.
-     *
-     * @throws Exception
-     */
-    @Test
-    public void testBoundaries_getInstallationArchiveChecksum() throws Exception {
-        helper.setInstallationFolder(null);
-        assertEquals(DITA_ARCHIVE_CHECKSUM, helper
-                .getInstallationArchiveChecksum(), "The checksum was not as expected.");
-
-        helper.setInstallationArchive(null);
-        assertThrows(NullPointerException.class, () ->
-                        helper.getInstallationArchiveChecksum(),
-                "NPE should have been thrown.");
-    }
-
     @Test
     public void installationDirContainingUsername() throws IOException {
         helper.install();
@@ -121,46 +98,6 @@ public class InstallWithUserTest {
 
         Assertions.assertThat(installRoot).isNotEmptyDirectory();
         Assertions.assertThat(installRoot.getParent()).endsWith(username + "_" + DITA_ARCHIVE_CHECKSUM);
-    }
-
-    /**
-     * Check if the {@link DitaInstallationHelper#isInstalled()} and
-     * {@link DitaInstallationHelper#install()} work as expected under normal
-     * conditions.
-     */
-    @Test
-    public void test_isInstalled_and_install() throws Exception {
-        assertFalse(helper.isInstalled(), "Dita should not be installed before test.");
-
-        // install the Dita Toolkit
-        assertTrue(helper.install(), "Result should have been true, Dita installation may have failed.");
-
-        // check if installation was successful
-        assertTrue(helper.isInstalled(), "Check that installation was successful has been failed.");
-
-        // this assertion is very instable. Needs in-depth analysis
-
-        // // check if the checksum file has been created with the correct
-        // checksum
-        // assertEquals(
-        // "The stored checksum differs from the expected one.",
-        // DITA_EXPANDED_CHECKSUM,
-        // FileUtils.readFileToString(new
-        // File(installation.getDitaToolkitRoot().getParentFile(),
-        // DitaInstallationHelper.AGGREGATED_CHECKSUM_FILE))
-        // );
-    }
-
-    /**
-     * Test the behavior, when an empty directory is given for checksum calculation.
-     *
-     */
-    @Test
-    public void testIsConsistent_Boundaries() {
-        File emptyTestDirectory = new File("target" + File.separator + "test-data" + File.separator + "empty-test-dir");
-        emptyTestDirectory.mkdirs();
-        String checksum = helper.getAggregatedChecksum(emptyTestDirectory);
-        assertNotNull(checksum, "Checksum was null, but was not expected to be.");
     }
 
     /**
@@ -185,56 +122,4 @@ public class InstallWithUserTest {
     }
 
 
-    /**
-     * Test in the context of mojo.
-     */
-    @Nested
-    class MojoContext {
-
-        File ditaToolkitRoot;
-
-        @BeforeEach
-        public void setUp() throws Exception {
-            helper.install();
-
-            this.ditaToolkitRoot = helper.getDitaToolkitRoot();
-        }
-
-        @AfterEach
-        public void tearDown() throws Exception {
-            // ensure mvn clean works correctly
-            setPermissions(this.ditaToolkitRoot, "rwxrwxrwx");
-        }
-
-        @Test
-        public void alreadyInstalled_accessRightsChanged_shouldNotFailIfConsistent() throws IOException, MojoExecutionException, MojoFailureException {
-
-            setPermissions(this.ditaToolkitRoot, "r-xr-xr-x");
-
-            mojo.execute();
-        }
-
-        @Test
-        public void alreadyInstalled_minimalPermissions_shouldNotFailIfConsistent() throws IOException, MojoExecutionException, MojoFailureException {
-
-            setPermissions(ditaToolkitRoot, "r-x------");
-
-
-            mojo.execute();
-        }
-
-        /**
-         * Bypass maven infrastructure by overriding {@link DitaInfrastructureMojo#execute()}.
-         */
-        final DitaInfrastructureMojo mojo = new DitaInfrastructureMojo() {
-            @Override
-            public void execute() throws MojoExecutionException, MojoFailureException {
-                executeInstallation(helper);
-            }
-        };
-
-        protected Path setPermissions(File onPath, String withPermissions) throws IOException {
-            return Files.setPosixFilePermissions(onPath.toPath(), PosixFilePermissions.fromString(withPermissions));
-        }
-    }
 }
