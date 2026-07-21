@@ -16,6 +16,7 @@
 
 package org.metaeffekt.dita.maven.installation;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugin.MojoFailureException;
 import org.junit.jupiter.api.AfterEach;
@@ -37,18 +38,19 @@ class MojoIntegrationTest {
     File ditaToolkitRoot;
 
     DitaInfrastructureMojo mojo;
+    File ditaInstallationCache;
 
     @BeforeEach
     public void setUp() throws Exception {
         // create a temporary directory for test installations
         File tempFile = File.createTempFile("dita-", "-install-test");
-        File ditaInstallationCache = new File("target" + File.separator + "test-data" + File.separator + tempFile.getName());
-        ditaInstallationCache.mkdirs();
+        this.ditaInstallationCache = new File("target" + File.separator + "test-data" + File.separator + tempFile.getName());
+        this.ditaInstallationCache.mkdirs();
 
         File mockArchive =
                 new File(this.getClass().getClassLoader().getResource("dita-installation-test/dita-toolkit-dummy.zip").toURI());
 
-        DitaInstallationHelper helper = new DitaInstallationHelper(ditaInstallationCache, mockArchive, "ANY_USER");
+        DitaInstallationHelper helper = new DitaInstallationHelper(this.ditaInstallationCache, mockArchive, "ANY_USER");
         helper.install();
 
         ditaToolkitRoot = helper.getDitaToolkitRoot();
@@ -57,8 +59,7 @@ class MojoIntegrationTest {
 
     @AfterEach
     public void tearDown() throws Exception {
-        // ensure `mvn clean` works correctly
-        setPermissions(this.ditaToolkitRoot, "rwxrwxrwx");
+        FileUtils.forceDelete(ditaInstallationCache);
     }
 
     @Test
