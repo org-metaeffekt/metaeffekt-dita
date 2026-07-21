@@ -26,6 +26,8 @@ import org.apache.tools.ant.taskdefs.Expand;
 import java.io.File;
 import java.io.FileFilter;
 import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 
 /**
  * This class takes care of all tasks necessary to provide a consistent Dita
@@ -188,7 +190,7 @@ public class DitaInstallationHelper {
         // get the actual root folder of the toolkit
         File toolkitRoot = this.getDitaToolkitRoot();
 
-        FileUtils.touch(new File(getInstallationRoot(), SUCCESS_FILE));
+        FileUtils.writeStringToFile(new File(getInstallationRoot(), SUCCESS_FILE), LocalDateTime.now().truncatedTo(ChronoUnit.SECONDS).toString(), UTF_8);
 
         return true;
     }
