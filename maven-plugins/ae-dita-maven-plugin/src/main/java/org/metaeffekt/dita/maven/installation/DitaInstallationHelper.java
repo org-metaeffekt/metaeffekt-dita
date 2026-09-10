@@ -15,24 +15,39 @@
  */
 package org.metaeffekt.dita.maven.installation;
 
-import java.io.File;
-import java.io.FileFilter;
-import java.io.IOException;
-
+import com.google.common.base.Preconditions;
+import com.google.common.base.Strings;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.filefilter.DirectoryFileFilter;
-import org.apache.tools.ant.BuildException;
 import org.apache.tools.ant.Project;
 import org.apache.tools.ant.taskdefs.Checksum;
 import org.apache.tools.ant.taskdefs.Expand;
-import org.apache.tools.ant.types.FileSet;
+
+import java.io.File;
+import java.io.FileFilter;
+import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 
 /**
  * This class takes care of all tasks necessary to provide a consistent Dita
  * Toolkit installation for the usage within a Maven build. <br>
  * <b>Warning:</b> The calculation of the checksum differs between Ant versions.
  * This might cause problems later on.
- * 
+ * <p>
+ * The file structure used looks as follows:
+ * <pre>
+ *     ${installationFolder}
+ *                  |- ${USER_1}_${ARCHIVE_CHECKSUM}
+ *                  |       |- dita-toolkit-installation
+ *                  |       |           |- ...
+ *                  |       |- installation.success
+ *                  |- ${USER_2}_${ARCHIVE_CHECKSUM}
+ *                          |- dita-toolkit-installation
+ *                          |           |- ...
+ *                          |- installation.success
+ * </pre>
+ *
  * @author Siegfried E.
  * @author Karsten Klein
  */
@@ -63,6 +78,15 @@ public class DitaInstallationHelper {
      */
     public static final String AGGREGATED_CHECKSUM_FILE = "toolkit.MD5";
     public static final String UTF_8 = "UTF-8";
+    private static final String SUCCESS_FILE = "installation.success";
+
+    /**
+     * Username to generate installation root with. Helps to distinguish installations
+     * created by different users.
+     * <p>
+     * May be null
+     */
+    private final String username;
 
     /**
      * The root directory where the Dita Toolkit is supposed to be installed.
@@ -87,25 +111,29 @@ public class DitaInstallationHelper {
 
     /**
      * Constructor.
-     * 
-     * @param installationFolder The installation folder.
+     *
+     * @param installationFolder  The installation folder.
      * @param installationArchive The installation archive.
+     * @param username            username to distinguish user installations.
      */
-    public DitaInstallationHelper(File installationFolder, File installationArchive) {
+    public DitaInstallationHelper(File installationFolder, File installationArchive, String username) {
+        Preconditions.checkArgument(installationArchive.isFile(), "Installation archive must point to an existing file.");
+        Preconditions.checkArgument(!Strings.isNullOrEmpty(username), "Username must not be null or empty.");
+
         this.installationFolder = installationFolder;
         this.installationArchive = installationArchive;
+        this.username = username;
     }
 
     /**
-     * Get a pointer to the location of a ready to use Dita Toolkit, where to
+     * Get a pointer to the location of a ready to use Dita Toolkit, where the
      * content of the location corresponds to the content of the given {@link DitaInstallationHelper}.
-     * 
+     *
      * @return String representing the path to the Dita Toolkit installation.
      * @throws IOException IOException
      */
     public File getDitaToolkitRoot() throws IOException {
-        String checksum = this.getInstallationArchiveChecksum();
-        File installationRoot = new File(installationFolder, checksum);
+        final File installationRoot = getInstallationRoot();
         File[] subDirs = installationRoot.listFiles((FileFilter) DirectoryFileFilter.INSTANCE);
 
         if (subDirs.length != 1) {
@@ -116,94 +144,36 @@ public class DitaInstallationHelper {
 
     /**
      * Create a checksum for the installation archive and return it as String.
-     * 
+     *
      * @return String containing the MD5 sum of the installation archive.
-     * @throws IOException IOException
      */
-    public String getInstallationArchiveChecksum() throws IOException {
-        if (installationArchive == null) {
-            throw new NullPointerException("No installation archive!");
-        }
-
+    public String getInstallationArchiveChecksum() {
         checksumTask = new Checksum();
         final Project project = new Project();
         checksumTask.setProject(project);
         checksumTask.setFile(installationArchive);
-        final String md5ChecksumProperty = "md5Checksum";
-        checksumTask.setProperty(md5ChecksumProperty);
+        final String checksumPropertyKey = "md5Checksum";
+        checksumTask.setProperty(checksumPropertyKey);
         checksumTask.execute();
-        return project.getProperty(md5ChecksumProperty);
+        return project.getProperty(checksumPropertyKey);
     }
 
     /**
-     * Check if the Dita Toolkit is installed. <br>
-     * This method tests if the installation directory of the Dita Toolkit
-     * exists. It does not check the installation for consistency.
-     * 
-     * @return <i>true</i> if the installation folder exists, <i>false</i>
-     *         otherwise.
-     * @throws IOException IOException
-     */
-    public boolean isInstalled() throws IOException {
-        String checksum = this.getInstallationArchiveChecksum();
-        File installationDirectory = new File(getInstallationFolder(), checksum);
-        return installationDirectory.isDirectory();
-    }
-
-    /**
-     * Checks the current Dita Toolkit installation for consistency. <br>
-     * This method is best to be executed after isInstalled(). It
-     * creates an aggregated checksum on the Dita Toolkit installation
-     * directory. The checksum is then compared to the checksum that was created
-     * upon installation. This way the consistency of the installation can be
-     * ensured.
-     * 
-     * @return <i>true</i> if the checksums match, <i>false</i> if the checksums
-     *         do not match, or the checksum file cannot be found.
-     */
-    public boolean isConsistent() {
-        File checksumFile = null;
-        String archivedChecksum;
-        String calculatedChecksum;
-
-        try {
-            checksumFile = new File(this.getDitaToolkitRoot().getParent(), AGGREGATED_CHECKSUM_FILE);
-        } catch (IOException e) {
-            return false;
-        }
-        try {
-            archivedChecksum = FileUtils.readFileToString(checksumFile);
-            calculatedChecksum = getAggregatedChecksum(getDitaToolkitRoot());
-
-            if (archivedChecksum.equals(calculatedChecksum)) {
-                return true;
-            }
-        } catch (Exception e) {
-            return false;
-        }
-
-        return false;
-    }
-
-    /**
-     * Install the Dita Toolkit from the installation archive that is provided. <br>
+     * Installs the Dita Toolkit from the installation archive that is provided. <br>
      * Create a checksum of the installation archive and unzip the content of
      * the installation archive to a sub-folder of the given installationFolder.
-     * The sub-folder's name is the checksum. After
-     * extracting the Dita Toolkit to the target folder, create an aggregated
-     * checksum on the directory content and save the checksum to a text file
-     * right along with the folder. The name of the text file is
-     * <i>&lt;INSTALL_ARCHIVE_CHECKSUM&gt;.txt</i>.
-     * 
+     * The sub-folder's name is the checksum of the installation archive.
+     * <p>
+     * After extracting the Dita Toolkit to the target folder, create an aggregated
+     * checksum of the directory content and save the checksum to a text file
+     * right along with the folder.
+     *
      * @return True if the installation was successful, false otherwise.
      * @throws IOException IOException
      */
     public boolean install() throws IOException {
-        String checksum = this.getInstallationArchiveChecksum();
-        File installRoot = new File(installationFolder, checksum);
-        File checksumFile = new File(installRoot, AGGREGATED_CHECKSUM_FILE);
-        File toolkitRoot;
-        String aggregatedChecksum = "";
+        final File installRoot = getInstallationRoot();
+        final File checksumFile = new File(installRoot, AGGREGATED_CHECKSUM_FILE);
 
         // remove the installation directory if it already exists.
         if (installRoot.exists()) {
@@ -218,79 +188,33 @@ public class DitaInstallationHelper {
         unzipTask.execute();
 
         // get the actual root folder of the toolkit
-        toolkitRoot = this.getDitaToolkitRoot();
+        File toolkitRoot = this.getDitaToolkitRoot();
 
-        // get the checksum of the fresh installation an remember it
-        aggregatedChecksum = getAggregatedChecksum(toolkitRoot);
-        FileUtils.writeStringToFile(checksumFile, aggregatedChecksum, UTF_8);
+        FileUtils.writeStringToFile(new File(getInstallationRoot(), SUCCESS_FILE), LocalDateTime.now().truncatedTo(ChronoUnit.SECONDS).toString(), UTF_8);
 
         return true;
     }
 
     /**
-     * This method creates an aggregated checksum for a given directory. <br>
-     * The checksum is calculated using the Ant codeextraction <i>Checksum</i> with the
-     * according file inclusions.
-     * 
-     * @param target
-     *            Directory to calculate the checksum for.
+     * Calculates the root directory where the toolkit is unzipped into. The directory path
+     * is based onto the checksum of the zip file and the username passed at instantiation.
      *
-     * @return The aggregated checksum
+     * @return directory path based on checksum and username
      */
-    public String getAggregatedChecksum(File target) {
-        Project checksumProject = new Project();
-        FileSet fileSet = new FileSet();
-        String checksum;
-
-        // define FileSet to include all files recursively
-        fileSet.setProject(checksumProject);
-        fileSet.setIncludes("*/**");
-        fileSet.setDir(target);
-
-        // calculate the actual checksum
-        checksumTask = new Checksum();
-        checksumTask.setProject(checksumProject);
-        checksumTask.setTodir(new File(JAVA_IO_TMPDIR, "dita-checksums"));
-        checksumTask.setTotalproperty(ANT_AGGREGATED_CHECKSUM_PROPERTY);
-        checksumTask.addFileset(fileSet);
-
-        try {
-           checksumTask.execute();
-           checksum = checksumTask.getProject().getProperty(ANT_AGGREGATED_CHECKSUM_PROPERTY);
-        } catch (BuildException e) {
-           checksum = "";
-        }
-
-        return checksum;
+    private File getInstallationRoot() {
+        String checksum = this.getInstallationArchiveChecksum();
+        return new File(installationFolder, "%s_%s".formatted(username, checksum));
     }
 
     /**
-     * @return the installationFolder
+     * Checks if the Dita Toolkit is installed. <br>
+     * This method tests if the installation folder contains a {@link DitaInstallationHelper#SUCCESS_FILE}.
+     *
+     * @return <i>true</i> if the {@link DitaInstallationHelper#SUCCESS_FILE} exists, <i>false</i>
+     * otherwise.
      */
-    public File getInstallationFolder() {
-        return installationFolder;
-    }
-
-    /**
-     * @param installationFolder
-     *            the installationFolder to set
-     */
-    public void setInstallationFolder(File installationFolder) {
-        this.installationFolder = installationFolder;
-    }
-
-    /**
-     * @return the installationArchive
-     */
-    public File getInstallationArchive() {
-        return installationArchive;
-    }
-
-    /**
-     * @param installationArchive
-     *            the installationArchive to set
-     */
-    public void setInstallationArchive(File installationArchive) {
-        this.installationArchive = installationArchive;
+    public boolean isInstalled() {
+        final File installationRoot = getInstallationRoot();
+        return new File(installationRoot, SUCCESS_FILE).exists();
     }
 }

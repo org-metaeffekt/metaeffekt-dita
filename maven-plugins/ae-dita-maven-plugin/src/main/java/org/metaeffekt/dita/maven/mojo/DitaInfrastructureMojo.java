@@ -99,6 +99,7 @@ public class DitaInfrastructureMojo extends AbstractDitaMojo {
     )
     private String ditaToolkitClassifier;
 
+    @Override
     public void execute() throws MojoExecutionException, MojoFailureException {
         super.execute();
         if (skipProject()) {
@@ -107,26 +108,42 @@ public class DitaInfrastructureMojo extends AbstractDitaMojo {
 
         File installArchive = getDitaToolkitDependency().getFile();
         getLog().info("DITA Open Toolkit install archive: " + installArchive.getAbsolutePath());
-        String toolkitPath = "";
 
         // create new installation with the according parameters
         DitaInstallationHelper installHelper =
-                new DitaInstallationHelper(ditaToolkitCacheDir, installArchive);
+                new DitaInstallationHelper(ditaToolkitCacheDir, installArchive, System.getProperty("user.name"));
 
+        String toolkitPath = executeInstallation(installHelper);
+
+        getMavenSession().getUserProperties().setProperty(
+                DitaInstallationHelper.DITA_TOOLKIT_ROOT_PROPERTY, toolkitPath);
+    }
+
+    /**
+     * Perform the installation of dita toolkit.
+     * <br>
+     * For testing purposes override {@link DitaInfrastructureMojo#execute()} and call this method with an initialized
+     * {@link DitaInstallationHelper}.
+     *
+     * @param installHelper
+     * @return
+     * @throws MojoExecutionException
+     */
+    protected String executeInstallation(DitaInstallationHelper installHelper) throws MojoExecutionException {
         try {
-            if (!installHelper.isInstalled() || !installHelper.isConsistent()) {
+            if (!installHelper.isInstalled()) {
                 getLog().info("No consistent DITA Open Toolkit installation found. Installing ...");
                 installHelper.install();
             }
-            toolkitPath = installHelper.getDitaToolkitRoot().getAbsolutePath();
+            String toolkitPath = installHelper.getDitaToolkitRoot().getAbsolutePath();
 
             getLog().info("Using DITA Open Toolkit at: " + toolkitPath);
 
             // ensure that the binaries of the dita toolkit are executable
             makeDitaExecutable(installHelper.getDitaToolkitRoot());
 
-            getMavenSession().getUserProperties().setProperty(
-                    DitaInstallationHelper.DITA_TOOLKIT_ROOT_PROPERTY, toolkitPath);
+            return toolkitPath;
+
         } catch (IOException e) {
             throw new MojoExecutionException("Error while checking or installing the DITA Open Toolkit.", e);
         }
