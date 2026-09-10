@@ -125,7 +125,6 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-invoker-plugin</artifactId>
-                    <version>${maven.invoker.plugin.version}</version>
                     <configuration>
                         <debug>true</debug>
                         <addTestClassPath>true</addTestClassPath>
@@ -149,7 +148,6 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-plugin-plugin</artifactId>
-                    <version>${maven.plugin.plugin.version}</version>
                     <executions>
                         <execution>
                             <id>default-descriptor</id>
