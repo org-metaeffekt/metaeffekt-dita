@@ -244,7 +244,11 @@ public class GlossaryMapCreator {
 
     private void extractRequiredGlossaryTerms(File file, Set<String> keyRefs) throws DocumentException {
         final Document document = readDocument(file);
-        final List<Node> selectedNodes = document.selectNodes("//abbreviated-form");
+        contribute(keyRefs, document.selectNodes("//abbreviated-form"));
+        contribute(keyRefs, document.selectNodes("//xref"));
+    }
+
+    private static void contribute(Set<String> keyRefs, List<Node> selectedNodes) {
         for (Node node : selectedNodes) {
             if (node.getNodeType() == Node.ELEMENT_NODE) {
                 String keyRef = ((Element) node).attributeValue("keyref");
