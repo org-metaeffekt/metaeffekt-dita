@@ -7,6 +7,7 @@
     <feature extension="dita.conductor.transtype.check" value="ae-standard-pdf" />
     <feature extension="dita.transtype.print" value="ae-standard-pdf" />
     <feature extension="dita.conductor.target.relative" file="integrator.xml" />
+    <feature extension="dita.xsl.xslfo" file="xsl/custom-term.xsl" />
 
     <!-- libraries
         <feature extension="dita.conductor.lib.import" file="lib/<name>.jar"/>
