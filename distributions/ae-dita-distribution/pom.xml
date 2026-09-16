@@ -69,6 +69,7 @@
                                     <exclude>**/COPYING</exclude>
                                     <exclude>**/README</exclude>
                                     <exclude>**/*.rng</exclude>
+                                    <exclude>**/*.svg</exclude>
                                 </scanExcludes>
                             </configuration>
                         </execution>

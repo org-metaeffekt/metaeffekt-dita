@@ -253,7 +253,6 @@ public class GlossaryMapCreator {
         for (Node node : selectedNodes) {
             if (node.getNodeType() == Node.ELEMENT_NODE) {
                 String keyRef = ((Element) node).attributeValue("keyref");
-                if (keyRef == null) keyRef = ((Element) node).attributeValue("xref");
                 if (keyRef != null && !keyRefs.contains(keyRef)) {
                     keyRefs.add(keyRef);
                 }
