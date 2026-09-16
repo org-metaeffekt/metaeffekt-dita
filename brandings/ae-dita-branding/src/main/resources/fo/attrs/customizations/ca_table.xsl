@@ -70,6 +70,11 @@
         <xsl:attribute name="text-align">start</xsl:attribute>
         <xsl:attribute name="font-size">9pt</xsl:attribute>
     </xsl:attribute-set>
+
+    <xsl:attribute-set name="tbody.row">
+        <!--Table body row-->
+        <xsl:attribute name="keep-together.within-page">auto</xsl:attribute>
+    </xsl:attribute-set>
     
     <xsl:attribute-set name="dl">
 		<!--DL is a table-->
