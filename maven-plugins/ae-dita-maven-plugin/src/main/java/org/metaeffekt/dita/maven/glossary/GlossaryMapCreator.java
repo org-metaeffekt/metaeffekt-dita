@@ -245,7 +245,6 @@ public class GlossaryMapCreator {
     private void extractRequiredGlossaryTerms(File file, Set<String> keyRefs) throws DocumentException {
         final Document document = readDocument(file);
         contribute(keyRefs, document.selectNodes("//abbreviated-form"));
-        contribute(keyRefs, document.selectNodes("//xref"));
         contribute(keyRefs, document.selectNodes("//term"));
     }
 
