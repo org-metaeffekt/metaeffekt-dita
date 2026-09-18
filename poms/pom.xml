@@ -7,11 +7,12 @@
     <parent>
         <groupId>org.metaeffekt.dita</groupId>
         <artifactId>ae-dita</artifactId>
-        <version>HEAD-SNAPSHOT</version>
+        <version>0.30.0</version>
         <relativePath>../</relativePath>
     </parent>
 
     <artifactId>ae-dita-poms</artifactId>
+    <name>${project.artifactId}</name>
     <packaging>pom</packaging>
 
     <modules>

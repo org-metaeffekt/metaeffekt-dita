@@ -5,11 +5,12 @@
     <parent>
         <groupId>org.metaeffekt.dita</groupId>
         <artifactId>ae-dita-distribution-pom</artifactId>
-        <version>HEAD-SNAPSHOT</version>
+        <version>0.30.0</version>
         <relativePath>../../poms/ae-dita-distribution-pom</relativePath>
     </parent>
 
     <artifactId>ae-dita-distribution</artifactId>
+    <name>${project.artifactId}</name>
     <packaging>jar</packaging>
 
     <properties>

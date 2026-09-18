@@ -8,10 +8,11 @@
     <parent>
         <groupId>org.metaeffekt.dita</groupId>
         <artifactId>ae-dita</artifactId>
-        <version>HEAD-SNAPSHOT</version>
+        <version>0.30.0</version>
     </parent>
 
     <artifactId>ae-dita-inventory</artifactId>
+    <name>${project.artifactId}</name>
     <packaging>jar</packaging>
 
     <build>
