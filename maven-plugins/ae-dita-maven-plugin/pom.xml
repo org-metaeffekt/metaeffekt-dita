@@ -15,6 +15,7 @@
 
     <groupId>org.metaeffekt.dita</groupId>
     <artifactId>ae-dita-maven-plugin</artifactId>
+    <name>${project.artifactId}</name>
     <version>HEAD-SNAPSHOT</version>
     <packaging>maven-plugin</packaging>
 

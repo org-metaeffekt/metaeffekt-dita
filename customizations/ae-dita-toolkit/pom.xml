@@ -11,6 +11,7 @@
 
     <groupId>org.metaeffekt.dita</groupId>
     <artifactId>ae-dita-toolkit</artifactId>
+    <name>${project.artifactId}</name>
     <version>HEAD-SNAPSHOT</version>
     <packaging>pom</packaging>
 

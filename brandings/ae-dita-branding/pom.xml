@@ -9,6 +9,7 @@
     </parent>
 
     <artifactId>ae-dita-branding</artifactId>
+    <name>${project.artifactId}</name>
     <packaging>jar</packaging>
 
     <build>

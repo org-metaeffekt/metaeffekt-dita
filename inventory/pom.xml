@@ -12,6 +12,7 @@
     </parent>
 
     <artifactId>ae-dita-inventory</artifactId>
+    <name>${project.artifactId}</name>
     <packaging>jar</packaging>
 
     <build>

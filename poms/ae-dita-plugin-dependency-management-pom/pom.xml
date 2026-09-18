@@ -13,6 +13,7 @@
 
     <groupId>org.metaeffekt.dita</groupId>
     <artifactId>ae-dita-plugin-dependency-management-pom</artifactId>
+    <name>${project.artifactId}</name>
     <version>HEAD-SNAPSHOT</version>
     <packaging>pom</packaging>
 

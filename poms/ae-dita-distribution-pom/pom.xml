@@ -14,6 +14,7 @@
     </parent>
 
     <artifactId>ae-dita-distribution-pom</artifactId>
+    <name>${project.artifactId}</name>
     <packaging>pom</packaging>
 
     <properties>

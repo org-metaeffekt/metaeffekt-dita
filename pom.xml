@@ -6,6 +6,7 @@
 
     <groupId>org.metaeffekt.dita</groupId>
     <artifactId>ae-dita</artifactId>
+    <name>metaeffekt-dita</name>
     <version>HEAD-SNAPSHOT</version>
     <packaging>pom</packaging>
 
@@ -15,7 +16,6 @@
         <version>HEAD-SNAPSHOT</version>
     </parent>
 
-    <name>metaeffekt-dita</name>
     <description>DITA Tool Chain project with basic support for creating documents with DITA and Maven.</description>
     <url>https://github.com/org-metaeffekt/metaeffekt-dita</url>
 
@@ -91,4 +91,50 @@
         </pluginManagement>
     </build>
 
+    <profiles>
+        <profile>
+            <id>deploy</id>
+            <modules>
+                <module>brandings</module>
+                <module>customizations</module>
+                <module>dita-plugins</module>
+                <module>maven-plugins</module>
+                <module>poms</module>
+                <module>inventory</module>
+                <!-- FIXME-KKL: annex requires review
+                <module>distributions</module>
+                -->
+            </modules>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>io.github.mavenplugins</groupId>
+                        <artifactId>central-publishing-maven-plugin</artifactId>
+                        <version>${mavenplugins.central.publishing.plugin.version}</version>
+                        <extensions>true</extensions>
+                        <configuration>
+                            <publishingServerId>central</publishingServerId>
+                            <autoPublish>true</autoPublish>
+                        </configuration>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                                <configuration>
+                                    <executable>gpg</executable>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 </project>

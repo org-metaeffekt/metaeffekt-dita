@@ -10,6 +10,7 @@
     </parent>
 
     <artifactId>ae-dita-maven-plugins</artifactId>
+    <name>${project.artifactId}</name>
     <packaging>pom</packaging>
 
     <modules>

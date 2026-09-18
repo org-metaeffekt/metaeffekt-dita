@@ -12,6 +12,7 @@
 
     <groupId>org.metaeffekt.dita</groupId>
     <artifactId>ae-common-content</artifactId>
+    <name>${project.artifactId}</name>
     <version>HEAD-SNAPSHOT</version>
     <packaging>jar</packaging>
 
