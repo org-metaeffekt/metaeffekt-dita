@@ -6,7 +6,7 @@
                 version="2.0">
 
     <!-- Overrides to fix DITA-OT 3.2.1 bug where keyref targets resolve to multiple elements -->
-    <xsl:template match="*[contains(@class,' topic/term ')]" name="topic.term">
+    <xsl:template match="*[contains(@class,' topic/term ')][not(contains(@class,' abbrev-d/abbreviated-form '))]" name="topic.term">
         <xsl:param name="keys" select="@keyref" as="attribute()?"/>
         <xsl:param name="contents" as="node()*">
             <xsl:variable name="target" select="if (exists(root()) and @href) then (key('id', substring(@href, 2))[contains(@class, ' topic/topic ')])[1] else ()" as="element()?"/>
