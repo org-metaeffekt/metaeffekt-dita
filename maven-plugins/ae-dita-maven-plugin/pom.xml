@@ -9,14 +9,14 @@
     <parent>
         <groupId>org.metaeffekt.core</groupId>
         <artifactId>ae-core-plugin-management-pom</artifactId>
-        <version>HEAD-SNAPSHOT</version>
+        <version>0.157.2</version>
         <relativePath />
     </parent>
 
     <groupId>org.metaeffekt.dita</groupId>
     <artifactId>ae-dita-maven-plugin</artifactId>
     <name>${project.artifactId}</name>
-    <version>HEAD-SNAPSHOT</version>
+    <version>0.31.0</version>
     <packaging>maven-plugin</packaging>
 
     <properties>
