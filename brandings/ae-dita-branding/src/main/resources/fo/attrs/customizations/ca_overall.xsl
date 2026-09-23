@@ -24,6 +24,8 @@
         <xsl:attribute name="font-family">Helvetica</xsl:attribute>
         <xsl:attribute name="color">black</xsl:attribute>
         <xsl:attribute name="text-align">justify</xsl:attribute>
+        <xsl:attribute name="orphans">2</xsl:attribute>
+        <xsl:attribute name="widows">2</xsl:attribute>
     </xsl:attribute-set>
     
     <!-- Reduce the font size of pre element content. The intention is to
